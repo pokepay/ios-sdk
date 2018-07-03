@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "KeychainAccess",
+        "repositoryURL": "https://github.com/kishikawakatsumi/KeychainAccess",
+        "state": {
+          "branch": null,
+          "revision": "b2233a86ef693f1d7da80e3ced8ad86aacf85068",
+          "version": "3.1.1"
+        }
+      },
+      {
         "package": "Result",
         "repositoryURL": "https://github.com/antitypical/Result.git",
         "state": {

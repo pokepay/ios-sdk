@@ -5,6 +5,7 @@ import APIKit
 final class PokepayTests: XCTestCase {
     func testGetTerminal() {
         let expect = expectation(description: "get request test")
+        Pokepay.setup(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr")
         Session.send(GetTerminalRequest()) { result in
             switch result {
             case .success(let response):

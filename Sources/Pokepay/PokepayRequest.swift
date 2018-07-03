@@ -1,5 +1,6 @@
 import Foundation
 import APIKit
+import KeychainAccess
 
 let API_BASE_URL = "https://api-dev.***REMOVED***"
 
@@ -11,8 +12,12 @@ extension PokepayRequest {
         return URL(string: API_BASE_URL)!
     }
     var headerFields: [String: String] {
+        let keychain = Keychain(service: "jp.pocket-change.pay")
+        guard let accessToken = keychain["accessToken"] else {
+            return [:]
+        }
         return [
-          "Authorization": "Bearer ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr"
+          "Authorization": "Bearer \(accessToken)"
         ]
     }
 }
