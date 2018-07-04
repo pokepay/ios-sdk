@@ -1,6 +1,6 @@
 import APIKit
 
-struct GetCheck: PokepayRequest {
+struct GetCheckRequest: PokepayRequest {
     let id: String
 
     typealias Response = Check

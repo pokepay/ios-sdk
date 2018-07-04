@@ -1,6 +1,6 @@
 import APIKit
 
-struct MakeTransactionWithJwt: PokepayRequest {
+struct MakeTransactionWithJwtRequest: PokepayRequest {
     let data: String
     let accountId: String?
 

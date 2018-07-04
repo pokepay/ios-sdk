@@ -1,6 +1,6 @@
 import APIKit
 
-struct UpdateCheck: PokepayRequest {
+struct UpdateCheckRequest: PokepayRequest {
     let id: String
     let amount: Double?
     let description: String?

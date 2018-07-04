@@ -1,6 +1,6 @@
 import APIKit
 
-struct SendWithBill: PokepayRequest {
+struct SendWithBillRequest: PokepayRequest {
     let id: String
     let accountId: String?
     let amount: Double?

@@ -1,6 +1,6 @@
 import APIKit
 
-struct MakeTransactionWithCashtray: PokepayRequest {
+struct MakeTransactionWithCashtrayRequest: PokepayRequest {
     let id: String
     let accountId: String?
 

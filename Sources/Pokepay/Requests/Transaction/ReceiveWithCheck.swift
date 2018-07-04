@@ -1,6 +1,6 @@
 import APIKit
 
-struct RecieveWithCheck: PokepayRequest {
+struct RecieveWithCheckRequest: PokepayRequest {
     let id: String
     let accountId: String?
 

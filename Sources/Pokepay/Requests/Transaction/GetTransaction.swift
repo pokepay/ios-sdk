@@ -1,6 +1,6 @@
 import APIKit
 
-struct GetTransaction: PokepayRequest {
+struct GetTransactionRequest: PokepayRequest {
     let id: String
 
     typealias Response = UserTransaction

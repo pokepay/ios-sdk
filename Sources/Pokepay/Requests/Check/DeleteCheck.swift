@@ -1,6 +1,6 @@
 import APIKit
 
-struct DeleteCheck: PokepayRequest {
+struct DeleteCheckRequest: PokepayRequest {
     let id: String
 
     typealias Response = NoContent

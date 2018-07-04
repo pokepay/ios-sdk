@@ -1,6 +1,6 @@
 import APIKit
 
-struct CancelTransaction: PokepayRequest {
+struct CancelTransactionRequest: PokepayRequest {
     let id: String
 
     typealias Response = NoContent
