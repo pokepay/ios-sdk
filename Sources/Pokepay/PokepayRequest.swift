@@ -52,6 +52,10 @@ extension PokepayRequest where Response: Decodable {
         guard let data = object as? Data else {
             throw PokepayError(object: Data())
         }
+        guard data.count != 0 else {
+            let emptyJson = "{}"
+            return try JSONDecoder().decode(Response.self, from: emptyJson.data(using: .utf8)!)
+        }
         return try JSONDecoder().decode(Response.self, from: data)
     }
 }
