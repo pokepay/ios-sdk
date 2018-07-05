@@ -6,7 +6,7 @@ final class PokepayTests: XCTestCase {
     func testGetTerminal() {
         let expect = expectation(description: "get request test")
         Pokepay.setup(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr")
-        Session.send(GetTerminalRequest()) { result in
+        Session.send(BankAPI.Terminal.Get()) { result in
             switch result {
             case .success(let response):
                 print(response)
@@ -22,7 +22,7 @@ final class PokepayTests: XCTestCase {
     func testAddPublicKey() {
         let expect = expectation(description: "add public key request test")
         Pokepay.setup(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr")
-        Session.send(AddPublicKeyRequest(key:
+        Session.send(BankAPI.Terminal.AddPublicKey(key:
 """
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAq8oHIShTIJHrQpBQqAVs
 JxjhstGMghotRq2QaU0PU7y4jR42AAWMHzjzTxQUjE/Id/ko5lwbFx+tco0NvJVR
