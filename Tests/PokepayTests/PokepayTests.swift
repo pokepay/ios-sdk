@@ -38,7 +38,23 @@ AQIDAQAB
                 expect.fulfill()
             case .failure:
                 print(result)
-                break
+                expect.fulfill()
+            }
+        }
+        waitForExpectations(timeout: 5.0, handler: nil)
+    }
+
+    func testCreateToken() {
+        let expect = expectation(description: "add public key request test")
+        Pokepay.setup(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr")
+        Pokepay.createToken(108) { result in
+            switch result {
+            case .success(let token):
+                print(token)
+                expect.fulfill()
+            case .failure(let error):
+                print(error)
+                expect.fulfill()
             }
         }
         waitForExpectations(timeout: 5.0, handler: nil)

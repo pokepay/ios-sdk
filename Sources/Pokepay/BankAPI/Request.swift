@@ -3,6 +3,7 @@ import APIKit
 import KeychainAccess
 
 let API_BASE_URL = "https://api-dev.***REMOVED***"
+let WWW_BASE_URL = "https://www-dev.***REMOVED***"
 
 protocol BankRequest: Request {
 }
