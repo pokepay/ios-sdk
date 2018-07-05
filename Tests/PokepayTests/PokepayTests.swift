@@ -47,7 +47,8 @@ AQIDAQAB
     func testCreateToken() {
         let expect = expectation(description: "add public key request test")
         Pokepay.setup(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr")
-        Pokepay.createToken(108) { result in
+        let client = Pokepay.Client(isMerchant: true)
+        client.createToken(108) { result in
             switch result {
             case .success(let token):
                 print(token)
