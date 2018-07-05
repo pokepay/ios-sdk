@@ -1,24 +1,24 @@
 import APIKit
 
-extension BankAPI.Terminal {
-    struct AddPublicKey: BankRequest {
-        let key: String
+public extension BankAPI.Terminal {
+    public struct AddPublicKey: BankRequest {
+        public let key: String
 
-        typealias Response = NoContent
+        public typealias Response = NoContent
 
-        init(key: String) {
+        public init(key: String) {
             self.key = key
         }
 
-        var method: HTTPMethod {
+        public var method: HTTPMethod {
             return .post
         }
 
-        var path: String {
+        public var path: String {
             return "/terminal/keys"
         }
 
-        var parameters: Any? {
+        public var parameters: Any? {
             return [
               "key": self.key
             ]

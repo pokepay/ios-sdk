@@ -1,16 +1,16 @@
 import APIKit
 
-extension BankAPI.Terminal {
-    struct Get: BankRequest {
-        typealias Response = Terminal
+public extension BankAPI.Terminal {
+    public struct Get: BankRequest {
+        public typealias Response = Terminal
 
-        init() {}
+        public init() {}
 
-        var method: HTTPMethod {
+        public var method: HTTPMethod {
             return .get
         }
 
-        var path: String {
+        public var path: String {
             return "/terminal"
         }
     }

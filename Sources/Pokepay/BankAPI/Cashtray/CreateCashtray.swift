@@ -1,28 +1,28 @@
 import APIKit
 
-extension BankAPI.Cashtray {
-    struct Create: BankRequest {
-        let amount: Double
-        let description: String?
-        let expiresIn: Int32?
+public extension BankAPI.Cashtray {
+    public struct Create: BankRequest {
+        public let amount: Double
+        public let description: String?
+        public let expiresIn: Int32?
 
-        typealias Response = Cashtray
+        public typealias Response = Cashtray
 
-        init(amount: Double, description: String?, expiresIn: Int32?) {
+        public init(amount: Double, description: String?, expiresIn: Int32?) {
             self.amount = amount
             self.description = description
             self.expiresIn = expiresIn
         }
 
-        var method: HTTPMethod {
+        public var method: HTTPMethod {
             return .post
         }
 
-        var path: String {
+        public var path: String {
             return "/cashtrays"
         }
 
-        var parameters: Any? {
+        public var parameters: Any? {
             var dict: [String: Any] = ["amount": amount as Any]
             if description != nil {
                 dict["description"] = description

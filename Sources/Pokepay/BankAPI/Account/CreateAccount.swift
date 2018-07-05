@@ -1,26 +1,26 @@
 import APIKit
 
-extension BankAPI.Account {
-    struct Create: BankRequest {
-        let name: String?
-        let privateMoneyId: String?
+public extension BankAPI.Account {
+    public struct Create: BankRequest {
+        public let name: String?
+        public let privateMoneyId: String?
 
-        typealias Response = Account
+        public typealias Response = Account
 
-        init(name: String?, privateMoneyId: String?) {
+        public init(name: String?, privateMoneyId: String?) {
             self.name = name
             self.privateMoneyId = privateMoneyId
         }
 
-        var method: HTTPMethod {
+        public var method: HTTPMethod {
             return .post
         }
 
-        var path: String {
+        public var path: String {
             return "/accounts"
         }
 
-        var parameters: Any? {
+        public var parameters: Any? {
             var dict: [String: Any] = [:]
             if name != nil {
                 dict["name"] = name

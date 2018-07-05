@@ -1,20 +1,20 @@
 import APIKit
 
-extension BankAPI.Cashtray {
-    struct Get: BankRequest {
-        let id: String
+public extension BankAPI.Cashtray {
+    public struct Get: BankRequest {
+        public let id: String
 
-        typealias Response = Cashtray
+        public typealias Response = Cashtray
 
-        init(id: String) {
+        public init(id: String) {
             self.id = id
         }
 
-        var method: HTTPMethod {
+        public var method: HTTPMethod {
             return .get
         }
 
-        var path: String {
+        public var path: String {
             return "/cashtrays/\(id)"
         }
     }

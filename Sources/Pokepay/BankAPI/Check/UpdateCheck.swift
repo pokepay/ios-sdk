@@ -1,28 +1,28 @@
 import APIKit
 
-extension BankAPI.Check {
-    struct Update: BankRequest {
-        let id: String
-        let amount: Double?
-        let description: String?
+public extension BankAPI.Check {
+    public struct Update: BankRequest {
+        public let id: String
+        public let amount: Double?
+        public let description: String?
 
-        typealias Response = Check
+        public typealias Response = Check
 
-        init(id: String, amount: Double?, description: String?) {
+        public init(id: String, amount: Double?, description: String?) {
             self.id = id
             self.amount = amount
             self.description = description
         }
 
-        var method: HTTPMethod {
+        public var method: HTTPMethod {
             return .patch
         }
 
-        var path: String {
+        public var path: String {
             return "/checks/\(id)"
         }
 
-        var parameters: Any? {
+        public var parameters: Any? {
             var dict: [String: Any] = [:]
             if amount != nil {
                 dict["amount"] = amount

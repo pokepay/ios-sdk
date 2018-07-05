@@ -1,20 +1,20 @@
 import APIKit
 
-extension BankAPI.Check {
-    struct Get: BankRequest {
-        let id: String
+public extension BankAPI.Check {
+    public struct Get: BankRequest {
+        public let id: String
 
-        typealias Response = Check
+        public typealias Response = Check
 
-        init(id: String) {
+        public init(id: String) {
             self.id = id
         }
 
-        var method: HTTPMethod {
+        public var method: HTTPMethod {
             return .get
         }
 
-        var path: String {
+        public var path: String {
             return "/checks/\(id)"
         }
     }

@@ -1,30 +1,30 @@
 import APIKit
 
-extension BankAPI.Account {
-    struct GetTransactions: BankRequest {
-        let id: String
-        let before: String?
-        let after: String?
-        let perPage: Int32?
+public extension BankAPI.Account {
+    public struct GetTransactions: BankRequest {
+        public let id: String
+        public let before: String?
+        public let after: String?
+        public let perPage: Int32?
 
-        typealias Response = PaginatedTransactions
+        public typealias Response = PaginatedTransactions
 
-        init(id: String, before: String?, after: String?, perPage: Int32?) {
+        public init(id: String, before: String?, after: String?, perPage: Int32?) {
             self.id = id
             self.before = before
             self.after = after
             self.perPage = perPage
         }
 
-        var method: HTTPMethod {
+        public var method: HTTPMethod {
             return .get
         }
 
-        var path: String {
+        public var path: String {
             return "/accounts/\(id)/transactions"
         }
 
-        var parameters: Any? {
+        public var parameters: Any? {
             var dict: [String: Any] = [:]
             if before != nil {
                 dict["before"] = before

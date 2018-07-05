@@ -1,6 +1,6 @@
 import Foundation
 
-struct APIError: Codable {
-    let type: String
-    let message: String
+public struct APIError: Codable {
+    public let type: String
+    public let message: String
 }

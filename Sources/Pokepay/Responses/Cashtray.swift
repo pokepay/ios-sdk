@@ -1,11 +1,11 @@
 import Foundation
 
-struct Cashtray: Codable {
-    let id: String
-    let amount: Double
-    let description: String
-    let user: User
-    let expiresAt: String
+public struct Cashtray: Codable {
+    public let id: String
+    public let amount: Double
+    public let description: String
+    public let user: User
+    public let expiresAt: String
 
     private enum CodingKeys: String, CodingKey {
         case id

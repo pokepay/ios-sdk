@@ -5,11 +5,11 @@ import KeychainAccess
 let API_BASE_URL = "https://api-dev.***REMOVED***"
 let WWW_BASE_URL = "https://www-dev.***REMOVED***"
 
-protocol BankRequest: Request {
+public protocol BankRequest: Request {
 }
 
-extension BankRequest {
-    var baseURL: URL {
+public extension BankRequest {
+    public var baseURL: URL {
         return URL(string: API_BASE_URL)!
     }
     var headerFields: [String: String] {
@@ -23,8 +23,8 @@ extension BankRequest {
     }
 }
 
-extension BankRequest {
-    func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {
+public extension BankRequest {
+    public func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {
         guard (200..<300).contains(urlResponse.statusCode) else {
             throw BankAPIError(object: object as! Data)
         }
@@ -45,11 +45,11 @@ final class DecodableDataParser: DataParser {
 }
 
 extension BankRequest where Response: Decodable {
-    var dataParser: DataParser {
+    public var dataParser: DataParser {
         return DecodableDataParser()
     }
 
-    func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
+    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
         guard let data = object as? Data else {
             throw BankAPIError(object: Data())
         }

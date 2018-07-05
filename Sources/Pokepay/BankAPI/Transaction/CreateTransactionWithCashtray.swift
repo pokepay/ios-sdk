@@ -1,26 +1,26 @@
 import APIKit
 
-extension BankAPI.Transaction {
-    struct CreateWillCashtray: BankRequest {
-        let cashtrayId: String
-        let accountId: String?
+public extension BankAPI.Transaction {
+    public struct CreateWillCashtray: BankRequest {
+        public let cashtrayId: String
+        public let accountId: String?
 
-        typealias Response = UserTransaction
+        public typealias Response = UserTransaction
 
-        init(cashtrayId: String, accountId: String?) {
+        public init(cashtrayId: String, accountId: String?) {
             self.cashtrayId = cashtrayId
             self.accountId = accountId
         }
 
-        var method: HTTPMethod {
+        public var method: HTTPMethod {
             return .post
         }
 
-        var path: String {
+        public var path: String {
             return "/transactions"
         }
 
-        var parameters: Any? {
+        public var parameters: Any? {
             var dict = ["cashtray_id": cashtrayId]
             if accountId != nil {
                 dict["account_id"] = accountId

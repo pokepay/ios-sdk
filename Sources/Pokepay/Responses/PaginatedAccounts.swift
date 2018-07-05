@@ -1,11 +1,11 @@
 import Foundation
 
-struct PaginatedAccounts: Codable {
-    let perPage: Int32
-    let count: Int32
-    let next: String?
-    let prev: String?
-    let items: [Account]
+public struct PaginatedAccounts: Codable {
+    public let perPage: Int32
+    public let count: Int32
+    public let next: String?
+    public let prev: String?
+    public let items: [Account]
 
     private enum CodingKeys: String, CodingKey {
         case perPage = "per_page"

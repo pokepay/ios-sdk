@@ -1,20 +1,20 @@
 import APIKit
 
-extension BankAPI.User {
-    struct RegisterEmail: BankRequest {
-        let token: String
+public extension BankAPI.User {
+    public struct RegisterEmail: BankRequest {
+        public let token: String
 
-        typealias Response = NoContent
+        public typealias Response = NoContent
 
-        init(token: String) {
+        public init(token: String) {
             self.token = token
         }
 
-        var method: HTTPMethod {
+        public var method: HTTPMethod {
             return .post
         }
 
-        var path: String {
+        public var path: String {
             return "/emails"
         }
     }

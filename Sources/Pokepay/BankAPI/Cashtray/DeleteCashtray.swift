@@ -1,20 +1,20 @@
 import APIKit
 
-extension BankAPI.Cashtray {
-    struct Delete: BankRequest {
-        let id: String
+public extension BankAPI.Cashtray {
+    public struct Delete: BankRequest {
+        public let id: String
 
-        typealias Response = NoContent
+        public typealias Response = NoContent
 
-        init(id: String) {
+        public init(id: String) {
             self.id = id
         }
 
-        var method: HTTPMethod {
+        public var method: HTTPMethod {
             return .delete
         }
 
-        var path: String {
+        public var path: String {
             return "/cashtrays/\(id)"
         }
     }

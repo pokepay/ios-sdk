@@ -1,22 +1,22 @@
 import APIKit
 
-extension BankAPI.User {
-    struct DeleteEmail: BankRequest {
-        let id: String
-        let email: String
+public extension BankAPI.User {
+    public struct DeleteEmail: BankRequest {
+        public let id: String
+        public let email: String
 
-        typealias Response = NoContent
+        public typealias Response = NoContent
 
-        init(id: String, email: String) {
+        public init(id: String, email: String) {
             self.id = id
             self.email = email
         }
 
-        var method: HTTPMethod {
+        public var method: HTTPMethod {
             return .delete
         }
 
-        var path: String {
+        public var path: String {
             return "/users/\(id)/emails/\(email)"
         }
     }

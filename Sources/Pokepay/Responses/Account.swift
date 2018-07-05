@@ -1,11 +1,11 @@
 import Foundation
 
-struct Account: Codable {
-    let id: String
-    let name: String
-    let balance: Double
-    let isSuspended: Bool
-    let privateMoney: PrivateMoney
+public struct Account: Codable {
+    public let id: String
+    public let name: String
+    public let balance: Double
+    public let isSuspended: Bool
+    public let privateMoney: PrivateMoney
 
     private enum CodingKeys: String, CodingKey {
         case id

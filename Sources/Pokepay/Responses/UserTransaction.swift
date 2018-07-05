@@ -1,14 +1,14 @@
 import Foundation
 
-struct UserTransaction: Codable {
-    let id: String
-    let user: User
-    let balance: Double
-    let amount: Double
-    let moneyAmount: Double
-    let pointAmount: Double
-    let description: String
-    let doneAt: String
+public struct UserTransaction: Codable {
+    public let id: String
+    public let user: User
+    public let balance: Double
+    public let amount: Double
+    public let moneyAmount: Double
+    public let pointAmount: Double
+    public let description: String
+    public let doneAt: String
 
     private enum CodingKeys: String, CodingKey {
         case id

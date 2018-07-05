@@ -1,16 +1,16 @@
 import APIKit
 
-extension BankAPI.Transaction {
-    struct SendToAccount: BankRequest {
-        let accountId: String
-        let amount: Double
-        let receiverTerminalId: String?
-        let senderAccountId: String?
-        let description: String?
+public extension BankAPI.Transaction {
+    public struct SendToAccount: BankRequest {
+        public let accountId: String
+        public let amount: Double
+        public let receiverTerminalId: String?
+        public let senderAccountId: String?
+        public let description: String?
 
-        typealias Response = UserTransaction
+        public typealias Response = UserTransaction
 
-        init(to accountId: String, amount: Double, receiverTerminalId: String?, senderAccountId: String?, description: String?) {
+        public init(to accountId: String, amount: Double, receiverTerminalId: String?, senderAccountId: String?, description: String?) {
             self.accountId = accountId
             self.amount = amount
             self.receiverTerminalId = receiverTerminalId
@@ -18,15 +18,15 @@ extension BankAPI.Transaction {
             self.description = description
         }
 
-        var method: HTTPMethod {
+        public var method: HTTPMethod {
             return .post
         }
 
-        var path: String {
+        public var path: String {
             return "/accounts/\(accountId)/transactions"
         }
 
-        var parameters: Any? {
+        public var parameters: Any? {
             var dict: [String: Any] = ["amount": amount]
             if receiverTerminalId != nil {
                 dict["receiver_terminal_id"] = receiverTerminalId

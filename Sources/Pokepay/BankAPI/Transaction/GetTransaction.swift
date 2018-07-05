@@ -1,20 +1,20 @@
 import APIKit
 
-extension BankAPI.Transaction {
-    struct Get: BankRequest {
-        let id: String
+public extension BankAPI.Transaction {
+    public struct Get: BankRequest {
+        public let id: String
 
-        typealias Response = UserTransaction
+        public typealias Response = UserTransaction
 
-        init(id: String) {
+        public init(id: String) {
             self.id = id
         }
 
-        var method: HTTPMethod {
+        public var method: HTTPMethod {
             return .get
         }
 
-        var path: String {
+        public var path: String {
             return "/transactions/\(id)"
         }
     }

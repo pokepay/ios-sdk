@@ -1,28 +1,28 @@
 import APIKit
 
-extension BankAPI.Bill {
-    struct Create: BankRequest {
-        let amount: Double?
-        let accountId: String?
-        let description: String?
+public extension BankAPI.Bill {
+    public struct Create: BankRequest {
+        public let amount: Double?
+        public let accountId: String?
+        public let description: String?
 
-        typealias Response = Bill
+        public typealias Response = Bill
 
-        init(amount: Double?, accountId: String?, description: String?) {
+        public init(amount: Double?, accountId: String?, description: String?) {
             self.amount = amount
             self.accountId = accountId
             self.description = description
         }
 
-        var method: HTTPMethod {
+        public var method: HTTPMethod {
             return .post
         }
 
-        var path: String {
+        public var path: String {
             return "/bills"
         }
 
-        var parameters: Any? {
+        public var parameters: Any? {
             var dict: [String: Any] = ["amount": amount as Any]
             if accountId != nil {
                 dict["account_id"] = accountId

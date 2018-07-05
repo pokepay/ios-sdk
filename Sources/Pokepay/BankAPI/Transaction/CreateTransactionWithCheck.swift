@@ -1,26 +1,26 @@
 import APIKit
 
-extension BankAPI.Transaction {
-    struct CreateWillCheck: BankRequest {
-        let checkId: String
-        let accountId: String?
+public extension BankAPI.Transaction {
+    public struct CreateWillCheck: BankRequest {
+        public let checkId: String
+        public let accountId: String?
 
-        typealias Response = UserTransaction
+        public typealias Response = UserTransaction
 
-        init(checkId: String, accountId: String?) {
+        public init(checkId: String, accountId: String?) {
             self.checkId = checkId
             self.accountId = accountId
         }
 
-        var method: HTTPMethod {
+        public var method: HTTPMethod {
             return .post
         }
 
-        var path: String {
+        public var path: String {
             return "/transactions"
         }
 
-        var parameters: Any? {
+        public var parameters: Any? {
             var dict = ["check_id": checkId]
             if accountId != nil {
                 dict["account_id"] = accountId

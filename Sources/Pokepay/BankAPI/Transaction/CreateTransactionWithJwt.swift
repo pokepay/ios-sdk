@@ -1,26 +1,26 @@
 import APIKit
 
-extension BankAPI.Transaction {
-    struct CreateWithJwt: BankRequest {
-        let data: String
-        let accountId: String?
+public extension BankAPI.Transaction {
+    public struct CreateWithJwt: BankRequest {
+        public let data: String
+        public let accountId: String?
 
-        typealias Response = UserTransaction
+        public typealias Response = UserTransaction
 
-        init(data: String, accountId: String?) {
+        public init(data: String, accountId: String?) {
             self.data = data
             self.accountId = accountId
         }
 
-        var method: HTTPMethod {
+        public var method: HTTPMethod {
             return .post
         }
 
-        var path: String {
+        public var path: String {
             return "/transactions"
         }
 
-        var parameters: Any? {
+        public var parameters: Any? {
             var dict = ["data": data]
             if accountId != nil {
                 dict["account_id"] = accountId

@@ -1,4 +1,4 @@
 import Foundation
 
-struct NoContent: Codable {
+public struct NoContent: Codable {
 }

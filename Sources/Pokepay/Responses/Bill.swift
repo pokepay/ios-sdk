@@ -1,8 +1,8 @@
 import Foundation
 
-struct Bill: Codable {
-    let id: String
-    let amount: Double?
-    let description: String
-    let user: User
+public struct Bill: Codable {
+    public let id: String
+    public let amount: Double?
+    public let description: String
+    public let user: User
 }

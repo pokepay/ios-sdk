@@ -1,12 +1,12 @@
 import Foundation
 
-struct Terminal: Codable {
-    let id: String
-    let name: String
-    let hardwareId: String
-    let pushToken: String?
-    let user: User
-    let account: Account
+public struct Terminal: Codable {
+    public let id: String
+    public let name: String
+    public let hardwareId: String
+    public let pushToken: String?
+    public let user: User
+    public let account: Account
 
     private enum CodingKeys: String, CodingKey {
         case id
