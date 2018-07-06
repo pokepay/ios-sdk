@@ -8,12 +8,30 @@ iOS SDK for Pocket Change Pay (https://pay.pocket-change.jp).
 Pokepay.setup(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr")
 let client = Pokepay.Client(isMerchant: true)
 
+client.getTerminalInfo() { result in
+    switch result {
+    case .success(let terminal):
+        print(terminal)
+    case .failure(let error):
+        print(error)
+    }
+}
+
 // Create a token for sending 108 yen.
 client.createToken(108) { result in
     switch result {
     case .success(let token):
         print(token)  // like 'https://www.***REMOVED***/cashtrays/dc204118-9e3b-493c-b396-b9259ce28663'
     case .failure(let error):
+        print(error)
+    }
+}
+
+client.scanToken("https://www.***REMOVED***/cashtrays/dc204118-9e3b-493c-b396-b9259ce28663") { result in
+    switch result {
+    case .success(let transaction):
+        print(transaction)
+    case. failure(let error):
         print(error)
     }
 }

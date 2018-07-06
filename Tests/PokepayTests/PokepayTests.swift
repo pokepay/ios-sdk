@@ -45,7 +45,7 @@ AQIDAQAB
     }
 
     func testCreateToken() {
-        let expect = expectation(description: "add public key request test")
+        let expect = expectation(description: "create token test")
         Pokepay.setup(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr")
         let client = Pokepay.Client(isMerchant: true)
         client.createToken(108) { result in
@@ -61,8 +61,56 @@ AQIDAQAB
         waitForExpectations(timeout: 5.0, handler: nil)
     }
 
+    func testClientGetTerminal() {
+        let expect = expectation(description: "client.getTerminal")
+        Pokepay.setup(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr")
+        let client = Pokepay.Client(isMerchant: true)
+        client.getTerminalInfo() { result in
+            switch result {
+            case .success(let terminal):
+                print(terminal)
+                expect.fulfill()
+            case .failure(let error):
+                print(error)
+                expect.fulfill()
+            }
+        }
+        waitForExpectations(timeout: 5.0, handler: nil)
+    }
+
+    func testScanToken() {
+        let expect = expectation(description: "client.scanToken")
+        Pokepay.setup(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr")
+        let client = Pokepay.Client(isMerchant: true)
+        client.createToken(108) { result in
+            switch result {
+            case .success(let token):
+                print(token)
+                Pokepay.setup(accessToken: "lR5iX_U7TB7o_-FBCO5LpW6t7x-UQ4w3HpdqnZ8QoS1GlQM09n-swfQqbZQMqbvc")
+                let client2 = Pokepay.Client()
+                client2.scanToken(token) { result in
+                    switch result {
+                    case .success(let transaction):
+                        print(transaction)
+                        expect.fulfill()
+                    case .failure(let error):
+                        print(error)
+                        expect.fulfill()
+                    }
+                }
+            case .failure(let error):
+                print(error)
+                expect.fulfill()
+            }
+        }
+        waitForExpectations(timeout: 5.0, handler: nil)
+    }
+
     static var allTests = [
       ("testGetTerminal", testGetTerminal),
       ("testAddPublicKey", testAddPublicKey),
+      ("testCreateToken", testCreateToken),
+      ("testClientGetTerminal", testClientGetTerminal),
+      ("testScanToken", testScanToken),
     ]
 }

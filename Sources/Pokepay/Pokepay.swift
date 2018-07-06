@@ -10,6 +10,43 @@ public struct Pokepay {
             self.isMerchant = isMerchant
         }
 
+        public func getTerminalInfo(handler: @escaping (Result<Terminal, SessionTaskError>) -> Void = { _ in }) {
+            Session.send(BankAPI.Terminal.Get()) { result in
+                switch result {
+                case .success(let terminal):
+                    handler(.success(terminal))
+                case .failure(let error):
+                    handler(.failure(error))
+                }
+            }
+        }
+
+        public func scanToken(_ token: String, amount: Double? = nil,
+                              handler: @escaping (Result<UserTransaction, SessionTaskError>) -> Void = { _ in }) {
+            if token.hasPrefix("\(WWW_BASE_URL)/cashtrays/") {
+                let uuid = String(token.suffix(token.utf8.count - "\(WWW_BASE_URL)/cashtrays/".utf8.count))
+                Session.send(BankAPI.Transaction.CreateWithCashtray(cashtrayId: uuid)) { result in
+                    handler(result)
+                }
+            }
+            else if token.hasPrefix("\(WWW_BASE_URL)/bills/") {
+                let uuid = String(token.suffix(token.utf8.count - "\(WWW_BASE_URL)/bills/".utf8.count))
+                Session.send(BankAPI.Transaction.CreateWithBill(billId: uuid, amount: amount)) { result in
+                    handler(result)
+                }
+            }
+            else if token.hasPrefix("\(WWW_BASE_URL)/checks/") {
+                let uuid = String(token.suffix(token.utf8.count - "\(WWW_BASE_URL)/checks/".utf8.count))
+                Session.send(BankAPI.Transaction.CreateWithCheck(checkId: uuid)) { result in
+                    handler(result)
+                }
+            }
+            else {
+                // Invalid token
+                assert(false)
+            }
+        }
+
         public func createToken(_ amount: Double? = nil, description: String? = nil, expiresIn: Int32? = nil,
                                 handler: @escaping (Result<String, SessionTaskError>) -> Void = { _ in }) {
             if isMerchant {

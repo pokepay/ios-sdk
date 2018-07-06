@@ -1,7 +1,7 @@
 import APIKit
 
 public extension BankAPI.Transaction {
-    public struct CreateWillBill: BankRequest {
+    public struct CreateWithBill: BankRequest {
         public let billId: String
         public let accountId: String?
         public let amount: Double?
