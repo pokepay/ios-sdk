@@ -7,7 +7,7 @@ public extension BankAPI.User {
 
         public typealias Response = User
 
-        public init(id: String, name: String?) {
+        public init(id: String, name: String? = nil) {
             self.id = id
             self.name = name
         }

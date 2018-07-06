@@ -8,7 +8,7 @@ extension BankAPI.Terminal {
 
         typealias Response = Terminal
 
-        init(name: String, accountId: String, pushToken: String?) {
+        init(name: String, accountId: String, pushToken: String? = nil) {
             self.name = name
             self.accountId = accountId
             self.pushToken = pushToken

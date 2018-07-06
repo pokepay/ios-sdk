@@ -8,7 +8,7 @@ public extension BankAPI.Bill {
 
         public typealias Response = Bill
 
-        public init(amount: Double?, accountId: String?, description: String?) {
+        public init(amount: Double? = nil, accountId: String? = nil, description: String? = nil) {
             self.amount = amount
             self.accountId = accountId
             self.description = description

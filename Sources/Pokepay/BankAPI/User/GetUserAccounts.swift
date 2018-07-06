@@ -9,7 +9,7 @@ public extension BankAPI.User {
 
         public typealias Response = PaginatedAccounts
 
-        public init(id: String, before: String?, after: String?, perPage: Int32?) {
+        public init(id: String, before: String? = nil, after: String? = nil, perPage: Int32? = nil) {
             self.id = id
             self.before = before
             self.after = after

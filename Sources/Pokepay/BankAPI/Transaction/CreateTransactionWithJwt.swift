@@ -7,7 +7,7 @@ public extension BankAPI.Transaction {
 
         public typealias Response = UserTransaction
 
-        public init(data: String, accountId: String?) {
+        public init(data: String, accountId: String? = nil) {
             self.data = data
             self.accountId = accountId
         }

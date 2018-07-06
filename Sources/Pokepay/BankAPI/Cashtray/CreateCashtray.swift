@@ -8,7 +8,7 @@ public extension BankAPI.Cashtray {
 
         public typealias Response = Cashtray
 
-        public init(amount: Double, description: String?, expiresIn: Int32?) {
+        public init(amount: Double, description: String? = nil, expiresIn: Int32? = nil) {
             self.amount = amount
             self.description = description
             self.expiresIn = expiresIn

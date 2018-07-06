@@ -7,7 +7,7 @@ public extension BankAPI.Account {
 
         public typealias Response = Account
 
-        public init(name: String?, privateMoneyId: String?) {
+        public init(name: String? = nil, privateMoneyId: String? = nil) {
             self.name = name
             self.privateMoneyId = privateMoneyId
         }

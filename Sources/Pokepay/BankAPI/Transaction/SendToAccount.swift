@@ -10,7 +10,7 @@ public extension BankAPI.Transaction {
 
         public typealias Response = UserTransaction
 
-        public init(to accountId: String, amount: Double, receiverTerminalId: String?, senderAccountId: String?, description: String?) {
+        public init(to accountId: String, amount: Double, receiverTerminalId: String? = nil, senderAccountId: String?, description: String? = nil) {
             self.accountId = accountId
             self.amount = amount
             self.receiverTerminalId = receiverTerminalId
