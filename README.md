@@ -5,8 +5,8 @@ iOS SDK for Pocket Change Pay (https://pay.pocket-change.jp).
 ## Usage
 
 ```swift
-Pokepay.setup(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr")
-let client = Pokepay.Client(isMerchant: true)
+let client = Pokepay.Client(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr",
+                            isMerchant: true)
 
 client.getTerminalInfo() { result in
     switch result {
@@ -37,16 +37,38 @@ client.scanToken("https://www.***REMOVED***/cashtrays/dc204118-9e3b-493c-b396-b9
 }
 ```
 
+## Authorization
+
+Pocket Change Pay API provides OAuth for authentication of third-party applications.
+
+1. Open Authorization URL in Web View (like WKWebView)
+
+```swift
+let url = Pokepay.getAuthorizationUrl(clientId)
+// => https://www.***REMOVED***/oauth/authorize?client_id=xxxxxxxxxxx&response_type=code
+```
+
+2. Wait for the user authenticate on Pocket Change Pay and authorize your app.
+
+3. Get the authorization code from the redirected URL
+
+```swift
+let code = Pokepay.getAuthorizationCode(from: redirectedUrl)
+```
+
+4. Exchange the authorization code for an access token
+
+```swift
+let accessToken = Pokepay.getAccessToken(code: code)
+```
+
 ## APIs
-
-### [Static Function] Pokepay#setup(accessToken: String)
-
-Set the access token for Bank APIs.
 
 ### [Class] Pokepay.Client
 
 #### Options
 
+- `accessToken` (String): An access token to request Pocket Change Pay APIs.
 - `isMerchant` (Bool): A flag for accessing as a merchant account. (It should be an error if the access token isn't for merchant one.)
 
 ### [Method] Client.getTerminalInfo

@@ -1,6 +1,5 @@
 import Foundation
 import APIKit
-import KeychainAccess
 
 let API_BASE_URL = "https://api-dev.***REMOVED***"
 let WWW_BASE_URL = "https://www-dev.***REMOVED***"
@@ -11,15 +10,6 @@ public protocol BankRequest: Request {
 public extension BankRequest {
     public var baseURL: URL {
         return URL(string: API_BASE_URL)!
-    }
-    var headerFields: [String: String] {
-        let keychain = Keychain(service: "jp.pocket-change.pay")
-        guard let accessToken = keychain["accessToken"] else {
-            return [:]
-        }
-        return [
-          "Authorization": "Bearer \(accessToken)"
-        ]
     }
 }
 
