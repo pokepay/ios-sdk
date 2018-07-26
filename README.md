@@ -12,6 +12,7 @@ client.getTerminalInfo() { result in
     switch result {
     case .success(let terminal):
         print(terminal)
+        // => Terminal(id: "45046d7f-aa33-4d26-8cb0-8971aae5a487", name: "", hardwareId: "4e5c5d18-b27f-4b32-a0e0-e8900686fe23", pushToken: nil, user: Pokepay.User(id: "4abed0cc-6431-446f-aaf5-bebc208d84c1", name: "", isMerchant: true), account: Pokepay.Account(id: "1b4533c0-651c-4e79-8444-346419b18c77", name: "", balance: -15357.0, isSuspended: false, privateMoney: Pokepay.PrivateMoney(id: "090bf006-7450-4ed9-8da1-977ea3ff332c", name: "PocketBank", organization: Pokepay.Organization(code: "pocketchange", name: "ポケットチェンジ"), maxBalance: 30000.0, expirationType: "static")))
     case .failure(let error):
         print(error)
     }
@@ -27,6 +28,7 @@ client.createToken(108) { result in
     }
 }
 
+// Scan a QR code
 client.scanToken("https://www.***REMOVED***/cashtrays/dc204118-9e3b-493c-b396-b9259ce28663") { result in
     switch result {
     case .success(let transaction):
@@ -41,25 +43,20 @@ client.scanToken("https://www.***REMOVED***/cashtrays/dc204118-9e3b-493c-b396-b9
 
 Pocket Change Pay API provides OAuth for authentication of third-party applications.
 
-1. Open Authorization URL in Web View (like WKWebView)
+1. Open Authorization URL in Web browser (like Safari or WKWebView)
 
 ```swift
-let url = Pokepay.getAuthorizationUrl(clientId)
+let oauth = Pokepay.OAuthClient(clientId: clientId, clientSecret: clientSecret)
+let url = oauth.getAuthorizationUrl()
 // => https://www.***REMOVED***/oauth/authorize?client_id=xxxxxxxxxxx&response_type=code
 ```
 
-2. Wait for the user authenticate on Pocket Change Pay and authorize your app.
-
-3. Get the authorization code from the redirected URL
-
-```swift
-let code = Pokepay.getAuthorizationCode(from: redirectedUrl)
-```
-
+2. Wait for the user to authorize your app on Pocket Change Pay
+3. Browser redirects to the app with authorization code
 4. Exchange the authorization code for an access token
 
 ```swift
-let accessToken = Pokepay.getAccessToken(code: code)
+let accessToken = oauth.getAccessToken(code: code)
 ```
 
 ## APIs
@@ -106,6 +103,12 @@ Session.send(BankAPI.Terminal.Get()) { result in
 * Xcode 9 or later
 
 ## Installation
+
+### CocoaPods
+
+```ruby
+pod "Pokepay"
+```
 
 ## Dependencies
 
