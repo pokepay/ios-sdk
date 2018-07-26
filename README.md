@@ -86,9 +86,9 @@ All HTTP requests to Bank RESTful APIs also can be done with APIKit and request 
 
 ```swift
 import Pokepay
-import APIKit
 
-Session.send(BankAPI.Terminal.Get()) { result in
+let client = Pokepay.Client(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr")
+client.send(BankAPI.Terminal.Get()) { result in
     switch result {
     case .success(let terminal):
         print(terminal)
