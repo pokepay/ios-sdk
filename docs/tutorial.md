@@ -1,3 +1,7 @@
+---
+title: Pokepay Swift SDK
+lang: ja
+---
 # Pokepay Swift SDK
 
 ## Overview
