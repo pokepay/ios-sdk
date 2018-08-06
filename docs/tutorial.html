@@ -4,19 +4,8 @@
       <title>tutorial</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      
-      <link rel="stylesheet" href="file:////Users/fukamachi/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.3.5/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
-      <link rel="stylesheet" href="file:////Users/fukamachi/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.3.5/node_modules/@shd101wyy/mume/dependencies/mermaid/mermaid.css">
-      
-      
-      
-      
-      <script type="text/javascript" src="file:////Users/fukamachi/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.3.5/node_modules/@shd101wyy/mume/dependencies/mermaid/mermaid.min.js"></script>
-      
-      
-      
-      
-
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css">
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.1.2/mermaid.min.js"></script>
       <style> 
       /**
  * prism.js Github theme based on GitHub's theme.
@@ -219,7 +208,7 @@ code.language-yaml {
 <h2 class="mume-header" id="overview">Overview</h2>
 
 <p>これは <a href="https://pay.pocket-change.jp">Pokepay</a> の決済プラットフォームをSwiftアプリケーションに組み込むためのSDKです。</p>
-<p>このSDKは二段階に分離できます。</p>
+<p>このSDKは抽象度によって二段階に分離できます。</p>
 <h3 class="mume-header" id="client-api">Client API</h3>
 
 <p>1つはQRやNFCを使ってPokepayでの支払い・残高チャージを抽象化したClient APIです。QRで読み取った文字列を関数に渡すだけでQRの種類判別とAPIに対してのHTTPリクエストまでを一括して行います。</p>
@@ -236,8 +225,23 @@ client<span class="token punctuation">.</span><span class="token function">scanT
         <span class="token function">print</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>                                                                                                  
     <span class="token punctuation">}</span>                                                                                                                  
 <span class="token punctuation">}</span>
-</pre><p>レスポンスとして <code>transaction</code> が返ってきます。</p>
-<p>この関数 <code>scanToken</code> は個人間送金、硬貨チャージ機でのチャージ、ポケレジでの決済の各QRコードをSDK側で自動判別して処理を行うため、アプリケーションで意識する必要はありません。</p>
+</pre><p>レスポンスとして <code>transaction</code> が返ってきます。これは以下のような構造体になっています。</p>
+<pre data-role="codeBlock" data-info="swift" class="language-swift"><span class="token comment">// 例) 194円の支払い取引のレスポンス</span>
+<span class="token function">UserTransaction</span><span class="token punctuation">(</span>
+    id<span class="token punctuation">:</span> <span class="token string">"1e53ba8f-d755-4d84-8698-79a5b0dd3615"</span><span class="token punctuation">,</span>
+    user<span class="token punctuation">:</span> <span class="token builtin">Pokepay</span><span class="token punctuation">.</span><span class="token function">User</span><span class="token punctuation">(</span>
+        id<span class="token punctuation">:</span> <span class="token string">"4abed0cc-6431-446f-aaf5-bebc208d84c1"</span><span class="token punctuation">,</span>
+        name<span class="token punctuation">:</span> <span class="token string">"上川口屋"</span><span class="token punctuation">,</span>
+        isMerchant<span class="token punctuation">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    balance<span class="token punctuation">:</span> <span class="token number">1080.0</span><span class="token punctuation">,</span>
+    amount<span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">194.0</span><span class="token punctuation">,</span>
+    moneyAmount<span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">194.0</span><span class="token punctuation">,</span>
+    pointAmount<span class="token punctuation">:</span> <span class="token number">0.0</span><span class="token punctuation">,</span>
+    description<span class="token punctuation">:</span> <span class="token string">"うまい棒18本を購入"</span><span class="token punctuation">,</span>
+    doneAt<span class="token punctuation">:</span> <span class="token string">"2018-07-08T14:29:00Z"</span>
+<span class="token punctuation">)</span>
+</pre><p>この関数 <code>scanToken</code> は個人間送金、硬貨チャージ機でのチャージ、ポケレジでの決済の各QRコードをSDK側で自動判別して処理を行うため、アプリケーションで意識する必要はありません。</p>
 <h3 class="mume-header" id="low-level-api">Low-Level API</h3>
 
 <p>もう1つは、Pokepayの決済Web API (BankAPI) に対してリクエストを行うLow-Level APIです。Pokepayが提供する決済用Web APIのエンドポイントをすべて呼び出すことができます。</p>
@@ -310,16 +314,17 @@ token<span class="token punctuation">.</span>accessToken <span class="token comm
     id<span class="token punctuation">:</span> <span class="token string">"45046d7f-aa33-4d26-8cb0-8971aae5a487"</span><span class="token punctuation">,</span>
     name<span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
     hardwareId<span class="token punctuation">:</span> <span class="token string">"4e5c5d18-b27f-4b32-a0e0-e8900686fe23"</span><span class="token punctuation">,</span>
+    pushService<span class="token punctuation">:</span> <span class="token string">"apns"</span><span class="token punctuation">,</span>
     pushToken<span class="token punctuation">:</span> <span class="token constant">nil</span><span class="token punctuation">,</span>
     user<span class="token punctuation">:</span> <span class="token builtin">Pokepay</span><span class="token punctuation">.</span><span class="token function">User</span><span class="token punctuation">(</span>
-        id<span class="token punctuation">:</span> <span class="token string">"4abed0cc-6431-446f-aaf5-bebc208d84c1"</span><span class="token punctuation">,</span>
-        name<span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+        id<span class="token punctuation">:</span> <span class="token string">"9e3d0591-ab2c-47e5-8a8c-87533a54e8a8"</span><span class="token punctuation">,</span>
+        name<span class="token punctuation">:</span> <span class="token string">"Pokepay太郎"</span><span class="token punctuation">,</span>
         isMerchant<span class="token punctuation">:</span> <span class="token boolean">true</span>
     <span class="token punctuation">)</span><span class="token punctuation">,</span>
     account<span class="token punctuation">:</span> <span class="token builtin">Pokepay</span><span class="token punctuation">.</span><span class="token function">Account</span><span class="token punctuation">(</span>
         id<span class="token punctuation">:</span> <span class="token string">"1b4533c0-651c-4e79-8444-346419b18c77"</span><span class="token punctuation">,</span>
         name<span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
-        balance<span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">15357.0</span><span class="token punctuation">,</span>
+        balance<span class="token punctuation">:</span> <span class="token number">1080.0</span><span class="token punctuation">,</span>
         isSuspended<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
         privateMoney<span class="token punctuation">:</span> <span class="token builtin">Pokepay</span><span class="token punctuation">.</span><span class="token function">PrivateMoney</span><span class="token punctuation">(</span>
             id<span class="token punctuation">:</span> <span class="token string">"090bf006-7450-4ed9-8da1-977ea3ff332c"</span><span class="token punctuation">,</span> 
