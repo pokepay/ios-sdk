@@ -115,6 +115,14 @@ pod "Pokepay"
 * Swift 4.1
 * [APIKit](https://github.com/ishkawa/APIKit)
 
+## Development Note
+
+### Building HTML documents
+
+```
+$ make docs
+```
+
 ## Copyright
 
 Copyright (c) 2018 Pocket Change, Inc.
