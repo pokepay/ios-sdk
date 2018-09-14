@@ -22,14 +22,14 @@ client.getTerminalInfo() { result in
 client.createToken(108) { result in
     switch result {
     case .success(let token):
-        print(token)  // like 'https://www.***REMOVED***/cashtrays/dc204118-9e3b-493c-b396-b9259ce28663'
+        print(token)  // like 'https://www.pokepay.jp/cashtrays/dc204118-9e3b-493c-b396-b9259ce28663'
     case .failure(let error):
         print(error)
     }
 }
 
 // Scan a QR code
-client.scanToken("https://www.***REMOVED***/cashtrays/dc204118-9e3b-493c-b396-b9259ce28663") { result in
+client.scanToken("https://www.pokepay.jp/cashtrays/dc204118-9e3b-493c-b396-b9259ce28663") { result in
     switch result {
     case .success(let transaction):
         print(transaction)
@@ -48,7 +48,7 @@ Pocket Change Pay API provides OAuth for authentication of third-party applicati
 ```swift
 let oauth = Pokepay.OAuthClient(clientId: clientId, clientSecret: clientSecret)
 let url = oauth.getAuthorizationUrl()
-// => https://www.***REMOVED***/oauth/authorize?client_id=xxxxxxxxxxx&response_type=code
+// => https://www.pokepay.jp/oauth/authorize?client_id=xxxxxxxxxxx&response_type=code
 ```
 
 2. Wait for the user to authorize your app on Pocket Change Pay

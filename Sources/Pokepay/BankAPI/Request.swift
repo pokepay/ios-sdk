@@ -1,8 +1,8 @@
 import Foundation
 import APIKit
 
-let API_BASE_URL = "https://api-dev.***REMOVED***"
-let WWW_BASE_URL = "https://www-dev.***REMOVED***"
+let API_BASE_URL = "https://api-dev.pokepay.jp"
+let WWW_BASE_URL = "https://www-dev.pokepay.jp"
 
 public protocol BankRequest: Request {
 }
