@@ -57,6 +57,7 @@ let url = oauth.getAuthorizationUrl()
 
 ```swift
 let accessToken = oauth.getAccessToken(code: code)
+// => AccessToken(accessToken: "dXX1Guh7Ze0F_s6L8mAk-t4DXxvO2wd_IwWXbQBGdNo0nkj01tYA9EKY992H_mMP", refreshToken: "XKOfCZmLuRjLggDZzDfz", tokenType: "Bearer", expiresIn: 2591999)
 ```
 
 ## APIs

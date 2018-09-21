@@ -105,11 +105,36 @@ AQIDAQAB
         waitForExpectations(timeout: 5.0, handler: nil)
     }
 
+    func testAuthorizationUrl() {
+        let expect = expectation(description: "OAuthClient.getAuthorizationUrl")
+        let oauth = Pokepay.OAuthClient(clientId: "3qyJZlDnJbGK5roa-5XLkw", clientSecret: "kz96I8SDmjl2x77aAI9iNvAjc0cneL3UoK6zKLjmdXwmoghC7FSRrqKr")
+        print(oauth.getAuthorizationUrl())
+        expect.fulfill()
+    }
+
+    func testGetAccessToken() {
+        let expect = expectation(description: "OAuthClient.getAccessToken")
+        let oauth = Pokepay.OAuthClient(clientId: "3qyJZlDnJbGK5roa-5XLkw", clientSecret: "kz96I8SDmjl2x77aAI9iNvAjc0cneL3UoK6zKLjmdXwmoghC7FSRrqKr")
+        oauth.getAccessToken(code: "NdnqscefbW4RVa30/DvOf1vKDuPaX0e4") { result in
+            switch result {
+            case .success(let response):
+                print(response)
+                expect.fulfill()
+            case .failure:
+                print(result)
+                expect.fulfill()
+            }
+        }
+        waitForExpectations(timeout: 5.0, handler: nil)
+    }
+
     static var allTests = [
       ("testGetTerminal", testGetTerminal),
       ("testAddPublicKey", testAddPublicKey),
       ("testCreateToken", testCreateToken),
       ("testClientGetTerminal", testClientGetTerminal),
       ("testScanToken", testScanToken),
+      ("testAuthorizationUrl", testAuthorizationUrl),
+      ("testGetAccessToken", testGetAccessToken),
     ]
 }

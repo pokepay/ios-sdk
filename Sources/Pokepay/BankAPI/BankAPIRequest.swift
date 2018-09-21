@@ -2,7 +2,6 @@ import Foundation
 import APIKit
 
 let API_BASE_URL = "https://api-dev.pokepay.jp"
-let WWW_BASE_URL = "https://www-dev.pokepay.jp"
 
 public protocol BankRequest: Request {
 }
@@ -19,18 +18,6 @@ public extension BankRequest {
             throw BankAPIError(object: object as! Data)
         }
         return object
-    }
-}
-
-// Prevents APIError from decoding Data to JSON object implicitly
-// This would be unnecessary in APIKit 4.0
-final class DecodableDataParser: DataParser {
-    var contentType: String? {
-        return "application/json"
-    }
-
-    func parse(data: Data) throws -> Any {
-        return data
     }
 }
 

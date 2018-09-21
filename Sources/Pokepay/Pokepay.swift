@@ -104,4 +104,26 @@ public struct Pokepay {
             }
         }
     }
+    public struct OAuthClient {
+        let clientId: String
+        let clientSecret: String
+
+        public init(clientId: String, clientSecret: String) {
+            self.clientId = clientId
+            self.clientSecret = clientSecret
+        }
+
+        public func send<T: APIKit.Request>(_ request: T, handler: @escaping (Result<T.Response, SessionTaskError>) -> Void) {
+            Session.send(request) { result in handler(result) }
+        }
+
+        public func getAuthorizationUrl() -> String {
+            return "\(WWW_BASE_URL)/oauth/authorize?client_id=\(clientId)&response_type=code"
+        }
+
+        public func getAccessToken(code: String,
+                                   handler: @escaping (Result<AccessToken, SessionTaskError>) -> Void = { _ in }) {
+            send(OAuthAPI.Token.ExchangeAuthCode(code: code, clientId: clientId, clientSecret: clientSecret)) { result in handler(result) }
+        }
+    }
 }
