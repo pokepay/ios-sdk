@@ -2,15 +2,25 @@ import Foundation
 
 enum BankAPIError: Error {
     case invalidJSON(Swift.Error)
-    case unknown
-    case apiError(APIError)
+    case unknownError(APIError)
+    case clientError(Int, APIError)
+    case serverError(Int, APIError)
 
-    init(object: Data) {
+    init(statusCode: Int? = nil, object: Data) {
         do {
             let error = try JSONDecoder().decode(APIError.self, from: object)
-            switch error.type {
-            case "api_error": self = .apiError(error)
-            default: self = .unknown
+            guard let code = statusCode else {
+                self = .unknownError(error)
+                return
+            }
+            if ((400..<500).contains(code)) {
+                self = .clientError(code, error)
+            }
+            else if ((500..<600).contains(code)) {
+                self = .serverError(code, error)
+            }
+            else {
+                self = .unknownError(error)
             }
         } catch let decodeError {
             self = .invalidJSON(decodeError)

@@ -15,7 +15,7 @@ public extension BankRequest {
 public extension BankRequest {
     public func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {
         guard (200..<300).contains(urlResponse.statusCode) else {
-            throw BankAPIError(object: object as! Data)
+            throw BankAPIError(statusCode: urlResponse.statusCode, object: object as! Data)
         }
         return object
     }
