@@ -5,7 +5,8 @@ import APIKit
 final class PokepayTests: XCTestCase {
     func testGetTerminal() {
         let expect = expectation(description: "get request test")
-        let client = Pokepay.Client(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr")
+        let client = Pokepay.Client(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr",
+                                    env: "dev")
         client.getTerminalInfo() { result in
             switch result {
             case .success(let response):
@@ -21,7 +22,8 @@ final class PokepayTests: XCTestCase {
 
     func testAddPublicKey() {
         let expect = expectation(description: "add public key request test")
-        let client = Pokepay.Client(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr")
+        let client = Pokepay.Client(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr",
+                                    env: "dev")
         client.send(BankAPI.Terminal.AddPublicKey(key:
 """
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAq8oHIShTIJHrQpBQqAVs
@@ -47,7 +49,8 @@ AQIDAQAB
     func testCreateToken() {
         let expect = expectation(description: "create token test")
         let client = Pokepay.Client(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr",
-                                    isMerchant: true)
+                                    isMerchant: true,
+                                    env: "dev")
         client.createToken(108) { result in
             switch result {
             case .success(let token):
@@ -64,7 +67,8 @@ AQIDAQAB
     func testClientGetTerminal() {
         let expect = expectation(description: "client.getTerminal")
         let client = Pokepay.Client(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr",
-                                    isMerchant: true)
+                                    isMerchant: true,
+                                    env: "dev")
         client.getTerminalInfo() { result in
             switch result {
             case .success(let terminal):
@@ -81,12 +85,14 @@ AQIDAQAB
     func testScanToken() {
         let expect = expectation(description: "client.scanToken")
         let client = Pokepay.Client(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr",
-                                    isMerchant: true)
+                                    isMerchant: true,
+                                    env: "dev")
         client.createToken(108) { result in
             switch result {
             case .success(let token):
                 print(token)
-                let client2 = Pokepay.Client(accessToken: "lR5iX_U7TB7o_-FBCO5LpW6t7x-UQ4w3HpdqnZ8QoS1GlQM09n-swfQqbZQMqbvc")
+                let client2 = Pokepay.Client(accessToken: "lR5iX_U7TB7o_-FBCO5LpW6t7x-UQ4w3HpdqnZ8QoS1GlQM09n-swfQqbZQMqbvc",
+                                             env: "dev")
                 client2.scanToken(token) { result in
                     switch result {
                     case .success(let transaction):
@@ -110,6 +116,7 @@ AQIDAQAB
         let oauth = Pokepay.OAuthClient(clientId: "3qyJZlDnJbGK5roa-5XLkw", clientSecret: "kz96I8SDmjl2x77aAI9iNvAjc0cneL3UoK6zKLjmdXwmoghC7FSRrqKr")
         print(oauth.getAuthorizationUrl())
         expect.fulfill()
+        waitForExpectations(timeout: 5.0, handler: nil)
     }
 
     func testGetAccessToken() {

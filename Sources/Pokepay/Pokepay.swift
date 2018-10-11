@@ -1,3 +1,4 @@
+import Foundation
 import APIKit
 import Result
 
@@ -5,14 +6,24 @@ public struct Pokepay {
     public struct Client {
         let accessToken: String
         let isMerchant: Bool
+        let env: String
 
-        public init(accessToken: String, isMerchant: Bool = false) {
+        public var wwwBaseURL: URL {
+            return URL(string: "https://www-\(env).pokepay.jp")!
+        }
+
+        public var apiBaseURL: URL {
+            return URL(string: "https://api-\(env).pokepay.jp")!
+        }
+
+        public init(accessToken: String, isMerchant: Bool = false, env: String = "sandbox") {
             self.accessToken = accessToken
             self.isMerchant = isMerchant
+            self.env = env
         }
 
         public func send<T: APIKit.Request>(_ request: T, handler: @escaping (Result<T.Response, SessionTaskError>) -> Void) {
-            let request = AuthorizedRequest(request: request, accessToken: accessToken)
+            let request = AuthorizedRequest(request: request, accessToken: accessToken, endpoint: apiBaseURL)
             Session.send(request) { result in handler(result) }
         }
 
@@ -29,20 +40,20 @@ public struct Pokepay {
 
         public func scanToken(_ token: String, amount: Double? = nil,
                               handler: @escaping (Result<UserTransaction, SessionTaskError>) -> Void = { _ in }) {
-            if token.hasPrefix("\(WWW_BASE_URL)/cashtrays/") {
-                let uuid = String(token.suffix(token.utf8.count - "\(WWW_BASE_URL)/cashtrays/".utf8.count))
+            if token.hasPrefix("\(wwwBaseURL)/cashtrays/") {
+                let uuid = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/cashtrays/".utf8.count))
                 send(BankAPI.Transaction.CreateWithCashtray(cashtrayId: uuid)) { result in
                     handler(result)
                 }
             }
-            else if token.hasPrefix("\(WWW_BASE_URL)/bills/") {
-                let uuid = String(token.suffix(token.utf8.count - "\(WWW_BASE_URL)/bills/".utf8.count))
+            else if token.hasPrefix("\(wwwBaseURL)/bills/") {
+                let uuid = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/bills/".utf8.count))
                 send(BankAPI.Transaction.CreateWithBill(billId: uuid, amount: amount)) { result in
                     handler(result)
                 }
             }
-            else if token.hasPrefix("\(WWW_BASE_URL)/checks/") {
-                let uuid = String(token.suffix(token.utf8.count - "\(WWW_BASE_URL)/checks/".utf8.count))
+            else if token.hasPrefix("\(wwwBaseURL)/checks/") {
+                let uuid = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/checks/".utf8.count))
                 send(BankAPI.Transaction.CreateWithCheck(checkId: uuid)) { result in
                     handler(result)
                 }
@@ -60,7 +71,7 @@ public struct Pokepay {
                     send(BankAPI.Cashtray.Create(amount: amount, description: description, expiresIn: expiresIn)) { result in
                         switch result {
                         case .success(let cashtray):
-                            handler(.success("\(WWW_BASE_URL)/cashtrays/\(cashtray.id)"))
+                            handler(.success("\(self.wwwBaseURL)/cashtrays/\(cashtray.id)"))
                         case .failure(let error):
                             handler(.failure(error))
                         }
@@ -75,7 +86,7 @@ public struct Pokepay {
                     send(BankAPI.Bill.Create(amount: -amount, description: description)) { result in
                         switch result {
                         case .success(let bill):
-                            handler(.success("\(WWW_BASE_URL)/bills/\(bill.id)"))
+                            handler(.success("\(self.wwwBaseURL)/bills/\(bill.id)"))
                         case .failure(let error):
                             handler(.failure(error))
                         }
@@ -85,7 +96,7 @@ public struct Pokepay {
                     send(BankAPI.Check.Create(amount: amount, description: description)) { result in
                         switch result {
                         case .success(let check):
-                            handler(.success("\(WWW_BASE_URL)/checks/\(check.id)"))
+                            handler(.success("\(self.wwwBaseURL)/checks/\(check.id)"))
                         case .failure(let error):
                             handler(.failure(error))
                         }
@@ -96,7 +107,7 @@ public struct Pokepay {
                 send(BankAPI.Bill.Create(amount: nil, description: description)) { result in
                     switch result {
                     case .success(let bill):
-                        handler(.success("\(WWW_BASE_URL)/bills/\(bill.id)"))
+                        handler(.success("\(self.wwwBaseURL)/bills/\(bill.id)"))
                     case .failure(let error):
                         handler(.failure(error))
                     }
@@ -107,18 +118,25 @@ public struct Pokepay {
     public struct OAuthClient {
         let clientId: String
         let clientSecret: String
+        let env: String
 
-        public init(clientId: String, clientSecret: String) {
+        public var wwwBaseURL: URL {
+            return URL(string: "https://www-\(env).pokepay.jp")!
+        }
+
+        public init(clientId: String, clientSecret: String, env: String = "sandbox") {
             self.clientId = clientId
             self.clientSecret = clientSecret
+            self.env = env
         }
 
         public func send<T: APIKit.Request>(_ request: T, handler: @escaping (Result<T.Response, SessionTaskError>) -> Void) {
+            let request = OAuthEnvRequest(request: request, endpoint: wwwBaseURL)
             Session.send(request) { result in handler(result) }
         }
 
         public func getAuthorizationUrl() -> String {
-            return "\(WWW_BASE_URL)/oauth/authorize?client_id=\(clientId)&response_type=code"
+            return "\(wwwBaseURL)/oauth/authorize?client_id=\(clientId)&response_type=code"
         }
 
         public func getAccessToken(code: String,

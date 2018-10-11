@@ -1,14 +1,14 @@
 import Foundation
 import APIKit
 
-let API_BASE_URL = "https://api-dev.pokepay.jp"
+let DEFAULT_API_BASE_URL = "https://api-sandbox.pokepay.jp"
 
 public protocol BankRequest: Request {
 }
 
 public extension BankRequest {
     public var baseURL: URL {
-        return URL(string: API_BASE_URL)!
+        return URL(string: DEFAULT_API_BASE_URL)!
     }
 }
 

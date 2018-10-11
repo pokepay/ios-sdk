@@ -1,14 +1,14 @@
 import Foundation
 import APIKit
 
-let WWW_BASE_URL = "https://www-dev.pokepay.jp"
+let DEFAULT_WWW_BASE_URL = "https://www-sandbox.pokepay.jp"
 
 public protocol OAuthAPIRequest: Request {
 }
 
 public extension OAuthAPIRequest {
     public var baseURL: URL {
-        return URL(string: WWW_BASE_URL)!
+        return URL(string: DEFAULT_WWW_BASE_URL)!
     }
 }
 
