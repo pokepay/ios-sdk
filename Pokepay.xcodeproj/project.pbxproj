@@ -123,10 +123,6 @@
 		DF6B2F92216F4678007E2B4C /* DeleteCashtray.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2DDE216F4677007E2B4C /* DeleteCashtray.swift */; };
 		DF6B2F93216F4678007E2B4C /* RequestProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2DDF216F4677007E2B4C /* RequestProxy.swift */; };
 		DF6B2F94216F4678007E2B4C /* RequestProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2DDF216F4677007E2B4C /* RequestProxy.swift */; };
-		DF6B3045216F4679007E2B4C /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2F1C216F4678007E2B4C /* XCTestManifests.swift */; };
-		DF6B3046216F4679007E2B4C /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2F1C216F4678007E2B4C /* XCTestManifests.swift */; };
-		DF6B3047216F4679007E2B4C /* PokepayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2F1D216F4678007E2B4C /* PokepayTests.swift */; };
-		DF6B3048216F4679007E2B4C /* PokepayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2F1D216F4678007E2B4C /* PokepayTests.swift */; };
 		DF6B3049216F4679007E2B4C /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2F1E216F4678007E2B4C /* Makefile */; };
 		DF6B304A216F4679007E2B4C /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2F1E216F4678007E2B4C /* Makefile */; };
 /* End PBXBuildFile section */
@@ -208,8 +204,6 @@
 		DF6B2DE2216F4677007E2B4C /* tutorial.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = tutorial.html; sourceTree = "<group>"; };
 		DF6B2DE3216F4677007E2B4C /* tutorial.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = tutorial.md; sourceTree = "<group>"; };
 		DF6B2DE5216F4677007E2B4C /* Pokepay.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Pokepay.xcodeproj; sourceTree = "<group>"; };
-		DF6B2F1C216F4678007E2B4C /* XCTestManifests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
-		DF6B2F1D216F4678007E2B4C /* PokepayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokepayTests.swift; sourceTree = "<group>"; };
 		DF6B2F1E216F4678007E2B4C /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		DF6B2F1F216F4678007E2B4C /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -407,23 +401,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DF6B2F19216F4678007E2B4C /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				DF6B2F1B216F4678007E2B4C /* PokepayTests */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
-		DF6B2F1B216F4678007E2B4C /* PokepayTests */ = {
-			isa = PBXGroup;
-			children = (
-				DF6B2F1C216F4678007E2B4C /* XCTestManifests.swift */,
-				DF6B2F1D216F4678007E2B4C /* PokepayTests.swift */,
-			);
-			path = PokepayTests;
-			sourceTree = "<group>";
-		};
 		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
@@ -435,7 +412,6 @@
 				DF6B2DE5216F4677007E2B4C /* Pokepay.xcodeproj */,
 				DF6B2D98216F4677007E2B4C /* README.md */,
 				DF6B2D99216F4677007E2B4C /* Sources */,
-				DF6B2F19216F4678007E2B4C /* Tests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -556,7 +532,6 @@
 				DF6B2F45216F4678007E2B4C /* PaginatedAccounts.swift in Sources */,
 				DF6B2F4F216F4678007E2B4C /* CreateTransactionWithBill.swift in Sources */,
 				DF6B2F75216F4678007E2B4C /* RegisterUserEmail.swift in Sources */,
-				DF6B3045216F4679007E2B4C /* XCTestManifests.swift in Sources */,
 				DF6B2F7F216F4678007E2B4C /* GetAccount.swift in Sources */,
 				DF6B2F71216F4678007E2B4C /* UpdateUser.swift in Sources */,
 				DF6B2F8D216F4678007E2B4C /* GetCashtray.swift in Sources */,
@@ -592,7 +567,6 @@
 				DF6B2F79216F4678007E2B4C /* GetUserAccounts.swift in Sources */,
 				DF6B2F87216F4678007E2B4C /* CreateCheck.swift in Sources */,
 				DF6B2F65216F4678007E2B4C /* GetBill.swift in Sources */,
-				DF6B3047216F4679007E2B4C /* PokepayTests.swift in Sources */,
 				DF6B2F57216F4678007E2B4C /* CancelTransaction.swift in Sources */,
 				DF6B2F2D216F4678007E2B4C /* Error.swift in Sources */,
 				DF6B2F77216F4678007E2B4C /* DeleteUserEmail.swift in Sources */,
@@ -624,7 +598,6 @@
 				DF6B2F46216F4678007E2B4C /* PaginatedAccounts.swift in Sources */,
 				DF6B2F50216F4678007E2B4C /* CreateTransactionWithBill.swift in Sources */,
 				DF6B2F76216F4678007E2B4C /* RegisterUserEmail.swift in Sources */,
-				DF6B3046216F4679007E2B4C /* XCTestManifests.swift in Sources */,
 				DF6B2F80216F4678007E2B4C /* GetAccount.swift in Sources */,
 				DF6B2F72216F4678007E2B4C /* UpdateUser.swift in Sources */,
 				DF6B2F8E216F4678007E2B4C /* GetCashtray.swift in Sources */,
@@ -660,7 +633,6 @@
 				DF6B2F7A216F4678007E2B4C /* GetUserAccounts.swift in Sources */,
 				DF6B2F88216F4678007E2B4C /* CreateCheck.swift in Sources */,
 				DF6B2F66216F4678007E2B4C /* GetBill.swift in Sources */,
-				DF6B3048216F4679007E2B4C /* PokepayTests.swift in Sources */,
 				DF6B2F58216F4678007E2B4C /* CancelTransaction.swift in Sources */,
 				DF6B2F2E216F4678007E2B4C /* Error.swift in Sources */,
 				DF6B2F78216F4678007E2B4C /* DeleteUserEmail.swift in Sources */,
