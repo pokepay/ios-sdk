@@ -106,10 +106,10 @@ client.send(BankAPI.Terminal.Get()) { result in
 
 ## Installation
 
-### CocoaPods
+### Carthage
 
 ```ruby
-pod "Pokepay"
+github "pokepay/ios-sdk"
 ```
 
 ## Dependencies
