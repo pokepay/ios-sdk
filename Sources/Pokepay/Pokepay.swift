@@ -6,17 +6,27 @@ public struct Pokepay {
     public struct Client {
         let accessToken: String
         let isMerchant: Bool
-        let env: String
+        let env: Env
 
         public var wwwBaseURL: URL {
-            return URL(string: "https://www-\(env).pokepay.jp")!
+            switch env {
+            case .production:
+                return URL(string: "https://www.pokepay.jp")!
+            default:
+                return URL(string: "https://www-\(env.rawValue).pokepay.jp")!
+            }
         }
 
         public var apiBaseURL: URL {
-            return URL(string: "https://api-\(env).pokepay.jp")!
+            switch env {
+            case .production:
+                return URL(string: "https://api.pokepay.jp")!
+            default:
+                return URL(string: "https://api-\(env.rawValue).pokepay.jp")!
+            }
         }
 
-        public init(accessToken: String, isMerchant: Bool = false, env: String = "sandbox") {
+        public init(accessToken: String, isMerchant: Bool = false, env: Env = .development) {
             self.accessToken = accessToken
             self.isMerchant = isMerchant
             self.env = env
@@ -118,13 +128,18 @@ public struct Pokepay {
     public struct OAuthClient {
         let clientId: String
         let clientSecret: String
-        let env: String
+        let env: Env
 
         public var wwwBaseURL: URL {
-            return URL(string: "https://www-\(env).pokepay.jp")!
+            switch env {
+            case .production:
+                return URL(string: "https://www.pokepay.jp")!
+            default:
+                return URL(string: "https://www-\(env.rawValue).pokepay.jp")!
+            }
         }
 
-        public init(clientId: String, clientSecret: String, env: String = "sandbox") {
+        public init(clientId: String, clientSecret: String, env: Env = .development) {
             self.clientId = clientId
             self.clientSecret = clientSecret
             self.env = env
