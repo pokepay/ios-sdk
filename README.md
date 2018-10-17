@@ -114,7 +114,7 @@ github "pokepay/ios-sdk"
 
 ## Dependencies
 
-* Swift 4.1
+* Swift 4.0
 * [APIKit](https://github.com/ishkawa/APIKit)
 
 ## Development Note
