@@ -19,6 +19,10 @@ extension RequestProxy {
         return request.path
     }
 
+    var parameters: Any? {
+        return request.parameters
+    }
+
     var dataParser: DataParser {
         return request.dataParser
     }
