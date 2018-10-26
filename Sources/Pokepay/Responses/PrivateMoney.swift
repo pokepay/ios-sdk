@@ -6,7 +6,6 @@ public struct PrivateMoney: Codable {
     public let type: String
     public let description: String
     public let onelineMessage: String
-    public let images: Dictionary<String, String>
     public let organization: Organization
     public let maxBalance: Double
     public let transferLimit: Double
@@ -23,7 +22,6 @@ public struct PrivateMoney: Codable {
         case type
         case description
         case onelineMessage = "oneline_message"
-        case images
         case organization
         case maxBalance = "max_balance"
         case transferLimit = "transfer_limit"
