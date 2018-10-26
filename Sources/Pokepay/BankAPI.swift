@@ -6,4 +6,5 @@ public struct BankAPI {
     public struct Terminal {}
     public struct Transaction {}
     public struct User {}
+    public struct PrivateMoney {}
 }
