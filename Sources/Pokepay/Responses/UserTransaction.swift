@@ -7,6 +7,7 @@ public struct UserTransaction: Codable {
     public let amount: Double
     public let moneyAmount: Double
     public let pointAmount: Double
+    public let account: Account
     public let description: String
     public let doneAt: String
 
@@ -17,6 +18,7 @@ public struct UserTransaction: Codable {
         case amount
         case moneyAmount = "money_amount"
         case pointAmount = "point_amount"
+        case account
         case description
         case doneAt = "done_at"
     }
