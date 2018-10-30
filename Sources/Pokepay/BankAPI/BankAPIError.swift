@@ -1,6 +1,6 @@
 import Foundation
 
-enum BankAPIError: Error {
+public enum BankAPIError: Error {
     case invalidJSON(Swift.Error)
     case unknownError(APIError)
     case clientError(Int, APIError)
