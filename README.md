@@ -81,7 +81,7 @@ Scan a token and make a new transaction via Bank APIs.
 
 Make a new token for sending/receiving money, which can be done with `scanToken`.
 
-## Low-Level APIs
+## BankAPI Requests
 
 All HTTP requests to Bank RESTful APIs also can be done with APIKit and request structures defined under `BankAPI` (See Sources/Pokepay/BankAPI/).
 
@@ -95,6 +95,34 @@ client.send(BankAPI.Terminal.Get()) { result in
         print(terminal)
     case .failure(let error):
         print(error)
+    }
+}
+```
+
+## Error handling
+
+```swift
+client.send(BankAPI.Terminal.Get()) { result in
+    switch result {
+    case .success(let response):
+        // Success. `response` is a Terminal object.
+        print(response)
+    case .failure(.responseError(let error as BankAPIError)):
+        // Failure with response error. The content of Error object is returned from Bank API.
+        switch error {
+        case .clientError(let code, let apiError):
+            // 4xx error
+            print("code: \(code)")
+            print("type: \(apiError.type)")
+            print("message: \(apiError.message)")
+        case .serverError:
+            // 5xx error
+        default:
+            print("Other unknown error.")
+        }
+    case .failure:
+        // Other error, like network disconnected
+        print(result)
     }
 }
 ```
