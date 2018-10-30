@@ -9,7 +9,7 @@ public struct UserTransaction: Codable {
     public let pointAmount: Double
     public let account: Account
     public let description: String
-    public let doneAt: String
+    public let doneAt: Date
 
     private enum CodingKeys: String, CodingKey {
         case id

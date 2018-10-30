@@ -5,7 +5,7 @@ public struct Cashtray: Codable {
     public let amount: Double
     public let description: String
     public let user: User
-    public let expiresAt: String
+    public let expiresAt: Date
 
     private enum CodingKeys: String, CodingKey {
         case id

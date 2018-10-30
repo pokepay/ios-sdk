@@ -1,7 +1,7 @@
 import Foundation
 
 public struct AccountBalance: Codable {
-    public let expiresAt: String
+    public let expiresAt: Date
     public let moneyAmount: Double
     public let pointAmount: Double
 

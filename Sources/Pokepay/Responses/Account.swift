@@ -8,7 +8,7 @@ public struct Account: Codable {
     public let pointBalance: Double
     public let isSuspended: Bool
     public let privateMoney: PrivateMoney
-    public let nearestExpiresAt: String?
+    public let nearestExpiresAt: Date?
 
     private enum CodingKeys: String, CodingKey {
         case id
