@@ -83,6 +83,10 @@
 		DF9982C42186AECB00A1FD71 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9982B32186AECB00A1FD71 /* Account.swift */; };
 		DF9982C52186AECB00A1FD71 /* PrivateMoney.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9982B42186AECB00A1FD71 /* PrivateMoney.swift */; };
 		DF9982C62186AECB00A1FD71 /* PaginatedAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9982B52186AECB00A1FD71 /* PaginatedAccounts.swift */; };
+		DFAD197D2189860E0081BE39 /* PaginatedMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAD197A2189860E0081BE39 /* PaginatedMessages.swift */; };
+		DFAD197E2189860E0081BE39 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAD197B2189860E0081BE39 /* Message.swift */; };
+		DFAD197F2189860E0081BE39 /* MessageAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAD197C2189860E0081BE39 /* MessageAttachment.swift */; };
+		DFAD198F2189865A0081BE39 /* MessagingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAD198E2189865A0081BE39 /* MessagingAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +174,14 @@
 		DF9982B32186AECB00A1FD71 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		DF9982B42186AECB00A1FD71 /* PrivateMoney.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateMoney.swift; sourceTree = "<group>"; };
 		DF9982B52186AECB00A1FD71 /* PaginatedAccounts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginatedAccounts.swift; sourceTree = "<group>"; };
+		DFAD197A2189860E0081BE39 /* PaginatedMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaginatedMessages.swift; path = Sources/Pokepay/Responses/PaginatedMessages.swift; sourceTree = SOURCE_ROOT; };
+		DFAD197B2189860E0081BE39 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Sources/Pokepay/Responses/Message.swift; sourceTree = SOURCE_ROOT; };
+		DFAD197C2189860E0081BE39 /* MessageAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageAttachment.swift; path = Sources/Pokepay/Responses/MessageAttachment.swift; sourceTree = SOURCE_ROOT; };
+		DFAD1981218986400081BE39 /* GetUnreadCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUnreadCount.swift; sourceTree = "<group>"; };
+		DFAD1982218986400081BE39 /* ReceiveMessageAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveMessageAttachment.swift; sourceTree = "<group>"; };
+		DFAD1983218986400081BE39 /* GetMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMessage.swift; sourceTree = "<group>"; };
+		DFAD1984218986400081BE39 /* ListMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMessages.swift; sourceTree = "<group>"; };
+		DFAD198E2189865A0081BE39 /* MessagingAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagingAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,14 +213,16 @@
 		DF6B2D9A216F4677007E2B4C /* Pokepay */ = {
 			isa = PBXGroup;
 			children = (
+				DF6B2DB4216F4677007E2B4C /* Pokepay.swift */,
+				DF6B2DB3216F4677007E2B4C /* BankAPI.swift */,
+				DF9982512186AE7900A1FD71 /* BankAPI */,
 				DF6B2D9B216F4677007E2B4C /* OAuthAPI.swift */,
 				DF6B2D9C216F4677007E2B4C /* OAuthAPI */,
+				DFAD198E2189865A0081BE39 /* MessagingAPI.swift */,
+				DFAD1980218986400081BE39 /* MessagingAPI */,
 				DF9982A42186AECB00A1FD71 /* Responses */,
 				DF6B2DB1216F4677007E2B4C /* Env.swift */,
 				DF6B2DB2216F4677007E2B4C /* DecodableDataParser.swift */,
-				DF6B2DB3216F4677007E2B4C /* BankAPI.swift */,
-				DF6B2DB4216F4677007E2B4C /* Pokepay.swift */,
-				DF9982512186AE7900A1FD71 /* BankAPI */,
 				DF6B2DDF216F4677007E2B4C /* RequestProxy.swift */,
 			);
 			path = Pokepay;
@@ -250,17 +264,17 @@
 		DF9982512186AE7900A1FD71 /* BankAPI */ = {
 			isa = PBXGroup;
 			children = (
-				DF9982522186AE7900A1FD71 /* Transaction */,
-				DF99825B2186AE7900A1FD71 /* BankAPIRequest.swift */,
-				DF99825C2186AE7900A1FD71 /* PrivateMoney */,
-				DF99825E2186AE7900A1FD71 /* Bill */,
-				DF9982632186AE7900A1FD71 /* BankAPIError.swift */,
 				DF9982642186AE7900A1FD71 /* Terminal */,
 				DF9982682186AE7900A1FD71 /* User */,
-				DF99826F2186AE7900A1FD71 /* AuthorizedRequest.swift */,
 				DF9982702186AE7900A1FD71 /* Account */,
+				DF9982522186AE7900A1FD71 /* Transaction */,
+				DF99825E2186AE7900A1FD71 /* Bill */,
 				DF9982752186AE7900A1FD71 /* Check */,
 				DF99827A2186AE7900A1FD71 /* Cashtray */,
+				DF99825C2186AE7900A1FD71 /* PrivateMoney */,
+				DF99825B2186AE7900A1FD71 /* BankAPIRequest.swift */,
+				DF99826F2186AE7900A1FD71 /* AuthorizedRequest.swift */,
+				DF9982632186AE7900A1FD71 /* BankAPIError.swift */,
 			);
 			path = BankAPI;
 			sourceTree = "<group>";
@@ -268,12 +282,12 @@
 		DF9982522186AE7900A1FD71 /* Transaction */ = {
 			isa = PBXGroup;
 			children = (
-				DF9982532186AE7900A1FD71 /* CreateTransactionWithBill.swift */,
+				DF9982582186AE7900A1FD71 /* GetTransaction.swift */,
 				DF9982542186AE7900A1FD71 /* SendToUser.swift */,
 				DF9982552186AE7900A1FD71 /* SendToAccount.swift */,
-				DF9982562186AE7900A1FD71 /* CreateTransactionWithCheck.swift */,
 				DF9982572186AE7900A1FD71 /* CancelTransaction.swift */,
-				DF9982582186AE7900A1FD71 /* GetTransaction.swift */,
+				DF9982532186AE7900A1FD71 /* CreateTransactionWithBill.swift */,
+				DF9982562186AE7900A1FD71 /* CreateTransactionWithCheck.swift */,
 				DF9982592186AE7900A1FD71 /* CreateTransactionWithCashtray.swift */,
 				DF99825A2186AE7900A1FD71 /* CreateTransactionWithJwt.swift */,
 			);
@@ -291,10 +305,10 @@
 		DF99825E2186AE7900A1FD71 /* Bill */ = {
 			isa = PBXGroup;
 			children = (
-				DF99825F2186AE7900A1FD71 /* DeleteBill.swift */,
-				DF9982602186AE7900A1FD71 /* UpdateBill.swift */,
 				DF9982612186AE7900A1FD71 /* GetBill.swift */,
 				DF9982622186AE7900A1FD71 /* CreateBill.swift */,
+				DF9982602186AE7900A1FD71 /* UpdateBill.swift */,
+				DF99825F2186AE7900A1FD71 /* DeleteBill.swift */,
 			);
 			path = Bill;
 			sourceTree = "<group>";
@@ -312,12 +326,12 @@
 		DF9982682186AE7900A1FD71 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				DF9982692186AE7900A1FD71 /* UpdateUser.swift */,
 				DF99826A2186AE7900A1FD71 /* GetUserTransactions.swift */,
-				DF99826B2186AE7900A1FD71 /* RegisterUserEmail.swift */,
-				DF99826C2186AE7900A1FD71 /* DeleteUserEmail.swift */,
+				DF9982692186AE7900A1FD71 /* UpdateUser.swift */,
 				DF99826D2186AE7900A1FD71 /* GetUserAccounts.swift */,
 				DF99826E2186AE7900A1FD71 /* SendConfirmationEmail.swift */,
+				DF99826B2186AE7900A1FD71 /* RegisterUserEmail.swift */,
+				DF99826C2186AE7900A1FD71 /* DeleteUserEmail.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -327,8 +341,8 @@
 			children = (
 				DF9982712186AE7900A1FD71 /* GetAccount.swift */,
 				DF9982722186AE7900A1FD71 /* CreateAccount.swift */,
-				DF9982732186AE7900A1FD71 /* GetAccountTransactions.swift */,
 				DF9982742186AE7900A1FD71 /* GetBalances.swift */,
+				DF9982732186AE7900A1FD71 /* GetAccountTransactions.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -338,8 +352,8 @@
 			children = (
 				DF9982762186AE7900A1FD71 /* GetCheck.swift */,
 				DF9982772186AE7900A1FD71 /* CreateCheck.swift */,
-				DF9982782186AE7900A1FD71 /* DeleteCheck.swift */,
 				DF9982792186AE7900A1FD71 /* UpdateCheck.swift */,
+				DF9982782186AE7900A1FD71 /* DeleteCheck.swift */,
 			);
 			path = Check;
 			sourceTree = "<group>";
@@ -347,9 +361,9 @@
 		DF99827A2186AE7900A1FD71 /* Cashtray */ = {
 			isa = PBXGroup;
 			children = (
-				DF99827B2186AE7900A1FD71 /* UpdateCashtray.swift */,
 				DF99827C2186AE7900A1FD71 /* GetCashtray.swift */,
 				DF99827D2186AE7900A1FD71 /* CreateCashtray.swift */,
+				DF99827B2186AE7900A1FD71 /* UpdateCashtray.swift */,
 				DF99827E2186AE7900A1FD71 /* DeleteCashtray.swift */,
 			);
 			path = Cashtray;
@@ -358,27 +372,41 @@
 		DF9982A42186AECB00A1FD71 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
-				DF9982A52186AECB00A1FD71 /* AccountBalance.swift */,
-				DF9982A62186AECB00A1FD71 /* NoContent.swift */,
-				DF9982A72186AECB00A1FD71 /* Error.swift */,
 				DF9982A82186AECB00A1FD71 /* Terminal.swift */,
 				DF9982A92186AECB00A1FD71 /* AccessToken.swift */,
-				DF9982AA2186AECB00A1FD71 /* PaginatedAccountBalances.swift */,
+				DF9982B42186AECB00A1FD71 /* PrivateMoney.swift */,
 				DF9982AB2186AECB00A1FD71 /* Organization.swift */,
 				DF9982AC2186AECB00A1FD71 /* User.swift */,
-				DF9982AD2186AECB00A1FD71 /* Cashtray.swift */,
-				DF9982AE2186AECB00A1FD71 /* PaginatedTransactions.swift */,
-				DF9982AF2186AECB00A1FD71 /* Check.swift */,
-				DF9982B02186AECB00A1FD71 /* PaginatedPrivateMoneys.swift */,
 				DF9982B12186AECB00A1FD71 /* UserTransaction.swift */,
-				DF9982B22186AECB00A1FD71 /* Bill.swift */,
 				DF9982B32186AECB00A1FD71 /* Account.swift */,
-				DF9982B42186AECB00A1FD71 /* PrivateMoney.swift */,
+				DF9982A52186AECB00A1FD71 /* AccountBalance.swift */,
+				DF9982B22186AECB00A1FD71 /* Bill.swift */,
+				DF9982AF2186AECB00A1FD71 /* Check.swift */,
+				DF9982AD2186AECB00A1FD71 /* Cashtray.swift */,
 				DF9982B52186AECB00A1FD71 /* PaginatedAccounts.swift */,
+				DF9982AA2186AECB00A1FD71 /* PaginatedAccountBalances.swift */,
+				DF9982B02186AECB00A1FD71 /* PaginatedPrivateMoneys.swift */,
+				DF9982AE2186AECB00A1FD71 /* PaginatedTransactions.swift */,
+				DFAD197B2189860E0081BE39 /* Message.swift */,
+				DFAD197C2189860E0081BE39 /* MessageAttachment.swift */,
+				DFAD197A2189860E0081BE39 /* PaginatedMessages.swift */,
+				DF9982A62186AECB00A1FD71 /* NoContent.swift */,
+				DF9982A72186AECB00A1FD71 /* Error.swift */,
 			);
 			name = Responses;
 			path = Sources/Pokepay/Responses;
 			sourceTree = SOURCE_ROOT;
+		};
+		DFAD1980218986400081BE39 /* MessagingAPI */ = {
+			isa = PBXGroup;
+			children = (
+				DFAD1984218986400081BE39 /* ListMessages.swift */,
+				DFAD1983218986400081BE39 /* GetMessage.swift */,
+				DFAD1982218986400081BE39 /* ReceiveMessageAttachment.swift */,
+				DFAD1981218986400081BE39 /* GetUnreadCount.swift */,
+			);
+			path = MessagingAPI;
+			sourceTree = "<group>";
 		};
 		OBJ_5 = {
 			isa = PBXGroup;
@@ -513,6 +541,7 @@
 				DF9982BA2186AECB00A1FD71 /* AccessToken.swift in Sources */,
 				DF9982992186AE7900A1FD71 /* CreateAccount.swift in Sources */,
 				DF9982902186AE7900A1FD71 /* AddTerminalPublicKey.swift in Sources */,
+				DFAD198F2189865A0081BE39 /* MessagingAPI.swift in Sources */,
 				DF9982952186AE7900A1FD71 /* GetUserAccounts.swift in Sources */,
 				DF99828C2186AE7900A1FD71 /* CreateBill.swift in Sources */,
 				DF9982BE2186AECB00A1FD71 /* Cashtray.swift in Sources */,
@@ -531,6 +560,7 @@
 				DF6B2F47216F4678007E2B4C /* Env.swift in Sources */,
 				DF9982BF2186AECB00A1FD71 /* PaginatedTransactions.swift in Sources */,
 				DF9982982186AE7900A1FD71 /* GetAccount.swift in Sources */,
+				DFAD197D2189860E0081BE39 /* PaginatedMessages.swift in Sources */,
 				DF9982822186AE7900A1FD71 /* CreateTransactionWithCheck.swift in Sources */,
 				DF9982C42186AECB00A1FD71 /* Account.swift in Sources */,
 				DF9982C52186AECB00A1FD71 /* PrivateMoney.swift in Sources */,
@@ -555,6 +585,7 @@
 				DF9982882186AE7900A1FD71 /* SearchPrivateMoneys.swift in Sources */,
 				DF99829C2186AE7900A1FD71 /* GetCheck.swift in Sources */,
 				DF9982C62186AECB00A1FD71 /* PaginatedAccounts.swift in Sources */,
+				DFAD197E2189860E0081BE39 /* Message.swift in Sources */,
 				DF9982942186AE7900A1FD71 /* DeleteUserEmail.swift in Sources */,
 				DF99828F2186AE7900A1FD71 /* UpdateTerminal.swift in Sources */,
 				DF6B2F27216F4678007E2B4C /* OAuthEnvRequest.swift in Sources */,
@@ -564,6 +595,7 @@
 				DF6B2F4B216F4678007E2B4C /* BankAPI.swift in Sources */,
 				DF6B2F4D216F4678007E2B4C /* Pokepay.swift in Sources */,
 				DF9982852186AE7900A1FD71 /* CreateTransactionWithCashtray.swift in Sources */,
+				DFAD197F2189860E0081BE39 /* MessageAttachment.swift in Sources */,
 				DF9982912186AE7900A1FD71 /* UpdateUser.swift in Sources */,
 				DF9982C22186AECB00A1FD71 /* UserTransaction.swift in Sources */,
 				DF99829F2186AE7900A1FD71 /* UpdateCheck.swift in Sources */,
