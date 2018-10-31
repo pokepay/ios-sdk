@@ -38,6 +38,17 @@ AQIDAQAB
             case .success(let response):
                 print(response)
                 expect.fulfill()
+            case .failure(.responseError(let error as BankAPIError)):
+                print("responseError")
+                switch error {
+                case .clientError(let code, let apiError):
+                    print("code: \(code)")
+                    print("type: \(apiError.type)")
+                    print("message: \(apiError.message)")
+                default:
+                    print("other error")
+                }
+                expect.fulfill()
             case .failure:
                 print(result)
                 expect.fulfill()
@@ -91,7 +102,7 @@ AQIDAQAB
             switch result {
             case .success(let token):
                 print(token)
-                let client2 = Pokepay.Client(accessToken: "lR5iX_U7TB7o_-FBCO5LpW6t7x-UQ4w3HpdqnZ8QoS1GlQM09n-swfQqbZQMqbvc",
+                let client2 = Pokepay.Client(accessToken: "x7wPPW4QQ1wvu93LlP8GSgCIdG2Pic7anH3UO9kdRZPYDs6ym0V_y40TW6iVc-rY",
                                              env: .development)
                 client2.scanToken(token) { result in
                     switch result {
@@ -135,6 +146,42 @@ AQIDAQAB
         waitForExpectations(timeout: 5.0, handler: nil)
     }
 
+    func testSearchPrivateMoney() {
+        let expect = expectation(description: "SearchPrivateMoney")
+        let client = Pokepay.Client(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr",
+                                    isMerchant: true,
+                                    env: .development)
+        client.send(BankAPI.PrivateMoney.Search()) { result in
+            switch result {
+            case .success(let response):
+                print(response)
+                expect.fulfill()
+            case .failure:
+                print(result)
+                expect.fulfill()
+            }
+        }
+        waitForExpectations(timeout: 5.0, handler: nil)
+    }
+
+    func testListMessages() {
+        let expect = expectation(description: "ListMessages")
+        let client = Pokepay.Client(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr",
+                                    isMerchant: true,
+                                    env: .development)
+        client.send(MessagingAPI.List()) { result in
+            switch result {
+            case .success(let response):
+                print(response)
+                expect.fulfill()
+            case .failure:
+                print(result)
+                expect.fulfill()
+            }
+        }
+        waitForExpectations(timeout: 5.0, handler: nil)
+    }
+
     static var allTests = [
       ("testGetTerminal", testGetTerminal),
       ("testAddPublicKey", testAddPublicKey),
@@ -143,5 +190,7 @@ AQIDAQAB
       ("testScanToken", testScanToken),
       ("testAuthorizationUrl", testAuthorizationUrl),
       ("testGetAccessToken", testGetAccessToken),
+      ("testSearchPrivateMoney", testSearchPrivateMoney),
+      ("testListMessages", testListMessages),
     ]
 }
