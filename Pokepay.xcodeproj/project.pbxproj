@@ -87,6 +87,7 @@
 		DFAD197E2189860E0081BE39 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAD197B2189860E0081BE39 /* Message.swift */; };
 		DFAD197F2189860E0081BE39 /* MessageAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAD197C2189860E0081BE39 /* MessageAttachment.swift */; };
 		DFAD198F2189865A0081BE39 /* MessagingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAD198E2189865A0081BE39 /* MessagingAPI.swift */; };
+		DFAEF9A5218AFC9C00A965F6 /* SendMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAEF9A4218AFC9B00A965F6 /* SendMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +183,7 @@
 		DFAD1983218986400081BE39 /* GetMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMessage.swift; sourceTree = "<group>"; };
 		DFAD1984218986400081BE39 /* ListMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMessages.swift; sourceTree = "<group>"; };
 		DFAD198E2189865A0081BE39 /* MessagingAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagingAPI.swift; sourceTree = "<group>"; };
+		DFAEF9A4218AFC9B00A965F6 /* SendMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,6 +402,7 @@
 		DFAD1980218986400081BE39 /* MessagingAPI */ = {
 			isa = PBXGroup;
 			children = (
+				DFAEF9A4218AFC9B00A965F6 /* SendMessage.swift */,
 				DFAD1984218986400081BE39 /* ListMessages.swift */,
 				DFAD1983218986400081BE39 /* GetMessage.swift */,
 				DFAD1982218986400081BE39 /* ReceiveMessageAttachment.swift */,
@@ -571,6 +574,7 @@
 				DF9982892186AE7900A1FD71 /* DeleteBill.swift in Sources */,
 				DF9982BC2186AECB00A1FD71 /* Organization.swift in Sources */,
 				DF9982932186AE7900A1FD71 /* RegisterUserEmail.swift in Sources */,
+				DFAEF9A5218AFC9C00A965F6 /* SendMessage.swift in Sources */,
 				DF99828D2186AE7900A1FD71 /* BankAPIError.swift in Sources */,
 				DF9982A22186AE7900A1FD71 /* CreateCashtray.swift in Sources */,
 				DF99829D2186AE7900A1FD71 /* CreateCheck.swift in Sources */,

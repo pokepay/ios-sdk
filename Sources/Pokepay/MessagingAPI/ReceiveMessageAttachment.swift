@@ -11,15 +11,11 @@ public extension MessagingAPI {
         }
 
         public var method: HTTPMethod {
-            return .patch
+            return .post
         }
 
         public var path: String {
-            return "/messages/\(message.id)/attachment"
-        }
-
-        public var parameters: Any? {
-            return ["is_received": "true"]
+            return "/messages/\(message.id)/attachment/receive"
         }
     }
 }
