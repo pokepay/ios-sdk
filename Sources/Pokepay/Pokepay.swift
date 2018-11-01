@@ -2,6 +2,13 @@ import Foundation
 import APIKit
 import Result
 
+public enum PokepayError: Error {
+    case invalidToken
+    case connectionError(Error)
+    case requestError(Error)
+    case responseError(Error)
+}
+
 public struct Pokepay {
     public struct Client {
         let accessToken: String
@@ -32,50 +39,90 @@ public struct Pokepay {
             self.env = env
         }
 
-        public func send<T: APIKit.Request>(_ request: T, handler: @escaping (Result<T.Response, SessionTaskError>) -> Void) {
+        public func send<T: APIKit.Request>(_ request: T, handler: @escaping (Result<T.Response, PokepayError>) -> Void) {
             let request = AuthorizedRequest(request: request, accessToken: accessToken, endpoint: apiBaseURL)
-            Session.send(request) { result in handler(result) }
+            Session.send(request) { result in
+                switch result {
+                case .success(let data):
+                    handler(.success(data))
+                case .failure(let error):
+                    switch error {
+                    case .connectionError(let error):
+                        handler(.failure(PokepayError.connectionError(error)))
+                    case .requestError(let error):
+                        handler(.failure(PokepayError.requestError(error)))
+                    case .responseError(let error):
+                        handler(.failure(PokepayError.responseError(error)))
+                    }
+                }
+            }
         }
 
-        public func getTerminalInfo(handler: @escaping (Result<Terminal, SessionTaskError>) -> Void = { _ in }) {
-            send(BankAPI.Terminal.Get()) { result in
-                switch result {
-                case .success(let terminal):
-                    handler(.success(terminal))
-                case .failure(let error):
-                    handler(.failure(error))
+        public func getTerminalInfo(handler: @escaping (Result<Terminal, PokepayError>) -> Void = { _ in }) {
+            send(BankAPI.Terminal.Get(), handler: handler)
+        }
+
+        public func getTokenInfo(_ token: String,
+                                 handler: @escaping (Result<Any, PokepayError>) -> Void) {
+            if token.hasPrefix("\(wwwBaseURL)/cashtrays/") {
+                let id = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/cashtrays/".utf8.count))
+                send(BankAPI.Cashtray.Get(id: id)) { result in
+                    switch result {
+                    case .success(let data):
+                        handler(.success(data))
+                    case .failure(let error):
+                        handler(.failure(error))
+                    }
                 }
+            }
+            else if token.hasPrefix("\(wwwBaseURL)/bills/") {
+                let id = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/bills/".utf8.count))
+                send(BankAPI.Bill.Get(id: id)) { result in
+                    switch result {
+                    case .success(let data):
+                        handler(.success(data))
+                    case .failure(let error):
+                        handler(.failure(error))
+                    }
+                }
+            }
+            else if token.hasPrefix("\(wwwBaseURL)/checks/") {
+                let id = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/checks/".utf8.count))
+                send(BankAPI.Check.Get(id: id)) { result in
+                    switch result {
+                    case .success(let data):
+                        handler(.success(data))
+                    case .failure(let error):
+                        handler(.failure(error))
+                    }
+                }
+            }
+            else {
+                handler(.failure(PokepayError.invalidToken))
             }
         }
 
         public func scanToken(_ token: String, amount: Double? = nil,
-                              handler: @escaping (Result<UserTransaction, SessionTaskError>) -> Void = { _ in }) {
+                              handler: @escaping (Result<UserTransaction, PokepayError>) -> Void = { _ in }) {
             if token.hasPrefix("\(wwwBaseURL)/cashtrays/") {
                 let uuid = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/cashtrays/".utf8.count))
-                send(BankAPI.Transaction.CreateWithCashtray(cashtrayId: uuid)) { result in
-                    handler(result)
-                }
+                send(BankAPI.Transaction.CreateWithCashtray(cashtrayId: uuid), handler: handler)
             }
             else if token.hasPrefix("\(wwwBaseURL)/bills/") {
                 let uuid = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/bills/".utf8.count))
-                send(BankAPI.Transaction.CreateWithBill(billId: uuid, amount: amount)) { result in
-                    handler(result)
-                }
+                send(BankAPI.Transaction.CreateWithBill(billId: uuid, amount: amount), handler: handler)
             }
             else if token.hasPrefix("\(wwwBaseURL)/checks/") {
                 let uuid = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/checks/".utf8.count))
-                send(BankAPI.Transaction.CreateWithCheck(checkId: uuid)) { result in
-                    handler(result)
-                }
+                send(BankAPI.Transaction.CreateWithCheck(checkId: uuid), handler: handler)
             }
             else {
-                // Invalid token
-                assert(false)
+                handler(.failure(PokepayError.invalidToken))
             }
         }
 
         public func createToken(_ amount: Double? = nil, description: String? = nil, expiresIn: Int32? = nil,
-                                handler: @escaping (Result<String, SessionTaskError>) -> Void = { _ in }) {
+                                handler: @escaping (Result<String, PokepayError>) -> Void = { _ in }) {
             if isMerchant {
                 if let amount = amount {
                     send(BankAPI.Cashtray.Create(amount: amount, description: description, expiresIn: expiresIn)) { result in
@@ -145,9 +192,23 @@ public struct Pokepay {
             self.env = env
         }
 
-        public func send<T: APIKit.Request>(_ request: T, handler: @escaping (Result<T.Response, SessionTaskError>) -> Void) {
+        public func send<T: APIKit.Request>(_ request: T, handler: @escaping (Result<T.Response, PokepayError>) -> Void) {
             let request = OAuthEnvRequest(request: request, endpoint: wwwBaseURL)
-            Session.send(request) { result in handler(result) }
+            Session.send(request) { result in
+                switch result {
+                case .success(let data):
+                    handler(.success(data))
+                case .failure(let error):
+                    switch error {
+                    case .connectionError(let error):
+                        handler(.failure(PokepayError.connectionError(error)))
+                    case .requestError(let error):
+                        handler(.failure(PokepayError.requestError(error)))
+                    case .responseError(let error):
+                        handler(.failure(PokepayError.responseError(error)))
+                    }
+                }
+            }
         }
 
         public func getAuthorizationUrl() -> String {
@@ -155,8 +216,8 @@ public struct Pokepay {
         }
 
         public func getAccessToken(code: String,
-                                   handler: @escaping (Result<AccessToken, SessionTaskError>) -> Void = { _ in }) {
-            send(OAuthAPI.Token.ExchangeAuthCode(code: code, clientId: clientId, clientSecret: clientSecret)) { result in handler(result) }
+                                   handler: @escaping (Result<AccessToken, PokepayError>) -> Void = { _ in }) {
+            send(OAuthAPI.Token.ExchangeAuthCode(code: code, clientId: clientId, clientSecret: clientSecret), handler: handler)
         }
     }
 }

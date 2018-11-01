@@ -93,6 +93,35 @@ AQIDAQAB
         waitForExpectations(timeout: 5.0, handler: nil)
     }
 
+    func testGetTokenInfo() {
+        let expect = expectation(description: "client.getTokenInfo")
+        let client = Pokepay.Client(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr",
+                                    isMerchant: false,
+                                    env: .development)
+        client.createToken(108) { result in
+            switch result {
+            case .success(let token):
+                print(token)
+                let client2 = Pokepay.Client(accessToken: "x7wPPW4QQ1wvu93LlP8GSgCIdG2Pic7anH3UO9kdRZPYDs6ym0V_y40TW6iVc-rY",
+                                             env: .development)
+                client2.getTokenInfo(token) { result in
+                    switch result {
+                    case .success(let value):
+                        print(value)
+                        expect.fulfill()
+                    case .failure(let error):
+                        print(error)
+                        expect.fulfill()
+                    }
+                }
+            case .failure(let error):
+                print(error)
+                expect.fulfill()
+            }
+        }
+        waitForExpectations(timeout: 5.0, handler: nil)
+    }
+
     func testScanToken() {
         let expect = expectation(description: "client.scanToken")
         let client = Pokepay.Client(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr",
@@ -187,6 +216,7 @@ AQIDAQAB
       ("testAddPublicKey", testAddPublicKey),
       ("testCreateToken", testCreateToken),
       ("testClientGetTerminal", testClientGetTerminal),
+      ("testGetTokenInfo", testGetTokenInfo),
       ("testScanToken", testScanToken),
       ("testAuthorizationUrl", testAuthorizationUrl),
       ("testGetAccessToken", testGetAccessToken),
