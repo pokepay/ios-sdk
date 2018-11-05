@@ -8,6 +8,71 @@
 
 /* Begin PBXBuildFile section */
 		DF6B304A216F4679007E2B4C /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2F1E216F4678007E2B4C /* Makefile */; };
+		DF831E7F2190A76F00AC3C5A /* OAuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E322190A76F00AC3C5A /* OAuthAPI.swift */; };
+		DF831E802190A76F00AC3C5A /* RefreshAccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E352190A76F00AC3C5A /* RefreshAccessToken.swift */; };
+		DF831E812190A76F00AC3C5A /* ExchangeAuthCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E362190A76F00AC3C5A /* ExchangeAuthCode.swift */; };
+		DF831E822190A76F00AC3C5A /* OAuthAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E372190A76F00AC3C5A /* OAuthAPIError.swift */; };
+		DF831E832190A76F00AC3C5A /* OAuthEnvRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E382190A76F00AC3C5A /* OAuthEnvRequest.swift */; };
+		DF831E842190A76F00AC3C5A /* OAuthAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E392190A76F00AC3C5A /* OAuthAPIRequest.swift */; };
+		DF831E852190A76F00AC3C5A /* AccountBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E3B2190A76F00AC3C5A /* AccountBalance.swift */; };
+		DF831E862190A76F00AC3C5A /* NoContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E3C2190A76F00AC3C5A /* NoContent.swift */; };
+		DF831E872190A76F00AC3C5A /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E3D2190A76F00AC3C5A /* Error.swift */; };
+		DF831E882190A76F00AC3C5A /* Terminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E3E2190A76F00AC3C5A /* Terminal.swift */; };
+		DF831E892190A76F00AC3C5A /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E3F2190A76F00AC3C5A /* AccessToken.swift */; };
+		DF831E8A2190A76F00AC3C5A /* PaginatedAccountBalances.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E402190A76F00AC3C5A /* PaginatedAccountBalances.swift */; };
+		DF831E8B2190A76F00AC3C5A /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E412190A76F00AC3C5A /* Organization.swift */; };
+		DF831E8C2190A76F00AC3C5A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E422190A76F00AC3C5A /* User.swift */; };
+		DF831E8D2190A76F00AC3C5A /* Cashtray.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E432190A76F00AC3C5A /* Cashtray.swift */; };
+		DF831E8E2190A76F00AC3C5A /* PaginatedTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E442190A76F00AC3C5A /* PaginatedTransactions.swift */; };
+		DF831E8F2190A76F00AC3C5A /* Check.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E452190A76F00AC3C5A /* Check.swift */; };
+		DF831E902190A76F00AC3C5A /* PaginatedPrivateMoneys.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E462190A76F00AC3C5A /* PaginatedPrivateMoneys.swift */; };
+		DF831E912190A76F00AC3C5A /* UserTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E472190A76F00AC3C5A /* UserTransaction.swift */; };
+		DF831E922190A76F00AC3C5A /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E482190A76F00AC3C5A /* Bill.swift */; };
+		DF831E932190A76F00AC3C5A /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E492190A76F00AC3C5A /* Account.swift */; };
+		DF831E942190A76F00AC3C5A /* PrivateMoney.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E4A2190A76F00AC3C5A /* PrivateMoney.swift */; };
+		DF831E952190A76F00AC3C5A /* PaginatedAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E4B2190A76F00AC3C5A /* PaginatedAccounts.swift */; };
+		DF831E962190A76F00AC3C5A /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E4C2190A76F00AC3C5A /* Env.swift */; };
+		DF831E972190A76F00AC3C5A /* DecodableDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E4D2190A76F00AC3C5A /* DecodableDataParser.swift */; };
+		DF831E982190A76F00AC3C5A /* BankAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E4E2190A76F00AC3C5A /* BankAPI.swift */; };
+		DF831E992190A76F00AC3C5A /* Pokepay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E4F2190A76F00AC3C5A /* Pokepay.swift */; };
+		DF831E9A2190A76F00AC3C5A /* CreateTransactionWithBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E522190A76F00AC3C5A /* CreateTransactionWithBill.swift */; };
+		DF831E9B2190A76F00AC3C5A /* SendToUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E532190A76F00AC3C5A /* SendToUser.swift */; };
+		DF831E9C2190A76F00AC3C5A /* SendToAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E542190A76F00AC3C5A /* SendToAccount.swift */; };
+		DF831E9D2190A76F00AC3C5A /* CreateTransactionWithCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E552190A76F00AC3C5A /* CreateTransactionWithCheck.swift */; };
+		DF831E9E2190A76F00AC3C5A /* CancelTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E562190A76F00AC3C5A /* CancelTransaction.swift */; };
+		DF831E9F2190A76F00AC3C5A /* GetTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E572190A76F00AC3C5A /* GetTransaction.swift */; };
+		DF831EA02190A76F00AC3C5A /* CreateTransactionWithCashtray.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E582190A76F00AC3C5A /* CreateTransactionWithCashtray.swift */; };
+		DF831EA12190A76F00AC3C5A /* CreateTransactionWithJwt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E592190A76F00AC3C5A /* CreateTransactionWithJwt.swift */; };
+		DF831EA22190A76F00AC3C5A /* BankAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E5A2190A76F00AC3C5A /* BankAPIRequest.swift */; };
+		DF831EA32190A76F00AC3C5A /* SearchPrivateMoneys.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E5C2190A76F00AC3C5A /* SearchPrivateMoneys.swift */; };
+		DF831EA42190A76F00AC3C5A /* DeleteBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E5E2190A76F00AC3C5A /* DeleteBill.swift */; };
+		DF831EA52190A76F00AC3C5A /* UpdateBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E5F2190A76F00AC3C5A /* UpdateBill.swift */; };
+		DF831EA62190A76F00AC3C5A /* GetBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E602190A76F00AC3C5A /* GetBill.swift */; };
+		DF831EA72190A76F00AC3C5A /* CreateBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E612190A76F00AC3C5A /* CreateBill.swift */; };
+		DF831EA82190A76F00AC3C5A /* BankAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E622190A76F00AC3C5A /* BankAPIError.swift */; };
+		DF831EA92190A76F00AC3C5A /* GetTerminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E642190A76F00AC3C5A /* GetTerminal.swift */; };
+		DF831EAA2190A76F00AC3C5A /* UpdateTerminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E652190A76F00AC3C5A /* UpdateTerminal.swift */; };
+		DF831EAB2190A76F00AC3C5A /* AddTerminalPublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E662190A76F00AC3C5A /* AddTerminalPublicKey.swift */; };
+		DF831EAC2190A76F00AC3C5A /* UpdateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E682190A76F00AC3C5A /* UpdateUser.swift */; };
+		DF831EAD2190A76F00AC3C5A /* GetUserTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E692190A76F00AC3C5A /* GetUserTransactions.swift */; };
+		DF831EAE2190A76F00AC3C5A /* RegisterUserEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E6A2190A76F00AC3C5A /* RegisterUserEmail.swift */; };
+		DF831EAF2190A76F00AC3C5A /* DeleteUserEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E6B2190A76F00AC3C5A /* DeleteUserEmail.swift */; };
+		DF831EB02190A76F00AC3C5A /* GetUserAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E6C2190A76F00AC3C5A /* GetUserAccounts.swift */; };
+		DF831EB12190A76F00AC3C5A /* SendConfirmationEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E6D2190A76F00AC3C5A /* SendConfirmationEmail.swift */; };
+		DF831EB22190A76F00AC3C5A /* AuthorizedRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E6E2190A76F00AC3C5A /* AuthorizedRequest.swift */; };
+		DF831EB32190A76F00AC3C5A /* GetAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E702190A76F00AC3C5A /* GetAccount.swift */; };
+		DF831EB42190A76F00AC3C5A /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E712190A76F00AC3C5A /* CreateAccount.swift */; };
+		DF831EB52190A76F00AC3C5A /* GetAccountTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E722190A76F00AC3C5A /* GetAccountTransactions.swift */; };
+		DF831EB62190A77000AC3C5A /* GetBalances.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E732190A76F00AC3C5A /* GetBalances.swift */; };
+		DF831EB72190A77000AC3C5A /* GetCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E752190A76F00AC3C5A /* GetCheck.swift */; };
+		DF831EB82190A77000AC3C5A /* CreateCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E762190A76F00AC3C5A /* CreateCheck.swift */; };
+		DF831EB92190A77000AC3C5A /* DeleteCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E772190A76F00AC3C5A /* DeleteCheck.swift */; };
+		DF831EBA2190A77000AC3C5A /* UpdateCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E782190A76F00AC3C5A /* UpdateCheck.swift */; };
+		DF831EBB2190A77000AC3C5A /* UpdateCashtray.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E7A2190A76F00AC3C5A /* UpdateCashtray.swift */; };
+		DF831EBC2190A77000AC3C5A /* GetCashtray.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E7B2190A76F00AC3C5A /* GetCashtray.swift */; };
+		DF831EBD2190A77000AC3C5A /* CreateCashtray.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E7C2190A76F00AC3C5A /* CreateCashtray.swift */; };
+		DF831EBE2190A77000AC3C5A /* DeleteCashtray.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E7D2190A76F00AC3C5A /* DeleteCashtray.swift */; };
+		DF831EBF2190A77000AC3C5A /* RequestProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF831E7E2190A76F00AC3C5A /* RequestProxy.swift */; };
 		DF9BFD5A2190A4B6000BA317 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9BFD592190A4B6000BA317 /* Result.framework */; };
 		DF9BFD5C2190A4C7000BA317 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9BFD5B2190A4C7000BA317 /* APIKit.framework */; };
 /* End PBXBuildFile section */
@@ -31,7 +96,71 @@
 		DF6B2DE5216F4677007E2B4C /* Pokepay.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Pokepay.xcodeproj; sourceTree = "<group>"; };
 		DF6B2F1E216F4678007E2B4C /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		DF6B2F1F216F4678007E2B4C /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
-		DF7FECE62190904A001F30B4 /* Sources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sources; sourceTree = "<group>"; };
+		DF831E322190A76F00AC3C5A /* OAuthAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthAPI.swift; sourceTree = "<group>"; };
+		DF831E352190A76F00AC3C5A /* RefreshAccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshAccessToken.swift; sourceTree = "<group>"; };
+		DF831E362190A76F00AC3C5A /* ExchangeAuthCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeAuthCode.swift; sourceTree = "<group>"; };
+		DF831E372190A76F00AC3C5A /* OAuthAPIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthAPIError.swift; sourceTree = "<group>"; };
+		DF831E382190A76F00AC3C5A /* OAuthEnvRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthEnvRequest.swift; sourceTree = "<group>"; };
+		DF831E392190A76F00AC3C5A /* OAuthAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthAPIRequest.swift; sourceTree = "<group>"; };
+		DF831E3B2190A76F00AC3C5A /* AccountBalance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBalance.swift; sourceTree = "<group>"; };
+		DF831E3C2190A76F00AC3C5A /* NoContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoContent.swift; sourceTree = "<group>"; };
+		DF831E3D2190A76F00AC3C5A /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		DF831E3E2190A76F00AC3C5A /* Terminal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Terminal.swift; sourceTree = "<group>"; };
+		DF831E3F2190A76F00AC3C5A /* AccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
+		DF831E402190A76F00AC3C5A /* PaginatedAccountBalances.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginatedAccountBalances.swift; sourceTree = "<group>"; };
+		DF831E412190A76F00AC3C5A /* Organization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
+		DF831E422190A76F00AC3C5A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DF831E432190A76F00AC3C5A /* Cashtray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cashtray.swift; sourceTree = "<group>"; };
+		DF831E442190A76F00AC3C5A /* PaginatedTransactions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginatedTransactions.swift; sourceTree = "<group>"; };
+		DF831E452190A76F00AC3C5A /* Check.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Check.swift; sourceTree = "<group>"; };
+		DF831E462190A76F00AC3C5A /* PaginatedPrivateMoneys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginatedPrivateMoneys.swift; sourceTree = "<group>"; };
+		DF831E472190A76F00AC3C5A /* UserTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTransaction.swift; sourceTree = "<group>"; };
+		DF831E482190A76F00AC3C5A /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
+		DF831E492190A76F00AC3C5A /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		DF831E4A2190A76F00AC3C5A /* PrivateMoney.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateMoney.swift; sourceTree = "<group>"; };
+		DF831E4B2190A76F00AC3C5A /* PaginatedAccounts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginatedAccounts.swift; sourceTree = "<group>"; };
+		DF831E4C2190A76F00AC3C5A /* Env.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
+		DF831E4D2190A76F00AC3C5A /* DecodableDataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodableDataParser.swift; sourceTree = "<group>"; };
+		DF831E4E2190A76F00AC3C5A /* BankAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankAPI.swift; sourceTree = "<group>"; };
+		DF831E4F2190A76F00AC3C5A /* Pokepay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokepay.swift; sourceTree = "<group>"; };
+		DF831E522190A76F00AC3C5A /* CreateTransactionWithBill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTransactionWithBill.swift; sourceTree = "<group>"; };
+		DF831E532190A76F00AC3C5A /* SendToUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendToUser.swift; sourceTree = "<group>"; };
+		DF831E542190A76F00AC3C5A /* SendToAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendToAccount.swift; sourceTree = "<group>"; };
+		DF831E552190A76F00AC3C5A /* CreateTransactionWithCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTransactionWithCheck.swift; sourceTree = "<group>"; };
+		DF831E562190A76F00AC3C5A /* CancelTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelTransaction.swift; sourceTree = "<group>"; };
+		DF831E572190A76F00AC3C5A /* GetTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTransaction.swift; sourceTree = "<group>"; };
+		DF831E582190A76F00AC3C5A /* CreateTransactionWithCashtray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTransactionWithCashtray.swift; sourceTree = "<group>"; };
+		DF831E592190A76F00AC3C5A /* CreateTransactionWithJwt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTransactionWithJwt.swift; sourceTree = "<group>"; };
+		DF831E5A2190A76F00AC3C5A /* BankAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankAPIRequest.swift; sourceTree = "<group>"; };
+		DF831E5C2190A76F00AC3C5A /* SearchPrivateMoneys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPrivateMoneys.swift; sourceTree = "<group>"; };
+		DF831E5E2190A76F00AC3C5A /* DeleteBill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteBill.swift; sourceTree = "<group>"; };
+		DF831E5F2190A76F00AC3C5A /* UpdateBill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateBill.swift; sourceTree = "<group>"; };
+		DF831E602190A76F00AC3C5A /* GetBill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBill.swift; sourceTree = "<group>"; };
+		DF831E612190A76F00AC3C5A /* CreateBill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateBill.swift; sourceTree = "<group>"; };
+		DF831E622190A76F00AC3C5A /* BankAPIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankAPIError.swift; sourceTree = "<group>"; };
+		DF831E642190A76F00AC3C5A /* GetTerminal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTerminal.swift; sourceTree = "<group>"; };
+		DF831E652190A76F00AC3C5A /* UpdateTerminal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTerminal.swift; sourceTree = "<group>"; };
+		DF831E662190A76F00AC3C5A /* AddTerminalPublicKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTerminalPublicKey.swift; sourceTree = "<group>"; };
+		DF831E682190A76F00AC3C5A /* UpdateUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUser.swift; sourceTree = "<group>"; };
+		DF831E692190A76F00AC3C5A /* GetUserTransactions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserTransactions.swift; sourceTree = "<group>"; };
+		DF831E6A2190A76F00AC3C5A /* RegisterUserEmail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterUserEmail.swift; sourceTree = "<group>"; };
+		DF831E6B2190A76F00AC3C5A /* DeleteUserEmail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteUserEmail.swift; sourceTree = "<group>"; };
+		DF831E6C2190A76F00AC3C5A /* GetUserAccounts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserAccounts.swift; sourceTree = "<group>"; };
+		DF831E6D2190A76F00AC3C5A /* SendConfirmationEmail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendConfirmationEmail.swift; sourceTree = "<group>"; };
+		DF831E6E2190A76F00AC3C5A /* AuthorizedRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizedRequest.swift; sourceTree = "<group>"; };
+		DF831E702190A76F00AC3C5A /* GetAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAccount.swift; sourceTree = "<group>"; };
+		DF831E712190A76F00AC3C5A /* CreateAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
+		DF831E722190A76F00AC3C5A /* GetAccountTransactions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAccountTransactions.swift; sourceTree = "<group>"; };
+		DF831E732190A76F00AC3C5A /* GetBalances.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBalances.swift; sourceTree = "<group>"; };
+		DF831E752190A76F00AC3C5A /* GetCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCheck.swift; sourceTree = "<group>"; };
+		DF831E762190A76F00AC3C5A /* CreateCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCheck.swift; sourceTree = "<group>"; };
+		DF831E772190A76F00AC3C5A /* DeleteCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteCheck.swift; sourceTree = "<group>"; };
+		DF831E782190A76F00AC3C5A /* UpdateCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateCheck.swift; sourceTree = "<group>"; };
+		DF831E7A2190A76F00AC3C5A /* UpdateCashtray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateCashtray.swift; sourceTree = "<group>"; };
+		DF831E7B2190A76F00AC3C5A /* GetCashtray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCashtray.swift; sourceTree = "<group>"; };
+		DF831E7C2190A76F00AC3C5A /* CreateCashtray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCashtray.swift; sourceTree = "<group>"; };
+		DF831E7D2190A76F00AC3C5A /* DeleteCashtray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteCashtray.swift; sourceTree = "<group>"; };
+		DF831E7E2190A76F00AC3C5A /* RequestProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProxy.swift; sourceTree = "<group>"; };
 		DF86A17C216F637600FCD979 /* Pokepay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pokepay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF86A17D216F637600FCD979 /* PokepayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokepayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF9BFD592190A4B6000BA317 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
@@ -72,6 +201,182 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		DF831E302190A76F00AC3C5A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				DF831E312190A76F00AC3C5A /* Pokepay */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		DF831E312190A76F00AC3C5A /* Pokepay */ = {
+			isa = PBXGroup;
+			children = (
+				DF831E322190A76F00AC3C5A /* OAuthAPI.swift */,
+				DF831E332190A76F00AC3C5A /* OAuthAPI */,
+				DF831E3A2190A76F00AC3C5A /* Responses */,
+				DF831E4C2190A76F00AC3C5A /* Env.swift */,
+				DF831E4D2190A76F00AC3C5A /* DecodableDataParser.swift */,
+				DF831E4E2190A76F00AC3C5A /* BankAPI.swift */,
+				DF831E4F2190A76F00AC3C5A /* Pokepay.swift */,
+				DF831E502190A76F00AC3C5A /* BankAPI */,
+				DF831E7E2190A76F00AC3C5A /* RequestProxy.swift */,
+			);
+			path = Pokepay;
+			sourceTree = "<group>";
+		};
+		DF831E332190A76F00AC3C5A /* OAuthAPI */ = {
+			isa = PBXGroup;
+			children = (
+				DF831E342190A76F00AC3C5A /* Token */,
+				DF831E372190A76F00AC3C5A /* OAuthAPIError.swift */,
+				DF831E382190A76F00AC3C5A /* OAuthEnvRequest.swift */,
+				DF831E392190A76F00AC3C5A /* OAuthAPIRequest.swift */,
+			);
+			path = OAuthAPI;
+			sourceTree = "<group>";
+		};
+		DF831E342190A76F00AC3C5A /* Token */ = {
+			isa = PBXGroup;
+			children = (
+				DF831E352190A76F00AC3C5A /* RefreshAccessToken.swift */,
+				DF831E362190A76F00AC3C5A /* ExchangeAuthCode.swift */,
+			);
+			path = Token;
+			sourceTree = "<group>";
+		};
+		DF831E3A2190A76F00AC3C5A /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				DF831E3B2190A76F00AC3C5A /* AccountBalance.swift */,
+				DF831E3C2190A76F00AC3C5A /* NoContent.swift */,
+				DF831E3D2190A76F00AC3C5A /* Error.swift */,
+				DF831E3E2190A76F00AC3C5A /* Terminal.swift */,
+				DF831E3F2190A76F00AC3C5A /* AccessToken.swift */,
+				DF831E402190A76F00AC3C5A /* PaginatedAccountBalances.swift */,
+				DF831E412190A76F00AC3C5A /* Organization.swift */,
+				DF831E422190A76F00AC3C5A /* User.swift */,
+				DF831E432190A76F00AC3C5A /* Cashtray.swift */,
+				DF831E442190A76F00AC3C5A /* PaginatedTransactions.swift */,
+				DF831E452190A76F00AC3C5A /* Check.swift */,
+				DF831E462190A76F00AC3C5A /* PaginatedPrivateMoneys.swift */,
+				DF831E472190A76F00AC3C5A /* UserTransaction.swift */,
+				DF831E482190A76F00AC3C5A /* Bill.swift */,
+				DF831E492190A76F00AC3C5A /* Account.swift */,
+				DF831E4A2190A76F00AC3C5A /* PrivateMoney.swift */,
+				DF831E4B2190A76F00AC3C5A /* PaginatedAccounts.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		DF831E502190A76F00AC3C5A /* BankAPI */ = {
+			isa = PBXGroup;
+			children = (
+				DF831E512190A76F00AC3C5A /* Transaction */,
+				DF831E5A2190A76F00AC3C5A /* BankAPIRequest.swift */,
+				DF831E5B2190A76F00AC3C5A /* PrivateMoney */,
+				DF831E5D2190A76F00AC3C5A /* Bill */,
+				DF831E622190A76F00AC3C5A /* BankAPIError.swift */,
+				DF831E632190A76F00AC3C5A /* Terminal */,
+				DF831E672190A76F00AC3C5A /* User */,
+				DF831E6E2190A76F00AC3C5A /* AuthorizedRequest.swift */,
+				DF831E6F2190A76F00AC3C5A /* Account */,
+				DF831E742190A76F00AC3C5A /* Check */,
+				DF831E792190A76F00AC3C5A /* Cashtray */,
+			);
+			path = BankAPI;
+			sourceTree = "<group>";
+		};
+		DF831E512190A76F00AC3C5A /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				DF831E522190A76F00AC3C5A /* CreateTransactionWithBill.swift */,
+				DF831E532190A76F00AC3C5A /* SendToUser.swift */,
+				DF831E542190A76F00AC3C5A /* SendToAccount.swift */,
+				DF831E552190A76F00AC3C5A /* CreateTransactionWithCheck.swift */,
+				DF831E562190A76F00AC3C5A /* CancelTransaction.swift */,
+				DF831E572190A76F00AC3C5A /* GetTransaction.swift */,
+				DF831E582190A76F00AC3C5A /* CreateTransactionWithCashtray.swift */,
+				DF831E592190A76F00AC3C5A /* CreateTransactionWithJwt.swift */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		DF831E5B2190A76F00AC3C5A /* PrivateMoney */ = {
+			isa = PBXGroup;
+			children = (
+				DF831E5C2190A76F00AC3C5A /* SearchPrivateMoneys.swift */,
+			);
+			path = PrivateMoney;
+			sourceTree = "<group>";
+		};
+		DF831E5D2190A76F00AC3C5A /* Bill */ = {
+			isa = PBXGroup;
+			children = (
+				DF831E5E2190A76F00AC3C5A /* DeleteBill.swift */,
+				DF831E5F2190A76F00AC3C5A /* UpdateBill.swift */,
+				DF831E602190A76F00AC3C5A /* GetBill.swift */,
+				DF831E612190A76F00AC3C5A /* CreateBill.swift */,
+			);
+			path = Bill;
+			sourceTree = "<group>";
+		};
+		DF831E632190A76F00AC3C5A /* Terminal */ = {
+			isa = PBXGroup;
+			children = (
+				DF831E642190A76F00AC3C5A /* GetTerminal.swift */,
+				DF831E652190A76F00AC3C5A /* UpdateTerminal.swift */,
+				DF831E662190A76F00AC3C5A /* AddTerminalPublicKey.swift */,
+			);
+			path = Terminal;
+			sourceTree = "<group>";
+		};
+		DF831E672190A76F00AC3C5A /* User */ = {
+			isa = PBXGroup;
+			children = (
+				DF831E682190A76F00AC3C5A /* UpdateUser.swift */,
+				DF831E692190A76F00AC3C5A /* GetUserTransactions.swift */,
+				DF831E6A2190A76F00AC3C5A /* RegisterUserEmail.swift */,
+				DF831E6B2190A76F00AC3C5A /* DeleteUserEmail.swift */,
+				DF831E6C2190A76F00AC3C5A /* GetUserAccounts.swift */,
+				DF831E6D2190A76F00AC3C5A /* SendConfirmationEmail.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		DF831E6F2190A76F00AC3C5A /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				DF831E702190A76F00AC3C5A /* GetAccount.swift */,
+				DF831E712190A76F00AC3C5A /* CreateAccount.swift */,
+				DF831E722190A76F00AC3C5A /* GetAccountTransactions.swift */,
+				DF831E732190A76F00AC3C5A /* GetBalances.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		DF831E742190A76F00AC3C5A /* Check */ = {
+			isa = PBXGroup;
+			children = (
+				DF831E752190A76F00AC3C5A /* GetCheck.swift */,
+				DF831E762190A76F00AC3C5A /* CreateCheck.swift */,
+				DF831E772190A76F00AC3C5A /* DeleteCheck.swift */,
+				DF831E782190A76F00AC3C5A /* UpdateCheck.swift */,
+			);
+			path = Check;
+			sourceTree = "<group>";
+		};
+		DF831E792190A76F00AC3C5A /* Cashtray */ = {
+			isa = PBXGroup;
+			children = (
+				DF831E7A2190A76F00AC3C5A /* UpdateCashtray.swift */,
+				DF831E7B2190A76F00AC3C5A /* GetCashtray.swift */,
+				DF831E7C2190A76F00AC3C5A /* CreateCashtray.swift */,
+				DF831E7D2190A76F00AC3C5A /* DeleteCashtray.swift */,
+			);
+			path = Cashtray;
+			sourceTree = "<group>";
+		};
 		DF9BFD582190A4B5000BA317 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,7 +396,7 @@
 				DF6B2F1E216F4678007E2B4C /* Makefile */,
 				DF6B2DE5216F4677007E2B4C /* Pokepay.xcodeproj */,
 				DF6B2D98216F4677007E2B4C /* README.md */,
-				DF7FECE62190904A001F30B4 /* Sources */,
+				DF831E302190A76F00AC3C5A /* Sources */,
 				DF86A17C216F637600FCD979 /* Pokepay.framework */,
 				DF86A17D216F637600FCD979 /* PokepayTests.xctest */,
 				DF9BFD582190A4B5000BA317 /* Frameworks */,
@@ -179,6 +484,71 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				DF831E9C2190A76F00AC3C5A /* SendToAccount.swift in Sources */,
+				DF831EBE2190A77000AC3C5A /* DeleteCashtray.swift in Sources */,
+				DF831EAF2190A76F00AC3C5A /* DeleteUserEmail.swift in Sources */,
+				DF831EA12190A76F00AC3C5A /* CreateTransactionWithJwt.swift in Sources */,
+				DF831E832190A76F00AC3C5A /* OAuthEnvRequest.swift in Sources */,
+				DF831E882190A76F00AC3C5A /* Terminal.swift in Sources */,
+				DF831E8B2190A76F00AC3C5A /* Organization.swift in Sources */,
+				DF831E9A2190A76F00AC3C5A /* CreateTransactionWithBill.swift in Sources */,
+				DF831EA02190A76F00AC3C5A /* CreateTransactionWithCashtray.swift in Sources */,
+				DF831E9D2190A76F00AC3C5A /* CreateTransactionWithCheck.swift in Sources */,
+				DF831E992190A76F00AC3C5A /* Pokepay.swift in Sources */,
+				DF831EA42190A76F00AC3C5A /* DeleteBill.swift in Sources */,
+				DF831EB02190A76F00AC3C5A /* GetUserAccounts.swift in Sources */,
+				DF831E852190A76F00AC3C5A /* AccountBalance.swift in Sources */,
+				DF831EB62190A77000AC3C5A /* GetBalances.swift in Sources */,
+				DF831EB82190A77000AC3C5A /* CreateCheck.swift in Sources */,
+				DF831E862190A76F00AC3C5A /* NoContent.swift in Sources */,
+				DF831E7F2190A76F00AC3C5A /* OAuthAPI.swift in Sources */,
+				DF831EBA2190A77000AC3C5A /* UpdateCheck.swift in Sources */,
+				DF831EB12190A76F00AC3C5A /* SendConfirmationEmail.swift in Sources */,
+				DF831E902190A76F00AC3C5A /* PaginatedPrivateMoneys.swift in Sources */,
+				DF831E8C2190A76F00AC3C5A /* User.swift in Sources */,
+				DF831EA22190A76F00AC3C5A /* BankAPIRequest.swift in Sources */,
+				DF831E842190A76F00AC3C5A /* OAuthAPIRequest.swift in Sources */,
+				DF831EBC2190A77000AC3C5A /* GetCashtray.swift in Sources */,
+				DF831E9F2190A76F00AC3C5A /* GetTransaction.swift in Sources */,
+				DF831E8D2190A76F00AC3C5A /* Cashtray.swift in Sources */,
+				DF831EAB2190A76F00AC3C5A /* AddTerminalPublicKey.swift in Sources */,
+				DF831EA62190A76F00AC3C5A /* GetBill.swift in Sources */,
+				DF831EBF2190A77000AC3C5A /* RequestProxy.swift in Sources */,
+				DF831EA32190A76F00AC3C5A /* SearchPrivateMoneys.swift in Sources */,
+				DF831EB42190A76F00AC3C5A /* CreateAccount.swift in Sources */,
+				DF831E8F2190A76F00AC3C5A /* Check.swift in Sources */,
+				DF831E912190A76F00AC3C5A /* UserTransaction.swift in Sources */,
+				DF831E952190A76F00AC3C5A /* PaginatedAccounts.swift in Sources */,
+				DF831EBD2190A77000AC3C5A /* CreateCashtray.swift in Sources */,
+				DF831E972190A76F00AC3C5A /* DecodableDataParser.swift in Sources */,
+				DF831E982190A76F00AC3C5A /* BankAPI.swift in Sources */,
+				DF831E812190A76F00AC3C5A /* ExchangeAuthCode.swift in Sources */,
+				DF831EB32190A76F00AC3C5A /* GetAccount.swift in Sources */,
+				DF831E9B2190A76F00AC3C5A /* SendToUser.swift in Sources */,
+				DF831EA72190A76F00AC3C5A /* CreateBill.swift in Sources */,
+				DF831EAE2190A76F00AC3C5A /* RegisterUserEmail.swift in Sources */,
+				DF831EB52190A76F00AC3C5A /* GetAccountTransactions.swift in Sources */,
+				DF831E802190A76F00AC3C5A /* RefreshAccessToken.swift in Sources */,
+				DF831EB72190A77000AC3C5A /* GetCheck.swift in Sources */,
+				DF831EAC2190A76F00AC3C5A /* UpdateUser.swift in Sources */,
+				DF831E942190A76F00AC3C5A /* PrivateMoney.swift in Sources */,
+				DF831EBB2190A77000AC3C5A /* UpdateCashtray.swift in Sources */,
+				DF831EA52190A76F00AC3C5A /* UpdateBill.swift in Sources */,
+				DF831E8A2190A76F00AC3C5A /* PaginatedAccountBalances.swift in Sources */,
+				DF831EB92190A77000AC3C5A /* DeleteCheck.swift in Sources */,
+				DF831EA82190A76F00AC3C5A /* BankAPIError.swift in Sources */,
+				DF831EAA2190A76F00AC3C5A /* UpdateTerminal.swift in Sources */,
+				DF831E8E2190A76F00AC3C5A /* PaginatedTransactions.swift in Sources */,
+				DF831E922190A76F00AC3C5A /* Bill.swift in Sources */,
+				DF831E872190A76F00AC3C5A /* Error.swift in Sources */,
+				DF831E822190A76F00AC3C5A /* OAuthAPIError.swift in Sources */,
+				DF831E962190A76F00AC3C5A /* Env.swift in Sources */,
+				DF831E892190A76F00AC3C5A /* AccessToken.swift in Sources */,
+				DF831E9E2190A76F00AC3C5A /* CancelTransaction.swift in Sources */,
+				DF831EAD2190A76F00AC3C5A /* GetUserTransactions.swift in Sources */,
+				DF831E932190A76F00AC3C5A /* Account.swift in Sources */,
+				DF831EB22190A76F00AC3C5A /* AuthorizedRequest.swift in Sources */,
+				DF831EA92190A76F00AC3C5A /* GetTerminal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +647,7 @@
 		OBJ_245 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -307,6 +678,7 @@
 		OBJ_246 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
