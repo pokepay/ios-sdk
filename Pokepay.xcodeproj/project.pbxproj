@@ -83,6 +83,7 @@
 		DF9982C42186AECB00A1FD71 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9982B32186AECB00A1FD71 /* Account.swift */; };
 		DF9982C52186AECB00A1FD71 /* PrivateMoney.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9982B42186AECB00A1FD71 /* PrivateMoney.swift */; };
 		DF9982C62186AECB00A1FD71 /* PaginatedAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9982B52186AECB00A1FD71 /* PaginatedAccounts.swift */; };
+		DFAA9A2321902A9B00971522 /* RefreshAccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAA9A2221902A9B00971522 /* RefreshAccessToken.swift */; };
 		DFAD197D2189860E0081BE39 /* PaginatedMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAD197A2189860E0081BE39 /* PaginatedMessages.swift */; };
 		DFAD197E2189860E0081BE39 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAD197B2189860E0081BE39 /* Message.swift */; };
 		DFAD197F2189860E0081BE39 /* MessageAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAD197C2189860E0081BE39 /* MessageAttachment.swift */; };
@@ -175,6 +176,7 @@
 		DF9982B32186AECB00A1FD71 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		DF9982B42186AECB00A1FD71 /* PrivateMoney.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateMoney.swift; sourceTree = "<group>"; };
 		DF9982B52186AECB00A1FD71 /* PaginatedAccounts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginatedAccounts.swift; sourceTree = "<group>"; };
+		DFAA9A2221902A9B00971522 /* RefreshAccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshAccessToken.swift; sourceTree = "<group>"; };
 		DFAD197A2189860E0081BE39 /* PaginatedMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaginatedMessages.swift; path = Sources/Pokepay/Responses/PaginatedMessages.swift; sourceTree = SOURCE_ROOT; };
 		DFAD197B2189860E0081BE39 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Sources/Pokepay/Responses/Message.swift; sourceTree = SOURCE_ROOT; };
 		DFAD197C2189860E0081BE39 /* MessageAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageAttachment.swift; path = Sources/Pokepay/Responses/MessageAttachment.swift; sourceTree = SOURCE_ROOT; };
@@ -245,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				DF6B2D9E216F4677007E2B4C /* ExchangeAuthCode.swift */,
+				DFAA9A2221902A9B00971522 /* RefreshAccessToken.swift */,
 			);
 			path = Token;
 			sourceTree = "<group>";
@@ -591,6 +594,7 @@
 				DF9982C62186AECB00A1FD71 /* PaginatedAccounts.swift in Sources */,
 				DFAD197E2189860E0081BE39 /* Message.swift in Sources */,
 				DF9982942186AE7900A1FD71 /* DeleteUserEmail.swift in Sources */,
+				DFAA9A2321902A9B00971522 /* RefreshAccessToken.swift in Sources */,
 				DF99828F2186AE7900A1FD71 /* UpdateTerminal.swift in Sources */,
 				DF6B2F27216F4678007E2B4C /* OAuthEnvRequest.swift in Sources */,
 				DF99828B2186AE7900A1FD71 /* GetBill.swift in Sources */,
