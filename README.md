@@ -41,7 +41,7 @@ client.scanToken("https://www.pokepay.jp/cashtrays/dc204118-9e3b-493c-b396-b9259
 
 ## Authorization
 
-Pocket Change Pay API provides OAuth for authentication of third-party applications.
+Pokepay API provides OAuth authentication for third-party applications.
 
 1. Open Authorization URL in Web browser (like Safari or WKWebView)
 
@@ -51,7 +51,7 @@ let url = oauth.getAuthorizationUrl()
 // => https://www.pokepay.jp/oauth/authorize?client_id=xxxxxxxxxxx&response_type=code
 ```
 
-2. Wait for the user to authorize your app on Pocket Change Pay
+2. Wait for the user to authorize your app on Pokepay's Web page.
 3. Browser redirects to the app with authorization code
 4. Exchange the authorization code for an access token
 
@@ -73,7 +73,7 @@ oauth.refreshAccessToken(refreshToken: accessToken.refreshToken)
 // => AccessToken(accessToken: "gtSn683mul_FFaMlB2jLyOyK-6LJ-u3Qiv-Iiy6cGoJZyKD242xe29BTHEYXXaqj", refreshToken: "-YvJULJ5rEhQ0fY86t80", tokenType: "Bearer", expiresIn: 2591999)
 ```
 
-Refresh tokens can be used only once. Don't forget to update the refresh token again after reauthentication.
+Refresh tokens can be used only once. Be sure to update the refresh token after reauthentication.
 
 ## APIs
 
@@ -81,12 +81,12 @@ Refresh tokens can be used only once. Don't forget to update the refresh token a
 
 #### Options
 
-- `accessToken` (String): An access token to request Pocket Change Pay APIs.
-- `isMerchant` (Bool): A flag for accessing as a merchant account. (It should be an error if the access token isn't for merchant one.)
+- `accessToken` (String): An access token to request Pokepay APIs.
+- `isMerchant` (Bool): A flag whether access as a merchant. (It should be an error if the access token isn't for merchant one.)
 
 ### [Method] Client.getTerminalInfo
 
-Get a `Terminal` informations about the accessing terminal.
+Get the accessing `Terminal` informations.
 
 ### [Method] Client.scanToken(_ token: String, amount: Double? = nil)
 
@@ -155,18 +155,16 @@ client.send(BankAPI.Terminal.Get()) { result in
 github "pokepay/ios-sdk"
 ```
 
+### CocoaPods
+
+```
+pod 'Pokepay'
+```
+
 ## Dependencies
 
 * Swift 4.0
 * [APIKit](https://github.com/ishkawa/APIKit)
-
-## Development Note
-
-### Building HTML documents
-
-```
-$ make docs
-```
 
 ## Copyright
 
