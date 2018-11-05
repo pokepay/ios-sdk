@@ -6,7 +6,8 @@ iOS SDK for Pocket Change Pay (https://pay.pocket-change.jp).
 
 ```swift
 let client = Pokepay.Client(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr",
-                            isMerchant: true)
+                            isMerchant: true,
+                            env: .production)
 
 client.getTerminalInfo() { result in
     switch result {
@@ -37,6 +38,19 @@ client.scanToken("https://www.pokepay.jp/cashtrays/dc204118-9e3b-493c-b396-b9259
         print(error)
     }
 }
+```
+
+## Environments
+
+Pokepay APIs have multiple server environments for isolation between development ones and production ones. `Pokepay.Client` (and `Pokepay.OAuthClient`) takes `:env` argument to switch which environment to use.
+
+```swift
+// Sandbox (default)
+let client = Pokepay.Client(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr",
+                            env: .sandbox)
+// Production
+let client = Pokepay.Client(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr",
+                            env: .production)
 ```
 
 ## Authorization
