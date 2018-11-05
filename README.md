@@ -60,7 +60,7 @@ Pokepay API provides OAuth authentication for third-party applications.
 1. Open Authorization URL in Web browser (like Safari or WKWebView)
 
 ```swift
-let oauth = Pokepay.OAuthClient(clientId: clientId, clientSecret: clientSecret)
+let oauth = Pokepay.OAuthClient(clientId: clientId, clientSecret: clientSecret, env: .production)
 let url = oauth.getAuthorizationUrl()
 // => https://www.pokepay.jp/oauth/authorize?client_id=xxxxxxxxxxx&response_type=code
 ```
@@ -97,6 +97,11 @@ Refresh tokens can be used only once. Be sure to update the refresh token after 
 
 - `accessToken` (String): An access token to request Pokepay APIs.
 - `isMerchant` (Bool): A flag whether access as a merchant. (It should be an error if the access token isn't for merchant one.)
+- `env` (Environment Enum): A enum value to specify which environment to use.
+
+### [Method] Client.send(_ request: Request)
+
+Send an HTTP request to APIs and get the response as an object. See [Send requests with Request objects](#Send-requests-with-Request-objects) for details.
 
 ### [Method] Client.getTerminalInfo
 
@@ -110,13 +115,38 @@ Scan a token and make a new transaction via Bank APIs.
 
 Make a new token for sending/receiving money, which can be done with `scanToken`.
 
-## BankAPI Requests
+### [Method] Client.getTokenInfo(_ token: String)
 
-All HTTP requests to Bank RESTful APIs also can be done with APIKit and request structures defined under `BankAPI` (See Sources/Pokepay/BankAPI/).
+Get informations of the `token` which is created by `createToken` or read with `scanToken`. The result type could be one of `Bill`, `Check` or `Cashtray`.
+
+### [Class] Pokepay.OAuthClient
+
+#### Options
+
+- `clientId` (String): OAuth client ID
+- `clientSecret`: OAuth client secret
+- `env` (Environment Enum): A enum value to specify which environment to use.
+
+### [Method] OAuthClient.getAuthorizationUrl() -> String
+
+Get the OAuth authorization URL to open with an external browser. (ex. https://www.pokepay.jp/oauth/authorize?client_id=xxxxxxxx&response_type=code)
+
+### [Method] OAuthClient.getAccessToken(code: String)
+
+Exchange authorization code, a string in redirection URL, with an access token.
+
+### [Method] OAuthClient.refreshAccessToken(refreshToken: String)
+
+Issue a new access token with a refresh token.
+
+## Send requests with Request objects
+
+All HTTP requests to RESTful APIs also can be done with request structures defined under `BankAPI` (See Sources/Pokepay/BankAPI/).
 
 ```swift
 import Pokepay
 
+// Same as Client.getTerminalInfo
 let client = Pokepay.Client(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr")
 client.send(BankAPI.Terminal.Get()) { result in
     switch result {
