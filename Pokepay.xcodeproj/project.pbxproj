@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DF6B3049216F4679007E2B4C /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2F1E216F4678007E2B4C /* Makefile */; };
 		DF6B304A216F4679007E2B4C /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2F1E216F4678007E2B4C /* Makefile */; };
+		DF9BFD5A2190A4B6000BA317 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9BFD592190A4B6000BA317 /* Result.framework */; };
+		DF9BFD5C2190A4C7000BA317 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9BFD5B2190A4C7000BA317 /* APIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,8 @@
 		DF7FECE62190904A001F30B4 /* Sources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sources; sourceTree = "<group>"; };
 		DF86A17C216F637600FCD979 /* Pokepay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pokepay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF86A17D216F637600FCD979 /* PokepayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokepayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF9BFD592190A4B6000BA317 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		DF9BFD5B2190A4C7000BA317 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
+				DF9BFD5C2190A4C7000BA317 /* APIKit.framework in Frameworks */,
+				DF9BFD5A2190A4B6000BA317 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +72,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		DF9BFD582190A4B5000BA317 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF9BFD5B2190A4C7000BA317 /* APIKit.framework */,
+				DF9BFD592190A4B6000BA317 /* Result.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +94,7 @@
 				DF7FECE62190904A001F30B4 /* Sources */,
 				DF86A17C216F637600FCD979 /* Pokepay.framework */,
 				DF86A17D216F637600FCD979 /* PokepayTests.xctest */,
+				DF9BFD582190A4B5000BA317 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,7 +107,6 @@
 			buildPhases = (
 				OBJ_168 /* Sources */,
 				OBJ_227 /* Frameworks */,
-				DFD43440216F3C6500B4E006 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -160,36 +174,11 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		DFD43440216F3C6500B4E006 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/APIKit.framework",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/APIKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		OBJ_168 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				DF6B3049216F4679007E2B4C /* Makefile in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
