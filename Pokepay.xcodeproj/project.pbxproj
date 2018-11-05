@@ -83,6 +83,7 @@
 		DF9982C42186AECB00A1FD71 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9982B32186AECB00A1FD71 /* Account.swift */; };
 		DF9982C52186AECB00A1FD71 /* PrivateMoney.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9982B42186AECB00A1FD71 /* PrivateMoney.swift */; };
 		DF9982C62186AECB00A1FD71 /* PaginatedAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9982B52186AECB00A1FD71 /* PaginatedAccounts.swift */; };
+		DFAA9A1D21901FC100971522 /* RefreshAccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAA9A1C21901FC100971522 /* RefreshAccessToken.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +171,7 @@
 		DF9982B32186AECB00A1FD71 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		DF9982B42186AECB00A1FD71 /* PrivateMoney.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateMoney.swift; sourceTree = "<group>"; };
 		DF9982B52186AECB00A1FD71 /* PaginatedAccounts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginatedAccounts.swift; sourceTree = "<group>"; };
+		DFAA9A1C21901FC100971522 /* RefreshAccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshAccessToken.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				DF6B2D9E216F4677007E2B4C /* ExchangeAuthCode.swift */,
+				DFAA9A1C21901FC100971522 /* RefreshAccessToken.swift */,
 			);
 			path = Token;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 				DF6B2F49216F4678007E2B4C /* DecodableDataParser.swift in Sources */,
 				DF9982922186AE7900A1FD71 /* GetUserTransactions.swift in Sources */,
 				DF6B2F47216F4678007E2B4C /* Env.swift in Sources */,
+				DFAA9A1D21901FC100971522 /* RefreshAccessToken.swift in Sources */,
 				DF9982BF2186AECB00A1FD71 /* PaginatedTransactions.swift in Sources */,
 				DF9982982186AE7900A1FD71 /* GetAccount.swift in Sources */,
 				DF9982822186AE7900A1FD71 /* CreateTransactionWithCheck.swift in Sources */,

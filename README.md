@@ -60,6 +60,21 @@ let accessToken = oauth.getAccessToken(code: code)
 // => AccessToken(accessToken: "dXX1Guh7Ze0F_s6L8mAk-t4DXxvO2wd_IwWXbQBGdNo0nkj01tYA9EKY992H_mMP", refreshToken: "XKOfCZmLuRjLggDZzDfz", tokenType: "Bearer", expiresIn: 2591999)
 ```
 
+### Refreshing access tokens
+
+Every access tokens will be expired. The term is 30 days now, however, it could be shorten in the future. Therefore, please prepare the case when those access tokens are expired and the API server returns 403 Forbidden.
+
+For avoiding reauthentication with OAuth every time, Pokepay returns a refresh token for each access token responses, at a field `refreshToken` in `AccessToken` objects. As `OAuthClient` doesn't store it automatically, storing it at any secure place (like KeyChain) is recommended.
+
+`OAuthClient#refreshAccessToken` is the function to issue another access token with a refresh token:
+
+```swift
+oauth.refreshAccessToken(refreshToken: accessToken.refreshToken)
+// => AccessToken(accessToken: "gtSn683mul_FFaMlB2jLyOyK-6LJ-u3Qiv-Iiy6cGoJZyKD242xe29BTHEYXXaqj", refreshToken: "-YvJULJ5rEhQ0fY86t80", tokenType: "Bearer", expiresIn: 2591999)
+```
+
+Refresh tokens can be used only once. Don't forget to update the refresh token again after reauthentication.
+
 ## APIs
 
 ### [Class] Pokepay.Client

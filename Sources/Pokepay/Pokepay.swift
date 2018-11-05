@@ -219,5 +219,10 @@ public struct Pokepay {
                                    handler: @escaping (Result<AccessToken, PokepayError>) -> Void = { _ in }) {
             send(OAuthAPI.Token.ExchangeAuthCode(code: code, clientId: clientId, clientSecret: clientSecret), handler: handler)
         }
+
+        public func refreshAccessToken(refreshToken: String,
+                                       handler: @escaping (Result<AccessToken, PokepayError>) -> Void = { _ in }) {
+            send(OAuthAPI.Token.RefreshAccessToken(refreshToken: refreshToken, clientId: clientId, clientSecret: clientSecret), handler: handler)
+        }
     }
 }
