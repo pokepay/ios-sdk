@@ -1,3 +1,4 @@
+import Foundation
 import APIKit
 
 public extension MessagingAPI {
@@ -7,6 +8,9 @@ public extension MessagingAPI {
         public let subject: String
         public let body: String
         public let fromAccountId: String?
+        public var requestId: String {
+            return UUID().uuidString
+        }
 
         public typealias Response = Message
 
@@ -37,6 +41,7 @@ public extension MessagingAPI {
             if fromAccountId != nil {
                 dict["from_account_id"] = fromAccountId
             }
+            dict["_request_id"] = requestId
             return dict
         }
     }
