@@ -3,14 +3,14 @@ import APIKit
 public extension MessagingAPI {
     public struct Send: BankRequest {
         public let toUserId: String
-        public let amount: Double
+        public let amount: Double?
         public let subject: String
         public let body: String
         public let fromAccountId: String?
 
         public typealias Response = Message
 
-        public init(toUserId: String, amount: Double, subject: String = "", body: String = "", fromAccountId: String? = nil) {
+        public init(toUserId: String, amount: Double? = nil, subject: String = "", body: String = "", fromAccountId: String? = nil) {
             self.toUserId = toUserId
             self.amount = amount
             self.subject = subject
@@ -29,7 +29,9 @@ public extension MessagingAPI {
         public var parameters: Any? {
             var dict: [String: Any] = [:]
             dict["to_user_id"] = toUserId
-            dict["amount"] = amount
+            if amount != nil {
+                dict["amount"] = amount
+            }
             dict["subject"] = subject
             dict["body"] = body
             if fromAccountId != nil {
