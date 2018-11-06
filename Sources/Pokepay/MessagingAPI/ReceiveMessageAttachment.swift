@@ -4,7 +4,7 @@ public extension MessagingAPI {
     public struct ReceiveAttachment: BankRequest {
         public let message: Message
 
-        public typealias Response = Message
+        public typealias Response = MessageAttachment
 
         public init(message: Message) {
             self.message = message
