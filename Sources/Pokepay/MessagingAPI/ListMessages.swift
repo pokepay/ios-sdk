@@ -1,6 +1,11 @@
 import APIKit
 
 public extension MessagingAPI {
+    /**
+     Gets a paginated collection of messages.
+     
+     The endpoint is `GET /messages`.
+     */
     public struct List: BankRequest {
         public let before: String?
         public let after: String?

@@ -1,6 +1,11 @@
 import APIKit
 
 public extension MessagingAPI {
+    /**
+     Gets the information of a single message and marks it as read.
+     
+     The endpoint is `GET /messages/{id}`.
+     */
     public struct Get: BankRequest {
         public let id: String
 

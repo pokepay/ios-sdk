@@ -2,6 +2,14 @@ import Foundation
 import APIKit
 
 public extension MessagingAPI {
+    /**
+     Sends a new message to a user `toUserId` with an optional attachment.
+     
+     The endpoint is `POST /messages`.
+     If `amount` is not `nil`, the specified amount money is attached with the message.
+     It allows to choose which account to use for the attachment by specifying `fromAccountId`.
+     If `amount` is specified without `fromAccountId`, the terminal default account will be used.
+     */
     public struct Send: BankRequest {
         public let toUserId: String
         public let amount: Double?
