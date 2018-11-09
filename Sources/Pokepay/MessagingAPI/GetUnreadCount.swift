@@ -4,6 +4,9 @@ public extension MessagingAPI {
     public struct GetUnreadCount: BankRequest {
         public typealias Response = MessageUnreadCount
 
+        public init() {
+        }
+
         public var method: HTTPMethod {
             return .get
         }
