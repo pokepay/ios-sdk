@@ -2,6 +2,8 @@ import Foundation
 
 public struct UserTransaction: Codable {
     public let id: String
+    public let type: String
+    public let isModified: Bool
     public let user: User
     public let balance: Double
     public let amount: Double
@@ -13,6 +15,8 @@ public struct UserTransaction: Codable {
 
     private enum CodingKeys: String, CodingKey {
         case id
+        case type
+        case isModified = "is_modified"
         case user
         case balance
         case amount
