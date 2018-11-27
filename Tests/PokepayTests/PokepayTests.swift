@@ -195,8 +195,7 @@ AQIDAQAB
 
     func testListMessages() {
         let expect = expectation(description: "ListMessages")
-        let client = Pokepay.Client(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr",
-                                    isMerchant: true,
+        let client = Pokepay.Client(accessToken: "4evQMOwx077ev_ke6f1-E1TxQvs5B1KZh9uwscJbncblfw0Hrcta_L2Fs4Nlyc0s",
                                     env: .development)
         client.send(MessagingAPI.List()) { result in
             switch result {
