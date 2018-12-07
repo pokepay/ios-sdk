@@ -7,6 +7,7 @@ public enum PokepayError: Error {
     case connectionError(Error)
     case requestError(Error)
     case responseError(Error)
+    case bleError(Error)
 }
 
 public struct Pokepay {
@@ -102,9 +103,73 @@ public struct Pokepay {
             }
         }
 
+        private func bleScanToken(_ token: String,  handler: @escaping (Result<UserTransaction, PokepayError>) -> Void = { _ in }) {
+            let ble = BLEController()
+            ble.scanToken(token: token) { result in
+                switch result {
+                case .success(let jwt):
+                    self.send(BankAPI.Transaction.CreateWithJwt(data: jwt)) { result in
+                        switch result {
+                        case .success(let response):
+                            if response.data != nil {
+                                let responseData = response.data!
+                                do {
+                                    let ut: UserTransaction = try response.parseAsUserTransaction()
+                                    ble.writeResult(response: responseData) { result in
+                                        ble.stop()
+                                        switch result {
+                                        case .success(_):
+                                            handler(.success(ut))
+                                        case .failure(let error):
+                                            handler(.failure(PokepayError.bleError(error)))
+                                        }
+                                    }
+                                } catch let error {
+                                    ble.stop()
+                                    handler(.failure(PokepayError.responseError(error)))
+                                }
+                            } else if response.error != nil {
+                                let responseError = response.error!
+                                do {
+                                    let ae: APIError = try response.parseAsAPIError()
+                                    ble.writeResult(response: responseError) { result in
+                                        ble.stop()
+                                        switch result {
+                                        case .success(_):
+                                            handler(.failure(PokepayError.responseError(BankAPIError.unknownError(ae))))
+                                        case .failure(let error):
+                                            handler(.failure(PokepayError.bleError(error)))
+                                        }
+                                    }
+                                } catch let error {
+                                    ble.stop()
+                                    handler(.failure(PokepayError.responseError(error)))
+                                }
+                            } else {
+                                ble.stop()
+                                let tmpJSON:String = "{\"type\":\"Invalid JSON structure\",\"message\":\"jwt response doesn't have neither data nor error.\"}"
+                                let ae: BankAPIError = BankAPIError.init(object: tmpJSON.data(using: String.Encoding.utf8)!)
+                                handler(.failure(PokepayError.responseError(ae)))
+                            }
+                        case .failure(let error):
+                            ble.stop()
+                            handler(.failure(error))
+                        }
+                    }
+                case .failure(let error):
+                    ble.stop()
+                    let e = PokepayError.bleError(error)
+                    handler(.failure(e))
+                }
+            }
+        }
+
         public func scanToken(_ token: String, amount: Double? = nil,
                               handler: @escaping (Result<UserTransaction, PokepayError>) -> Void = { _ in }) {
-            if token.hasPrefix("\(wwwBaseURL)/cashtrays/") {
+            if token.range(of: "^[A-Z0-9]{25}$", options: NSString.CompareOptions.regularExpression, range: nil, locale: nil) != nil {
+                bleScanToken(token, handler: handler)
+            }
+            else if token.hasPrefix("\(wwwBaseURL)/cashtrays/") {
                 let uuid = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/cashtrays/".utf8.count))
                 send(BankAPI.Transaction.CreateWithCashtray(cashtrayId: uuid), handler: handler)
             }
