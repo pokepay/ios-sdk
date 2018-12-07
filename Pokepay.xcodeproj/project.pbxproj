@@ -98,6 +98,8 @@
 		B415E58221BA8682009843DB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B415E52C21BA2B2F009843DB /* Security.framework */; };
 		B415E58721BA884E009843DB /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9BFD5B2190A4C7000BA317 /* APIKit.framework */; };
 		B4D4446F21BA98AC00353BBE /* Pokepay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF86A17C216F637600FCD979 /* Pokepay.framework */; };
+		B4D4447521BA9F4900353BBE /* BankAPIJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D4447421BA9F4900353BBE /* BankAPIJSONDecoder.swift */; };
+		B4D4447621BA9F4900353BBE /* BankAPIJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D4447421BA9F4900353BBE /* BankAPIJSONDecoder.swift */; };
 		DF9BFD5A2190A4B6000BA317 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9BFD592190A4B6000BA317 /* Result.framework */; };
 		DFA122E521911C3F007C2750 /* OAuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA1228E21911C3E007C2750 /* OAuthAPI.swift */; };
 		DFA122E621911C3F007C2750 /* RefreshAccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA1229121911C3E007C2750 /* RefreshAccessToken.swift */; };
@@ -187,6 +189,7 @@
 		B415E52C21BA2B2F009843DB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		B415E57A21BA3936009843DB /* PokeregiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeregiTests.swift; sourceTree = "<group>"; };
 		B4D4446E21BA984B00353BBE /* PokepayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokepayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4D4447421BA9F4900353BBE /* BankAPIJSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAPIJSONDecoder.swift; sourceTree = "<group>"; };
 		DF6B2D97216F4677007E2B4C /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
 		DF6B2D98216F4677007E2B4C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DF6B2DE0216F4677007E2B4C /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
@@ -449,6 +452,7 @@
 				DFA122D421911C3F007C2750 /* Account */,
 				DFA122D921911C3F007C2750 /* Check */,
 				DFA122DE21911C3F007C2750 /* Cashtray */,
+				B4D4447421BA9F4900353BBE /* BankAPIJSONDecoder.swift */,
 			);
 			path = BankAPI;
 			sourceTree = "<group>";
@@ -703,6 +707,7 @@
 			files = (
 				B415E54D21BA2C15009843DB /* PrivateMoney.swift in Sources */,
 				B415E57921BA2C71009843DB /* DeleteCashtray.swift in Sources */,
+				B4D4447621BA9F4900353BBE /* BankAPIJSONDecoder.swift in Sources */,
 				B415E55F21BA2C55009843DB /* DeleteBill.swift in Sources */,
 				B415E54421BA2C15009843DB /* MessageAttachment.swift in Sources */,
 				B415E56121BA2C55009843DB /* GetBill.swift in Sources */,
@@ -850,6 +855,7 @@
 				B415E50521B9110E009843DB /* BLEController.swift in Sources */,
 				DFA122FF21911C3F007C2750 /* UserTransaction.swift in Sources */,
 				DFD201FA21B534F300A1D59B /* JwtResult.swift in Sources */,
+				B4D4447521BA9F4900353BBE /* BankAPIJSONDecoder.swift in Sources */,
 				DFA122EF21911C3F007C2750 /* ListMessages.swift in Sources */,
 				DFA122F421911C3F007C2750 /* AccessToken.swift in Sources */,
 				B415E50621B9110E009843DB /* Cypher.swift in Sources */,

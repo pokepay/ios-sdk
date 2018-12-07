@@ -38,7 +38,7 @@ public struct JwtResult: Codable {
     public func parseAsUserTransaction() throws -> UserTransaction {
         if data != nil {
             let data = try getJWTBodyData(jwtToken: self.data!)
-            let ut: UserTransaction = try JSONDecoder().decode(UserTransaction.self, from: data)
+            let ut: UserTransaction = try BankAPIJSONDecoder().decode(UserTransaction.self, from: data)
             return ut
         }
         throw JwtResultError.invalidConvertionError("data is not set")
@@ -47,7 +47,7 @@ public struct JwtResult: Codable {
     public func parseAsAPIError() throws -> APIError {
         if error != nil {
             let error = try getJWTBodyData(jwtToken: self.error!)
-            let ae: APIError = try JSONDecoder().decode(APIError.self, from: error)
+            let ae: APIError = try BankAPIJSONDecoder().decode(APIError.self, from: error)
             return ae
         }
         throw JwtResultError.invalidConvertionError("error is not set")
