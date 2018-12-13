@@ -5,7 +5,7 @@ public extension BankAPI.Transaction {
         public let data: String
         public let accountId: String?
 
-        public typealias Response = UserTransaction
+        public typealias Response = JwtResult
 
         public init(data: String, accountId: String? = nil) {
             self.data = data

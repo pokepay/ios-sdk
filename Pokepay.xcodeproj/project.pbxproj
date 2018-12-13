@@ -85,6 +85,7 @@
 		DFA1232D21911C3F007C2750 /* MessagingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA122E321911C3F007C2750 /* MessagingAPI.swift */; };
 		DFA1232E21911C3F007C2750 /* RequestProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA122E421911C3F007C2750 /* RequestProxy.swift */; };
 		DFA123302191212D007C2750 /* MessageUnreadCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA1232F2191212D007C2750 /* MessageUnreadCount.swift */; };
+		DFD201FA21B534F300A1D59B /* JwtResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD201F921B534F300A1D59B /* JwtResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,6 +186,7 @@
 		DFA122E321911C3F007C2750 /* MessagingAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagingAPI.swift; sourceTree = "<group>"; };
 		DFA122E421911C3F007C2750 /* RequestProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProxy.swift; sourceTree = "<group>"; };
 		DFA1232F2191212D007C2750 /* MessageUnreadCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageUnreadCount.swift; sourceTree = "<group>"; };
+		DFD201F921B534F300A1D59B /* JwtResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JwtResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +310,7 @@
 				DFA122AA21911C3F007C2750 /* Check.swift */,
 				DFA122AB21911C3F007C2750 /* PaginatedPrivateMoneys.swift */,
 				DFA122AC21911C3F007C2750 /* UserTransaction.swift */,
+				DFD201F921B534F300A1D59B /* JwtResult.swift */,
 				DFA122AD21911C3F007C2750 /* Bill.swift */,
 				DFA122AE21911C3F007C2750 /* Account.swift */,
 				DFA122AF21911C3F007C2750 /* PrivateMoney.swift */,
@@ -580,6 +583,7 @@
 				DFA1230821911C3F007C2750 /* CreateTransactionWithBill.swift in Sources */,
 				DFA122F721911C3F007C2750 /* Organization.swift in Sources */,
 				DFA122FF21911C3F007C2750 /* UserTransaction.swift in Sources */,
+				DFD201FA21B534F300A1D59B /* JwtResult.swift in Sources */,
 				DFA122EF21911C3F007C2750 /* ListMessages.swift in Sources */,
 				DFA122F421911C3F007C2750 /* AccessToken.swift in Sources */,
 				DFA122F821911C3F007C2750 /* PaginatedMessages.swift in Sources */,
