@@ -30,15 +30,10 @@ extension BankRequest where Response: Decodable {
         guard let data = object as? Data else {
             throw BankAPIError(object: Data())
         }
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'"
-        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .formatted(dateFormatter)
         guard data.count != 0 else {
             let emptyJson = "{}"
-            return try decoder.decode(Response.self, from: emptyJson.data(using: .utf8)!)
+            return try BankAPIJSONDecoder().decode(Response.self, from: emptyJson.data(using: .utf8)!)
         }
-        return try decoder.decode(Response.self, from: data)
+        return try BankAPIJSONDecoder().decode(Response.self, from: data)
     }
 }
