@@ -2,8 +2,9 @@ import CoreBluetooth
 import Result
 
 public enum BLEError : Error {
-    case invalidStateError(String)
-    case startingError(String)
+    case peripheralIsGone
+    case poweredOff
+    case notSupported
     case discoveringError(Error)
     case readingError(Error)
     case writingError(Error)
@@ -56,7 +57,7 @@ class BLEController: NSObject {
                 writeCallback = handler
                 peripheral.writeValue(data, for: self.responseCharacteristic, type: CBCharacteristicWriteType.withResponse)
             } else {
-                handler(.failure(BLEError.invalidStateError("BLE peripheral is gone")))
+                handler(.failure(BLEError.peripheralIsGone))
             }
         } catch let error {
             handler(.failure(BLEError.dataEncryptionError(error)))
@@ -88,11 +89,11 @@ extension BLEController: CBCentralManagerDelegate {
             let services: [CBUUID] = [serviceUUID]
             centralManager?.scanForPeripherals(withServices: services, options: nil)
         case CBManagerState.poweredOff:
-            let err = BLEError.startingError("BLE powered off")
+            let err = BLEError.poweredOff
             callback(.failure(err))
             writeCallback(.failure(err))
         case CBManagerState.unsupported:
-            let err = BLEError.startingError("BLE not supported")
+            let err = BLEError.notSupported
             callback(.failure(err))
             writeCallback(.failure(err))
         default:
