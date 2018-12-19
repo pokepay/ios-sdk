@@ -93,10 +93,6 @@
 		B415E57B21BA3936009843DB /* PokeregiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415E57A21BA3936009843DB /* PokeregiTests.swift */; };
 		B4D4447521BA9F4900353BBE /* BankAPIJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D4447421BA9F4900353BBE /* BankAPIJSONDecoder.swift */; };
 		B4D4447621BA9F4900353BBE /* BankAPIJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D4447421BA9F4900353BBE /* BankAPIJSONDecoder.swift */; };
-		B4D4447821BAA66400353BBE /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9BFD5B2190A4C7000BA317 /* APIKit.framework */; };
-		B4D4447921BAA66400353BBE /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9BFD592190A4B6000BA317 /* Result.framework */; };
-		B4D4447A21BAA67D00353BBE /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9BFD5B2190A4C7000BA317 /* APIKit.framework */; };
-		B4D4447B21BAA67D00353BBE /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9BFD592190A4B6000BA317 /* Result.framework */; };
 		B4D4447C21BAA74D00353BBE /* Pokepay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF86A17C216F637600FCD979 /* Pokepay.framework */; };
 		DFA122E521911C3F007C2750 /* OAuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA1228E21911C3E007C2750 /* OAuthAPI.swift */; };
 		DFA122E621911C3F007C2750 /* RefreshAccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA1229121911C3E007C2750 /* RefreshAccessToken.swift */; };
@@ -183,7 +179,6 @@
 		B415E50421B9110E009843DB /* RegexCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexCase.swift; sourceTree = "<group>"; };
 		B415E51A21BA2599009843DB /* PokepayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokepayTests.swift; sourceTree = "<group>"; };
 		B415E51C21BA2599009843DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B415E52C21BA2B2F009843DB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		B415E57A21BA3936009843DB /* PokeregiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeregiTests.swift; sourceTree = "<group>"; };
 		B4D4446E21BA984B00353BBE /* PokepayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokepayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D4447421BA9F4900353BBE /* BankAPIJSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAPIJSONDecoder.swift; sourceTree = "<group>"; };
@@ -196,8 +191,6 @@
 		DF6B2F1E216F4678007E2B4C /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		DF6B2F1F216F4678007E2B4C /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		DF86A17C216F637600FCD979 /* Pokepay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pokepay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF9BFD592190A4B6000BA317 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
-		DF9BFD5B2190A4C7000BA317 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
 		DFA1228E21911C3E007C2750 /* OAuthAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthAPI.swift; sourceTree = "<group>"; };
 		DFA1229121911C3E007C2750 /* RefreshAccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshAccessToken.swift; sourceTree = "<group>"; };
 		DFA1229221911C3E007C2750 /* ExchangeAuthCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeAuthCode.swift; sourceTree = "<group>"; };
@@ -282,8 +275,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4D4447C21BAA74D00353BBE /* Pokepay.framework in Frameworks */,
-				B4D4447A21BAA67D00353BBE /* APIKit.framework in Frameworks */,
-				B4D4447B21BAA67D00353BBE /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,8 +282,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				B4D4447821BAA66400353BBE /* APIKit.framework in Frameworks */,
-				B4D4447921BAA66400353BBE /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,16 +321,6 @@
 		DF6B2DE6216F4677007E2B4C /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
-			sourceTree = "<group>";
-		};
-		DF9BFD582190A4B5000BA317 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B415E52C21BA2B2F009843DB /* Security.framework */,
-				DF9BFD5B2190A4C7000BA317 /* APIKit.framework */,
-				DF9BFD592190A4B6000BA317 /* Result.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		DFA1228C21911C3E007C2750 /* Sources */ = {
@@ -554,7 +533,6 @@
 				DFA1228C21911C3E007C2750 /* Sources */,
 				DF86A17C216F637600FCD979 /* Pokepay.framework */,
 				B415E51921BA2599009843DB /* PokepayTests */,
-				DF9BFD582190A4B5000BA317 /* Frameworks */,
 				B4D4446E21BA984B00353BBE /* PokepayTests.xctest */,
 			);
 			sourceTree = "<group>";
