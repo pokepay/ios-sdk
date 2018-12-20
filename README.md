@@ -189,7 +189,7 @@ client.send(BankAPI.Terminal.Get()) { result in
 ## Requirements
 
 * Xcode 9 or later
-* iOS 8.4 or later
+* iOS 10.0 or later
 
 ## Installation
 
