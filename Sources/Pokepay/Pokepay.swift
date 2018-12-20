@@ -11,6 +11,14 @@ public enum PokepayError: Error {
 }
 
 public struct Pokepay {
+
+    public enum TokenInfo {
+        case cashtray(BankAPI.Cashtray.Get.Response)
+        case bill(BankAPI.Bill.Get.Response)
+        case check(BankAPI.Check.Get.Response)
+        case pokeregi
+    }
+
     public struct Client {
         let accessToken: String
         let isMerchant: Bool
@@ -64,13 +72,13 @@ public struct Pokepay {
         }
 
         public func getTokenInfo(_ token: String,
-                                 handler: @escaping (Result<Any, PokepayError>) -> Void) {
+                                 handler: @escaping (Result<TokenInfo, PokepayError>) -> Void) {
             if token.hasPrefix("\(wwwBaseURL)/cashtrays/") {
                 let id = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/cashtrays/".utf8.count))
                 send(BankAPI.Cashtray.Get(id: id)) { result in
                     switch result {
                     case .success(let data):
-                        handler(.success(data))
+                        handler(.success(TokenInfo.cashtray(data)))
                     case .failure(let error):
                         handler(.failure(error))
                     }
@@ -81,7 +89,7 @@ public struct Pokepay {
                 send(BankAPI.Bill.Get(id: id)) { result in
                     switch result {
                     case .success(let data):
-                        handler(.success(data))
+                        handler(.success(TokenInfo.bill(data)))
                     case .failure(let error):
                         handler(.failure(error))
                     }
@@ -92,11 +100,14 @@ public struct Pokepay {
                 send(BankAPI.Check.Get(id: id)) { result in
                     switch result {
                     case .success(let data):
-                        handler(.success(data))
+                        handler(.success(TokenInfo.check(data)))
                     case .failure(let error):
                         handler(.failure(error))
                     }
                 }
+            }
+            else if token.range(of: "^[A-Z0-9]{25}$", options: NSString.CompareOptions.regularExpression, range: nil, locale: nil) != nil {
+                handler(.success(TokenInfo.pokeregi))
             }
             else {
                 handler(.failure(PokepayError.invalidToken))
@@ -166,10 +177,7 @@ public struct Pokepay {
 
         public func scanToken(_ token: String, amount: Double? = nil,
                               handler: @escaping (Result<UserTransaction, PokepayError>) -> Void = { _ in }) {
-            if token.range(of: "^[A-Z0-9]{25}$", options: NSString.CompareOptions.regularExpression, range: nil, locale: nil) != nil {
-                bleScanToken(token, handler: handler)
-            }
-            else if token.hasPrefix("\(wwwBaseURL)/cashtrays/") {
+            if token.hasPrefix("\(wwwBaseURL)/cashtrays/") {
                 let uuid = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/cashtrays/".utf8.count))
                 send(BankAPI.Transaction.CreateWithCashtray(cashtrayId: uuid), handler: handler)
             }
@@ -180,6 +188,9 @@ public struct Pokepay {
             else if token.hasPrefix("\(wwwBaseURL)/checks/") {
                 let uuid = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/checks/".utf8.count))
                 send(BankAPI.Transaction.CreateWithCheck(checkId: uuid), handler: handler)
+            }
+            else if token.range(of: "^[A-Z0-9]{25}$", options: NSString.CompareOptions.regularExpression, range: nil, locale: nil) != nil {
+                bleScanToken(token, handler: handler)
             }
             else {
                 handler(.failure(PokepayError.invalidToken))
