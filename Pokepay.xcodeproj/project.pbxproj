@@ -547,7 +547,6 @@
 				B415E51421BA2599009843DB /* Sources */,
 				B415E51521BA2599009843DB /* Frameworks */,
 				B415E51621BA2599009843DB /* Resources */,
-				B415E52721BA29D1009843DB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -564,7 +563,6 @@
 			buildPhases = (
 				OBJ_168 /* Sources */,
 				OBJ_227 /* Frameworks */,
-				B415E4F121B901E7009843DB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -630,47 +628,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		B415E4F121B901E7009843DB /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/APIKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-		B415E52721BA29D1009843DB /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/APIKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B415E51421BA2599009843DB /* Sources */ = {
