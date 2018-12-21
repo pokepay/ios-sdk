@@ -98,6 +98,9 @@ AQIDAQAB
         let client = Pokepay.Client(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr",
                                     isMerchant: false,
                                     env: .development)
+        let dispatchGroup = DispatchGroup()
+        // check
+        dispatchGroup.enter()
         client.createToken(108) { result in
             switch result {
             case .success(let token):
@@ -107,18 +110,89 @@ AQIDAQAB
                 client2.getTokenInfo(token) { result in
                     switch result {
                     case .success(let value):
-                        print(value)
-                        expect.fulfill()
+                        switch value {
+                        case .check(_):
+                            dispatchGroup.leave()
+                        default:
+                            print(value)
+                            XCTFail("Unexpected type")
+                        }
                     case .failure(let error):
                         print(error)
-                        expect.fulfill()
+                        XCTFail("Error on getTokenInfo")
                     }
                 }
             case .failure(let error):
                 print(error)
-                expect.fulfill()
+                XCTFail("Error on createToken")
             }
         }
+
+        // bill
+        dispatchGroup.enter()
+        client.createToken(-108) { result in
+            switch result {
+            case .success(let token):
+                print(token)
+                let client2 = Pokepay.Client(accessToken: "x7wPPW4QQ1wvu93LlP8GSgCIdG2Pic7anH3UO9kdRZPYDs6ym0V_y40TW6iVc-rY",
+                                             env: .development)
+                client2.getTokenInfo(token) { result in
+                    switch result {
+                    case .success(let value):
+                        switch value {
+                        case .bill(_):
+                            dispatchGroup.leave()
+                        default:
+                            print(value)
+                            XCTFail("Unexpected type")
+                        }
+                    case .failure(let error):
+                        print(error)
+                        XCTFail("Error on getTokenInfo")
+                    }
+                }
+            case .failure(let error):
+                print(error)
+                XCTFail("Error on createToken")
+            }
+        }
+
+        let mclient = Pokepay.Client(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr",
+                                    isMerchant: true,
+                                    env: .development)
+        // cashtray
+        dispatchGroup.enter()
+        mclient.createToken(108) { result in
+            switch result {
+            case .success(let token):
+                print(token)
+                let client2 = Pokepay.Client(accessToken: "x7wPPW4QQ1wvu93LlP8GSgCIdG2Pic7anH3UO9kdRZPYDs6ym0V_y40TW6iVc-rY",
+                                             env: .development)
+                client2.getTokenInfo(token) { result in
+                    switch result {
+                    case .success(let value):
+                        switch value {
+                        case .cashtray(_):
+                            dispatchGroup.leave()
+                        default:
+                            print(value)
+                            XCTFail("Unexpected type")
+                        }
+                    case .failure(let error):
+                        print(error)
+                        XCTFail("Error on getTokenInfo")
+                    }
+                }
+            case .failure(let error):
+                print(error)
+                XCTFail("Error on createToken")
+            }
+        }
+
+        dispatchGroup.notify(queue: DispatchQueue.main, work: DispatchWorkItem(block: {
+            expect.fulfill()
+        }))
+        
         waitForExpectations(timeout: 5.0, handler: nil)
     }
 
