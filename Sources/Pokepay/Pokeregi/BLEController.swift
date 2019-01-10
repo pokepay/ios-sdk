@@ -21,8 +21,8 @@ class BLEController: NSObject {
     var centralManager: CBCentralManager!
     var peripheral: CBPeripheral!
     var serviceUUID : CBUUID!
-    var tokenCharacteristics : [CBCharacteristic] = []
-    var responseCharacteristic : CBCharacteristic!
+    var tokenCharacteristicsOld : [CBCharacteristic] = []
+    var responseCharacteristicOld : CBCharacteristic!
     var callback : (Result<String, BLEError>) -> Void = { _ in }
     var writeCallback: (Result<Void, BLEError>) -> Void = { _ in }
 
@@ -55,7 +55,7 @@ class BLEController: NSObject {
             let data = try Cypher.AES.encrypt(plainString: response, sharedKey: aesKey, iv: kIV)
             if peripheral != nil {
                 writeCallback = handler
-                peripheral.writeValue(data, for: self.responseCharacteristic, type: CBCharacteristicWriteType.withResponse)
+                peripheral.writeValue(data, for: self.responseCharacteristicOld, type: CBCharacteristicWriteType.withResponse)
             } else {
                 handler(.failure(BLEError.peripheralIsGone))
             }
@@ -146,11 +146,11 @@ extension BLEController: CBPeripheralDelegate {
         service.characteristics?.forEach { (char) in
             let uuidString = char.uuid.uuidString;
             switch uuidString {
-            case RegexCase(pattern: "^00[12][0-9A-Fa-f]$"):
-                tokenCharacteristics.append(char)
+            case RegexCase(pattern: "^00[1][0-9A-Fa-f]$"):
+                tokenCharacteristicsOld.append(char)
                 peripheral.readValue(for: char)
-            case RegexCase(pattern: "^00[34][0-9A-Fa-f]$"):
-                responseCharacteristic = char
+            case RegexCase(pattern: "^0030$"):
+                responseCharacteristicOld = char
             case RegexCase(pattern: "^0100$"):
                 break
             default:
@@ -167,7 +167,7 @@ extension BLEController: CBPeripheralDelegate {
             callback(.failure(BLEError.readingError(error!)))
             return
         }
-        let allTokenRead = !(tokenCharacteristics.contains { $0.value == nil })
+        let allTokenRead = !(tokenCharacteristicsOld.contains { $0.value == nil })
         if (allTokenRead) {
             procToken()
         }
@@ -186,7 +186,7 @@ extension BLEController: CBPeripheralDelegate {
 
     private func procToken() {
         do {
-            let stringArray = try tokenCharacteristics.sorted(by: { (lhs, rhs) -> Bool in
+            let stringArray = try tokenCharacteristicsOld.sorted(by: { (lhs, rhs) -> Bool in
                 lhs.uuid.uuidString < rhs.uuid.uuidString
             }).map { (char) -> String in
                 if char.value == nil {
