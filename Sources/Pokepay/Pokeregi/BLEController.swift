@@ -69,17 +69,19 @@ class BLEController: NSObject {
 
     private func writeResultIter(data: Data, handler: @escaping (Result<Void, BLEError>) -> Void = { _ in })
     {
-        let slice = data.subdata(in: responseDataSentCount ..< (responseDataSentCount + kChunkSize))
+        let start: Int = responseDataSentCount
+        let end: Int = min(start + kChunkSize, data.count)
+        let slice: Data = data.subdata(in: start ..< end)
         if peripheral != nil {
             writeCallback = { result in
                 switch result {
                 case .failure(_):
                     handler(result)
                 case .success(_):
+                    self.responseDataSentCount = end
                     if slice.count == 0 {
                         handler(result)
                     } else {
-                        self.responseDataSentCount += slice.count
                         self.writeResultIter(data: data, handler: handler)
                     }
                 }
