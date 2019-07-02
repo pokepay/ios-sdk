@@ -1,7 +1,7 @@
 import APIKit
 
 public extension BankAPI.Transaction {
-    public struct Get: BankRequest {
+    struct Get: BankRequest {
         public let id: String
 
         public typealias Response = UserTransaction

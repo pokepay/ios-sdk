@@ -1,7 +1,7 @@
 import APIKit
 
 public extension BankAPI.User {
-    public struct SendConfirmationEmail: BankRequest {
+    struct SendConfirmationEmail: BankRequest {
         public let id: String
         public let email: String
 

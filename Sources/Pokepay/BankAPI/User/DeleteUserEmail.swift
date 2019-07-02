@@ -1,7 +1,7 @@
 import APIKit
 
 public extension BankAPI.User {
-    public struct DeleteEmail: BankRequest {
+    struct DeleteEmail: BankRequest {
         public let id: String
         public let email: String
 

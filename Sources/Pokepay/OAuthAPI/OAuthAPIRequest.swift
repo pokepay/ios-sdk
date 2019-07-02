@@ -7,13 +7,13 @@ public protocol OAuthAPIRequest: Request {
 }
 
 public extension OAuthAPIRequest {
-    public var baseURL: URL {
+    var baseURL: URL {
         return URL(string: DEFAULT_WWW_BASE_URL)!
     }
 }
 
 public extension OAuthAPIRequest {
-    public func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {
+    func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {
         guard (200..<300).contains(urlResponse.statusCode) else {
             throw OAuthAPIError(object: object as! Data)
         }

@@ -1,7 +1,7 @@
 import APIKit
 
 public extension BankAPI.Transaction {
-    public struct CreateWithJwt: BankRequest {
+    struct CreateWithJwt: BankRequest {
         public let data: String
         public let accountId: String?
 

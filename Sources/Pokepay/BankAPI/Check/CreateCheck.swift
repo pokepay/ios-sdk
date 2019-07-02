@@ -1,7 +1,7 @@
 import APIKit
 
 public extension BankAPI.Check {
-    public struct Create: BankRequest {
+    struct Create: BankRequest {
         public let amount: Double?
         public let accountId: String?
         public let description: String?

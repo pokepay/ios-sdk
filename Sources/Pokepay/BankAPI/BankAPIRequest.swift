@@ -7,13 +7,13 @@ public protocol BankRequest: Request {
 }
 
 public extension BankRequest {
-    public var baseURL: URL {
+    var baseURL: URL {
         return URL(string: DEFAULT_API_BASE_URL)!
     }
 }
 
 public extension BankRequest {
-    public func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {
+    func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {
         guard (200..<300).contains(urlResponse.statusCode) else {
             throw BankAPIError(statusCode: urlResponse.statusCode, object: object as! Data)
         }

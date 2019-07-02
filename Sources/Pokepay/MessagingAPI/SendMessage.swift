@@ -2,7 +2,7 @@ import Foundation
 import APIKit
 
 public extension MessagingAPI {
-    public struct Send: BankRequest {
+    struct Send: BankRequest {
         public let toUserId: String
         public let amount: Double?
         public let subject: String

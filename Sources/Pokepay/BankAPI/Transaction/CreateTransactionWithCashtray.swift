@@ -1,7 +1,7 @@
 import APIKit
 
 public extension BankAPI.Transaction {
-    public struct CreateWithCashtray: BankRequest {
+    struct CreateWithCashtray: BankRequest {
         public let cashtrayId: String
         public let accountId: String?
 

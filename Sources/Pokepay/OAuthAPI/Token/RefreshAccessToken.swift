@@ -1,7 +1,7 @@
 import APIKit
 
 public extension OAuthAPI.Token {
-    public struct RefreshAccessToken: OAuthAPIRequest {
+    struct RefreshAccessToken: OAuthAPIRequest {
         public let grantType: String = "refresh_token"
         public let refreshToken: String
         public let clientId: String

@@ -1,7 +1,7 @@
 import APIKit
 
 public extension MessagingAPI {
-    public struct List: BankRequest {
+    struct List: BankRequest {
         public let before: String?
         public let after: String?
         public let perPage: Int32?

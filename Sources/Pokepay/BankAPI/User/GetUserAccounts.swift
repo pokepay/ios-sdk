@@ -1,7 +1,7 @@
 import APIKit
 
 public extension BankAPI.User {
-    public struct GetAccounts: BankRequest {
+    struct GetAccounts: BankRequest {
         public let id: String
         public let before: String?
         public let after: String?

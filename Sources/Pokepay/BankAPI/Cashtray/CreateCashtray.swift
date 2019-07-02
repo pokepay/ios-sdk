@@ -1,7 +1,7 @@
 import APIKit
 
 public extension BankAPI.Cashtray {
-    public struct Create: BankRequest {
+    struct Create: BankRequest {
         public let amount: Double
         public let description: String?
         public let expiresIn: Int32?
