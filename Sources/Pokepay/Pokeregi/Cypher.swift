@@ -11,83 +11,71 @@ public class Cypher {
     public class AES {
 
         public static func encrypt(plainString: String, sharedKey: String, iv: String) throws -> Data {
-            guard let initialzeVector = (iv.data(using: .utf8)) else {
+            guard let initializeVector = (iv.data(using: .utf8)) else {
                 throw Cypher.AESError.otherFailed("Encrypt iv failed", iv)
             }
             guard let keyData = sharedKey.data(using: .utf8) else {
                 throw Cypher.AESError.otherFailed("Encrypt sharedkey failed", sharedKey)
             }
-            guard let data = plainString.data(using: .utf8) else {
+            guard let plainData = plainString.data(using: .utf8) else {
                 throw Cypher.AESError.otherFailed("Encrypt plainString failed", plainString)
             }
 
-            let cryptLength = size_t(Int(ceil(Double(data.count / kCCBlockSizeAES128)) + 1.0) * kCCBlockSizeAES128)
-
-            var cryptData = Data(count:cryptLength)
+            let encryptedLength = size_t(Int(ceil(Double(plainData.count / kCCBlockSizeAES128)) + 1.0) * kCCBlockSizeAES128)
+            var encryptedData   = Data(count:encryptedLength)
             var numBytesEncrypted: size_t = 0
 
-            let cryptStatus = cryptData.withUnsafeMutableBytes {cryptBytes in
-                initialzeVector.withUnsafeBytes {ivBytes in
-                    data.withUnsafeBytes {dataBytes in
-                        keyData.withUnsafeBytes {keyBytes in
-                            CCCrypt(CCOperation(kCCEncrypt),
-                                    CCAlgorithm(kCCAlgorithmAES),
-                                    CCOptions(kCCOptionPKCS7Padding),
-                                    keyBytes, keyData.count,
-                                    ivBytes,
-                                    dataBytes, data.count,
-                                    cryptBytes, cryptLength,
-                                    &numBytesEncrypted)
-                        }
-                    }
-                }
-            }
+            let cryptStatus = CCCrypt(CCOperation(kCCEncrypt),
+                                      CCAlgorithm(kCCAlgorithmAES),
+                                      CCOptions(kCCOptionPKCS7Padding),
+                                      keyData.withUnsafeBytes { $0.baseAddress },
+                                      keyData.count,
+                                      initializeVector.withUnsafeBytes { $0.baseAddress },
+                                      plainData.withUnsafeBytes { $0.baseAddress },
+                                      plainData.count,
+                                      encryptedData.withUnsafeMutableBytes { $0.baseAddress },
+                                      encryptedData.count,
+                                      &numBytesEncrypted)
 
             if cryptStatus != kCCSuccess {
                 throw Cypher.AESError.encryptFailed("Encrypt Failed", cryptStatus)
             }
-            return cryptData
+            return encryptedData
         }
 
         public static func decrypt(encryptedData: Data, sharedKey: String, iv: String) throws -> String {
-            guard let initialzeVector = (iv.data(using: .utf8)) else {
-                throw Cypher.AESError.otherFailed("Encrypt iv failed", iv)
+            guard let initializeVector = (iv.data(using: .utf8)) else {
+                throw Cypher.AESError.otherFailed("Decrypt iv failed", iv)
             }
             guard let keyData = sharedKey.data(using: .utf8) else {
-                throw Cypher.AESError.otherFailed("Encrypt sharedKey failed", sharedKey)
+                throw Cypher.AESError.otherFailed("Decrypt sharedKey failed", sharedKey)
             }
 
-            let clearLength = size_t(encryptedData.count + kCCBlockSizeAES128)
-            var clearData   = Data(count:clearLength)
+            let plainLength = size_t(encryptedData.count + kCCBlockSizeAES128)
+            var plainData   = Data(count:plainLength)
+            var numBytesDecrypted: size_t = 0
 
-            var numBytesEncrypted :size_t = 0
-
-            let cryptStatus = clearData.withUnsafeMutableBytes {clearBytes in
-                initialzeVector.withUnsafeBytes {ivBytes in
-                    encryptedData.withUnsafeBytes {dataBytes in
-                        keyData.withUnsafeBytes {keyBytes in
-                            CCCrypt(CCOperation(kCCDecrypt),
-                                    CCAlgorithm(kCCAlgorithmAES),
-                                    CCOptions(kCCOptionPKCS7Padding),
-                                    keyBytes, keyData.count,
-                                    ivBytes,
-                                    dataBytes, encryptedData.count,
-                                    clearBytes, clearLength,
-                                    &numBytesEncrypted)
-                        }
-                    }
-                }
-            }
+            let cryptStatus = CCCrypt(CCOperation(kCCDecrypt),
+                                      CCAlgorithm(kCCAlgorithmAES),
+                                      CCOptions(kCCOptionPKCS7Padding),
+                                      keyData.withUnsafeBytes { $0.baseAddress },
+                                      keyData.count,
+                                      initializeVector.withUnsafeBytes { $0.baseAddress },
+                                      encryptedData.withUnsafeBytes { $0.baseAddress },
+                                      encryptedData.count,
+                                      plainData.withUnsafeMutableBytes { $0.baseAddress },
+                                      plainData.count,
+                                      &numBytesDecrypted)
 
             if cryptStatus != kCCSuccess {
                 throw Cypher.AESError.decryptFailed("Decrypt Failed", cryptStatus)
             }
 
-            guard let decryptedStr = String(data: clearData.prefix(numBytesEncrypted), encoding: .utf8) else {
-                throw Cypher.AESError.decryptFailed("PKSC Unpad Failed", clearData)
+            guard let decryptedString = String(data: plainData.prefix(numBytesDecrypted), encoding: .utf8) else {
+                throw Cypher.AESError.decryptFailed("PKCS7 Unpadding Failed", plainData)
             }
 
-            return decryptedStr
+            return decryptedString
         }
     }
 }
