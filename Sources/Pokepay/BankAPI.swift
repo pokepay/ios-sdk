@@ -3,6 +3,7 @@ public struct BankAPI {
     public struct Bill {}
     public struct Cashtray {}
     public struct Check {}
+    public struct CpmToken {}
     public struct Terminal {}
     public struct Transaction {}
     public struct User {}
