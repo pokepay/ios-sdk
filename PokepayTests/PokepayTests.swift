@@ -284,6 +284,83 @@ AQIDAQAB
         waitForExpectations(timeout: 5.0, handler: nil)
     }
 
+    func testCpmTokens() {
+        var expect = expectation(description: "404 should return when get random CPM token.")
+        let customer = Pokepay.Client(accessToken: "oNTvWHFqv512JJQhUVgAwCx7LphHVpHFAp_jDMQ62THIN9iOwNfUXA9nMkI66xoA", env: .development)
+        let merchant = Pokepay.Client(accessToken: "7mL_asUSVHUZhW11nDJzlm-Xa7-01VjgVBPi8Hd43UAqYpMCEfEuzLPGWfKr0VU9", env: .development)
+        customer.send(BankAPI.CpmToken.Get(cpmToken: "000011112222")) { result in
+            switch result {
+            case .success:
+                XCTFail("This call should be 404.")
+            case .failure(.responseError(let error as BankAPIError)):
+                switch error {
+                case .clientError(let code, let apiError):
+                    print("code: \(code)")
+                    print("type: \(apiError.type)")
+                    print("message: \(apiError.message)")
+                    if code != 404 {
+                        XCTFail("This call shold be 404.")
+                    } else {
+                        expect.fulfill()
+                    }
+                default:
+                    XCTFail("unknown error")
+                }
+            case .failure:
+                XCTFail("unknown error")
+            }
+        }
+        waitForExpectations(timeout: 5.0, handler: nil)
+        // ---
+        expect = expectation(description: "Create CPM with customer AccessToken")
+        customer.send(BankAPI.Account.CreateAccountCpmToken(accountId: "d360738a-55e4-469b-882f-c866dc21e5d8", scopes: BankAPI.Account.CreateAccountCpmToken.Scope.BOTH, expiresIn: 100)) { result in
+            switch result {
+            case .success(let response):
+                let token = response.cpmToken
+                customer.send(BankAPI.CpmToken.Get(cpmToken: token)) { result in
+                    switch result {
+                    case .success(let response):
+                        if response.transaction != nil {
+                            XCTFail("transaction should be null")
+                        }
+                        let balanceBefore = response.account.balance
+                        merchant.send(BankAPI.Transaction.CreateWithCpm(cpmToken: token, amount: 1000.0)) { result in
+                            switch result {
+                            case .success:
+                                customer.send(BankAPI.CpmToken.Get(cpmToken: token)) { result in
+                                    switch result {
+                                    case .success(let response):
+                                        if response.transaction == nil {
+                                            XCTFail("transaction should be")
+                                        }
+                                        let balanceAfter = response.account.balance
+                                        if balanceBefore + 1000.0 != balanceAfter {
+                                            XCTFail("balance not match")
+                                        }
+                                        expect.fulfill()
+                                    case .failure(let err):
+                                        print(err)
+                                        XCTFail()
+                                    }
+                                }
+                            case .failure(let err):
+                                print(err)
+                                XCTFail()
+                            }
+                        }
+                    case .failure(let err):
+                        print(err)
+                        XCTFail()
+                    }
+                }
+            case .failure(let err):
+                print(err)
+                XCTFail()
+            }
+        }
+        waitForExpectations(timeout: 5.0, handler: nil)
+     }
+
     static var allTests = [
       ("testGetTerminal", testGetTerminal),
       ("testAddPublicKey", testAddPublicKey),
@@ -295,5 +372,6 @@ AQIDAQAB
       ("testGetAccessToken", testGetAccessToken),
       ("testSearchPrivateMoney", testSearchPrivateMoney),
       ("testListMessages", testListMessages),
+      ("testCpmTokens", testCpmTokens),
     ]
 }
