@@ -16,6 +16,7 @@ public struct Pokepay {
         case cashtray(BankAPI.Cashtray.Get.Response)
         case bill(BankAPI.Bill.Get.Response)
         case check(BankAPI.Check.Get.Response)
+        case cpm(BankAPI.CpmToken.Get.Response)
         case pokeregi
     }
 
@@ -109,6 +110,16 @@ public struct Pokepay {
             else if token.range(of: "^[A-Z0-9]{25}$", options: NSString.CompareOptions.regularExpression, range: nil, locale: nil) != nil {
                 handler(.success(TokenInfo.pokeregi))
             }
+            else if token.range(of: "^[0-9]{12}$", options: NSString.CompareOptions.regularExpression, range: nil, locale: nil) != nil {
+                send(BankAPI.CpmToken.Get(cpmToken: token)) { result in
+                    switch result {
+                    case .success(let data):
+                        handler(.success(TokenInfo.cpm(data)))
+                    case .failure(let error):
+                        handler(.failure(error))
+                    }
+                }
+            }
             else {
                 handler(.failure(PokepayError.invalidToken))
             }
@@ -191,6 +202,9 @@ public struct Pokepay {
             }
             else if token.range(of: "^[A-Z0-9]{25}$", options: NSString.CompareOptions.regularExpression, range: nil, locale: nil) != nil {
                 bleScanToken(token, handler: handler)
+            }
+            else if token.range(of: "^[0-9]{12}$", options: NSString.CompareOptions.regularExpression, range: nil, locale: nil) != nil {
+                send(BankAPI.Transaction.CreateWithCpm(cpmToken: token, amount: amount), handler: handler)
             }
             else {
                 handler(.failure(PokepayError.invalidToken))
