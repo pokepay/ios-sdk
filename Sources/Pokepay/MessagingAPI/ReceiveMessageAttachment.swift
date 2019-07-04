@@ -1,7 +1,7 @@
 import APIKit
 
 public extension MessagingAPI {
-    public struct ReceiveAttachment: BankRequest {
+    struct ReceiveAttachment: BankRequest {
         public let message: Message
 
         public typealias Response = MessageAttachment

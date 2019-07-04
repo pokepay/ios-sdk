@@ -1,7 +1,7 @@
 import APIKit
 
 public extension BankAPI.Transaction {
-    public struct SendToUser: BankRequest {
+    struct SendToUser: BankRequest {
         public let userId: String
         public let amount: Double
         public let receiverTerminalId: String?

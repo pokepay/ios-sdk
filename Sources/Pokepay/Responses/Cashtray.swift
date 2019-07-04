@@ -6,6 +6,8 @@ public struct Cashtray: Codable {
     public let description: String
     public let user: User
     public let expiresAt: Date
+    public let canceledAt: Date?
+    public let token: String
 
     private enum CodingKeys: String, CodingKey {
         case id
@@ -13,5 +15,7 @@ public struct Cashtray: Codable {
         case description
         case user
         case expiresAt = "expires_at"
+        case canceledAt = "canceled_at"
+        case token
     }
 }

@@ -1,7 +1,7 @@
 import APIKit
 
 public extension BankAPI.Transaction {
-    public struct Cancel: BankRequest {
+    struct Cancel: BankRequest {
         public let id: String
 
         public typealias Response = NoContent

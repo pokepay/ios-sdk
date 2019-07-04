@@ -6,6 +6,7 @@ public struct UserTransaction: Codable {
     public let isModified: Bool
     public let user: User
     public let balance: Double
+    public let customerBalance: Double?
     public let amount: Double
     public let moneyAmount: Double
     public let pointAmount: Double
@@ -19,6 +20,7 @@ public struct UserTransaction: Codable {
         case isModified = "is_modified"
         case user
         case balance
+        case customerBalance = "customer_balance"
         case amount
         case moneyAmount = "money_amount"
         case pointAmount = "point_amount"

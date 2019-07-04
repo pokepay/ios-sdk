@@ -1,7 +1,7 @@
 import APIKit
 
 public extension BankAPI.User {
-    public struct RegisterEmail: BankRequest {
+    struct RegisterEmail: BankRequest {
         public let token: String
 
         public typealias Response = NoContent

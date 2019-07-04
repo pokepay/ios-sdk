@@ -1,7 +1,7 @@
 import APIKit
 
 public extension BankAPI.Terminal {
-    public struct Get: BankRequest {
+    struct Get: BankRequest {
         public typealias Response = Terminal
 
         public init() {}

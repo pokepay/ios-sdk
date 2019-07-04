@@ -91,9 +91,19 @@
 		B415E57821BA2C71009843DB /* CreateCashtray.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA122E121911C3F007C2750 /* CreateCashtray.swift */; };
 		B415E57921BA2C71009843DB /* DeleteCashtray.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA122E221911C3F007C2750 /* DeleteCashtray.swift */; };
 		B415E57B21BA3936009843DB /* PokeregiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415E57A21BA3936009843DB /* PokeregiTests.swift */; };
+		B4AF946721CB76030049B71C /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AF946521CB76030049B71C /* Result.framework */; };
+		B4AF946821CB76030049B71C /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AF946621CB76030049B71C /* APIKit.framework */; };
+		B4D28E2122CCF92A00F4E503 /* GetCpmToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DEDEC222CB68E200B16C0B /* GetCpmToken.swift */; };
+		B4D28E2222CCF93C00F4E503 /* AccountCpmToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DEDEC422CB690600B16C0B /* AccountCpmToken.swift */; };
+		B4D28E2322CCF94200F4E503 /* CreateTransactionWithCpm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DEDEC622CB6CE800B16C0B /* CreateTransactionWithCpm.swift */; };
+		B4D28E2422CCF94700F4E503 /* CreateAccountCpmToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DEDEBC22CB686D00B16C0B /* CreateAccountCpmToken.swift */; };
 		B4D4447521BA9F4900353BBE /* BankAPIJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D4447421BA9F4900353BBE /* BankAPIJSONDecoder.swift */; };
 		B4D4447621BA9F4900353BBE /* BankAPIJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D4447421BA9F4900353BBE /* BankAPIJSONDecoder.swift */; };
 		B4D4447C21BAA74D00353BBE /* Pokepay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF86A17C216F637600FCD979 /* Pokepay.framework */; };
+		B4DEDEBD22CB686D00B16C0B /* CreateAccountCpmToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DEDEBC22CB686D00B16C0B /* CreateAccountCpmToken.swift */; };
+		B4DEDEC322CB68E200B16C0B /* GetCpmToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DEDEC222CB68E200B16C0B /* GetCpmToken.swift */; };
+		B4DEDEC522CB690600B16C0B /* AccountCpmToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DEDEC422CB690600B16C0B /* AccountCpmToken.swift */; };
+		B4DEDEC722CB6CE800B16C0B /* CreateTransactionWithCpm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DEDEC622CB6CE800B16C0B /* CreateTransactionWithCpm.swift */; };
 		DFA122E521911C3F007C2750 /* OAuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA1228E21911C3E007C2750 /* OAuthAPI.swift */; };
 		DFA122E621911C3F007C2750 /* RefreshAccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA1229121911C3E007C2750 /* RefreshAccessToken.swift */; };
 		DFA122E721911C3F007C2750 /* ExchangeAuthCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA1229221911C3E007C2750 /* ExchangeAuthCode.swift */; };
@@ -180,8 +190,14 @@
 		B415E51A21BA2599009843DB /* PokepayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokepayTests.swift; sourceTree = "<group>"; };
 		B415E51C21BA2599009843DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B415E57A21BA3936009843DB /* PokeregiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeregiTests.swift; sourceTree = "<group>"; };
+		B4AF946521CB76030049B71C /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		B4AF946621CB76030049B71C /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
 		B4D4446E21BA984B00353BBE /* PokepayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokepayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D4447421BA9F4900353BBE /* BankAPIJSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAPIJSONDecoder.swift; sourceTree = "<group>"; };
+		B4DEDEBC22CB686D00B16C0B /* CreateAccountCpmToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountCpmToken.swift; sourceTree = "<group>"; };
+		B4DEDEC222CB68E200B16C0B /* GetCpmToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCpmToken.swift; sourceTree = "<group>"; };
+		B4DEDEC422CB690600B16C0B /* AccountCpmToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCpmToken.swift; sourceTree = "<group>"; };
+		B4DEDEC622CB6CE800B16C0B /* CreateTransactionWithCpm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTransactionWithCpm.swift; sourceTree = "<group>"; };
 		DF6B2D97216F4677007E2B4C /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
 		DF6B2D98216F4677007E2B4C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DF6B2DE0216F4677007E2B4C /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
@@ -274,6 +290,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4AF946721CB76030049B71C /* Result.framework in Frameworks */,
+				B4AF946821CB76030049B71C /* APIKit.framework in Frameworks */,
 				B4D4447C21BAA74D00353BBE /* Pokepay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +325,23 @@
 				B415E57A21BA3936009843DB /* PokeregiTests.swift */,
 			);
 			path = PokepayTests;
+			sourceTree = "<group>";
+		};
+		B4AF946421CB76030049B71C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B4AF946621CB76030049B71C /* APIKit.framework */,
+				B4AF946521CB76030049B71C /* Result.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B4DEDEC122CB68E200B16C0B /* CpmToken */ = {
+			isa = PBXGroup;
+			children = (
+				B4DEDEC222CB68E200B16C0B /* GetCpmToken.swift */,
+			);
+			path = CpmToken;
 			sourceTree = "<group>";
 		};
 		DF6B2DE1216F4677007E2B4C /* docs */ = {
@@ -385,6 +420,7 @@
 		DFA1229C21911C3E007C2750 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				B4DEDEC422CB690600B16C0B /* AccountCpmToken.swift */,
 				DFA1229D21911C3E007C2750 /* AccountBalance.swift */,
 				DFA1229E21911C3E007C2750 /* NoContent.swift */,
 				DFA1229F21911C3E007C2750 /* Error.swift */,
@@ -414,6 +450,7 @@
 		DFA122B521911C3F007C2750 /* BankAPI */ = {
 			isa = PBXGroup;
 			children = (
+				B4DEDEC122CB68E200B16C0B /* CpmToken */,
 				DFA122B621911C3F007C2750 /* Transaction */,
 				DFA122BF21911C3F007C2750 /* BankAPIRequest.swift */,
 				DFA122C021911C3F007C2750 /* PrivateMoney */,
@@ -433,6 +470,7 @@
 		DFA122B621911C3F007C2750 /* Transaction */ = {
 			isa = PBXGroup;
 			children = (
+				B4DEDEC622CB6CE800B16C0B /* CreateTransactionWithCpm.swift */,
 				DFA122B721911C3F007C2750 /* CreateTransactionWithBill.swift */,
 				DFA122B821911C3F007C2750 /* SendToUser.swift */,
 				DFA122B921911C3F007C2750 /* SendToAccount.swift */,
@@ -490,6 +528,7 @@
 		DFA122D421911C3F007C2750 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				B4DEDEBC22CB686D00B16C0B /* CreateAccountCpmToken.swift */,
 				DFA122D521911C3F007C2750 /* GetAccount.swift */,
 				DFA122D621911C3F007C2750 /* CreateAccount.swift */,
 				DFA122D721911C3F007C2750 /* GetAccountTransactions.swift */,
@@ -534,6 +573,7 @@
 				DF86A17C216F637600FCD979 /* Pokepay.framework */,
 				B415E51921BA2599009843DB /* PokepayTests */,
 				B4D4446E21BA984B00353BBE /* PokepayTests.xctest */,
+				B4AF946421CB76030049B71C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -547,6 +587,7 @@
 				B415E51421BA2599009843DB /* Sources */,
 				B415E51521BA2599009843DB /* Frameworks */,
 				B415E51621BA2599009843DB /* Resources */,
+				B4AF946321CB757D0049B71C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -585,11 +626,12 @@
 					B415E51721BA2599009843DB = {
 						CreatedOnToolsVersion = 10.1;
 						DevelopmentTeam = ETR87UAWVQ;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					"Pokepay::Pokepay" = {
 						DevelopmentTeam = ETR87UAWVQ;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -599,6 +641,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -629,11 +672,37 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B4AF946321CB757D0049B71C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/APIKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B415E51421BA2599009843DB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4D28E2422CCF94700F4E503 /* CreateAccountCpmToken.swift in Sources */,
+				B4D28E2322CCF94200F4E503 /* CreateTransactionWithCpm.swift in Sources */,
+				B4D28E2222CCF93C00F4E503 /* AccountCpmToken.swift in Sources */,
+				B4D28E2122CCF92A00F4E503 /* GetCpmToken.swift in Sources */,
 				B415E54D21BA2C15009843DB /* PrivateMoney.swift in Sources */,
 				B415E57921BA2C71009843DB /* DeleteCashtray.swift in Sources */,
 				B4D4447621BA9F4900353BBE /* BankAPIJSONDecoder.swift in Sources */,
@@ -724,6 +793,7 @@
 			buildActionMask = 0;
 			files = (
 				DFA1230221911C3F007C2750 /* PrivateMoney.swift in Sources */,
+				B4DEDEC522CB690600B16C0B /* AccountCpmToken.swift in Sources */,
 				DFA1232921911C3F007C2750 /* UpdateCashtray.swift in Sources */,
 				DFA1231A21911C3F007C2750 /* UpdateUser.swift in Sources */,
 				DFA122EB21911C3F007C2750 /* GetUnreadCount.swift in Sources */,
@@ -734,6 +804,7 @@
 				DFA1232121911C3F007C2750 /* GetAccount.swift in Sources */,
 				DFA1230021911C3F007C2750 /* Bill.swift in Sources */,
 				DFA122FC21911C3F007C2750 /* PaginatedTransactions.swift in Sources */,
+				B4DEDEC322CB68E200B16C0B /* GetCpmToken.swift in Sources */,
 				DFA122F521911C3F007C2750 /* PaginatedAccountBalances.swift in Sources */,
 				DFA1230E21911C3F007C2750 /* CreateTransactionWithCashtray.swift in Sources */,
 				DFA1231321911C3F007C2750 /* UpdateBill.swift in Sources */,
@@ -777,6 +848,7 @@
 				DFA1230D21911C3F007C2750 /* GetTransaction.swift in Sources */,
 				DFA122F221911C3F007C2750 /* Error.swift in Sources */,
 				DFA122FA21911C3F007C2750 /* MessageAttachment.swift in Sources */,
+				B4DEDEBD22CB686D00B16C0B /* CreateAccountCpmToken.swift in Sources */,
 				DFA1232021911C3F007C2750 /* AuthorizedRequest.swift in Sources */,
 				B415E50721B9110E009843DB /* RegexCase.swift in Sources */,
 				DFA1230821911C3F007C2750 /* CreateTransactionWithBill.swift in Sources */,
@@ -795,6 +867,7 @@
 				DFA1230321911C3F007C2750 /* PaginatedAccounts.swift in Sources */,
 				DFA1231E21911C3F007C2750 /* GetUserAccounts.swift in Sources */,
 				DFA1232521911C3F007C2750 /* GetCheck.swift in Sources */,
+				B4DEDEC722CB6CE800B16C0B /* CreateTransactionWithCpm.swift in Sources */,
 				DFA1232A21911C3F007C2750 /* GetCashtray.swift in Sources */,
 				DFA1231221911C3F007C2750 /* DeleteBill.swift in Sources */,
 				DFA1230C21911C3F007C2750 /* CancelTransaction.swift in Sources */,
@@ -868,7 +941,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "$(SRCROOT)/Sources/Pokepay/Pokeregi/SwiftAES-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -930,7 +1003,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "$(SRCROOT)/Sources/Pokepay/Pokeregi/SwiftAES-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -968,7 +1041,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "$(SRCROOT)/Sources/Pokepay/Pokeregi/SwiftAES-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGET_NAME = Pokepay;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1005,7 +1078,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "$(SRCROOT)/Sources/Pokepay/Pokeregi/SwiftAES-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGET_NAME = Pokepay;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

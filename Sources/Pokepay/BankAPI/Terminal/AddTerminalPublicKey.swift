@@ -1,7 +1,7 @@
 import APIKit
 
 public extension BankAPI.Terminal {
-    public struct AddPublicKey: BankRequest {
+    struct AddPublicKey: BankRequest {
         public let key: String
 
         public typealias Response = NoContent

@@ -1,7 +1,7 @@
 import APIKit
 
 public extension OAuthAPI.Token {
-    public struct ExchangeAuthCode: OAuthAPIRequest {
+    struct ExchangeAuthCode: OAuthAPIRequest {
         public let code: String
         public let grantType: String = "authorization_code"
         public let clientId: String

@@ -1,7 +1,7 @@
 import APIKit
 
 public extension BankAPI.PrivateMoney {
-    public struct Search: BankRequest {
+    struct Search: BankRequest {
         public let name: String?
         public let includeExclusive: Bool
         public let before: String?

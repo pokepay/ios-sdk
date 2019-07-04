@@ -1,15 +1,17 @@
 import APIKit
 
 public extension BankAPI.Transaction {
-    struct CreateWithJwt: BankRequest {
-        public let data: String
+    struct CreateWithCpm: BankRequest {
+        public let cpmToken: String
         public let accountId: String?
+        public let amount: Double?
 
-        public typealias Response = JwtResult
+        public typealias Response = UserTransaction
 
-        public init(data: String, accountId: String? = nil) {
-            self.data = data
+        public init(cpmToken: String, accountId: String? = nil, amount: Double? = nil) {
+            self.cpmToken = cpmToken
             self.accountId = accountId
+            self.amount = amount
         }
 
         public var method: HTTPMethod {
@@ -21,9 +23,12 @@ public extension BankAPI.Transaction {
         }
 
         public var parameters: Any? {
-            var dict = ["data": data]
+            var dict: [String: Any] = ["cpm_token": cpmToken]
             if accountId != nil {
                 dict["account_id"] = accountId
+            }
+            if amount != nil {
+                dict["amount"] = amount
             }
             return dict
         }

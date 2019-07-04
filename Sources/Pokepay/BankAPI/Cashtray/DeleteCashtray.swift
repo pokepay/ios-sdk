@@ -1,7 +1,7 @@
 import APIKit
 
 public extension BankAPI.Cashtray {
-    public struct Delete: BankRequest {
+    struct Delete: BankRequest {
         public let id: String
 
         public typealias Response = NoContent
