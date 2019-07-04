@@ -312,6 +312,7 @@ AQIDAQAB
         }
         waitForExpectations(timeout: 5.0, handler: nil)
         // ---
+        var firstBalance: Double = 0.0
         expect = expectation(description: "Create CPM with customer AccessToken")
         customer.send(BankAPI.Account.CreateAccountCpmToken(accountId: "d360738a-55e4-469b-882f-c866dc21e5d8", scopes: BankAPI.Account.CreateAccountCpmToken.Scope.BOTH, expiresIn: 100)) { result in
             switch result {
@@ -324,6 +325,7 @@ AQIDAQAB
                             XCTFail("transaction should be null")
                         }
                         let balanceBefore = response.account.balance
+                        firstBalance = balanceBefore
                         merchant.send(BankAPI.Transaction.CreateWithCpm(cpmToken: token, amount: 1000.0)) { result in
                             switch result {
                             case .success:
@@ -335,6 +337,54 @@ AQIDAQAB
                                         }
                                         let balanceAfter = response.account.balance
                                         if balanceBefore + 1000.0 != balanceAfter {
+                                            XCTFail("balance not match")
+                                        }
+                                        expect.fulfill()
+                                    case .failure(let err):
+                                        print(err)
+                                        XCTFail()
+                                    }
+                                }
+                            case .failure(let err):
+                                print(err)
+                                XCTFail()
+                            }
+                        }
+                    case .failure(let err):
+                        print(err)
+                        XCTFail()
+                    }
+                }
+            case .failure(let err):
+                print(err)
+                XCTFail()
+            }
+        }
+        waitForExpectations(timeout: 5.0, handler: nil)
+        // ---
+        expect = expectation(description: "Create CPM with customer AccessToken")
+        customer.send(BankAPI.Account.CreateAccountCpmToken(accountId: "d360738a-55e4-469b-882f-c866dc21e5d8", scopes: BankAPI.Account.CreateAccountCpmToken.Scope.BOTH, expiresIn: 100)) { result in
+            switch result {
+            case .success(let response):
+                let token = response.cpmToken
+                customer.send(BankAPI.CpmToken.Get(cpmToken: token)) { result in
+                    switch result {
+                    case .success(let response):
+                        if response.transaction != nil {
+                            XCTFail("transaction should be null")
+                        }
+                        let balanceBefore = response.account.balance
+                        merchant.send(BankAPI.Transaction.CreateWithCpm(cpmToken: token, amount: -1000.0)) { result in
+                            switch result {
+                            case .success:
+                                customer.send(BankAPI.CpmToken.Get(cpmToken: token)) { result in
+                                    switch result {
+                                    case .success(let response):
+                                        if response.transaction == nil {
+                                            XCTFail("transaction should be")
+                                        }
+                                        let balanceAfter = response.account.balance
+                                        if balanceBefore - 1000.0 != balanceAfter && firstBalance != balanceAfter {
                                             XCTFail("balance not match")
                                         }
                                         expect.fulfill()
