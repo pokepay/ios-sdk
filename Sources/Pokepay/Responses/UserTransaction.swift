@@ -6,7 +6,7 @@ public struct UserTransaction: Codable {
     public let isModified: Bool
     public let user: User
     public let balance: Double
-    public let customerBalance: Double
+    public let customerBalance: Double?
     public let amount: Double
     public let moneyAmount: Double
     public let pointAmount: Double
