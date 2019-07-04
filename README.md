@@ -207,7 +207,7 @@ pod 'Pokepay'
 
 ## Dependencies
 
-* Swift 4.0
+* Swift .0
 * [APIKit](https://github.com/ishkawa/APIKit)
 
 ## Copyright
