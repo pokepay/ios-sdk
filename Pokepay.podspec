@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Pokepay"
-  s.version      = "1.1.0"
+  s.version      = "1.2.0"
   s.summary      = "Pokepay iOS SDK."
   s.description  = <<-DESC
 iOS SDK for Pokepay written in Swift.
@@ -12,6 +12,7 @@ iOS SDK for Pokepay written in Swift.
   s.platform      = :ios, "10.0"
   s.source        = { :git => "https://github.com/pokepay/ios-sdk.git", :tag => "#{s.version}" }
   s.source_files  = "Sources/**/*.swift"
-  s.swift_version = "4.0"
+  s.swift_version = "5.0"
   s.dependency "APIKit", "~> 4.0.0"
+  s.dependency "Result", "~> 4.0.0"
 end
