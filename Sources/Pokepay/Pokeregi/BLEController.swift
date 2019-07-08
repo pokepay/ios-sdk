@@ -22,13 +22,10 @@ class BLEController: NSObject {
     var centralManager: CBCentralManager!
     var peripheral: CBPeripheral!
     var serviceUUID : CBUUID!
-    var tokenCharacteristicsOld : [CBCharacteristic] = []
     var tokenCharacteristic : CBCharacteristic!
     var tokenDataAccumulator : Data = Data.init()
-    var responseCharacteristicOld : CBCharacteristic!
     var responseCharacteristic : CBCharacteristic!
     var responseDataSentCount : Int = 0;
-    var oldProtocol : Bool = false
     var callback : (Result<String, BLEError>) -> Void = { _ in }
     var writeCallback: (Result<Void, BLEError>) -> Void = { _ in }
 
@@ -55,16 +52,6 @@ class BLEController: NSObject {
         serviceUUID = getUUID(token: token)
         tokenDataAccumulator = Data.init()
         responseDataSentCount = 0
-    }
-
-    private func writeResultOld(data: Data, handler: @escaping (Result<Void, BLEError>) -> Void = { _ in })
-    {
-        if peripheral != nil {
-            writeCallback = handler
-            peripheral.writeValue(data, for: self.responseCharacteristicOld, type: CBCharacteristicWriteType.withResponse)
-        } else {
-            handler(.failure(BLEError.peripheralIsGone))
-        }
     }
 
     private func writeResultIter(data: Data, handler: @escaping (Result<Void, BLEError>) -> Void = { _ in })
@@ -96,11 +83,7 @@ class BLEController: NSObject {
     {
         do {
             let data = try Cypher.AES.encrypt(plainString: response, sharedKey: aesKey, iv: kIV)
-            if oldProtocol {
-                writeResultOld(data: data, handler: handler)
-            } else {
-                writeResultIter(data: data, handler: handler)
-            }
+            writeResultIter(data: data, handler: handler)
         } catch let error {
             handler(.failure(BLEError.dataEncryptionError(error)))
         }
@@ -190,16 +173,9 @@ extension BLEController: CBPeripheralDelegate {
         service.characteristics?.forEach { (char) in
             let uuidString = char.uuid.uuidString;
             switch uuidString {
-            case RegexCase(pattern: "^00[1][0-9A-Fa-f]$"):
-                oldProtocol = true
-                tokenCharacteristicsOld.append(char)
-                peripheral.readValue(for: char)
             case RegexCase(pattern: "^0020$"):
-                oldProtocol = false
                 tokenCharacteristic = char
                 peripheral.readValue(for: char)
-            case RegexCase(pattern: "^0030$"):
-                responseCharacteristicOld = char
             case RegexCase(pattern: "^0040$"):
                 responseCharacteristic = char
             case RegexCase(pattern: "^0100$"):
@@ -218,16 +194,9 @@ extension BLEController: CBPeripheralDelegate {
             callback(.failure(BLEError.readingError(error!)))
             return
         }
-        if oldProtocol {
-            let allTokenRead = !(tokenCharacteristicsOld.contains { $0.value == nil })
-            if (allTokenRead) {
-                procTokenOld()
-            }
-        } else {
-            let tokenRead = tokenCharacteristic.value != nil
-            if (tokenRead) {
-                procToken()
-            }
+        let tokenRead = tokenCharacteristic.value != nil
+        if (tokenRead) {
+            procToken()
         }
     }
 
@@ -240,25 +209,6 @@ extension BLEController: CBPeripheralDelegate {
             return
         }
         writeCallback(.success(()))
-    }
-
-    private func procTokenOld() {
-        do {
-            let stringArray = try tokenCharacteristicsOld.sorted(by: { (lhs, rhs) -> Bool in
-                lhs.uuid.uuidString < rhs.uuid.uuidString
-            }).map { (char) -> String in
-                if char.value == nil {
-                    return ""
-                }
-                let data: Data = char.value!
-                let plain = try Cypher.AES.decrypt(encryptedData: data, sharedKey: aesKey, iv: kIV)
-                return plain
-            }
-            let jwt = stringArray.joined()
-            callback(.success(jwt))
-        } catch let error {
-            callback(.failure(BLEError.dataDecryptionError(error)))
-        }
     }
 
     private func procToken() {

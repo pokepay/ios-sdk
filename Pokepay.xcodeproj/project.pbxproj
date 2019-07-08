@@ -104,6 +104,8 @@
 		B4DEDEC322CB68E200B16C0B /* GetCpmToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DEDEC222CB68E200B16C0B /* GetCpmToken.swift */; };
 		B4DEDEC522CB690600B16C0B /* AccountCpmToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DEDEC422CB690600B16C0B /* AccountCpmToken.swift */; };
 		B4DEDEC722CB6CE800B16C0B /* CreateTransactionWithCpm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DEDEC622CB6CE800B16C0B /* CreateTransactionWithCpm.swift */; };
+		B4FDD2DB22D348BE003B561A /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FDD2DA22D348BE003B561A /* Images.swift */; };
+		B4FDD2DC22D349FC003B561A /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FDD2DA22D348BE003B561A /* Images.swift */; };
 		DFA122E521911C3F007C2750 /* OAuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA1228E21911C3E007C2750 /* OAuthAPI.swift */; };
 		DFA122E621911C3F007C2750 /* RefreshAccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA1229121911C3E007C2750 /* RefreshAccessToken.swift */; };
 		DFA122E721911C3F007C2750 /* ExchangeAuthCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA1229221911C3E007C2750 /* ExchangeAuthCode.swift */; };
@@ -198,6 +200,7 @@
 		B4DEDEC222CB68E200B16C0B /* GetCpmToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCpmToken.swift; sourceTree = "<group>"; };
 		B4DEDEC422CB690600B16C0B /* AccountCpmToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCpmToken.swift; sourceTree = "<group>"; };
 		B4DEDEC622CB6CE800B16C0B /* CreateTransactionWithCpm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTransactionWithCpm.swift; sourceTree = "<group>"; };
+		B4FDD2DA22D348BE003B561A /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		DF6B2D97216F4677007E2B4C /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
 		DF6B2D98216F4677007E2B4C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DF6B2DE0216F4677007E2B4C /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
@@ -443,6 +446,7 @@
 				DFA122AE21911C3F007C2750 /* Account.swift */,
 				DFA122AF21911C3F007C2750 /* PrivateMoney.swift */,
 				DFA122B021911C3F007C2750 /* PaginatedAccounts.swift */,
+				B4FDD2DA22D348BE003B561A /* Images.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -699,6 +703,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4FDD2DC22D349FC003B561A /* Images.swift in Sources */,
 				B4D28E2422CCF94700F4E503 /* CreateAccountCpmToken.swift in Sources */,
 				B4D28E2322CCF94200F4E503 /* CreateTransactionWithCpm.swift in Sources */,
 				B4D28E2222CCF93C00F4E503 /* AccountCpmToken.swift in Sources */,
@@ -871,6 +876,7 @@
 				DFA1232A21911C3F007C2750 /* GetCashtray.swift in Sources */,
 				DFA1231221911C3F007C2750 /* DeleteBill.swift in Sources */,
 				DFA1230C21911C3F007C2750 /* CancelTransaction.swift in Sources */,
+				B4FDD2DB22D348BE003B561A /* Images.swift in Sources */,
 				DFA1230721911C3F007C2750 /* Pokepay.swift in Sources */,
 				DFA1232821911C3F007C2750 /* UpdateCheck.swift in Sources */,
 				DFA1232721911C3F007C2750 /* DeleteCheck.swift in Sources */,
