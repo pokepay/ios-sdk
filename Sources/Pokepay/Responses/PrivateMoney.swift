@@ -4,9 +4,11 @@ public struct PrivateMoney: Codable {
     public let id: String
     public let name: String
     public let type: String
+    public let unit: String
     public let description: String
     public let onelineMessage: String
-    public let images: [String: String?]
+    public let accountImage: String?
+    public let images: Images
     public let organization: Organization
     public let maxBalance: Double
     public let transferLimit: Double
@@ -21,8 +23,10 @@ public struct PrivateMoney: Codable {
         case id
         case name
         case type
+        case unit
         case description
         case onelineMessage = "oneline_message"
+        case accountImage = "account_image"
         case images
         case organization
         case maxBalance = "max_balance"
