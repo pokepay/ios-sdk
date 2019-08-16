@@ -91,6 +91,9 @@
 		B415E57821BA2C71009843DB /* CreateCashtray.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA122E121911C3F007C2750 /* CreateCashtray.swift */; };
 		B415E57921BA2C71009843DB /* DeleteCashtray.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA122E221911C3F007C2750 /* DeleteCashtray.swift */; };
 		B415E57B21BA3936009843DB /* PokeregiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415E57A21BA3936009843DB /* PokeregiTests.swift */; };
+		B45BDCF92305553100D583BC /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45BDCF82305553100D583BC /* Product.swift */; };
+		B45BDCFA2306686700D583BC /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45BDCF82305553100D583BC /* Product.swift */; };
+		B45BDCFC2306E52000D583BC /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45BDCFB2306E52000D583BC /* Parameters.swift */; };
 		B4AF946721CB76030049B71C /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AF946521CB76030049B71C /* Result.framework */; };
 		B4AF946821CB76030049B71C /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AF946621CB76030049B71C /* APIKit.framework */; };
 		B4D28E2122CCF92A00F4E503 /* GetCpmToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DEDEC222CB68E200B16C0B /* GetCpmToken.swift */; };
@@ -192,6 +195,8 @@
 		B415E51A21BA2599009843DB /* PokepayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokepayTests.swift; sourceTree = "<group>"; };
 		B415E51C21BA2599009843DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B415E57A21BA3936009843DB /* PokeregiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeregiTests.swift; sourceTree = "<group>"; };
+		B45BDCF82305553100D583BC /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		B45BDCFB2306E52000D583BC /* Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
 		B4AF946521CB76030049B71C /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		B4AF946621CB76030049B71C /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
 		B4D4446E21BA984B00353BBE /* PokepayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokepayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -330,6 +335,14 @@
 			path = PokepayTests;
 			sourceTree = "<group>";
 		};
+		B45BDCF72305553100D583BC /* Parameters */ = {
+			isa = PBXGroup;
+			children = (
+				B45BDCF82305553100D583BC /* Product.swift */,
+			);
+			path = Parameters;
+			sourceTree = "<group>";
+		};
 		B4AF946421CB76030049B71C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +385,7 @@
 		DFA1228D21911C3E007C2750 /* Pokepay */ = {
 			isa = PBXGroup;
 			children = (
+				B45BDCF72305553100D583BC /* Parameters */,
 				B415E50021B910DE009843DB /* Pokeregi */,
 				DFA1228E21911C3E007C2750 /* OAuthAPI.swift */,
 				DFA1228F21911C3E007C2750 /* OAuthAPI */,
@@ -381,9 +395,10 @@
 				DFA122B221911C3F007C2750 /* DecodableDataParser.swift */,
 				DFA122B321911C3F007C2750 /* BankAPI.swift */,
 				DFA122B421911C3F007C2750 /* Pokepay.swift */,
-				DFA122B521911C3F007C2750 /* BankAPI */,
 				DFA122E321911C3F007C2750 /* MessagingAPI.swift */,
+				DFA122B521911C3F007C2750 /* BankAPI */,
 				DFA122E421911C3F007C2750 /* RequestProxy.swift */,
+				B45BDCFB2306E52000D583BC /* Parameters.swift */,
 			);
 			path = Pokepay;
 			sourceTree = "<group>";
@@ -703,6 +718,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B45BDCFA2306686700D583BC /* Product.swift in Sources */,
 				B4FDD2DC22D349FC003B561A /* Images.swift in Sources */,
 				B4D28E2422CCF94700F4E503 /* CreateAccountCpmToken.swift in Sources */,
 				B4D28E2322CCF94200F4E503 /* CreateTransactionWithCpm.swift in Sources */,
@@ -816,6 +832,7 @@
 				DFA1231421911C3F007C2750 /* GetBill.swift in Sources */,
 				DFA1231D21911C3F007C2750 /* DeleteUserEmail.swift in Sources */,
 				DFA1232B21911C3F007C2750 /* CreateCashtray.swift in Sources */,
+				B45BDCF92305553100D583BC /* Product.swift in Sources */,
 				DFA1230521911C3F007C2750 /* DecodableDataParser.swift in Sources */,
 				DFA122FE21911C3F007C2750 /* PaginatedPrivateMoneys.swift in Sources */,
 				DFA1230B21911C3F007C2750 /* CreateTransactionWithCheck.swift in Sources */,
@@ -847,6 +864,7 @@
 				DFA1232D21911C3F007C2750 /* MessagingAPI.swift in Sources */,
 				DFA122ED21911C3F007C2750 /* SendMessage.swift in Sources */,
 				DFA122FB21911C3F007C2750 /* Cashtray.swift in Sources */,
+				B45BDCFC2306E52000D583BC /* Parameters.swift in Sources */,
 				DFA122E821911C3F007C2750 /* OAuthAPIError.swift in Sources */,
 				DFA1231F21911C3F007C2750 /* SendConfirmationEmail.swift in Sources */,
 				DFA122F021911C3F007C2750 /* AccountBalance.swift in Sources */,
