@@ -7,7 +7,7 @@ public struct Product: Codable {
     public let price: Double
     public let unitPrice: Double
     public let isDiscounted: Bool
-    public let other: String
+    public let other: String?
 
     private enum CodingKeys: String, CodingKey {
         case janCode = "jan_code"
@@ -34,8 +34,12 @@ public struct Product: Codable {
         if amountUnit != nil {
             otherDict["amount_unit"] = amountUnit!
         }
-        let other = try! JSONSerialization.data(withJSONObject: otherDict)
-        return Product(janCode: janCode, name: name, price: price, unitPrice: unitPrice, isDiscounted: isDiscounted, other: String(decoding: other, as: UTF8.self))
+        let otherData = try! JSONSerialization.data(withJSONObject: otherDict)
+        var other: String? = String(decoding: otherData, as: UTF8.self)
+        if other == "{}" {
+            other = nil
+        }
+        return Product(janCode: janCode, name: name, price: price, unitPrice: unitPrice, isDiscounted: isDiscounted, other: other)
     }
     
 }

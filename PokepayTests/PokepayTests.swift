@@ -11,7 +11,7 @@ final class PokepayTests: XCTestCase {
     func getProducts() -> [Product] {
         let products: [Product] = [
             Product.create(janCodePrimary: "4569951116179", name: "ハムスこくとろカレー140g", price: 150, unitPrice: 300, isDiscounted: false, amount: 2.0, amountUnit: "個"),
-            Product.create(janCodePrimary: "4569951116179", name: "SCカレーの王様80g", price: 140, unitPrice: 160, isDiscounted: true, amount: 1.0, amountUnit: "個"),
+            Product.create(janCodePrimary: "4569951116179", name: "SCカレーの王様80g", price: 140, unitPrice: 160, isDiscounted: true),
             Product.create(janCodePrimary: "4569951116179", name: "牛肩ロースしゃぶしゃぶ用", price: 600, unitPrice: 200, isDiscounted: false, janCodeSecondary: "4569951116179", amount: 3.0, amountUnit: "100グラム"),
         ]
         return products
