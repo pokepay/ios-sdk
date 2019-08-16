@@ -327,6 +327,81 @@ AQIDAQAB
         waitForExpectations(timeout: 5.0, handler: nil)
     }
 
+    func testCashtray() {
+        let customer = Pokepay.Client(accessToken: customerAccessToken, isMerchant: false, env: .development)
+        let merchant = Pokepay.Client(accessToken: merchantAccessToken, isMerchant: true, env: .development)
+        let expect = expectation(description: "Create CPM with customer AccessToken")
+        merchant.send(BankAPI.Cashtray.Create(amount: -100000)) { result in
+            switch result {
+            case .success(let response):
+                let id = response.id
+                merchant.send(BankAPI.Cashtray.GetAttempts(id: id)) { result in
+                    switch result {
+                    case .success(let attempts):
+                        print(attempts)
+                        XCTAssertEqual(0, attempts.rows.count)
+                        customer.send(BankAPI.Transaction.CreateWithCashtray(cashtrayId: id)) { result in
+                            switch result {
+                            case .success(let tran):
+                                print(tran)
+                                XCTFail("Success on CreateWithCashtray1")
+                            case .failure(let error):
+                                print(error)
+                                merchant.send(BankAPI.Cashtray.GetAttempts(id: id)) { result in
+                                    switch result {
+                                    case .success(let attempts):
+                                        print(attempts)
+                                        XCTAssertEqual(1, attempts.rows.count)
+                                        merchant.send(BankAPI.Cashtray.Update(id: id, amount: 10)) { result in
+                                            switch result {
+                                            case .success(let cashtray):
+                                                print(cashtray)
+                                                customer.send(BankAPI.Transaction.CreateWithCashtray(cashtrayId: id)) { result in
+                                                    switch result {
+                                                    case .success(let tran):
+                                                        print(tran)
+                                                        merchant.send(BankAPI.Cashtray.GetAttempts(id: id)) { result in
+                                                            switch result {
+                                                            case .success(let attempts):
+                                                                print(attempts)
+                                                                XCTAssertEqual(2, attempts.rows.count)
+                                                                XCTAssertEqual(200, attempts.rows[0].statusCode)
+                                                                expect.fulfill()
+                                                            case .failure(let error):
+                                                                print(error)
+                                                                XCTFail("Error on GetAttempts3")
+                                                            }
+                                                        }
+                                                    case .failure(let error):
+                                                        print(error)
+                                                        XCTFail("Error on CreateWithCashtray2")
+                                                    }
+                                                }
+                                            case .failure(let error):
+                                                print(error)
+                                                XCTFail("Error on CashtrayUpdate")
+                                            }
+                                        }
+                                    case .failure(let error):
+                                        print(error)
+                                        XCTFail("Error on GetAttempts2")
+                                    }
+                                }
+                            }
+                        }
+                    case .failure(let error):
+                        print(error)
+                        XCTFail("Error on GetAttempts1")
+                    }
+                }
+            case .failure(let error):
+                print(error)
+                XCTFail("Error on Cashtray.Create")
+            }
+        }
+        waitForExpectations(timeout: 5.0, handler: nil)
+    }
+
     func testCpmTokens() {
         var expect = expectation(description: "404 should return when get random CPM token.")
         let customer = Pokepay.Client(accessToken: customerAccessToken, isMerchant: false, env: .development)
@@ -465,6 +540,7 @@ AQIDAQAB
       ("testGetAccessToken", testGetAccessToken),
       ("testSearchPrivateMoney", testSearchPrivateMoney),
       ("testListMessages", testListMessages),
+      ("testCashtray", testCashtray),
       ("testCpmTokens", testCpmTokens),
     ]
 }

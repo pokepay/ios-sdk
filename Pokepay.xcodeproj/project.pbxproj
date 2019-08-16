@@ -94,6 +94,13 @@
 		B45BDCF92305553100D583BC /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45BDCF82305553100D583BC /* Product.swift */; };
 		B45BDCFA2306686700D583BC /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45BDCF82305553100D583BC /* Product.swift */; };
 		B45BDCFC2306E52000D583BC /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45BDCFB2306E52000D583BC /* Parameters.swift */; };
+		B45BDCFE2306E99A00D583BC /* GetCashtrayAttempts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45BDCFD2306E99A00D583BC /* GetCashtrayAttempts.swift */; };
+		B45BDD002306EA1200D583BC /* CashtrayAttempt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45BDCFF2306EA1200D583BC /* CashtrayAttempt.swift */; };
+		B45BDD022306EB0600D583BC /* CashtrayAttempts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45BDD012306EB0600D583BC /* CashtrayAttempts.swift */; };
+		B45BDD032306EB0600D583BC /* CashtrayAttempts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45BDD012306EB0600D583BC /* CashtrayAttempts.swift */; };
+		B45BDD042306EC1400D583BC /* CashtrayAttempt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45BDCFF2306EA1200D583BC /* CashtrayAttempt.swift */; };
+		B45BDD052306EC1400D583BC /* GetCashtrayAttempts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45BDCFD2306E99A00D583BC /* GetCashtrayAttempts.swift */; };
+		B45BDD062306EC1400D583BC /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45BDCFB2306E52000D583BC /* Parameters.swift */; };
 		B4AF946721CB76030049B71C /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AF946521CB76030049B71C /* Result.framework */; };
 		B4AF946821CB76030049B71C /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AF946621CB76030049B71C /* APIKit.framework */; };
 		B4D28E2122CCF92A00F4E503 /* GetCpmToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DEDEC222CB68E200B16C0B /* GetCpmToken.swift */; };
@@ -197,6 +204,9 @@
 		B415E57A21BA3936009843DB /* PokeregiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeregiTests.swift; sourceTree = "<group>"; };
 		B45BDCF82305553100D583BC /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		B45BDCFB2306E52000D583BC /* Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
+		B45BDCFD2306E99A00D583BC /* GetCashtrayAttempts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCashtrayAttempts.swift; sourceTree = "<group>"; };
+		B45BDCFF2306EA1200D583BC /* CashtrayAttempt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashtrayAttempt.swift; sourceTree = "<group>"; };
+		B45BDD012306EB0600D583BC /* CashtrayAttempts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashtrayAttempts.swift; sourceTree = "<group>"; };
 		B4AF946521CB76030049B71C /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		B4AF946621CB76030049B71C /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
 		B4D4446E21BA984B00353BBE /* PokepayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokepayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -462,6 +472,8 @@
 				DFA122AF21911C3F007C2750 /* PrivateMoney.swift */,
 				DFA122B021911C3F007C2750 /* PaginatedAccounts.swift */,
 				B4FDD2DA22D348BE003B561A /* Images.swift */,
+				B45BDCFF2306EA1200D583BC /* CashtrayAttempt.swift */,
+				B45BDD012306EB0600D583BC /* CashtrayAttempts.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -574,6 +586,7 @@
 				DFA122E021911C3F007C2750 /* GetCashtray.swift */,
 				DFA122E121911C3F007C2750 /* CreateCashtray.swift */,
 				DFA122E221911C3F007C2750 /* DeleteCashtray.swift */,
+				B45BDCFD2306E99A00D583BC /* GetCashtrayAttempts.swift */,
 			);
 			path = Cashtray;
 			sourceTree = "<group>";
@@ -718,6 +731,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B45BDD042306EC1400D583BC /* CashtrayAttempt.swift in Sources */,
+				B45BDD052306EC1400D583BC /* GetCashtrayAttempts.swift in Sources */,
+				B45BDD062306EC1400D583BC /* Parameters.swift in Sources */,
 				B45BDCFA2306686700D583BC /* Product.swift in Sources */,
 				B4FDD2DC22D349FC003B561A /* Images.swift in Sources */,
 				B4D28E2422CCF94700F4E503 /* CreateAccountCpmToken.swift in Sources */,
@@ -753,6 +769,7 @@
 				B415E56821BA2C64009843DB /* GetUserTransactions.swift in Sources */,
 				B415E56021BA2C55009843DB /* UpdateBill.swift in Sources */,
 				B415E52F21BA2BE7009843DB /* RefreshAccessToken.swift in Sources */,
+				B45BDD032306EB0600D583BC /* CashtrayAttempts.swift in Sources */,
 				B415E54921BA2C15009843DB /* UserTransaction.swift in Sources */,
 				B415E55221BA2C1F009843DB /* DecodableDataParser.swift in Sources */,
 				B415E54C21BA2C15009843DB /* Account.swift in Sources */,
@@ -832,6 +849,7 @@
 				DFA1231421911C3F007C2750 /* GetBill.swift in Sources */,
 				DFA1231D21911C3F007C2750 /* DeleteUserEmail.swift in Sources */,
 				DFA1232B21911C3F007C2750 /* CreateCashtray.swift in Sources */,
+				B45BDD002306EA1200D583BC /* CashtrayAttempt.swift in Sources */,
 				B45BDCF92305553100D583BC /* Product.swift in Sources */,
 				DFA1230521911C3F007C2750 /* DecodableDataParser.swift in Sources */,
 				DFA122FE21911C3F007C2750 /* PaginatedPrivateMoneys.swift in Sources */,
@@ -866,6 +884,7 @@
 				DFA122FB21911C3F007C2750 /* Cashtray.swift in Sources */,
 				B45BDCFC2306E52000D583BC /* Parameters.swift in Sources */,
 				DFA122E821911C3F007C2750 /* OAuthAPIError.swift in Sources */,
+				B45BDCFE2306E99A00D583BC /* GetCashtrayAttempts.swift in Sources */,
 				DFA1231F21911C3F007C2750 /* SendConfirmationEmail.swift in Sources */,
 				DFA122F021911C3F007C2750 /* AccountBalance.swift in Sources */,
 				DFA1230D21911C3F007C2750 /* GetTransaction.swift in Sources */,
@@ -897,6 +916,7 @@
 				B4FDD2DB22D348BE003B561A /* Images.swift in Sources */,
 				DFA1230721911C3F007C2750 /* Pokepay.swift in Sources */,
 				DFA1232821911C3F007C2750 /* UpdateCheck.swift in Sources */,
+				B45BDD022306EB0600D583BC /* CashtrayAttempts.swift in Sources */,
 				DFA1232721911C3F007C2750 /* DeleteCheck.swift in Sources */,
 				DFA1232E21911C3F007C2750 /* RequestProxy.swift in Sources */,
 				DFA1231921911C3F007C2750 /* AddTerminalPublicKey.swift in Sources */,
