@@ -352,6 +352,7 @@ AQIDAQAB
                                     case .success(let attempts):
                                         print(attempts)
                                         XCTAssertEqual(1, attempts.rows.count)
+                                        XCTAssertTrue(400 <= attempts.rows[0].statusCode)
                                         merchant.send(BankAPI.Cashtray.Update(id: id, amount: 10)) { result in
                                             switch result {
                                             case .success(let cashtray):
