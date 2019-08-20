@@ -3,10 +3,23 @@ import APIKit
 @testable import Pokepay
 
 final class PokepayTests: XCTestCase {
+
+    public let merchantAccessToken: String = "7mL_asUSVHUZhW11nDJzlm-Xa7-01VjgVBPi8Hd43UAqYpMCEfEuzLPGWfKr0VU9"
+    public let customerAccessToken: String = "fWhzN-3FpIHdNcak5304hJHS7RTSTIpEWfdt0DUwZGAjU947OAV-fWBmPoKjSG6w"
+    public let customerAccountId: String = "7d80bc5b-b179-4d83-898c-4aba76ed76f5" // "c800b446-c016-4a6d-be66-43d63c317db2"
+
+    func getProducts() -> [Product] {
+        let products: [Product] = [
+            Product.create(janCodePrimary: "4569951116179", name: "ハムスこくとろカレー140g", price: 150, unitPrice: 300, isDiscounted: false, amount: 2.0, amountUnit: "個"),
+            Product.create(janCodePrimary: "4569951116179", name: "SCカレーの王様80g", price: 140, unitPrice: 160, isDiscounted: true),
+            Product.create(janCodePrimary: "4569951116179", name: "牛肩ロースしゃぶしゃぶ用", price: 600, unitPrice: 200, isDiscounted: false, janCodeSecondary: "4569951116179", amount: 3.0, amountUnit: "100グラム"),
+        ]
+        return products
+    }
+
     func testGetTerminal() {
         let expect = expectation(description: "get request test")
-        let client = Pokepay.Client(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr",
-                                    env: .development)
+        let client = Pokepay.Client(accessToken: customerAccessToken, env: .development)
         client.getTerminalInfo() { result in
             switch result {
             case .success(let response):
@@ -22,8 +35,7 @@ final class PokepayTests: XCTestCase {
 
     func testAddPublicKey() {
         let expect = expectation(description: "add public key request test")
-        let client = Pokepay.Client(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr",
-                                    env: .development)
+        let client = Pokepay.Client(accessToken: customerAccessToken, env: .development)
         client.send(BankAPI.Terminal.AddPublicKey(key:
 """
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAq8oHIShTIJHrQpBQqAVs
@@ -59,7 +71,7 @@ AQIDAQAB
 
     func testCreateToken() {
         let expect = expectation(description: "create token test")
-        let client = Pokepay.Client(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr",
+        let client = Pokepay.Client(accessToken: merchantAccessToken,
                                     isMerchant: true,
                                     env: .development)
         client.createToken(108) { result in
@@ -77,7 +89,7 @@ AQIDAQAB
 
     func testClientGetTerminal() {
         let expect = expectation(description: "client.getTerminal")
-        let client = Pokepay.Client(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr",
+        let client = Pokepay.Client(accessToken: merchantAccessToken,
                                     isMerchant: true,
                                     env: .development)
         client.getTerminalInfo() { result in
@@ -95,7 +107,7 @@ AQIDAQAB
 
     func testGetTokenInfo() {
         let expect = expectation(description: "client.getTokenInfo")
-        let client = Pokepay.Client(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr",
+        let client = Pokepay.Client(accessToken: merchantAccessToken,
                                     isMerchant: false,
                                     env: .development)
         let dispatchGroup = DispatchGroup()
@@ -105,7 +117,7 @@ AQIDAQAB
             switch result {
             case .success(let token):
                 print(token)
-                let client2 = Pokepay.Client(accessToken: "x7wPPW4QQ1wvu93LlP8GSgCIdG2Pic7anH3UO9kdRZPYDs6ym0V_y40TW6iVc-rY",
+                let client2 = Pokepay.Client(accessToken: self.customerAccessToken,
                                              env: .development)
                 client2.getTokenInfo(token) { result in
                     switch result {
@@ -124,7 +136,7 @@ AQIDAQAB
                 }
             case .failure(let error):
                 print(error)
-                XCTFail("Error on createToken")
+                XCTFail("Error on createToken 1")
             }
         }
 
@@ -134,7 +146,7 @@ AQIDAQAB
             switch result {
             case .success(let token):
                 print(token)
-                let client2 = Pokepay.Client(accessToken: "x7wPPW4QQ1wvu93LlP8GSgCIdG2Pic7anH3UO9kdRZPYDs6ym0V_y40TW6iVc-rY",
+                let client2 = Pokepay.Client(accessToken: self.customerAccessToken,
                                              env: .development)
                 client2.getTokenInfo(token) { result in
                     switch result {
@@ -153,11 +165,11 @@ AQIDAQAB
                 }
             case .failure(let error):
                 print(error)
-                XCTFail("Error on createToken")
+                XCTFail("Error on createToken 2")
             }
         }
 
-        let mclient = Pokepay.Client(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr",
+        let mclient = Pokepay.Client(accessToken: merchantAccessToken,
                                     isMerchant: true,
                                     env: .development)
         // cashtray
@@ -166,7 +178,7 @@ AQIDAQAB
             switch result {
             case .success(let token):
                 print(token)
-                let client2 = Pokepay.Client(accessToken: "x7wPPW4QQ1wvu93LlP8GSgCIdG2Pic7anH3UO9kdRZPYDs6ym0V_y40TW6iVc-rY",
+                let client2 = Pokepay.Client(accessToken: self.customerAccessToken,
                                              env: .development)
                 client2.getTokenInfo(token) { result in
                     switch result {
@@ -185,7 +197,7 @@ AQIDAQAB
                 }
             case .failure(let error):
                 print(error)
-                XCTFail("Error on createToken")
+                XCTFail("Error on createToken 3")
             }
         }
 
@@ -198,30 +210,61 @@ AQIDAQAB
 
     func testScanToken() {
         let expect = expectation(description: "client.scanToken")
-        let client = Pokepay.Client(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr",
+        let mclient = Pokepay.Client(accessToken: merchantAccessToken,
                                     isMerchant: true,
                                     env: .development)
-        client.createToken(108) { result in
+        let dispatchGroup = DispatchGroup()
+        // cashtray
+        dispatchGroup.enter()
+        mclient.createToken(108) { result in
             switch result {
             case .success(let token):
                 print(token)
-                let client2 = Pokepay.Client(accessToken: "x7wPPW4QQ1wvu93LlP8GSgCIdG2Pic7anH3UO9kdRZPYDs6ym0V_y40TW6iVc-rY",
+                let client2 = Pokepay.Client(accessToken: self.customerAccessToken,
                                              env: .development)
                 client2.scanToken(token) { result in
                     switch result {
                     case .success(let transaction):
                         print(transaction)
-                        expect.fulfill()
+                        dispatchGroup.leave()
                     case .failure(let error):
                         print(error)
-                        expect.fulfill()
+                        XCTFail("Error on scanToken")
                     }
                 }
             case .failure(let error):
                 print(error)
-                expect.fulfill()
+                XCTFail("Error on createToken")
             }
         }
+        // cashtray
+        dispatchGroup.enter()
+        mclient.createToken(-108, products: getProducts()) { result in
+            switch result {
+            case .success(let token):
+                print(token)
+                let client2 = Pokepay.Client(accessToken: self.customerAccessToken,
+                                             env: .development)
+                client2.scanToken(token) { result in
+                    switch result {
+                    case .success(let transaction):
+                        print(transaction)
+                        dispatchGroup.leave()
+                    case .failure(let error):
+                        print(error)
+                        XCTFail("Error on scanToken")
+                    }
+                }
+            case .failure(let error):
+                print(error)
+                XCTFail("Error on createToken")
+            }
+        }
+
+        dispatchGroup.notify(queue: DispatchQueue.main, work: DispatchWorkItem(block: {
+            expect.fulfill()
+        }))
+
         waitForExpectations(timeout: 5.0, handler: nil)
     }
 
@@ -251,7 +294,7 @@ AQIDAQAB
 
     func testSearchPrivateMoney() {
         let expect = expectation(description: "SearchPrivateMoney")
-        let client = Pokepay.Client(accessToken: "ZhwMsfoAyWZMGrCAKrrofmwYHV82GkUcf3kYSZYYf1oDKVvFAPIKuefyQoc1KDVr",
+        let client = Pokepay.Client(accessToken: merchantAccessToken,
                                     isMerchant: true,
                                     env: .development)
         client.send(BankAPI.PrivateMoney.Search()) { result in
@@ -269,7 +312,7 @@ AQIDAQAB
 
     func testListMessages() {
         let expect = expectation(description: "ListMessages")
-        let client = Pokepay.Client(accessToken: "4evQMOwx077ev_ke6f1-E1TxQvs5B1KZh9uwscJbncblfw0Hrcta_L2Fs4Nlyc0s",
+        let client = Pokepay.Client(accessToken: customerAccessToken,
                                     env: .development)
         client.send(MessagingAPI.List()) { result in
             switch result {
@@ -284,10 +327,86 @@ AQIDAQAB
         waitForExpectations(timeout: 5.0, handler: nil)
     }
 
+    func testCashtray() {
+        let customer = Pokepay.Client(accessToken: customerAccessToken, isMerchant: false, env: .development)
+        let merchant = Pokepay.Client(accessToken: merchantAccessToken, isMerchant: true, env: .development)
+        let expect = expectation(description: "Create CPM with customer AccessToken")
+        merchant.send(BankAPI.Cashtray.Create(amount: -100000)) { result in
+            switch result {
+            case .success(let response):
+                let id = response.id
+                merchant.send(BankAPI.Cashtray.GetAttempts(id: id)) { result in
+                    switch result {
+                    case .success(let attempts):
+                        print(attempts)
+                        XCTAssertEqual(0, attempts.rows.count)
+                        customer.send(BankAPI.Transaction.CreateWithCashtray(cashtrayId: id)) { result in
+                            switch result {
+                            case .success(let tran):
+                                print(tran)
+                                XCTFail("Success on CreateWithCashtray1")
+                            case .failure(let error):
+                                print(error)
+                                merchant.send(BankAPI.Cashtray.GetAttempts(id: id)) { result in
+                                    switch result {
+                                    case .success(let attempts):
+                                        print(attempts)
+                                        XCTAssertEqual(1, attempts.rows.count)
+                                        XCTAssertTrue(400 <= attempts.rows[0].statusCode)
+                                        merchant.send(BankAPI.Cashtray.Update(id: id, amount: 10)) { result in
+                                            switch result {
+                                            case .success(let cashtray):
+                                                print(cashtray)
+                                                customer.send(BankAPI.Transaction.CreateWithCashtray(cashtrayId: id)) { result in
+                                                    switch result {
+                                                    case .success(let tran):
+                                                        print(tran)
+                                                        merchant.send(BankAPI.Cashtray.GetAttempts(id: id)) { result in
+                                                            switch result {
+                                                            case .success(let attempts):
+                                                                print(attempts)
+                                                                XCTAssertEqual(2, attempts.rows.count)
+                                                                XCTAssertEqual(200, attempts.rows[0].statusCode)
+                                                                expect.fulfill()
+                                                            case .failure(let error):
+                                                                print(error)
+                                                                XCTFail("Error on GetAttempts3")
+                                                            }
+                                                        }
+                                                    case .failure(let error):
+                                                        print(error)
+                                                        XCTFail("Error on CreateWithCashtray2")
+                                                    }
+                                                }
+                                            case .failure(let error):
+                                                print(error)
+                                                XCTFail("Error on CashtrayUpdate")
+                                            }
+                                        }
+                                    case .failure(let error):
+                                        print(error)
+                                        XCTFail("Error on GetAttempts2")
+                                    }
+                                }
+                            }
+                        }
+                    case .failure(let error):
+                        print(error)
+                        XCTFail("Error on GetAttempts1")
+                    }
+                }
+            case .failure(let error):
+                print(error)
+                XCTFail("Error on Cashtray.Create")
+            }
+        }
+        waitForExpectations(timeout: 5.0, handler: nil)
+    }
+
     func testCpmTokens() {
         var expect = expectation(description: "404 should return when get random CPM token.")
-        let customer = Pokepay.Client(accessToken: "oNTvWHFqv512JJQhUVgAwCx7LphHVpHFAp_jDMQ62THIN9iOwNfUXA9nMkI66xoA", env: .development)
-        let merchant = Pokepay.Client(accessToken: "7mL_asUSVHUZhW11nDJzlm-Xa7-01VjgVBPi8Hd43UAqYpMCEfEuzLPGWfKr0VU9", env: .development)
+        let customer = Pokepay.Client(accessToken: customerAccessToken, isMerchant: false, env: .development)
+        let merchant = Pokepay.Client(accessToken: merchantAccessToken, isMerchant: true, env: .development)
         customer.send(BankAPI.CpmToken.Get(cpmToken: "000011112222")) { result in
             switch result {
             case .success:
@@ -314,7 +433,7 @@ AQIDAQAB
         // ---
         var firstBalance: Double = 0.0
         expect = expectation(description: "Create CPM with customer AccessToken")
-        customer.send(BankAPI.Account.CreateAccountCpmToken(accountId: "d360738a-55e4-469b-882f-c866dc21e5d8", scopes: BankAPI.Account.CreateAccountCpmToken.Scope.BOTH, expiresIn: 100)) { result in
+        customer.send(BankAPI.Account.CreateAccountCpmToken(accountId: customerAccountId, scopes: BankAPI.Account.CreateAccountCpmToken.Scope.BOTH, expiresIn: 100)) { result in
             switch result {
             case .success(let response):
                 let token = response.cpmToken
@@ -363,7 +482,7 @@ AQIDAQAB
         waitForExpectations(timeout: 5.0, handler: nil)
         // ---
         expect = expectation(description: "Create CPM with customer AccessToken")
-        customer.send(BankAPI.Account.CreateAccountCpmToken(accountId: "d360738a-55e4-469b-882f-c866dc21e5d8", scopes: BankAPI.Account.CreateAccountCpmToken.Scope.BOTH, expiresIn: 100)) { result in
+        customer.send(BankAPI.Account.CreateAccountCpmToken(accountId: customerAccountId, scopes: BankAPI.Account.CreateAccountCpmToken.Scope.BOTH, expiresIn: 100)) { result in
             switch result {
             case .success(let response):
                 let token = response.cpmToken
@@ -374,7 +493,7 @@ AQIDAQAB
                             XCTFail("transaction should be null")
                         }
                         let balanceBefore = response.account.balance
-                        merchant.send(BankAPI.Transaction.CreateWithCpm(cpmToken: token, amount: -1000.0)) { result in
+                        merchant.send(BankAPI.Transaction.CreateWithCpm(cpmToken: token, amount: -1000.0, products: self.getProducts())) { result in
                             switch result {
                             case .success:
                                 customer.send(BankAPI.CpmToken.Get(cpmToken: token)) { result in
@@ -422,6 +541,7 @@ AQIDAQAB
       ("testGetAccessToken", testGetAccessToken),
       ("testSearchPrivateMoney", testSearchPrivateMoney),
       ("testListMessages", testListMessages),
+      ("testCashtray", testCashtray),
       ("testCpmTokens", testCpmTokens),
     ]
 }

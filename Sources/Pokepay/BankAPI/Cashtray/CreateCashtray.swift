@@ -5,13 +5,15 @@ public extension BankAPI.Cashtray {
         public let amount: Double
         public let description: String?
         public let expiresIn: Int32?
+        public let products: [Product]?
 
         public typealias Response = Cashtray
 
-        public init(amount: Double, description: String? = nil, expiresIn: Int32? = nil) {
+        public init(amount: Double, description: String? = nil, expiresIn: Int32? = nil, products: [Product]? = nil) {
             self.amount = amount
             self.description = description
             self.expiresIn = expiresIn
+            self.products = products
         }
 
         public var method: HTTPMethod {
@@ -29,6 +31,9 @@ public extension BankAPI.Cashtray {
             }
             if expiresIn != nil {
                 dict["expires_in"] = expiresIn
+            }
+            if products != nil {
+                dict["products"] = products!.map { $0.dictionary }
             }
             return dict
         }

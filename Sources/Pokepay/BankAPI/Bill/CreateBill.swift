@@ -5,13 +5,15 @@ public extension BankAPI.Bill {
         public let amount: Double?
         public let accountId: String?
         public let description: String?
+        public let products: [Product]?
 
         public typealias Response = Bill
 
-        public init(amount: Double? = nil, accountId: String? = nil, description: String? = nil) {
+        public init(amount: Double? = nil, accountId: String? = nil, description: String? = nil, products: [Product]? = nil) {
             self.amount = amount
             self.accountId = accountId
             self.description = description
+            self.products = products
         }
 
         public var method: HTTPMethod {
@@ -29,6 +31,9 @@ public extension BankAPI.Bill {
             }
             if description != nil {
                 dict["description"] = description
+            }
+            if products != nil {
+                dict["products"] = products!.map { $0.dictionary }
             }
             return dict
         }
