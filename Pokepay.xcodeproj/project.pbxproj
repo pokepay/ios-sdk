@@ -191,6 +191,7 @@
 		DFA1232D21911C3F007C2750 /* MessagingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA122E321911C3F007C2750 /* MessagingAPI.swift */; };
 		DFA1232E21911C3F007C2750 /* RequestProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA122E421911C3F007C2750 /* RequestProxy.swift */; };
 		DFA123302191212D007C2750 /* MessageUnreadCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA1232F2191212D007C2750 /* MessageUnreadCount.swift */; };
+		DFB910EB230CF47B0065FE07 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFB910EA230CF47B0065FE07 /* Security.framework */; };
 		DFD201FA21B534F300A1D59B /* JwtResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD201F921B534F300A1D59B /* JwtResult.swift */; };
 /* End PBXBuildFile section */
 
@@ -300,6 +301,7 @@
 		DFA122E321911C3F007C2750 /* MessagingAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagingAPI.swift; sourceTree = "<group>"; };
 		DFA122E421911C3F007C2750 /* RequestProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProxy.swift; sourceTree = "<group>"; };
 		DFA1232F2191212D007C2750 /* MessageUnreadCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageUnreadCount.swift; sourceTree = "<group>"; };
+		DFB910EA230CF47B0065FE07 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DFD201F921B534F300A1D59B /* JwtResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JwtResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -318,6 +320,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
+				DFB910EB230CF47B0065FE07 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +359,7 @@
 		B4AF946421CB76030049B71C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DFB910EA230CF47B0065FE07 /* Security.framework */,
 				B4AF946621CB76030049B71C /* APIKit.framework */,
 				B4AF946521CB76030049B71C /* Result.framework */,
 			);
