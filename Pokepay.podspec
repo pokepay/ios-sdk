@@ -11,7 +11,7 @@ iOS SDK for Pokepay written in Swift.
   s.author        = { "Eitaro Fukamachi" => "eitaro.fukamachi@pocket-change.jp" }
   s.platform      = :ios, "10.0"
   s.source        = { :git => "https://github.com/pokepay/ios-sdk.git", :tag => "#{s.version}" }
-  s.source_files  = "Sources/**/*.swift"
+  s.source_files  = "Sources/**/*.swift", "Sources/**/*.h"
   s.swift_version = "5.0"
   s.dependency "APIKit", "~> 4.0.0"
   s.dependency "Result", "~> 4.0.0"
