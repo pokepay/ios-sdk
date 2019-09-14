@@ -197,6 +197,15 @@ client.send(BankAPI.Terminal.Get()) { result in
 
 ## Installation
 
+```
+brew update; brew install carthage
+ls Cartfile
+carthage bootstrap --platform iOS
+open Pokepay.xcodeproj
+[Cmd-b]
+ls $HOME/Library/Developer/Xcode/DerivedData/Pokepay-{somecode}/Build/Products/Release-iphoneos/Pokepay.framework
+```
+
 ### Carthage
 
 ```ruby
