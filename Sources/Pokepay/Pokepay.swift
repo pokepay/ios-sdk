@@ -301,8 +301,12 @@ public struct Pokepay {
             }
         }
 
-        public func getAuthorizationUrl() -> String {
-            return "\(wwwBaseURL)/oauth/authorize?client_id=\(clientId)&response_type=code"
+        public func getAuthorizationUrl(contact: String? = nil) -> String {
+            if contact != nil {
+                return "\(wwwBaseURL)/oauth/authorize?client_id=\(clientId)&response_type=code&contact=\(contact)"
+            } else {
+                return "\(wwwBaseURL)/oauth/authorize?client_id=\(clientId)&response_type=code"
+            }
         }
 
         public func getAccessToken(code: String,
