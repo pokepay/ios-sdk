@@ -269,11 +269,9 @@ AQIDAQAB
     }
 
     func testAuthorizationUrl() {
-        let expect = expectation(description: "OAuthClient.getAuthorizationUrl")
         let oauth = Pokepay.OAuthClient(clientId: "3qyJZlDnJbGK5roa-5XLkw", clientSecret: "kz96I8SDmjl2x77aAI9iNvAjc0cneL3UoK6zKLjmdXwmoghC7FSRrqKr")
-        print(oauth.getAuthorizationUrl())
-        expect.fulfill()
-        waitForExpectations(timeout: 5.0, handler: nil)
+        XCTAssertEqual(oauth.getAuthorizationUrl(), "https://www-dev.pokepay.jp/oauth/authorize?client_id=3qyJZlDnJbGK5roa-5XLkw&response_type=code")
+        XCTAssertEqual(oauth.getAuthorizationUrl(contact: "09012345678"), "https://www-dev.pokepay.jp/oauth/authorize?client_id=3qyJZlDnJbGK5roa-5XLkw&response_type=code&contact=09012345678")
     }
 
     func testGetAccessToken() {
