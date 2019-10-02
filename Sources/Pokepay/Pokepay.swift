@@ -303,7 +303,7 @@ public struct Pokepay {
 
         public func getAuthorizationUrl(contact: String? = nil) -> String {
             if contact != nil {
-                return "\(wwwBaseURL)/oauth/authorize?client_id=\(clientId)&response_type=code&contact=\(contact)"
+                return "\(wwwBaseURL)/oauth/authorize?client_id=\(clientId)&response_type=code&contact=\(contact!)"
             } else {
                 return "\(wwwBaseURL)/oauth/authorize?client_id=\(clientId)&response_type=code"
             }
