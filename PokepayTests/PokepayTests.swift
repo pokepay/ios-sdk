@@ -273,6 +273,7 @@ AQIDAQAB
         XCTAssertEqual(oauth.getAuthorizationUrl(), "https://www-dev.pokepay.jp/oauth/authorize?client_id=3qyJZlDnJbGK5roa-5XLkw&response_type=code")
         XCTAssertEqual(oauth.getAuthorizationUrl(contact: "09012345678"), "https://www-dev.pokepay.jp/oauth/authorize?client_id=3qyJZlDnJbGK5roa-5XLkw&response_type=code&contact=09012345678")
         XCTAssertEqual(oauth.getAuthorizationUrl(contact: "{"), "https://www-dev.pokepay.jp/oauth/authorize?client_id=3qyJZlDnJbGK5roa-5XLkw&response_type=code&contact=%7B")
+        XCTAssertEqual(oauth.getAuthorizationUrl(contact: "{}@foo.jp"), "https://www-dev.pokepay.jp/oauth/authorize?client_id=3qyJZlDnJbGK5roa-5XLkw&response_type=code&contact=%7B%7D@foo.jp")
     }
 
     func testGetAccessToken() {
