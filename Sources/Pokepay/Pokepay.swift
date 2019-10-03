@@ -302,10 +302,13 @@ public struct Pokepay {
         }
 
         public func getAuthorizationUrl(contact: String? = nil) -> String {
+            let url = "\(wwwBaseURL)/oauth/authorize?client_id=\(clientId)&response_type=code"
             if contact != nil {
-                return "\(wwwBaseURL)/oauth/authorize?client_id=\(clientId)&response_type=code&contact=\(contact!)"
+                let encodedContact = contact!.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
+                precondition(encodedContact != nil)
+                return "\(url)&contact=\(encodedContact!)"
             } else {
-                return "\(wwwBaseURL)/oauth/authorize?client_id=\(clientId)&response_type=code"
+                return url
             }
         }
 
