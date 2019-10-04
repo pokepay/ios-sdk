@@ -304,7 +304,7 @@ public struct Pokepay {
         public func getAuthorizationUrl(contact: String? = nil) -> String {
             let url = "\(wwwBaseURL)/oauth/authorize?client_id=\(clientId)&response_type=code"
             guard let contact = contact else {
-                return url;
+                return url
             }
             let encodedContact = contact.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
             precondition(encodedContact != nil)
