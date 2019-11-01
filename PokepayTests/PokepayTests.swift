@@ -200,7 +200,80 @@ AQIDAQAB
                 XCTFail("Error on createToken 3")
             }
         }
-
+        
+        // pokeregi
+        let v1_QR_Token = "A0B1C2D3E4F5G6H7I8J9K0L1M"
+        dispatchGroup.enter()
+        client.getTokenInfo(v1_QR_Token) { result in
+        switch result {
+            case .success(let value):
+                switch value {
+                case .pokeregi:
+                    dispatchGroup.leave()
+                default:
+                    print(value)
+                    XCTFail("Unexpected type")
+                }
+            case .failure(let error):
+                print(error)
+                XCTFail("Error on getTokenInfo")
+            }
+        }
+        
+        let v1_NFC_Token = "https://www.pokepay.jp/pd?d=A0B1C2D3E4F5G6H7I8J9K0L1M"
+        dispatchGroup.enter()
+        client.getTokenInfo(v1_NFC_Token) { result in
+        switch result {
+            case .success(let value):
+                switch value {
+                case .pokeregi:
+                    dispatchGroup.leave()
+                default:
+                    print(value)
+                    XCTFail("Unexpected type")
+                }
+            case .failure(let error):
+                print(error)
+                XCTFail("Error on getTokenInfo")
+            }
+        }
+        
+        let v2_QR_NFC_Token = "https://www.pokepay.jp/pd/A0B1C2D3E4F5G6H7I8J9K0L1M"
+        dispatchGroup.enter()
+        client.getTokenInfo(v2_QR_NFC_Token) { result in
+        switch result {
+            case .success(let value):
+                switch value {
+                case .pokeregi:
+                    dispatchGroup.leave()
+                default:
+                    print(value)
+                    XCTFail("Unexpected type")
+                }
+            case .failure(let error):
+                print(error)
+                XCTFail("Error on getTokenInfo")
+            }
+        }
+        
+        let invalidToken = "ABCDEFG10102020202020"
+        dispatchGroup.enter()
+        client.getTokenInfo(invalidToken) { result in
+        switch result {
+            case .success(let value):
+                switch value {
+                case .pokeregi:
+                    print(value)
+                    XCTFail("Shouldn't be success")
+                default:
+                    print(value)
+                    XCTFail("Unexpected type")
+                }
+            case .failure(_):
+                dispatchGroup.leave()
+            }
+        }
+        
         dispatchGroup.notify(queue: DispatchQueue.main, work: DispatchWorkItem(block: {
             expect.fulfill()
         }))

@@ -103,6 +103,10 @@
 		B45BDD062306EC1400D583BC /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45BDCFB2306E52000D583BC /* Parameters.swift */; };
 		B4AF946721CB76030049B71C /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AF946521CB76030049B71C /* Result.framework */; };
 		B4AF946821CB76030049B71C /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AF946621CB76030049B71C /* APIKit.framework */; };
+		B4BE7458236AA9BF0096C59B /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AF946621CB76030049B71C /* APIKit.framework */; };
+		B4BE7459236AA9BF0096C59B /* APIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4AF946621CB76030049B71C /* APIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B4BE745A236AA9BF0096C59B /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AF946521CB76030049B71C /* Result.framework */; };
+		B4BE745B236AA9BF0096C59B /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4AF946521CB76030049B71C /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4D28E2122CCF92A00F4E503 /* GetCpmToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DEDEC222CB68E200B16C0B /* GetCpmToken.swift */; };
 		B4D28E2222CCF93C00F4E503 /* AccountCpmToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DEDEC422CB690600B16C0B /* AccountCpmToken.swift */; };
 		B4D28E2322CCF94200F4E503 /* CreateTransactionWithCpm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DEDEC622CB6CE800B16C0B /* CreateTransactionWithCpm.swift */; };
@@ -194,6 +198,21 @@
 		DFB910EB230CF47B0065FE07 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFB910EA230CF47B0065FE07 /* Security.framework */; };
 		DFD201FA21B534F300A1D59B /* JwtResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD201F921B534F300A1D59B /* JwtResult.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B4BE745C236AA9BF0096C59B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B4BE7459236AA9BF0096C59B /* APIKit.framework in Embed Frameworks */,
+				B4BE745B236AA9BF0096C59B /* Result.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B415E50121B9110D009843DB /* BLEController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLEController.swift; sourceTree = "<group>"; };
@@ -320,6 +339,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
+				B4BE745A236AA9BF0096C59B /* Result.framework in Frameworks */,
+				B4BE7458236AA9BF0096C59B /* APIKit.framework in Frameworks */,
 				DFB910EB230CF47B0065FE07 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,8 +429,8 @@
 				DFA122B121911C3F007C2750 /* Env.swift */,
 				DFA122B221911C3F007C2750 /* DecodableDataParser.swift */,
 				DFA122B321911C3F007C2750 /* BankAPI.swift */,
-				DFA122B421911C3F007C2750 /* Pokepay.swift */,
 				DFA122E321911C3F007C2750 /* MessagingAPI.swift */,
+				DFA122B421911C3F007C2750 /* Pokepay.swift */,
 				DFA122B521911C3F007C2750 /* BankAPI */,
 				DFA122E421911C3F007C2750 /* RequestProxy.swift */,
 				B45BDCFB2306E52000D583BC /* Parameters.swift */,
@@ -640,6 +661,8 @@
 			buildPhases = (
 				OBJ_168 /* Sources */,
 				OBJ_227 /* Frameworks */,
+				B4BE745C236AA9BF0096C59B /* Embed Frameworks */,
+				B4BE745D236AA9F40096C59B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -710,6 +733,25 @@
 
 /* Begin PBXShellScriptBuildPhase section */
 		B4AF946321CB757D0049B71C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/APIKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		B4BE745D236AA9F40096C59B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
