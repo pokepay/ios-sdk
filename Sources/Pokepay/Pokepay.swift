@@ -2,6 +2,24 @@ import Foundation
 import APIKit
 import Result
 
+private extension String {
+    func capture(pattern: String, group: Int) -> String? {
+        let result = capture(pattern: pattern, group: [group])
+        return result.isEmpty ? nil : result[0]
+    }
+    func capture(pattern: String, group: [Int]) -> [String] {
+        guard let regex = try? NSRegularExpression(pattern: pattern) else {
+            return []
+        }
+        guard let matched = regex.firstMatch(in: self, range: NSRange(location: 0, length: self.count)) else {
+            return []
+        }
+        return group.map { group -> String in
+            return (self as NSString).substring(with: matched.range(at: group))
+        }
+    }
+}
+
 public enum PokepayError: Error {
     case invalidToken
     case connectionError(Error)
@@ -71,6 +89,21 @@ public struct Pokepay {
         public func getTerminalInfo(handler: @escaping (Result<Terminal, PokepayError>) -> Void = { _ in }) {
             send(BankAPI.Terminal.Get(), handler: handler)
         }
+        
+        public func parseAsPokeregiToken(_ token: String) -> (matched: Bool, key: String) {
+            if let group = token.capture(
+                // * {25 ALNUM} - (Pokeregi_V1 OfflineMode QR)
+                pattern: "^([A-Z0-9]{25})$", group: 1) {
+                return (matched: true, key: group)
+            }
+            if let group = token.capture(
+                // * https://www.pokepay.jp/pd?={25 ALNUM} - (Pokeregi_V1 OfflineMode NFC)
+                // * https://www.pokepay.jp/pd/{25 ALNUM} - (Pokeregi_V2 OfflineMode QR & NFC)
+                pattern: "^https://www(?:-dev|-sandbox|-qa|)\\.pokepay\\.jp/pd(?:/|\\?d=)([0-9A-Z]{25})$", group: 1) {
+                return (matched: true, key: group)
+            }
+            return (matched: false, key: "")
+        }
 
         public func getTokenInfo(_ token: String,
                                  handler: @escaping (Result<TokenInfo, PokepayError>) -> Void) {
@@ -107,9 +140,6 @@ public struct Pokepay {
                     }
                 }
             }
-            else if token.range(of: "^[A-Z0-9]{25}$", options: NSString.CompareOptions.regularExpression, range: nil, locale: nil) != nil {
-                handler(.success(TokenInfo.pokeregi))
-            }
             else if token.range(of: "^[0-9]{12}$", options: NSString.CompareOptions.regularExpression, range: nil, locale: nil) != nil {
                 send(BankAPI.CpmToken.Get(cpmToken: token)) { result in
                     switch result {
@@ -119,6 +149,9 @@ public struct Pokepay {
                         handler(.failure(error))
                     }
                 }
+            }
+            else if parseAsPokeregiToken(token).matched {
+                handler(.success(TokenInfo.pokeregi))
             }
             else {
                 handler(.failure(PokepayError.invalidToken))
@@ -200,14 +233,16 @@ public struct Pokepay {
                 let uuid = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/checks/".utf8.count))
                 send(BankAPI.Transaction.CreateWithCheck(checkId: uuid, accountId: accountId), handler: handler)
             }
-            else if token.range(of: "^[A-Z0-9]{25}$", options: NSString.CompareOptions.regularExpression, range: nil, locale: nil) != nil {
-                bleScanToken(token, handler: handler)
-            }
             else if token.range(of: "^[0-9]{12}$", options: NSString.CompareOptions.regularExpression, range: nil, locale: nil) != nil {
                 send(BankAPI.Transaction.CreateWithCpm(cpmToken: token, accountId: accountId, amount: amount, products: products), handler: handler)
             }
             else {
-                handler(.failure(PokepayError.invalidToken))
+                let pokeregiToken = parseAsPokeregiToken(token)
+                if pokeregiToken.matched {
+                    bleScanToken(pokeregiToken.key, handler: handler)
+                } else {
+                    handler(.failure(PokepayError.invalidToken))
+                }
             }
         }
 

@@ -4,9 +4,9 @@ import APIKit
 
 final class PokepayTests: XCTestCase {
 
-    public let merchantAccessToken: String = "7mL_asUSVHUZhW11nDJzlm-Xa7-01VjgVBPi8Hd43UAqYpMCEfEuzLPGWfKr0VU9"
-    public let customerAccessToken: String = "fWhzN-3FpIHdNcak5304hJHS7RTSTIpEWfdt0DUwZGAjU947OAV-fWBmPoKjSG6w"
-    public let customerAccountId: String = "7d80bc5b-b179-4d83-898c-4aba76ed76f5" // "c800b446-c016-4a6d-be66-43d63c317db2"
+    public let merchantAccessToken: String = "eYNDMo_cAqPgxMW3qlMv9968awTwFpiwi_rR8XrRhaO6zMOgMfem2q1wfnlluo-v"
+    public let customerAccessToken: String = "S-WAIYRN6rVdb77rYGgMeRQgMLuQ2ZAM0Fo8HfocrrTWxH7tsehCkD6JJSjGhs-0"
+    public let customerAccountId: String = "eb4e552b-4299-4e8f-ba8b-d738c96e1f60"
 
     func getProducts() -> [Product] {
         let products: [Product] = [
@@ -528,7 +528,24 @@ AQIDAQAB
             }
         }
         waitForExpectations(timeout: 5.0, handler: nil)
-     }
+    }
+    
+    func testParsingPokeregiToken() {
+        let client = Pokepay.Client(accessToken: self.customerAccessToken, env: .development)
+        let key = "A0B1C2D3E4F5G6H7I8J9K0L1M"
+        let v1QRToken = client.parseAsPokeregiToken(key)
+        XCTAssertTrue(v1QRToken.matched, "V1 QR should be matched")
+        XCTAssertEqual(v1QRToken.key, key, "V1 QR key")
+        let v1NFCToken = client.parseAsPokeregiToken("https://www.pokepay.jp/pd?d=" + key)
+        XCTAssertTrue(v1NFCToken.matched, "V1 NFC should be matched")
+        XCTAssertEqual(v1NFCToken.key, key, "V1 NFC key")
+        let v2QRNFCToken = client.parseAsPokeregiToken("https://www.pokepay.jp/pd/" + key)
+        XCTAssertTrue(v2QRNFCToken.matched, "V2 QR/NFC shoudl be  matched")
+        XCTAssertEqual(v2QRNFCToken.key, key, "V2 QR/NFC key")
+        let invalidToken = client.parseAsPokeregiToken("ABCDEFG10102020202020")
+        XCTAssertFalse(invalidToken.matched, "Invalid token should not be matched")
+        XCTAssertEqual(invalidToken.key, "", "Invalid token should not have data")
+    }
 
     static var allTests = [
       ("testGetTerminal", testGetTerminal),
@@ -543,5 +560,6 @@ AQIDAQAB
       ("testListMessages", testListMessages),
       ("testCashtray", testCashtray),
       ("testCpmTokens", testCpmTokens),
+      ("testParsingPokeregiToken", testParsingPokeregiToken),
     ]
 }
