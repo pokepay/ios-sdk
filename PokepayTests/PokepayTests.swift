@@ -201,6 +201,46 @@ AQIDAQAB
             }
         }
         
+        // get cashtray in lowlevel
+        dispatchGroup.enter()
+        mclient.createToken(108) { result in
+            switch result {
+            case .success(let token):
+                print(token)
+                let client2 = Pokepay.Client(accessToken: self.customerAccessToken,
+                                             env: .development)
+                client2.getTokenInfo(token) { result in
+                    switch result {
+                    case .success(let value):
+                        switch value {
+                        case .cashtray:
+                            let id = String(token.suffix(token.utf8.count - "\(mclient.wwwBaseURL)/cashtrays/".utf8.count))
+                            // merchant can get cashtray
+                            mclient.send(BankAPI.Cashtray.Get(id: id)) { result in
+                                switch result {
+                                    case .success(let data):
+                                        print(data.privateMoney.id)
+                                        dispatchGroup.leave()
+                                    case .failure(let error):
+                                        print(error)
+                                        XCTFail("Get failed")
+                                }
+                            }
+                        default:
+                            print(value)
+                            XCTFail("Unexpected type")
+                        }
+                    case .failure(let error):
+                        print(error)
+                        XCTFail("Error on getTokenInfo")
+                    }
+                }
+            case .failure(let error):
+                print(error)
+                XCTFail("Error on createToken 3")
+            }
+        }
+        
         // pokeregi
         let v1_QR_Token = "A0B1C2D3E4F5G6H7I8J9K0L1M"
         dispatchGroup.enter()
