@@ -184,8 +184,48 @@ AQIDAQAB
                     switch result {
                     case .success(let value):
                         switch value {
-                        case .cashtray(_):
+                        case .cashtray:
                             dispatchGroup.leave()
+                        default:
+                            print(value)
+                            XCTFail("Unexpected type")
+                        }
+                    case .failure(let error):
+                        print(error)
+                        XCTFail("Error on getTokenInfo")
+                    }
+                }
+            case .failure(let error):
+                print(error)
+                XCTFail("Error on createToken 3")
+            }
+        }
+        
+        // get cashtray in lowlevel
+        dispatchGroup.enter()
+        mclient.createToken(108) { result in
+            switch result {
+            case .success(let token):
+                print(token)
+                let client2 = Pokepay.Client(accessToken: self.customerAccessToken,
+                                             env: .development)
+                client2.getTokenInfo(token) { result in
+                    switch result {
+                    case .success(let value):
+                        switch value {
+                        case .cashtray:
+                            let id = String(token.suffix(token.utf8.count - "\(mclient.wwwBaseURL)/cashtrays/".utf8.count))
+                            // merchant can get cashtray
+                            mclient.send(BankAPI.Cashtray.Get(id: id)) { result in
+                                switch result {
+                                    case .success(let data):
+                                        print(data.privateMoney.id)
+                                        dispatchGroup.leave()
+                                    case .failure(let error):
+                                        print(error)
+                                        XCTFail("Get failed")
+                                }
+                            }
                         default:
                             print(value)
                             XCTFail("Unexpected type")
@@ -480,7 +520,7 @@ AQIDAQAB
         var expect = expectation(description: "404 should return when get random CPM token.")
         let customer = Pokepay.Client(accessToken: customerAccessToken, isMerchant: false, env: .development)
         let merchant = Pokepay.Client(accessToken: merchantAccessToken, isMerchant: true, env: .development)
-        customer.send(BankAPI.CpmToken.Get(cpmToken: "000011112222")) { result in
+        customer.send(BankAPI.CpmToken.Get(cpmToken: "00001111222233334444")) { result in
             switch result {
             case .success:
                 XCTFail("This call should be 404.")

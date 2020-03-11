@@ -31,7 +31,7 @@ public enum PokepayError: Error {
 public struct Pokepay {
 
     public enum TokenInfo {
-        case cashtray(BankAPI.Cashtray.Get.Response)
+        case cashtray
         case bill(BankAPI.Bill.Get.Response)
         case check(BankAPI.Check.Get.Response)
         case cpm(BankAPI.CpmToken.Get.Response)
@@ -89,7 +89,7 @@ public struct Pokepay {
         public func getTerminalInfo(handler: @escaping (Result<Terminal, PokepayError>) -> Void = { _ in }) {
             send(BankAPI.Terminal.Get(), handler: handler)
         }
-        
+
         public func parseAsPokeregiToken(_ token: String) -> (matched: Bool, key: String) {
             if let group = token.capture(
                 // * {25 ALNUM} - (Pokeregi_V1 OfflineMode QR)
@@ -108,15 +108,7 @@ public struct Pokepay {
         public func getTokenInfo(_ token: String,
                                  handler: @escaping (Result<TokenInfo, PokepayError>) -> Void) {
             if token.hasPrefix("\(wwwBaseURL)/cashtrays/") {
-                let id = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/cashtrays/".utf8.count))
-                send(BankAPI.Cashtray.Get(id: id)) { result in
-                    switch result {
-                    case .success(let data):
-                        handler(.success(TokenInfo.cashtray(data)))
-                    case .failure(let error):
-                        handler(.failure(error))
-                    }
-                }
+                handler(.success(TokenInfo.cashtray))
             }
             else if token.hasPrefix("\(wwwBaseURL)/bills/") {
                 let id = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/bills/".utf8.count))
@@ -140,7 +132,7 @@ public struct Pokepay {
                     }
                 }
             }
-            else if token.range(of: "^[0-9]{12}$", options: NSString.CompareOptions.regularExpression, range: nil, locale: nil) != nil {
+            else if token.range(of: "^[0-9]{20}$", options: NSString.CompareOptions.regularExpression, range: nil, locale: nil) != nil {
                 send(BankAPI.CpmToken.Get(cpmToken: token)) { result in
                     switch result {
                     case .success(let data):
@@ -233,7 +225,7 @@ public struct Pokepay {
                 let uuid = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/checks/".utf8.count))
                 send(BankAPI.Transaction.CreateWithCheck(checkId: uuid, accountId: accountId), handler: handler)
             }
-            else if token.range(of: "^[0-9]{12}$", options: NSString.CompareOptions.regularExpression, range: nil, locale: nil) != nil {
+            else if token.range(of: "^[0-9]{20}$", options: NSString.CompareOptions.regularExpression, range: nil, locale: nil) != nil {
                 send(BankAPI.Transaction.CreateWithCpm(cpmToken: token, accountId: accountId, amount: amount, products: products), handler: handler)
             }
             else {
