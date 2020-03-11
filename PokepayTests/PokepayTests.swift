@@ -184,7 +184,7 @@ AQIDAQAB
                     switch result {
                     case .success(let value):
                         switch value {
-                        case .cashtray(_):
+                        case .cashtray:
                             dispatchGroup.leave()
                         default:
                             print(value)
