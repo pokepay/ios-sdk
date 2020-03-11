@@ -31,7 +31,7 @@ public enum PokepayError: Error {
 public struct Pokepay {
 
     public enum TokenInfo {
-        case cashtray(BankAPI.Cashtray.Get.Response)
+        case cashtray
         case bill(BankAPI.Bill.Get.Response)
         case check(BankAPI.Check.Get.Response)
         case cpm(BankAPI.CpmToken.Get.Response)
@@ -108,15 +108,7 @@ public struct Pokepay {
         public func getTokenInfo(_ token: String,
                                  handler: @escaping (Result<TokenInfo, PokepayError>) -> Void) {
             if token.hasPrefix("\(wwwBaseURL)/cashtrays/") {
-                let id = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/cashtrays/".utf8.count))
-                send(BankAPI.Cashtray.Get(id: id)) { result in
-                    switch result {
-                    case .success(let data):
-                        handler(.success(TokenInfo.cashtray(data)))
-                    case .failure(let error):
-                        handler(.failure(error))
-                    }
-                }
+                handler(.success(TokenInfo.cashtray))
             }
             else if token.hasPrefix("\(wwwBaseURL)/bills/") {
                 let id = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/bills/".utf8.count))
