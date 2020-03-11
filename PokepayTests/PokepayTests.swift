@@ -480,7 +480,7 @@ AQIDAQAB
         var expect = expectation(description: "404 should return when get random CPM token.")
         let customer = Pokepay.Client(accessToken: customerAccessToken, isMerchant: false, env: .development)
         let merchant = Pokepay.Client(accessToken: merchantAccessToken, isMerchant: true, env: .development)
-        customer.send(BankAPI.CpmToken.Get(cpmToken: "000011112222")) { result in
+        customer.send(BankAPI.CpmToken.Get(cpmToken: "00001111222233334444")) { result in
             switch result {
             case .success:
                 XCTFail("This call should be 404.")
