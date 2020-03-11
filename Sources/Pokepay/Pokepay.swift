@@ -140,7 +140,7 @@ public struct Pokepay {
                     }
                 }
             }
-            else if token.range(of: "^[0-9]{12}$", options: NSString.CompareOptions.regularExpression, range: nil, locale: nil) != nil {
+            else if token.range(of: "^[0-9]{20}$", options: NSString.CompareOptions.regularExpression, range: nil, locale: nil) != nil {
                 send(BankAPI.CpmToken.Get(cpmToken: token)) { result in
                     switch result {
                     case .success(let data):
@@ -233,7 +233,7 @@ public struct Pokepay {
                 let uuid = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/checks/".utf8.count))
                 send(BankAPI.Transaction.CreateWithCheck(checkId: uuid, accountId: accountId), handler: handler)
             }
-            else if token.range(of: "^[0-9]{12}$", options: NSString.CompareOptions.regularExpression, range: nil, locale: nil) != nil {
+            else if token.range(of: "^[0-9]{20}$", options: NSString.CompareOptions.regularExpression, range: nil, locale: nil) != nil {
                 send(BankAPI.Transaction.CreateWithCpm(cpmToken: token, accountId: accountId, amount: amount, products: products), handler: handler)
             }
             else {
