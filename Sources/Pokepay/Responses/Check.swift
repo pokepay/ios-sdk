@@ -12,6 +12,8 @@ public struct Check: Codable {
     public let isDisabled: Bool
     public let expiresAt: Date
     public let token: String
+    public let pointExpiresAt: Date?
+    public let pointExpiresInDays: Date?
 
     private enum CodingKeys: String, CodingKey {
         case id
@@ -25,5 +27,7 @@ public struct Check: Codable {
         case isDisabled = "is_disabled"
         case expiresAt = "expires_at"
         case token
+        case pointExpiresAt = "point_expires_at"
+        case pointExpiresInDays = "point_expires_in_days"
     }
 }

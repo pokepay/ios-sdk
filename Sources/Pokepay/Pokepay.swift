@@ -89,7 +89,7 @@ public struct Pokepay {
         public func getTerminalInfo(handler: @escaping (Result<Terminal, PokepayError>) -> Void = { _ in }) {
             send(BankAPI.Terminal.Get(), handler: handler)
         }
-        
+
         public func parseAsPokeregiToken(_ token: String) -> (matched: Bool, key: String) {
             if let group = token.capture(
                 // * {25 ALNUM} - (Pokeregi_V1 OfflineMode QR)
