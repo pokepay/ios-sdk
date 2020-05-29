@@ -18,6 +18,7 @@ public struct PrivateMoney: Codable {
     public let privacyPolicyUrl: String?
     public let paymentActUrl: String?
     public let commercialActUrl: String?
+    public let canUseCreditCard: Bool
 
     private enum CodingKeys: String, CodingKey {
         case id
@@ -37,5 +38,6 @@ public struct PrivateMoney: Codable {
         case privacyPolicyUrl = "privacy_policy_url"
         case paymentActUrl = "payment_act_url"
         case commercialActUrl = "commercial_act_url"
+        case canUseCreditCard = "can_use_credit_card"
     }
 }

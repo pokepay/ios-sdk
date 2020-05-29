@@ -659,6 +659,70 @@ AQIDAQAB
         XCTAssertFalse(invalidToken.matched, "Invalid token should not be matched")
         XCTAssertEqual(invalidToken.key, "", "Invalid token should not have data")
     }
+    
+    func testPrivateMoneyCanUseCreditCard() {
+        let expect = expectation(description: "get privateMoney canUseCreditCard")
+        let client = Pokepay.Client(accessToken: customerAccessToken, env: .development)
+        client.getTerminalInfo() { result in
+            switch result {
+            case .success(let response):
+                client.send(BankAPI.User.GetAccounts(id: response.user.id)) { result in
+                    switch result {
+                    case .success(let response):
+                        for account in response.items{
+                            print(account.id)
+                            print(account.privateMoney.name)
+                            print(account.privateMoney.canUseCreditCard)
+                        }
+                        expect.fulfill()
+                    case .failure:
+                        XCTFail("get account error")
+                    }
+                }
+            case .failure:
+                print(result)
+                XCTFail("terminal not found")
+            }
+        }
+        waitForExpectations(timeout: 5.0, handler: nil)
+    }
+    
+    func testUserCreditCard() {
+        let expect = expectation(description: "get User CreditCard List and TOPUP")
+        let client = Pokepay.Client(accessToken: customerAccessToken, env: .development)
+        client.getTerminalInfo() { result in
+            switch result {
+            case .success(let response):
+                client.send(BankAPI.User.GetUserCards(id: response.user.id)) { result in
+                    let userId = response.user.id
+                    switch result {
+                    case .success(let response):
+                        for card in response.items{
+                            print(card.card_number)
+                        }
+                        if response.items.count == 0 {
+                            expect.fulfill()
+                        } else {
+                            client.send(BankAPI.User.CardsTopUp(id: userId, accountId: "9c13c0d4-b9ff-46d0-8561-c8ef292267b5", cardRegisteredAt: response.items.first!.registeredAt, amount: "100"), handler: { result in
+                                            switch result {
+                                            case .success(let response):
+                                                expect.fulfill()
+                                            case .failure:
+                                                XCTFail("top up error")
+                                            }
+                            })
+                        }
+                    case .failure:
+                        XCTFail("get account error")
+                    }
+                }
+            case .failure:
+                print(result)
+                XCTFail("terminal not found")
+            }
+        }
+        waitForExpectations(timeout: 5.0, handler: nil)
+    }
 
     static var allTests = [
       ("testGetTerminal", testGetTerminal),
