@@ -1,0 +1,31 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  podspec:
+    runs-on: macos-latest
+    name: CocoaPods Lint
+    env:
+      DEVELOPER_DIR: "/Applications/Xcode_11.4.1.app"
+    steps:
+      - uses: actions/checkout@v2
+      - run: pod lib lint
+
+  test:
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        xcode: [10.3, 11.3.1, 11.4.1]
+      fail-fast: false
+    name: Xcode ${{ matrix.xcode }}
+    env:
+      DEVELOPER_DIR: "/Applications/Xcode_${{ matrix.xcode }}.app"
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: carthage update --platform iOS
+      - name: Run tests
+        run: |
+          set -o pipefail
+          xcodebuild build-for-testing test-without-building -project Pokepay.xcodeproj -scheme Pokepay-Package -destination 'name=iPhone 8' | xcpretty -c
