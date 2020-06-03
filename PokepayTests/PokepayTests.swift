@@ -672,7 +672,9 @@ AQIDAQAB
                         for account in response.items{
                             print(account.id)
                             print(account.privateMoney.name)
-                            print(account.privateMoney.canUseCreditCard)
+                            if let canUseCreditCard = account.privateMoney.canUseCreditCard {
+                                print(canUseCreditCard)
+                            }
                         }
                         expect.fulfill()
                     case .failure:
