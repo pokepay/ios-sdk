@@ -3,16 +3,17 @@ import APIKit
 public extension OAuthAPI.Token {
     struct ExchangeAuthCode: OAuthAPIRequest {
         public let code: String
-        public let grantType: String = "authorization_code"
         public let clientId: String
         public let clientSecret: String
+        public let grantType: String
 
         public typealias Response = AccessToken
 
-        public init(code: String, clientId: String, clientSecret: String) {
+        public init(code: String, clientId: String, clientSecret: String, grantType: String = "authorization_code") {
             self.code = code
             self.clientId = clientId
             self.clientSecret = clientSecret
+            self.grantType = grantType
         }
 
         public var method: HTTPMethod {
