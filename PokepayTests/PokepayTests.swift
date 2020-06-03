@@ -474,21 +474,10 @@ AQIDAQAB
                                                     switch result {
                                                     case .success(let tran):
                                                         print(tran)
-                                                        merchant.send(BankAPI.Cashtray.GetAttempts(id: id)) { result in
-                                                            switch result {
-                                                            case .success(let attempts):
-                                                                print(attempts)
-                                                                XCTAssertEqual(2, attempts.rows.count)
-                                                                XCTAssertEqual(200, attempts.rows[0].statusCode)
-                                                                expect.fulfill()
-                                                            case .failure(let error):
-                                                                print(error)
-                                                                XCTFail("Error on GetAttempts3")
-                                                            }
-                                                        }
+                                                        XCTFail("Error on CreateWithCashtray2")
                                                     case .failure(let error):
                                                         print(error)
-                                                        XCTFail("Error on CreateWithCashtray2")
+                                                        expect.fulfill()
                                                     }
                                                 }
                                             case .failure(let error):
