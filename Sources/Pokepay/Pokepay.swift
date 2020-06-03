@@ -183,7 +183,7 @@ public struct Pokepay {
                                         ble.stop()
                                         switch result {
                                         case .success(_):
-                                            handler(.failure(PokepayError.responseError(BankAPIError.unknownError(ae))))
+                                            handler(.failure(PokepayError.responseError(BankAPIError.unknownError(0, ae))))
                                         case .failure(let error):
                                             handler(.failure(PokepayError.bleError(error)))
                                         }
@@ -226,7 +226,8 @@ public struct Pokepay {
                 send(BankAPI.Transaction.CreateWithCheck(checkId: uuid, accountId: accountId), handler: handler)
             }
             else if token.range(of: "^[0-9]{20}$", options: NSString.CompareOptions.regularExpression, range: nil, locale: nil) != nil {
-                send(BankAPI.Transaction.CreateWithCpm(cpmToken: token, accountId: accountId, amount: amount, products: products), handler: handler)
+                assert(amount != nil)
+                send(BankAPI.Transaction.CreateWithCpm(cpmToken: token, accountId: accountId, amount: amount!, products: products), handler: handler)
             }
             else {
                 let pokeregiToken = parseAsPokeregiToken(token)
