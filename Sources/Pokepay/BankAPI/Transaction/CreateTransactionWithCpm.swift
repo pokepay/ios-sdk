@@ -4,12 +4,12 @@ public extension BankAPI.Transaction {
     struct CreateWithCpm: BankRequest {
         public let cpmToken: String
         public let accountId: String?
-        public let amount: Double?
+        public let amount: Double
         public let products: [Product]?
 
         public typealias Response = UserTransaction
 
-        public init(cpmToken: String, accountId: String? = nil, amount: Double? = nil, products: [Product]? = nil) {
+        public init(cpmToken: String, accountId: String? = nil, amount: Double, products: [Product]? = nil) {
             self.cpmToken = cpmToken
             self.accountId = accountId
             self.amount = amount
@@ -25,12 +25,10 @@ public extension BankAPI.Transaction {
         }
 
         public var parameters: Any? {
-            var dict: [String: Any] = ["cpm_token": cpmToken]
+            var dict: [String: Any] = ["cpm_token": cpmToken,
+                                       "amount": amount]
             if accountId != nil {
                 dict["account_id"] = accountId
-            }
-            if amount != nil {
-                dict["amount"] = amount
             }
             if products != nil {
                 dict["products"] = products!.map { $0.dictionary }
