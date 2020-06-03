@@ -5,14 +5,16 @@ public extension BankAPI.Bill {
         public let amount: Double?
         public let accountId: String?
         public let description: String?
+        public let isOnetime: Bool
         public let products: [Product]?
 
         public typealias Response = Bill
 
-        public init(amount: Double? = nil, accountId: String? = nil, description: String? = nil, products: [Product]? = nil) {
+        public init(amount: Double? = nil, accountId: String? = nil, description: String? = nil, isOnetime: Bool = false, products: [Product]? = nil) {
             self.amount = amount
             self.accountId = accountId
             self.description = description
+            self.isOnetime = isOnetime
             self.products = products
         }
 
@@ -32,6 +34,7 @@ public extension BankAPI.Bill {
             if description != nil {
                 dict["description"] = description
             }
+            dict["is_onetime"] = isOnetime
             if products != nil {
                 dict["products"] = products!.map { $0.dictionary }
             }
