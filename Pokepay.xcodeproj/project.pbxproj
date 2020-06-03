@@ -662,7 +662,7 @@
 				OBJ_168 /* Sources */,
 				OBJ_227 /* Frameworks */,
 				B4BE745C236AA9BF0096C59B /* Embed Frameworks */,
-				B4BE745D236AA9F40096C59B /* ShellScript */,
+				B4BE745D236AA9F40096C59B /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -751,7 +751,7 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
-		B4BE745D236AA9F40096C59B /* ShellScript */ = {
+		B4BE745D236AA9F40096C59B /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -762,6 +762,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/APIKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 			);
+			name = "Run Script";
 			outputFileListPaths = (
 			);
 			outputPaths = (
