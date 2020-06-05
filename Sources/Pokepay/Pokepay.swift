@@ -268,7 +268,7 @@ public struct Pokepay {
                     }
                 }
                 else {
-                    send(BankAPI.Check.Create(amount: amount, accountId: accountId, description: description)) { result in
+                    send(BankAPI.Check.Create(amount: amount, moneyAmount: nil, pointAmount: nil, accountId: accountId, description: description, isOnetime: true)) { result in
                         switch result {
                         case .success(let check):
                             handler(.success("\(self.wwwBaseURL)/checks/\(check.id)"))
