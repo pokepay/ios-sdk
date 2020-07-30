@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B1C887624816D9400286DBA /* PaginatedCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C887424816D9400286DBA /* PaginatedCards.swift */; };
+		9B1C887724816D9400286DBA /* PaginatedCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C887424816D9400286DBA /* PaginatedCards.swift */; };
+		9B1C887824816D9400286DBA /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C887524816D9400286DBA /* Card.swift */; };
+		9B1C887924816D9400286DBA /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C887524816D9400286DBA /* Card.swift */; };
+		9B1C887B24816E1500286DBA /* GetUserCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C887A24816E1500286DBA /* GetUserCards.swift */; };
+		9B1C887C24816E1500286DBA /* GetUserCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C887A24816E1500286DBA /* GetUserCards.swift */; };
+		9B1C887E248174DA00286DBA /* CreateCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C887D248174DA00286DBA /* CreateCard.swift */; };
+		9B1C887F248174DA00286DBA /* CreateCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C887D248174DA00286DBA /* CreateCard.swift */; };
+		9B1C88812481755900286DBA /* CardsTopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C88802481755900286DBA /* CardsTopUp.swift */; };
+		9B1C88822481755900286DBA /* CardsTopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C88802481755900286DBA /* CardsTopUp.swift */; };
 		B415E50521B9110E009843DB /* BLEController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415E50121B9110D009843DB /* BLEController.swift */; };
 		B415E50621B9110E009843DB /* Cypher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415E50321B9110E009843DB /* Cypher.swift */; };
 		B415E50721B9110E009843DB /* RegexCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415E50421B9110E009843DB /* RegexCase.swift */; };
@@ -215,6 +225,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9B1C887424816D9400286DBA /* PaginatedCards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginatedCards.swift; sourceTree = "<group>"; };
+		9B1C887524816D9400286DBA /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		9B1C887A24816E1500286DBA /* GetUserCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserCards.swift; sourceTree = "<group>"; };
+		9B1C887D248174DA00286DBA /* CreateCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCard.swift; sourceTree = "<group>"; };
+		9B1C88802481755900286DBA /* CardsTopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsTopUp.swift; sourceTree = "<group>"; };
 		B415E50121B9110D009843DB /* BLEController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLEController.swift; sourceTree = "<group>"; };
 		B415E50221B9110D009843DB /* SwiftAES-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftAES-Bridging-Header.h"; sourceTree = "<group>"; };
 		B415E50321B9110E009843DB /* Cypher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cypher.swift; sourceTree = "<group>"; };
@@ -499,6 +514,8 @@
 				B4FDD2DA22D348BE003B561A /* Images.swift */,
 				B45BDCFF2306EA1200D583BC /* CashtrayAttempt.swift */,
 				B45BDD012306EB0600D583BC /* CashtrayAttempts.swift */,
+				9B1C887524816D9400286DBA /* Card.swift */,
+				9B1C887424816D9400286DBA /* PaginatedCards.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -577,6 +594,9 @@
 				DFA122D021911C3F007C2750 /* DeleteUserEmail.swift */,
 				DFA122D121911C3F007C2750 /* GetUserAccounts.swift */,
 				DFA122D221911C3F007C2750 /* SendConfirmationEmail.swift */,
+				9B1C887A24816E1500286DBA /* GetUserCards.swift */,
+				9B1C887D248174DA00286DBA /* CreateCard.swift */,
+				9B1C88802481755900286DBA /* CardsTopUp.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -787,6 +807,7 @@
 				B4D28E2222CCF93C00F4E503 /* AccountCpmToken.swift in Sources */,
 				B4D28E2122CCF92A00F4E503 /* GetCpmToken.swift in Sources */,
 				B415E54D21BA2C15009843DB /* PrivateMoney.swift in Sources */,
+				9B1C887C24816E1500286DBA /* GetUserCards.swift in Sources */,
 				B415E57921BA2C71009843DB /* DeleteCashtray.swift in Sources */,
 				B4D4447621BA9F4900353BBE /* BankAPIJSONDecoder.swift in Sources */,
 				B415E55F21BA2C55009843DB /* DeleteBill.swift in Sources */,
@@ -803,6 +824,7 @@
 				B415E52221BA2717009843DB /* BLEController.swift in Sources */,
 				B415E55121BA2C1F009843DB /* Env.swift in Sources */,
 				B415E57121BA2C68009843DB /* GetBalances.swift in Sources */,
+				9B1C88822481755900286DBA /* CardsTopUp.swift in Sources */,
 				B415E53E21BA2C15009843DB /* PaginatedAccountBalances.swift in Sources */,
 				B415E53021BA2BEE009843DB /* ExchangeAuthCode.swift in Sources */,
 				B415E57B21BA3936009843DB /* PokeregiTests.swift in Sources */,
@@ -824,6 +846,7 @@
 				B415E55821BA2C2A009843DB /* CreateTransactionWithCheck.swift in Sources */,
 				B415E55B21BA2C2A009843DB /* CreateTransactionWithCashtray.swift in Sources */,
 				B415E53A21BA2C15009843DB /* NoContent.swift in Sources */,
+				9B1C887924816D9400286DBA /* Card.swift in Sources */,
 				B415E53821BA2C09009843DB /* ListMessages.swift in Sources */,
 				B415E56A21BA2C64009843DB /* DeleteUserEmail.swift in Sources */,
 				B415E55321BA2C1F009843DB /* BankAPI.swift in Sources */,
@@ -832,6 +855,7 @@
 				B415E53121BA2BF1009843DB /* OAuthAPIError.swift in Sources */,
 				B415E52E21BA2BDF009843DB /* OAuthAPI.swift in Sources */,
 				B415E53221BA2BF4009843DB /* OAuthEnvRequest.swift in Sources */,
+				9B1C887F248174DA00286DBA /* CreateCard.swift in Sources */,
 				B415E56521BA2C61009843DB /* UpdateTerminal.swift in Sources */,
 				B415E54021BA2C15009843DB /* MessageUnreadCount.swift in Sources */,
 				B415E54121BA2C15009843DB /* Organization.swift in Sources */,
@@ -854,6 +878,7 @@
 				B415E54221BA2C15009843DB /* PaginatedMessages.swift in Sources */,
 				B415E55521BA2C2A009843DB /* CreateTransactionWithBill.swift in Sources */,
 				B415E57421BA2C6D009843DB /* DeleteCheck.swift in Sources */,
+				9B1C887724816D9400286DBA /* PaginatedCards.swift in Sources */,
 				B415E56E21BA2C68009843DB /* GetAccount.swift in Sources */,
 				B415E56221BA2C55009843DB /* CreateBill.swift in Sources */,
 				B415E53321BA2BF6009843DB /* OAuthAPIRequest.swift in Sources */,
@@ -901,6 +926,7 @@
 				DFA122FE21911C3F007C2750 /* PaginatedPrivateMoneys.swift in Sources */,
 				DFA1230B21911C3F007C2750 /* CreateTransactionWithCheck.swift in Sources */,
 				DFA1231721911C3F007C2750 /* GetTerminal.swift in Sources */,
+				9B1C887B24816E1500286DBA /* GetUserCards.swift in Sources */,
 				DFA122EC21911C3F007C2750 /* ReceiveMessageAttachment.swift in Sources */,
 				DFA1230121911C3F007C2750 /* Account.swift in Sources */,
 				DFA122E521911C3F007C2750 /* OAuthAPI.swift in Sources */,
@@ -908,6 +934,7 @@
 				DFA1230421911C3F007C2750 /* Env.swift in Sources */,
 				DFA1232621911C3F007C2750 /* CreateCheck.swift in Sources */,
 				DFA1231121911C3F007C2750 /* SearchPrivateMoneys.swift in Sources */,
+				9B1C88812481755900286DBA /* CardsTopUp.swift in Sources */,
 				DFA1231021911C3F007C2750 /* BankAPIRequest.swift in Sources */,
 				DFA122F321911C3F007C2750 /* Terminal.swift in Sources */,
 				DFA122F121911C3F007C2750 /* NoContent.swift in Sources */,
@@ -928,6 +955,7 @@
 				DFA1232D21911C3F007C2750 /* MessagingAPI.swift in Sources */,
 				DFA122ED21911C3F007C2750 /* SendMessage.swift in Sources */,
 				DFA122FB21911C3F007C2750 /* Cashtray.swift in Sources */,
+				9B1C887624816D9400286DBA /* PaginatedCards.swift in Sources */,
 				B45BDCFC2306E52000D583BC /* Parameters.swift in Sources */,
 				DFA122E821911C3F007C2750 /* OAuthAPIError.swift in Sources */,
 				B45BDCFE2306E99A00D583BC /* GetCashtrayAttempts.swift in Sources */,
@@ -947,6 +975,7 @@
 				B4D4447521BA9F4900353BBE /* BankAPIJSONDecoder.swift in Sources */,
 				DFA122EF21911C3F007C2750 /* ListMessages.swift in Sources */,
 				DFA122F421911C3F007C2750 /* AccessToken.swift in Sources */,
+				9B1C887E248174DA00286DBA /* CreateCard.swift in Sources */,
 				B415E50621B9110E009843DB /* Cypher.swift in Sources */,
 				DFA122F821911C3F007C2750 /* PaginatedMessages.swift in Sources */,
 				DFA1232321911C3F007C2750 /* GetAccountTransactions.swift in Sources */,
@@ -962,6 +991,7 @@
 				B4FDD2DB22D348BE003B561A /* Images.swift in Sources */,
 				DFA1230721911C3F007C2750 /* Pokepay.swift in Sources */,
 				DFA1232821911C3F007C2750 /* UpdateCheck.swift in Sources */,
+				9B1C887824816D9400286DBA /* Card.swift in Sources */,
 				B45BDD022306EB0600D583BC /* CashtrayAttempts.swift in Sources */,
 				DFA1232721911C3F007C2750 /* DeleteCheck.swift in Sources */,
 				DFA1232E21911C3F007C2750 /* RequestProxy.swift in Sources */,
