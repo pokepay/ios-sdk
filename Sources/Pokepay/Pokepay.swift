@@ -333,7 +333,7 @@ public struct Pokepay {
             guard let contact = contact else {
                 return url
             }
-            let encodedContact = contact.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
+            let encodedContact = contact.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.alphanumerics)
             precondition(encodedContact != nil)
             return "\(url)&contact=\(encodedContact!)"
         }
