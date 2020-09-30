@@ -4,7 +4,7 @@ iOS SDK for Pocket Change Pay (https://pay.pocket-change.jp).
 
 ## Document
 
-* https://docs.pokepay.jp/sdk/swift.html
+* https://docs.pokepay.jp/guidelines/app-sdk/swift.html
 
 ## Usage
 
