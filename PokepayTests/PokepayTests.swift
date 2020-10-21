@@ -327,12 +327,16 @@ AQIDAQAB
         let token = "https://www-dev.pokepay.jp/checks/52923951-3438-4acd-b433-2273732a5877"
         client.getTokenInfo(token) { result in
             switch result {
-            case .success(let response):
-                print(response)
-                expect.fulfill()
+            case .success(let tokentype):
+                switch tokentype {
+                case .check(let response):
+                    XCTAssertEqual(30, response.pointExpiresInDays!)
+                    expect.fulfill()
+                default:
+                    XCTFail("Unexpected type")
+                }
             case .failure:
-                print(result)
-                XCTFail("terminal not found")
+                XCTFail("Unexpected tokeninfo")
             }
         }
         waitForExpectations(timeout: 5.0, handler: nil)
