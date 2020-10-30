@@ -13,7 +13,7 @@ public struct Check: Codable {
     public let expiresAt: Date
     public let token: String
     public let pointExpiresAt: Date?
-    public let pointExpiresInDays: Date?
+    public let pointExpiresInDays: Int32?
 
     private enum CodingKeys: String, CodingKey {
         case id

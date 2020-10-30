@@ -320,6 +320,28 @@ AQIDAQAB
         
         waitForExpectations(timeout: 5.0, handler: nil)
     }
+    
+    func testGetTokenInfoHasPointExpiresInDays() {
+        let expect = expectation(description: "client.getTokenInfoHasPointExpiresInDays")
+        let client = Pokepay.Client(accessToken: customerAccessToken, env: .development)
+        let token = "https://www-dev.pokepay.jp/checks/52923951-3438-4acd-b433-2273732a5877"
+        client.getTokenInfo(token) { result in
+            switch result {
+            case .success(let tokentype):
+                switch tokentype {
+                case .check(let response):
+                    XCTAssertEqual(30, response.pointExpiresInDays!)
+                    expect.fulfill()
+                default:
+                    XCTFail("Unexpected type")
+                }
+            case .failure:
+                XCTFail("Unexpected tokeninfo")
+            }
+        }
+        waitForExpectations(timeout: 5.0, handler: nil)
+        
+    }
 
     func testScanToken() {
         let expect = expectation(description: "client.scanToken")
@@ -386,7 +408,7 @@ AQIDAQAB
         XCTAssertEqual(oauth.getAuthorizationUrl(), "https://www-dev.pokepay.jp/oauth/authorize?client_id=3qyJZlDnJbGK5roa-5XLkw&response_type=code")
         XCTAssertEqual(oauth.getAuthorizationUrl(contact: "09012345678"), "https://www-dev.pokepay.jp/oauth/authorize?client_id=3qyJZlDnJbGK5roa-5XLkw&response_type=code&contact=09012345678")
         XCTAssertEqual(oauth.getAuthorizationUrl(contact: "{"), "https://www-dev.pokepay.jp/oauth/authorize?client_id=3qyJZlDnJbGK5roa-5XLkw&response_type=code&contact=%7B")
-        XCTAssertEqual(oauth.getAuthorizationUrl(contact: "{}@foo.jp"), "https://www-dev.pokepay.jp/oauth/authorize?client_id=3qyJZlDnJbGK5roa-5XLkw&response_type=code&contact=%7B%7D@foo.jp")
+        XCTAssertEqual(oauth.getAuthorizationUrl(contact: "{}@foo.jp"), "https://www-dev.pokepay.jp/oauth/authorize?client_id=3qyJZlDnJbGK5roa-5XLkw&response_type=code&contact=%7B%7D%40foo%2Ejp")
     }
 
     func testGetAccessToken() {
@@ -709,7 +731,8 @@ AQIDAQAB
                                             switch result {
                                             case .success(let response):
                                                 expect.fulfill()
-                                            case .failure:
+                                            case .failure(let err):
+                                                print(err)
                                                 XCTFail("top up error")
                                             }
                             })
