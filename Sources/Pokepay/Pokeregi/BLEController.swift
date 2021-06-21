@@ -95,8 +95,12 @@ class BLEController: NSObject {
         callback = { _ in }
         writeCallback = { _ in }
         if centralManager != nil {
-            if centralManager.isScanning {
-                centralManager!.stopScan()
+            if #available(macOS 10.13, *) {
+                if centralManager.isScanning {
+                    centralManager!.stopScan()
+                }
+            } else {
+                // Fallback on earlier versions
             }
             if peripheral != nil {
                 centralManager?.cancelPeripheralConnection(peripheral)
@@ -111,20 +115,24 @@ extension BLEController: CBCentralManagerDelegate {
 
     func centralManagerDidUpdateState(_ central: CBCentralManager)
     {
-        switch central.state {
-        case CBManagerState.poweredOn:
-            let services: [CBUUID] = [serviceUUID]
-            centralManager?.scanForPeripherals(withServices: services, options: nil)
-        case CBManagerState.poweredOff:
-            let err = BLEError.poweredOff
-            callback(.failure(err))
-            writeCallback(.failure(err))
-        case CBManagerState.unsupported:
-            let err = BLEError.notSupported
-            callback(.failure(err))
-            writeCallback(.failure(err))
-        default:
-            break
+        if #available(macOS 10.13, *) {
+            switch central.state {
+            case CBManagerState.poweredOn:
+                let services: [CBUUID] = [serviceUUID]
+                centralManager?.scanForPeripherals(withServices: services, options: nil)
+            case CBManagerState.poweredOff:
+                let err = BLEError.poweredOff
+                callback(.failure(err))
+                writeCallback(.failure(err))
+            case CBManagerState.unsupported:
+                let err = BLEError.notSupported
+                callback(.failure(err))
+                writeCallback(.failure(err))
+            default:
+                break
+            }
+        } else {
+            // Fallback on earlier versions
         }
     }
 
@@ -134,8 +142,12 @@ extension BLEController: CBCentralManagerDelegate {
                         rssi RSSI: NSNumber)
     {
         self.peripheral = peripheral
-        if centralManager.isScanning {
-            centralManager?.stopScan()
+        if #available(macOS 10.13, *) {
+            if centralManager.isScanning {
+                centralManager?.stopScan()
+            }
+        } else {
+            // Fallback on earlier versions
         }
         central.connect(peripheral, options: nil)
     }

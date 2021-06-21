@@ -3,7 +3,7 @@ import Foundation
 public struct APIError: Codable {
     public let type: String
     public let message: String
-    // public let errors: AnyObject?
+    public let errors: String?
 }
 
 public struct OAuthError: Codable {

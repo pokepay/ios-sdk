@@ -183,7 +183,7 @@ public struct Pokepay {
                                         ble.stop()
                                         switch result {
                                         case .success(_):
-                                            handler(.failure(PokepayError.responseError(BankAPIError.unknownError(ae))))
+                                            handler(.failure(PokepayError.responseError(BankAPIError.unknownError(0, ae))))
                                         case .failure(let error):
                                             handler(.failure(PokepayError.bleError(error)))
                                         }
