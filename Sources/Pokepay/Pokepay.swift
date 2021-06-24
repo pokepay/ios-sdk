@@ -30,14 +30,6 @@ public enum PokepayError: Error {
 
 public struct Pokepay {
 
-    public enum TokenInfo {
-        case cashtray
-        case bill(BankAPI.Bill.Get.Response)
-        case check(BankAPI.Check.Get.Response)
-        case cpm(BankAPI.CpmToken.Get.Response)
-        case pokeregi
-    }
-
     public struct Client {
         let accessToken: String
         let isMerchant: Bool
@@ -108,14 +100,18 @@ public struct Pokepay {
         public func getTokenInfo(_ token: String,
                                  handler: @escaping (Result<TokenInfo, PokepayError>) -> Void) {
             if token.hasPrefix("\(wwwBaseURL)/cashtrays/") {
-                handler(.success(TokenInfo.cashtray))
+                let result:String = "{\"Type\":\"\(0)\",\"info\":\"\"}"
+                let tokenInfo = try! JSONDecoder().decode(TokenInfo.self, from: result.data(using: String.Encoding.utf8)!)
+                handler(.success(tokenInfo))
             }
             else if token.hasPrefix("\(wwwBaseURL)/bills/") {
                 let id = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/bills/".utf8.count))
                 send(BankAPI.Bill.Get(id: id)) { result in
                     switch result {
                     case .success(let data):
-                        handler(.success(TokenInfo.bill(data)))
+                        let result:String = "{\"Type\":\(1),\"info\":\"\(data)\"}"
+                        let tokenInfo = try! JSONDecoder().decode(TokenInfo.self, from: result.data(using: String.Encoding.utf8)!)
+                        handler(.success(tokenInfo))
                     case .failure(let error):
                         handler(.failure(error))
                     }
@@ -126,7 +122,9 @@ public struct Pokepay {
                 send(BankAPI.Check.Get(id: id)) { result in
                     switch result {
                     case .success(let data):
-                        handler(.success(TokenInfo.check(data)))
+                        let result:String = "{\"Type\":\(2),\"info\":\"\(data)\"}"
+                        let tokenInfo = try! JSONDecoder().decode(TokenInfo.self, from: result.data(using: String.Encoding.utf8)!)
+                        handler(.success(tokenInfo))
                     case .failure(let error):
                         handler(.failure(error))
                     }
@@ -136,14 +134,18 @@ public struct Pokepay {
                 send(BankAPI.CpmToken.Get(cpmToken: token)) { result in
                     switch result {
                     case .success(let data):
-                        handler(.success(TokenInfo.cpm(data)))
+                        let result:String = "{\"Type\":\(3),\"info\":\"\(data)\"}"
+                        let tokenInfo = try! JSONDecoder().decode(TokenInfo.self, from: result.data(using: String.Encoding.utf8)!)
+                        handler(.success(tokenInfo))
                     case .failure(let error):
                         handler(.failure(error))
                     }
                 }
             }
             else if parseAsPokeregiToken(token).matched {
-                handler(.success(TokenInfo.pokeregi))
+                let result:String = "{\"Type\":\(4),\"info\":\"\"}"
+                let tokenInfo = try! JSONDecoder().decode(TokenInfo.self, from: result.data(using: String.Encoding.utf8)!)
+                handler(.success(tokenInfo))
             }
             else {
                 handler(.failure(PokepayError.invalidToken))
