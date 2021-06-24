@@ -2,12 +2,12 @@ import APIKit
 
 public extension MessagingAPI {
     struct ReceiveAttachment: BankRequest {
-        public let message: Message
+        public let id: String
 
         public typealias Response = MessageAttachment
 
-        public init(message: Message) {
-            self.message = message
+        public init(id: String) {
+            self.id = id
         }
 
         public var method: HTTPMethod {
@@ -15,7 +15,7 @@ public extension MessagingAPI {
         }
 
         public var path: String {
-            return "/messages/\(message.id)/attachment/receive"
+            return "/messages/\(id)/attachment/receive"
         }
     }
 }
