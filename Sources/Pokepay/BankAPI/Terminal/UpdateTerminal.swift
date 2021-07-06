@@ -6,7 +6,7 @@ public extension BankAPI.Terminal {
         let name: String
         let pushToken: String?
 
-        typealias Response = Terminal
+        public typealias Response = Terminal
 
         public init(name: String, accountId: String, pushToken: String? = nil) {
             self.name = name
@@ -14,15 +14,15 @@ public extension BankAPI.Terminal {
             self.pushToken = pushToken
         }
 
-        var method: HTTPMethod {
+        public var method: HTTPMethod {
             return .patch
         }
 
-        var path: String {
+        public var path: String {
             return "/terminal"
         }
 
-        var parameters: Any? {
+        public var parameters: Any? {
             return [
               "account_id": accountId,
               "name": name,
