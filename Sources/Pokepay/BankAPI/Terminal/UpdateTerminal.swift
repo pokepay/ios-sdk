@@ -1,6 +1,6 @@
 import APIKit
 
-extension BankAPI.Terminal {
+public extension BankAPI.Terminal {
     struct Update: BankRequest {
         let accountId: String
         let name: String
@@ -8,7 +8,7 @@ extension BankAPI.Terminal {
 
         typealias Response = Terminal
 
-        init(name: String, accountId: String, pushToken: String? = nil) {
+        public init(name: String, accountId: String, pushToken: String? = nil) {
             self.name = name
             self.accountId = accountId
             self.pushToken = pushToken
