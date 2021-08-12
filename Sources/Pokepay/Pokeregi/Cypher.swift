@@ -1,4 +1,5 @@
 import Foundation
+import CommonCrypto
 
 public class Cypher {
 
