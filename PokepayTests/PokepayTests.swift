@@ -7,6 +7,7 @@ final class PokepayTests: XCTestCase {
     public let merchantAccessToken: String = "eYNDMo_cAqPgxMW3qlMv9968awTwFpiwi_rR8XrRhaO6zMOgMfem2q1wfnlluo-v"
     public let customerAccessToken: String = "S-WAIYRN6rVdb77rYGgMeRQgMLuQ2ZAM0Fo8HfocrrTWxH7tsehCkD6JJSjGhs-0"
     public let customerAccountId: String = "eb4e552b-4299-4e8f-ba8b-d738c96e1f60"
+    public let pokepayMoneyId: String = "4b138a4c-8944-4f98-a5c4-96d3c1c415eb"
 
     func getProducts() -> [Product] {
         let products: [Product] = [
@@ -748,6 +749,50 @@ AQIDAQAB
         }
         waitForExpectations(timeout: 5.0, handler: nil)
     }
+    
+    func testCoupon() {
+        let client = Pokepay.Client(accessToken: customerAccessToken, env: .development)
+        client.getTerminalInfo() { result in
+            switch result {
+            case .success(let response):
+                let accountId = response.account.id
+                client.send(BankAPI.PrivateMoney.GetPrivateMoneyCoupons(privateMoneyId: pokepayMoneyId)) { result in
+                    switch result {
+                    case .success(let response):
+                        print("coupon counts: "+response.counts)
+                        let coupon = response.items[0]
+                        print("coupon: "+coupon)
+                        client.send(BankAPI.Account.GetCouponDetail(accountId: accountId, couponId: coupon.id)){ result in
+                            switch result {
+                            case .success(let response):
+                                let couponDetail = response.couponDetail
+                                print("coupon detail: "+couponDetail)
+                                client.send(BankAPI.Account.PatchCouponDetail(accountId: accountId, couponId: coupon.id)) { result in
+                                    switch result {
+                                    case .success(let response):
+                                        print("Patch coupone detail: "+response.couponDetail)
+                                    case .failure:
+                                        print(result)
+                                        XCTFail("patch coupon detail fail")
+                                    }
+                                }
+                            case .failure:
+                                print(result)
+                                XCTFail("get coupon detail fail")
+                            }
+                        }
+                    case .failure:
+                        print(result)
+                        XCTFail("get private money coupons fails")
+                    }
+                }
+            case .failure:
+                print(result)
+                XCTFail("terminal not found")
+            }
+        }
+        waitForExpectations(timeout: 5.0, handler: nil)
+    }
 
     static var allTests = [
       ("testGetTerminal", testGetTerminal),
@@ -763,5 +808,6 @@ AQIDAQAB
       ("testCashtray", testCashtray),
       ("testCpmTokens", testCpmTokens),
       ("testParsingPokeregiToken", testParsingPokeregiToken),
+      ("testCoupon", testCoupon),
     ]
 }

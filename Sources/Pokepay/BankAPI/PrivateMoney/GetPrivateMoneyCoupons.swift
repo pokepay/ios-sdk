@@ -1,7 +1,7 @@
 import APIKit
 
 public extension BankAPI.PrivateMoney {
-    struct GetCoupons: BankRequest {
+    struct GetPrivateMoneyCoupons: BankRequest {
         public let privateMoneyId:String
         public let before:String?
         public let after:String?

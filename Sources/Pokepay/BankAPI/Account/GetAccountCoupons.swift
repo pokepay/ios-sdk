@@ -1,14 +1,14 @@
 import APIKit
 
 public extension BankAPI.Account {
-    struct GetCoupons: BankRequest {
+    struct GetAccountCoupons: BankRequest {
         public let accountId: String
         public let isAvailable:Bool?
         public let before: String?
         public let after: String?
         public let perPage: Int32?
 
-        public typealias Response = PaginatedTransactions
+        public typealias Response = PaginatedCoupons
 
         public init(accountId: String,isAvailable:Bool? = nil , before: String? = nil, after: String? = nil, perPage: Int32? = nil) {
             self.accountId = accountId
@@ -23,7 +23,7 @@ public extension BankAPI.Account {
         }
 
         public var path: String {
-            return "/accounts/\(accountId)/transactions"
+            return "/accounts/\(accountId)/coupons"
         }
 
         public var parameters: Any? {
