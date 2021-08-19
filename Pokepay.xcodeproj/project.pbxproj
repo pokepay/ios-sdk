@@ -1148,7 +1148,7 @@
 				INFOPLIST_FILE = Pokepay.xcodeproj/Pokepay_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				MARKETING_VERSION = 1.4.7;
+				MARKETING_VERSION = 1.4.9;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
@@ -1187,7 +1187,7 @@
 				INFOPLIST_FILE = Pokepay.xcodeproj/Pokepay_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				MARKETING_VERSION = 1.4.7;
+				MARKETING_VERSION = 1.4.9;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
