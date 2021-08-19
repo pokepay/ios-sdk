@@ -5,11 +5,11 @@ public extension BankAPI.PrivateMoney {
         public let privateMoneyId:String
         public let before:String?
         public let after:String?
-        public let perPage:Int?
+        public let perPage:Int32?
         
         public typealias Response = PaginatedCoupons
         
-        public init(privateMoneyId:String, before:String? = nil, after:String? = nil, perPage:Int? = nil){
+        public init(privateMoneyId: String, before: String? = nil, after: String? = nil, perPage: Int32? = nil){
             self.privateMoneyId = privateMoneyId
             self.before = before
             self.after = after
@@ -20,7 +20,7 @@ public extension BankAPI.PrivateMoney {
             return .get
         }
         
-        public var path: String{
+        public var path: String {
             return "/private-moneys/\(privateMoneyId)/coupons"
         }
         

@@ -5,17 +5,17 @@ public struct Coupon :Codable{
     public let name:String
     public let description:String
     public let discountAmount:Int
-    public let discountPercentage:Int
+    public let discountPercentage:Int?
     public let startAt:Date
     public let endAt:Date
     public let displayStartAt:Date
     public let displayEndAt:Date
     public let usageLimit:Int
-    public let minAmount:Int
+    public let minAmount:Int?
     public let isShopSpecified:Bool
     public let isDisabled:Bool
     public let isHidden:Bool
-    public let couponImage:String
+    public let couponImage:String?
     
     private enum CodingKeys: String, CodingKey {
         case id
