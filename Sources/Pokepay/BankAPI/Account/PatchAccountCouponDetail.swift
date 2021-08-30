@@ -24,7 +24,7 @@ public extension BankAPI.Account {
         
         public var parameters: Any? {
             return [
-              "is_received": isReceived,
+              "is_received": isReceived
             ]
         }
     }
