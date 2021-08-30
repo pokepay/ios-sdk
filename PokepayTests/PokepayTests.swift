@@ -767,7 +767,7 @@ AQIDAQAB
                             case .success(let response):
                                 let couponDetail = response.couponDetail
                                 print("coupon detail: "+couponDetail)
-                                client.send(BankAPI.Account.PatchCouponDetail(accountId: accountId, couponId: coupon.id)) { result in
+                                client.send(BankAPI.Account.PatchCouponDetail(accountId: accountId, couponId: coupon.id, isReceived: true)) { result in
                                     switch result {
                                     case .success(let response):
                                         print("Patch coupone detail: "+response.couponDetail)
