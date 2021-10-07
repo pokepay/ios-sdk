@@ -20,12 +20,12 @@ final class PokeregiTests: XCTestCase {
                                     env: .development)
         client.getTokenInfo("UNB23K37A2QMBDTMLOQX7JBQ1") { result in
             switch result {
-            case .success(let value):
-                switch value {
-                case .pokeregi:
-                    expect.fulfill()
+            case .success(let tokenInfo):
+                switch tokenInfo {
+                case .pokeregi(_):
+                    dispatchGroup.leave()
                 default:
-                    print(value)
+                    print(tokenInfo)
                     XCTFail("Unexpected Type")
                 }
             case .failure(let error):
