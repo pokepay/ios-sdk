@@ -118,16 +118,14 @@ AQIDAQAB
             switch result {
             case .success(let token):
                 print(token)
-                let client2 = Pokepay.Client(accessToken: self.customerAccessToken,
-                                             env: .development)
-                client2.getTokenInfo(token) { result in
+                client.getTokenInfo(token) { result in
                     switch result {
-                    case .success(let value):
-                        switch value {
+                    case .success(let tokeninfo):
+                        switch tokeninfo{
                         case .check(_):
                             dispatchGroup.leave()
                         default:
-                            print(value)
+                            print(tokeninfo)
                             XCTFail("Unexpected type")
                         }
                     case .failure(let error):
@@ -147,16 +145,14 @@ AQIDAQAB
             switch result {
             case .success(let token):
                 print(token)
-                let client2 = Pokepay.Client(accessToken: self.customerAccessToken,
-                                             env: .development)
-                client2.getTokenInfo(token) { result in
+                client.getTokenInfo(token) { result in
                     switch result {
-                    case .success(let value):
-                        switch value {
+                    case .success(let tokeninfo):
+                        switch tokeninfo {
                         case .bill(_):
                             dispatchGroup.leave()
                         default:
-                            print(value)
+                            print(tokeninfo)
                             XCTFail("Unexpected type")
                         }
                     case .failure(let error):
@@ -179,16 +175,15 @@ AQIDAQAB
             switch result {
             case .success(let token):
                 print(token)
-                let client2 = Pokepay.Client(accessToken: self.customerAccessToken,
-                                             env: .development)
-                client2.getTokenInfo(token) { result in
+                mclient.getTokenInfo(token) { result in
                     switch result {
-                    case .success(let value):
-                        switch value {
-                        case .cashtray:
+                    case .success(let tokeninfo):
+                        switch tokeninfo{
+                        case .cashtray(_):
+                            print(tokeninfo)
                             dispatchGroup.leave()
                         default:
-                            print(value)
+                            print(tokeninfo)
                             XCTFail("Unexpected type")
                         }
                     case .failure(let error):
@@ -208,13 +203,11 @@ AQIDAQAB
             switch result {
             case .success(let token):
                 print(token)
-                let client2 = Pokepay.Client(accessToken: self.customerAccessToken,
-                                             env: .development)
-                client2.getTokenInfo(token) { result in
+                mclient.getTokenInfo(token) { result in
                     switch result {
-                    case .success(let value):
-                        switch value {
-                        case .cashtray:
+                    case .success(let tokeninfo):
+                        switch tokeninfo{
+                        case .cashtray(_):
                             let id = String(token.suffix(token.utf8.count - "\(mclient.wwwBaseURL)/cashtrays/".utf8.count))
                             // merchant can get cashtray
                             mclient.send(BankAPI.Cashtray.Get(id: id)) { result in
@@ -228,7 +221,7 @@ AQIDAQAB
                                 }
                             }
                         default:
-                            print(value)
+                            print(tokeninfo)
                             XCTFail("Unexpected type")
                         }
                     case .failure(let error):
@@ -247,12 +240,12 @@ AQIDAQAB
         dispatchGroup.enter()
         client.getTokenInfo(v1_QR_Token) { result in
         switch result {
-            case .success(let value):
-                switch value {
-                case .pokeregi:
+            case .success(let tokeninfo):
+                switch tokeninfo {
+                case .pokeregi(_):
                     dispatchGroup.leave()
                 default:
-                    print(value)
+                    print(tokeninfo)
                     XCTFail("Unexpected type")
                 }
             case .failure(let error):
@@ -265,12 +258,12 @@ AQIDAQAB
         dispatchGroup.enter()
         client.getTokenInfo(v1_NFC_Token) { result in
         switch result {
-            case .success(let value):
-                switch value {
-                case .pokeregi:
+            case .success(let tokeninfo):
+                switch tokeninfo{
+                case .pokeregi(_):
                     dispatchGroup.leave()
                 default:
-                    print(value)
+                    print(tokeninfo)
                     XCTFail("Unexpected type")
                 }
             case .failure(let error):
@@ -283,12 +276,12 @@ AQIDAQAB
         dispatchGroup.enter()
         client.getTokenInfo(v2_QR_NFC_Token) { result in
         switch result {
-            case .success(let value):
-                switch value {
-                case .pokeregi:
+            case .success(let tokeninfo):
+                switch tokeninfo{
+                case .pokeregi(_):
                     dispatchGroup.leave()
                 default:
-                    print(value)
+                    print(tokeninfo)
                     XCTFail("Unexpected type")
                 }
             case .failure(let error):
@@ -301,13 +294,13 @@ AQIDAQAB
         dispatchGroup.enter()
         client.getTokenInfo(invalidToken) { result in
         switch result {
-            case .success(let value):
-                switch value {
-                case .pokeregi:
-                    print(value)
+            case .success(let tokeninfo):
+                switch tokeninfo{
+                case .pokeregi(_):
+                    print(tokeninfo)
                     XCTFail("Shouldn't be success")
                 default:
-                    print(value)
+                    print(tokeninfo)
                     XCTFail("Unexpected type")
                 }
             case .failure(_):
