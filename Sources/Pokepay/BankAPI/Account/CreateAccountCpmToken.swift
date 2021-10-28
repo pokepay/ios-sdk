@@ -12,11 +12,11 @@ public extension BankAPI.Account {
         public let accountId: String
         public let scopes: Scope
         public let expiresIn: Int?
-        public let metadata: Metadata?
+        public let metadata: [String:String]?
 
         public typealias Response = AccountCpmToken
 
-        public init(accountId: String, scopes: Scope = .PAYMENT, expiresIn: Int? = nil, metadata: Metadata? = nil) {
+        public init(accountId: String, scopes: Scope = .PAYMENT, expiresIn: Int? = nil, metadata: [String:String]? = nil) {
             self.accountId = accountId
             self.scopes = scopes
             self.expiresIn = expiresIn
@@ -51,10 +51,18 @@ public extension BankAPI.Account {
             return dict
         }
         
-        private func toJsonString(metadata:Metadata) -> String{
-            var jsonString = "{\"key1\":\""
-            jsonString.append(metadata.key1)
-            jsonString.append("\"}")
+        private func toJsonString(metadata:[String:String]) -> String{
+            var jsonString = "{"
+            for (key, value) in metadata {
+                jsonString.append("\"")
+                jsonString.append(key)
+                jsonString.append("\":\"")
+                jsonString.append(value)
+                jsonString.append("\"")
+                jsonString.append(",")
+            }
+            jsonString.removeLast()
+            jsonString.append("}")
             return jsonString
         }
     }
