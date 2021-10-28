@@ -12,15 +12,15 @@ public extension BankAPI.Account {
         public let accountId: String
         public let scopes: Scope
         public let expiresIn: Int?
-        public let additionalInfo: String?
+        public let metadata: Metadata?
 
         public typealias Response = AccountCpmToken
 
-        public init(accountId: String, scopes: Scope = .PAYMENT, expiresIn: Int? = nil, additionalInfo: String? = nil) {
+        public init(accountId: String, scopes: Scope = .PAYMENT, expiresIn: Int? = nil, metadata: Metadata? = nil) {
             self.accountId = accountId
             self.scopes = scopes
             self.expiresIn = expiresIn
-            self.additionalInfo = additionalInfo
+            self.metadata = metadata
         }
 
         public var method: HTTPMethod {
@@ -44,10 +44,18 @@ public extension BankAPI.Account {
             if expiresIn != nil {
                 dict["expires_in"] = expiresIn
             }
-            if additionalInfo != nil {
-                dict["additional_info"] = additionalInfo
+            if metadata != nil {
+                
+                dict["metadata"] = self.toJsonString(metadata:metadata!)
             }
             return dict
+        }
+        
+        private func toJsonString(metadata:Metadata) -> String{
+            var jsonString = "{\"key1\":\""
+            jsonString.append(metadata.key1)
+            jsonString.append("\"}")
+            return jsonString
         }
     }
 }
