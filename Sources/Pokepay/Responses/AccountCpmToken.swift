@@ -6,7 +6,7 @@ public struct AccountCpmToken: Codable {
     public let transaction: UserTransaction?
     public let scopes: [String]
     public let expiresAt: Date
-    public let additionalInfo: String?
+    public let metadata: [String:String]?
 
     private enum CodingKeys: String, CodingKey {
         case cpmToken = "cpm_token"
@@ -14,6 +14,6 @@ public struct AccountCpmToken: Codable {
         case transaction
         case scopes
         case expiresAt = "expires_at"
-        case additionalInfo = "additional_info"
+        case metadata
     }
 }

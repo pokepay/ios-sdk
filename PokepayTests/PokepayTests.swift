@@ -561,8 +561,11 @@ AQIDAQAB
         waitForExpectations(timeout: 5.0, handler: nil)
         // ---
         var firstBalance: Double = 0.0
+        var dict :[String:String] = [:]
+        dict["Animal"] = "Lion"
+        dict["foo"] = "bar"
         expect = expectation(description: "Create CPM with customer AccessToken")
-        customer.send(BankAPI.Account.CreateAccountCpmToken(accountId: customerAccountId, scopes: BankAPI.Account.CreateAccountCpmToken.Scope.BOTH, expiresIn: 100)) { result in
+        customer.send(BankAPI.Account.CreateAccountCpmToken(accountId: customerAccountId, scopes: BankAPI.Account.CreateAccountCpmToken.Scope.BOTH, expiresIn: 100, metadata: dict)) { result in
             switch result {
             case .success(let response):
                 let token = response.cpmToken
@@ -571,6 +574,10 @@ AQIDAQAB
                     case .success(let response):
                         if response.transaction != nil {
                             XCTFail("transaction should be null")
+                        }
+                        for(key, value) in response.metadata{
+                            if(response.metadata[key] != dict[key])
+                            XCTFail("the metadata in response doesn't match the request parameter")
                         }
                         let balanceBefore = response.account.balance
                         firstBalance = balanceBefore
@@ -582,6 +589,10 @@ AQIDAQAB
                                     case .success(let response):
                                         if response.transaction == nil {
                                             XCTFail("transaction should be")
+                                        }
+                                        for(key, value) in response.metadata{
+                                            if(response.metadata[key] != dict[key])
+                                            XCTFail("the metadata in response doesn't match the request parameter")
                                         }
                                         let balanceAfter = response.account.balance
                                         if balanceBefore + 1000.0 != balanceAfter {
@@ -611,7 +622,7 @@ AQIDAQAB
         waitForExpectations(timeout: 5.0, handler: nil)
         // ---
         expect = expectation(description: "Create CPM with customer AccessToken")
-        customer.send(BankAPI.Account.CreateAccountCpmToken(accountId: customerAccountId, scopes: BankAPI.Account.CreateAccountCpmToken.Scope.BOTH, expiresIn: 100)) { result in
+        customer.send(BankAPI.Account.CreateAccountCpmToken(accountId: customerAccountId, scopes: BankAPI.Account.CreateAccountCpmToken.Scope.BOTH, expiresIn: 100,metadata: dict)) { result in
             switch result {
             case .success(let response):
                 let token = response.cpmToken
@@ -620,6 +631,10 @@ AQIDAQAB
                     case .success(let response):
                         if response.transaction != nil {
                             XCTFail("transaction should be null")
+                        }
+                        for(key, value) in response.metadata{
+                            if(response.metadata[key] != dict[key])
+                            XCTFail("the metadata in response doesn't match the request parameter")
                         }
                         let balanceBefore = response.account.balance
                         merchant.send(BankAPI.Transaction.CreateWithCpm(cpmToken: token, amount: -1000.0, products: self.getProducts())) { result in
@@ -630,6 +645,10 @@ AQIDAQAB
                                     case .success(let response):
                                         if response.transaction == nil {
                                             XCTFail("transaction should be")
+                                        }
+                                        for(key, value) in response.metadata{
+                                            if(response.metadata[key] != dict[key])
+                                            XCTFail("the metadata in response doesn't match the request parameter")
                                         }
                                         let balanceAfter = response.account.balance
                                         if balanceBefore - 1000.0 != balanceAfter && firstBalance != balanceAfter {
