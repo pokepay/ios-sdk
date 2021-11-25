@@ -5,13 +5,15 @@ public extension BankAPI.Account {
         public let accountId: String
         public let couponId:String
         public let isReceived: Bool
+        public let code: String?
 
         public typealias Response = CouponDetail
 
-        public init(accountId: String, couponId:String, isReceived: Bool) {
+        public init(accountId: String, couponId:String, isReceived: Bool, code: String? = nil) {
             self.accountId = accountId
             self.couponId = couponId
             self.isReceived = isReceived
+            self.code = code
         }
 
         public var method: HTTPMethod {
@@ -23,9 +25,12 @@ public extension BankAPI.Account {
         }
         
         public var parameters: Any? {
-            return [
-              "is_received": isReceived
-            ]
+            var dict: [String: Any] = [:]
+            dict["is_received"] = isReceived
+            if code != nil {
+                dict["code"] = code
+            }
+            return dict
         }
     }
 }
