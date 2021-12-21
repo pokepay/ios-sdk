@@ -142,12 +142,12 @@ public struct Pokepay {
             }
         }
 
-        private func bleScanToken(_ token: String,  handler: @escaping (Result<UserTransaction, PokepayError>) -> Void = { _ in }) {
+        private func bleScanToken(_ token: String, couponId: String? = nil, handler: @escaping (Result<UserTransaction, PokepayError>) -> Void = { _ in }) {
             let ble = BLEController()
             ble.scanToken(token: token) { result in
                 switch result {
                 case .success(let jwt):
-                    self.send(BankAPI.Transaction.CreateWithJwt(data: jwt)) { result in
+                    self.send(BankAPI.Transaction.CreateWithJwt(data: jwt, couponId: couponId)) { result in
                         switch result {
                         case .success(let response):
                             if response.data != nil {
@@ -223,7 +223,7 @@ public struct Pokepay {
             else {
                 let pokeregiToken = parseAsPokeregiToken(token)
                 if pokeregiToken.matched {
-                    bleScanToken(pokeregiToken.key, handler: handler)
+                    bleScanToken(pokeregiToken.key, couponId: couponId, handler: handler)
                 } else {
                     handler(.failure(PokepayError.invalidToken))
                 }
