@@ -13,6 +13,7 @@ public struct UserTransaction: Codable {
     public let account: Account
     public let description: String
     public let doneAt: Date
+    public let transfers: [Transfer]
 
     private enum CodingKeys: String, CodingKey {
         case id
@@ -27,5 +28,6 @@ public struct UserTransaction: Codable {
         case account
         case description
         case doneAt = "done_at"
+        case transfers
     }
 }
