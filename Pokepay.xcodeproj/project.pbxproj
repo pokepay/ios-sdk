@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		975E7F6B27D5E42A008B24B1 /* PaginatedTransfers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975E7F6A27D5E42A008B24B1 /* PaginatedTransfers.swift */; };
+		975E7F6C27D5E42A008B24B1 /* PaginatedTransfers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975E7F6A27D5E42A008B24B1 /* PaginatedTransfers.swift */; };
+		975E7F6E27D5E473008B24B1 /* Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975E7F6D27D5E473008B24B1 /* Transfer.swift */; };
+		975E7F6F27D5E473008B24B1 /* Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975E7F6D27D5E473008B24B1 /* Transfer.swift */; };
+		975E7F7527D5E98B008B24B1 /* GetAccountTransfers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975E7F7427D5E98B008B24B1 /* GetAccountTransfers.swift */; };
+		975E7F7627D5E98B008B24B1 /* GetAccountTransfers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975E7F7427D5E98B008B24B1 /* GetAccountTransfers.swift */; };
 		9B1C887624816D9400286DBA /* PaginatedCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C887424816D9400286DBA /* PaginatedCards.swift */; };
 		9B1C887724816D9400286DBA /* PaginatedCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C887424816D9400286DBA /* PaginatedCards.swift */; };
 		9B1C887824816D9400286DBA /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C887524816D9400286DBA /* Card.swift */; };
@@ -114,9 +120,7 @@
 		B4AF946721CB76030049B71C /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AF946521CB76030049B71C /* Result.framework */; };
 		B4AF946821CB76030049B71C /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AF946621CB76030049B71C /* APIKit.framework */; };
 		B4BE7458236AA9BF0096C59B /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AF946621CB76030049B71C /* APIKit.framework */; };
-		B4BE7459236AA9BF0096C59B /* APIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4AF946621CB76030049B71C /* APIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4BE745A236AA9BF0096C59B /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AF946521CB76030049B71C /* Result.framework */; };
-		B4BE745B236AA9BF0096C59B /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4AF946521CB76030049B71C /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4D28E2122CCF92A00F4E503 /* GetCpmToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DEDEC222CB68E200B16C0B /* GetCpmToken.swift */; };
 		B4D28E2222CCF93C00F4E503 /* AccountCpmToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DEDEC422CB690600B16C0B /* AccountCpmToken.swift */; };
 		B4D28E2322CCF94200F4E503 /* CreateTransactionWithCpm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DEDEC622CB6CE800B16C0B /* CreateTransactionWithCpm.swift */; };
@@ -209,22 +213,10 @@
 		DFD201FA21B534F300A1D59B /* JwtResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD201F921B534F300A1D59B /* JwtResult.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		B4BE745C236AA9BF0096C59B /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				B4BE7459236AA9BF0096C59B /* APIKit.framework in Embed Frameworks */,
-				B4BE745B236AA9BF0096C59B /* Result.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		975E7F6A27D5E42A008B24B1 /* PaginatedTransfers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginatedTransfers.swift; sourceTree = "<group>"; };
+		975E7F6D27D5E473008B24B1 /* Transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transfer.swift; sourceTree = "<group>"; };
+		975E7F7427D5E98B008B24B1 /* GetAccountTransfers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccountTransfers.swift; sourceTree = "<group>"; };
 		9B1C887424816D9400286DBA /* PaginatedCards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginatedCards.swift; sourceTree = "<group>"; };
 		9B1C887524816D9400286DBA /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		9B1C887A24816E1500286DBA /* GetUserCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserCards.swift; sourceTree = "<group>"; };
@@ -516,6 +508,8 @@
 				B45BDD012306EB0600D583BC /* CashtrayAttempts.swift */,
 				9B1C887524816D9400286DBA /* Card.swift */,
 				9B1C887424816D9400286DBA /* PaginatedCards.swift */,
+				975E7F6A27D5E42A008B24B1 /* PaginatedTransfers.swift */,
+				975E7F6D27D5E473008B24B1 /* Transfer.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -607,6 +601,7 @@
 				B4DEDEBC22CB686D00B16C0B /* CreateAccountCpmToken.swift */,
 				DFA122D521911C3F007C2750 /* GetAccount.swift */,
 				DFA122D621911C3F007C2750 /* CreateAccount.swift */,
+				975E7F7427D5E98B008B24B1 /* GetAccountTransfers.swift */,
 				DFA122D721911C3F007C2750 /* GetAccountTransactions.swift */,
 				DFA122D821911C3F007C2750 /* GetBalances.swift */,
 			);
@@ -681,7 +676,6 @@
 			buildPhases = (
 				OBJ_168 /* Sources */,
 				OBJ_227 /* Frameworks */,
-				B4BE745C236AA9BF0096C59B /* Embed Frameworks */,
 				B4BE745D236AA9F40096C59B /* ShellScript */,
 			);
 			buildRules = (
@@ -709,8 +703,9 @@
 						ProvisioningStyle = Automatic;
 					};
 					"Pokepay::Pokepay" = {
+						DevelopmentTeam = T98PD289UQ;
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -803,6 +798,7 @@
 				B4FDD2DC22D349FC003B561A /* Images.swift in Sources */,
 				B4D28E2422CCF94700F4E503 /* CreateAccountCpmToken.swift in Sources */,
 				B4D28E2322CCF94200F4E503 /* CreateTransactionWithCpm.swift in Sources */,
+				975E7F6F27D5E473008B24B1 /* Transfer.swift in Sources */,
 				B4D28E2222CCF93C00F4E503 /* AccountCpmToken.swift in Sources */,
 				B4D28E2122CCF92A00F4E503 /* GetCpmToken.swift in Sources */,
 				B415E54D21BA2C15009843DB /* PrivateMoney.swift in Sources */,
@@ -828,6 +824,7 @@
 				B415E53021BA2BEE009843DB /* ExchangeAuthCode.swift in Sources */,
 				B415E57B21BA3936009843DB /* PokeregiTests.swift in Sources */,
 				B415E57021BA2C68009843DB /* GetAccountTransactions.swift in Sources */,
+				975E7F6C27D5E42A008B24B1 /* PaginatedTransfers.swift in Sources */,
 				B415E53721BA2C06009843DB /* GetMessage.swift in Sources */,
 				B415E57721BA2C71009843DB /* GetCashtray.swift in Sources */,
 				B415E54521BA2C15009843DB /* Cashtray.swift in Sources */,
@@ -848,6 +845,7 @@
 				9B1C887924816D9400286DBA /* Card.swift in Sources */,
 				B415E53821BA2C09009843DB /* ListMessages.swift in Sources */,
 				B415E56A21BA2C64009843DB /* DeleteUserEmail.swift in Sources */,
+				975E7F7627D5E98B008B24B1 /* GetAccountTransfers.swift in Sources */,
 				B415E55321BA2C1F009843DB /* BankAPI.swift in Sources */,
 				B415E53C21BA2C15009843DB /* Terminal.swift in Sources */,
 				B415E55A21BA2C2A009843DB /* GetTransaction.swift in Sources */,
@@ -948,6 +946,7 @@
 				DFA1231621911C3F007C2750 /* BankAPIError.swift in Sources */,
 				DFA1232421911C3F007C2750 /* GetBalances.swift in Sources */,
 				DFA1232C21911C3F007C2750 /* DeleteCashtray.swift in Sources */,
+				975E7F7527D5E98B008B24B1 /* GetAccountTransfers.swift in Sources */,
 				DFA1231B21911C3F007C2750 /* GetUserTransactions.swift in Sources */,
 				DFA1231521911C3F007C2750 /* CreateBill.swift in Sources */,
 				DFA1230921911C3F007C2750 /* SendToUser.swift in Sources */,
@@ -956,6 +955,7 @@
 				DFA122FB21911C3F007C2750 /* Cashtray.swift in Sources */,
 				9B1C887624816D9400286DBA /* PaginatedCards.swift in Sources */,
 				B45BDCFC2306E52000D583BC /* Parameters.swift in Sources */,
+				975E7F6B27D5E42A008B24B1 /* PaginatedTransfers.swift in Sources */,
 				DFA122E821911C3F007C2750 /* OAuthAPIError.swift in Sources */,
 				B45BDCFE2306E99A00D583BC /* GetCashtrayAttempts.swift in Sources */,
 				DFA1231F21911C3F007C2750 /* SendConfirmationEmail.swift in Sources */,
@@ -993,6 +993,7 @@
 				9B1C887824816D9400286DBA /* Card.swift in Sources */,
 				B45BDD022306EB0600D583BC /* CashtrayAttempts.swift in Sources */,
 				DFA1232721911C3F007C2750 /* DeleteCheck.swift in Sources */,
+				975E7F6E27D5E473008B24B1 /* Transfer.swift in Sources */,
 				DFA1232E21911C3F007C2750 /* RequestProxy.swift in Sources */,
 				DFA1231921911C3F007C2750 /* AddTerminalPublicKey.swift in Sources */,
 			);
@@ -1062,6 +1063,8 @@
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "$(SRCROOT)/Sources/Pokepay/Pokeregi/SwiftAES-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = NO;
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Debug;
 		};
@@ -1124,7 +1127,8 @@
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "$(SRCROOT)/Sources/Pokepay/Pokeregi/SwiftAES-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-				VALIDATE_PRODUCT = YES;
+				VALIDATE_PRODUCT = NO;
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Release;
 		};
@@ -1132,11 +1136,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = T98PD289UQ;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1156,6 +1160,7 @@
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
@@ -1163,6 +1168,8 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGET_NAME = Pokepay;
+				VALIDATE_PRODUCT = NO;
+				VALIDATE_WORKSPACE = NO;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1171,11 +1178,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = T98PD289UQ;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1195,12 +1202,15 @@
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "$(SRCROOT)/Sources/Pokepay/Pokeregi/SwiftAES-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGET_NAME = Pokepay;
+				VALIDATE_PRODUCT = NO;
+				VALIDATE_WORKSPACE = NO;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
