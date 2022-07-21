@@ -2,7 +2,7 @@ import APIKit
 
 public extension BankAPI.Account {
 
-    struct GetAccountSevenElevenAtmSessions: BankRequest {
+    struct CreateAccountSevenElevenAtmSessions: BankRequest {
         public let accountId: String
         public let qrInfo: String
 
