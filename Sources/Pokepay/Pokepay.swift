@@ -34,8 +34,12 @@ public struct Pokepay {
         let accessToken: String
         let isMerchant: Bool
         let env: Env
+        var customDomain: String?;
 
         public var wwwBaseURL: URL {
+            if let customDomain = self.customDomain {
+                return URL(string: customDomain)!
+            }
             switch env {
             case .production:
                 return URL(string: "https://www.pokepay.jp")!
@@ -53,10 +57,34 @@ public struct Pokepay {
             }
         }
 
-        public init(accessToken: String, isMerchant: Bool = false, env: Env = .development) {
+        public init(accessToken: String, isMerchant: Bool = false, env: Env = .development, customDomain: String? = nil) {
             self.accessToken = accessToken
             self.isMerchant = isMerchant
             self.env = env
+            self.customDomain = customDomain
+        }
+        
+        /**
+         Create a client object with custom domain.
+         
+         - warning
+         It is encouraged to get the client once and use it throughout the application since this method needs to call api endpoint to get a custom domain.
+        */
+        public static func withCustomDomain(accessToken: String, isMerchant: Bool = false, env: Env = .development, challange: String, handler: @escaping (Result<Client, PokepayError>) -> Void = { _ in }) {
+            let client = Client(accessToken: accessToken, isMerchant: true, env: env)
+            client.send(BankAPI.PrivateMoney.GetPrivateMoney(privateMoneyId: challange)) { result in
+                switch result {
+                    case .success(let response):
+                        handler(
+                            .success(Pokepay.Client(
+                                accessToken: accessToken, isMerchant: isMerchant, env: env, customDomain: response.customDomainName
+                            ))
+                        )
+                    case .failure(let error):
+                        handler(.failure(error))
+                }
+
+            }
         }
 
         public func send<T: APIKit.Request>(_ request: T, handler: @escaping (Result<T.Response, PokepayError>) -> Void) {
