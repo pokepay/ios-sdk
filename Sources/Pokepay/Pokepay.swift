@@ -64,6 +64,12 @@ public struct Pokepay {
             self.customDomain = customDomain
         }
         
+        /**
+         Create a client object with custom domain.
+         
+         - warning
+         It is encouraged to get the client once and use it throughout the application since this method needs to call api endpoint to get a custom domain.
+        */
         public static func withCustomDomain(accessToken: String, isMerchant: Bool = false, env: Env = .development, challange: String, handler: @escaping (Result<Client, PokepayError>) -> Void = { _ in }) {
             let client = Client(accessToken: accessToken, isMerchant: true, env: env)
             client.send(BankAPI.PrivateMoney.GetPrivateMoney(privateMoneyId: challange)) { result in
