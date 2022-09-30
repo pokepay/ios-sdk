@@ -308,6 +308,10 @@ public struct Pokepay {
                 }
             }
         }
+        
+        public func getUserSettingUrl(handler: @escaping (Result<UserSettingUrl, PokepayError>) -> Void = { _ in }) {
+            send(BankAPI.User.GetUserSettingUrl(accessCode: accessToken), handler: handler)
+        }
     }
     public struct OAuthClient {
         let clientId: String
@@ -322,7 +326,7 @@ public struct Pokepay {
                 return URL(string: "https://www-\(env.rawValue).pokepay.jp")!
             }
         }
-
+        
         public init(clientId: String, clientSecret: String, env: Env = .development) {
             self.clientId = clientId
             self.clientSecret = clientSecret
