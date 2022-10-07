@@ -2,18 +2,26 @@ import APIKit
 
 public extension BankAPI.Transaction {
     struct CreateWithBill: BankRequest {
+        
+        public enum Strategy: String {
+            case pointPreferred = "point-preferred"
+            case moneyOnly = "money-only"
+        }
+        
         public let billId: String
         public let accountId: String?
         public let amount: Double?
         public let couponId:String?
-
+        public let strategy: Strategy?
+        
         public typealias Response = UserTransaction
 
-        public init(billId: String, accountId: String? = nil, amount: Double? = nil, couponId:String? = nil) {
+        public init(billId: String, accountId: String? = nil, amount: Double? = nil, couponId:String? = nil, strategy:Strategy? = .pointPreferred) {
             self.billId = billId
             self.accountId = accountId
             self.amount = amount
             self.couponId = couponId
+            self.strategy = strategy
         }
 
         public var method: HTTPMethod {
@@ -34,6 +42,9 @@ public extension BankAPI.Transaction {
             }
             if couponId != nil {
                 dict["coupon_id"] = couponId
+            }
+            if strategy != nil {
+                dict["strategy"] = strategy?.rawValue
             }
             return dict
         }

@@ -7,6 +7,7 @@ public struct CashtrayAttempt: Codable {
     public let errorType: String?
     public let errorMessage: String?
     public let createdAt: Date
+    public let strategy: String?
 
     private enum CodingKeys: String, CodingKey {
         case user
@@ -15,5 +16,6 @@ public struct CashtrayAttempt: Codable {
         case errorType = "error_type"
         case errorMessage = "error_message"
         case createdAt = "created_at"
+        case strategy
     }
 }
