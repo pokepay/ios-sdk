@@ -3,19 +3,14 @@ import APIKit
 public extension BankAPI.Transaction {
     struct CreateWithJwt: BankRequest {
         
-        public enum Strategy: String {
-            case pointPreferred = "point-preferred"
-            case moneyOnly = "money-only"
-        }
-        
         public let data: String
         public let accountId: String?
         public let couponId:String?
-        public let strategy: Strategy?
+        public let strategy: TransactionStrategy?
 
         public typealias Response = JwtResult
 
-        public init(data: String, accountId: String? = nil, couponId:String? = nil, strategy: Strategy? = .pointPreferred) {
+        public init(data: String, accountId: String? = nil, couponId:String? = nil, strategy: TransactionStrategy? = .pointPreferred) {
             self.data = data
             self.accountId = accountId
             self.couponId = couponId

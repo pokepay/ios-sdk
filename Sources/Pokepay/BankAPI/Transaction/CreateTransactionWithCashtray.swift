@@ -3,19 +3,14 @@ import APIKit
 public extension BankAPI.Transaction {
     struct CreateWithCashtray: BankRequest {
         
-        public enum Strategy: String {
-            case pointPreferred = "point-preferred"
-            case moneyOnly = "money-only"
-        }
-        
         public let cashtrayId: String
         public let accountId: String?
         public let couponId:String?
-        public let strategy:Strategy?
+        public let strategy:TransactionStrategy?
 
         public typealias Response = UserTransaction
 
-        public init(cashtrayId: String, accountId: String? = nil, couponId:String? = nil, strategy:Strategy? = .pointPreferred) {
+        public init(cashtrayId: String, accountId: String? = nil, couponId:String? = nil, strategy:TransactionStrategy? = .pointPreferred) {
             self.cashtrayId = cashtrayId
             self.accountId = accountId
             self.couponId = couponId

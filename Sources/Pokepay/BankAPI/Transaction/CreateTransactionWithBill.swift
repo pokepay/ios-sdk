@@ -3,20 +3,15 @@ import APIKit
 public extension BankAPI.Transaction {
     struct CreateWithBill: BankRequest {
         
-        public enum Strategy: String {
-            case pointPreferred = "point-preferred"
-            case moneyOnly = "money-only"
-        }
-        
         public let billId: String
         public let accountId: String?
         public let amount: Double?
         public let couponId:String?
-        public let strategy: Strategy?
+        public let strategy: TransactionStrategy?
         
         public typealias Response = UserTransaction
 
-        public init(billId: String, accountId: String? = nil, amount: Double? = nil, couponId:String? = nil, strategy:Strategy? = .pointPreferred) {
+        public init(billId: String, accountId: String? = nil, amount: Double? = nil, couponId:String? = nil, strategy:TransactionStrategy? = .pointPreferred) {
             self.billId = billId
             self.accountId = accountId
             self.amount = amount
