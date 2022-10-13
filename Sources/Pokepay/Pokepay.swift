@@ -231,7 +231,7 @@ public struct Pokepay {
             }
         }
 
-        public func scanToken(_ token: String, amount: Double? = nil, accountId: String? = nil, products: [Product]? = nil,couponId: String? = nil, strategy: TransactionStrategy? = .pointPreferred
+        public func scanToken(_ token: String, amount: Double? = nil, accountId: String? = nil, products: [Product]? = nil,couponId: String? = nil, strategy: TransactionStrategy? = .pointPreferred,
                               handler: @escaping (Result<UserTransaction, PokepayError>) -> Void = { _ in }) {
             if token.hasPrefix("\(wwwBaseURL)/cashtrays/") {
                 let uuid = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/cashtrays/".utf8.count))
