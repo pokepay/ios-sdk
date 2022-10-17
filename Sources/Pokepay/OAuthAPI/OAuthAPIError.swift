@@ -2,7 +2,7 @@ import Foundation
 
 public enum OAuthAPIError: Error {
     case invalidJSON(Swift.Error)
-    case unknownError(Int, OAuthError)
+    case unknownError(Int?, OAuthError)
     case clientError(Int, OAuthError)
     case serverError(Int, OAuthError)
 
@@ -10,7 +10,7 @@ public enum OAuthAPIError: Error {
         do {
             let error = try JSONDecoder().decode(OAuthError.self, from: object)
             guard let code = statusCode else {
-                self = .unknownError(statusCode!, error)
+                self = .unknownError(statusCode, error)
                 return
             }
             if ((400..<500).contains(code)) {
