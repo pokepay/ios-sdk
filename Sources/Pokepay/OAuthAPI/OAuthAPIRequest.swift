@@ -15,7 +15,7 @@ public extension OAuthAPIRequest {
 public extension OAuthAPIRequest {
     func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {
         guard (200..<300).contains(urlResponse.statusCode) else {
-            throw OAuthAPIError(object: object as! Data)
+            throw OAuthAPIError(statusCode: urlResponse.statusCode, object: object as! Data)
         }
         return object
     }
@@ -28,7 +28,7 @@ extension OAuthAPIRequest where Response: Decodable {
 
     public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
         guard let data = object as? Data else {
-            throw OAuthAPIError(object: Data())
+            throw OAuthAPIError(statusCode: urlResponse.statusCode, object: Data())
         }
         guard data.count != 0 else {
             let emptyJson = "{}"

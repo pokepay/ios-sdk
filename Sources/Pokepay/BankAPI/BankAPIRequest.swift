@@ -28,7 +28,7 @@ extension BankRequest where Response: Decodable {
 
     public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
         guard let data = object as? Data else {
-            throw BankAPIError(object: Data())
+            throw BankAPIError(statusCode: urlResponse.statusCode, object: Data())
         }
         guard data.count != 0 else {
             let emptyJson = "{}"
