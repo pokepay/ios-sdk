@@ -7,6 +7,7 @@ public extension MessagingAPI {
         public let amount: Double?
         public let subject: String
         public let body: String
+        public let sender: User
         public let fromAccountId: String?
         public var requestId: String {
             return UUID().uuidString
@@ -14,11 +15,12 @@ public extension MessagingAPI {
 
         public typealias Response = Message
 
-        public init(toUserId: String, amount: Double? = nil, subject: String = "", body: String = "", fromAccountId: String? = nil) {
+        public init(toUserId: String, amount: Double? = nil, subject: String = "", body: String = "", sender: User, fromAccountId: String? = nil) {
             self.toUserId = toUserId
             self.amount = amount
             self.subject = subject
             self.body = body
+            self.sender = sender
             self.fromAccountId = fromAccountId
         }
 
@@ -33,7 +35,7 @@ public extension MessagingAPI {
         public var parameters: Any? {
             var dict: [String: Any] = [:]
             dict["to_user_id"] = toUserId
-            if amount != nil {
+            if amount != nil && sender.isMerchant{
                 dict["amount"] = amount
             }
             dict["subject"] = subject
