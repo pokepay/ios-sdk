@@ -258,7 +258,7 @@ public struct Pokepay {
             }
         }
 
-        public func createToken(_ amount: Double? = nil, description: String? = nil, expiresIn: Int32? = nil, accountId: String? = nil, products: [Product]? = nil,
+        public func createToken(_ amount: Double? = nil, description: String? = nil, expiresIn: Int32? = nil, accountId: String? = nil, products: [Product]? = nil, checkExpiresAt: Date? = nil,
                                 handler: @escaping (Result<String, PokepayError>) -> Void = { _ in }) {
             if isMerchant {
                 if let amount = amount {
@@ -287,7 +287,7 @@ public struct Pokepay {
                     }
                 }
                 else {
-                    send(BankAPI.Check.Create(amount: amount, accountId: accountId, description: description)) { result in
+                    send(BankAPI.Check.Create(amount: amount, accountId: accountId, description: description, expiresAt: checkExpiresAt)) { result in
                         switch result {
                         case .success(let check):
                             handler(.success("\(self.wwwBaseURL)/checks/\(check.id)"))

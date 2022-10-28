@@ -1,3 +1,4 @@
+import Foundation
 import APIKit
 
 public extension BankAPI.Check {
@@ -5,13 +6,15 @@ public extension BankAPI.Check {
         public let amount: Double?
         public let accountId: String?
         public let description: String?
+        public let expiresAt: Date?
 
         public typealias Response = Check
 
-        public init(amount: Double? = nil, accountId: String? = nil, description: String? = nil) {
+        public init(amount: Double? = nil, accountId: String? = nil, description: String? = nil, expiresAt: Date? = nil) {
             self.amount = amount
             self.accountId = accountId
             self.description = description
+            self.expiresAt = expiresAt
         }
 
         public var method: HTTPMethod {
@@ -32,6 +35,9 @@ public extension BankAPI.Check {
             }
             if description != nil {
                 dict["description"] = description
+            }
+            if let p = expiresAt {
+                dict["expires_at"] = BankAPIDateFormatter.string(date: p)
             }
             return dict
         }
