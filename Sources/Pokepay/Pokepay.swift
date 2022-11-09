@@ -246,7 +246,7 @@ public struct Pokepay {
                 send(BankAPI.Transaction.CreateWithCheck(checkId: uuid, accountId: accountId), handler: handler)
             }
             else if token.range(of: "^[0-9]{20}$", options: NSString.CompareOptions.regularExpression, range: nil, locale: nil) != nil {
-                send(BankAPI.Transaction.CreateWithCpm(cpmToken: token, accountId: accountId, amount: amount, products: products), handler: handler)
+                send(BankAPI.Transaction.CreateWithCpm(cpmToken: token, accountId: accountId, amount: amount ?? 0.0, products: products), handler: handler)
             }
             else {
                 let pokeregiToken = parseAsPokeregiToken(token)
