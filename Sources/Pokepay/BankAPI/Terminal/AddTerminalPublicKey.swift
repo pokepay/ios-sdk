@@ -4,7 +4,7 @@ public extension BankAPI.Terminal {
     struct AddPublicKey: BankRequest {
         public let key: String
 
-        public typealias Response = NoContent
+        public typealias Response = ServerKey
 
         public init(key: String) {
             self.key = key
