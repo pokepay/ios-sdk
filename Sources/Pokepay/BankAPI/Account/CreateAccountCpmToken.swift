@@ -10,13 +10,20 @@ public extension BankAPI.Account {
         }
 
         public let accountId: String
-        public let scopes: Scope
+        public let scopes: Int
         public let expiresIn: Int?
         public let metadata: [String:String]?
 
         public typealias Response = AccountCpmToken
 
         public init(accountId: String, scopes: Scope = .PAYMENT, expiresIn: Int? = nil, metadata: [String:String]? = nil) {
+            self.accountId = accountId
+            self.scopes = scopes.rawValue
+            self.expiresIn = expiresIn
+            self.metadata = metadata
+        }
+        
+        public init(accountId:String, scopes:Int,expiresIn: Int? = nil,metadata: [String:String]? = nil){
             self.accountId = accountId
             self.scopes = scopes
             self.expiresIn = expiresIn
@@ -34,10 +41,10 @@ public extension BankAPI.Account {
         public var parameters: Any? {
             var dict: [String: Any] = [:]
             var scopesArr: [String] = []
-            if (scopes.rawValue & Scope.PAYMENT.rawValue) != 0 {
+            if (scopes & Scope.PAYMENT.rawValue) != 0 {
                 scopesArr.append("payment")
             }
-            if (scopes.rawValue & Scope.TOPUP.rawValue) != 0 {
+            if (scopes & Scope.TOPUP.rawValue) != 0 {
                 scopesArr.append("topup")
             }
             dict["scopes"] = scopesArr

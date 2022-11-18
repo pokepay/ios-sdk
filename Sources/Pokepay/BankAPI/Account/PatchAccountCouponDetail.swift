@@ -9,7 +9,7 @@ public extension BankAPI.Account {
 
         public typealias Response = CouponDetail
 
-        public init(accountId: String, couponId:String, isReceived: Bool, code: String? = nil) {
+        public init(accountId: String, couponId:String, isReceived: Bool = true, code: String? = nil) {
             self.accountId = accountId
             self.couponId = couponId
             self.isReceived = isReceived
