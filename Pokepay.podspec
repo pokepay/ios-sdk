@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Pokepay"
-  s.version      = "1.8.7"
+  s.version      = "2.0.0"
   s.summary      = "Pokepay iOS SDK."
   s.description  = <<-DESC
 iOS SDK for Pokepay written in Swift.
