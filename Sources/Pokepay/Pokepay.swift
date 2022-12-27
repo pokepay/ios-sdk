@@ -131,11 +131,12 @@ public struct Pokepay {
 
         public func getTokenInfo(_ token: String,
                                  handler: @escaping (Result<TokenInfo, PokepayError>) -> Void) {
-            if token.hasPrefix("\(wwwBaseURL)/cashtrays/") {
+            let baseUrl = token.hasPrefix("\(wwwBaseURL)") ? wwwBaseURL : defaultWwwBaseURL
+            if token.hasPrefix("\(baseUrl)/cashtrays/") {
                 handler(.success(TokenInfo.cashtray("")))
             }
-            else if token.hasPrefix("\(wwwBaseURL)/bills/") {
-                let id = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/bills/".utf8.count))
+            else if token.hasPrefix("\(baseUrl)/bills/") {
+                let id = String(token.suffix(token.utf8.count - "\(baseUrl)/bills/".utf8.count))
                 send(BankAPI.Bill.Get(id: id)) { result in
                     switch result {
                     case .success(let data):
@@ -145,8 +146,8 @@ public struct Pokepay {
                     }
                 }
             }
-            else if token.hasPrefix("\(wwwBaseURL)/checks/") {
-                let id = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/checks/".utf8.count))
+            else if token.hasPrefix("\(baseUrl)/checks/") {
+                let id = String(token.suffix(token.utf8.count - "\(baseUrl)/checks/".utf8.count))
                 send(BankAPI.Check.Get(id: id)) { result in
                     switch result {
                     case .success(let data):
@@ -237,16 +238,17 @@ public struct Pokepay {
 
         public func scanToken(_ token: String, amount: Double? = nil, accountId: String? = nil, products: [Product]? = nil, couponId: String? = nil, strategy: TransactionStrategy? = .pointPreferred,
                               handler: @escaping (Result<UserTransaction, PokepayError>) -> Void = { _ in }) {
-            if token.hasPrefix("\(wwwBaseURL)/cashtrays/") || token.hasPrefix("\(defaultWwwBaseURL)/cashtrays/") {
-                let uuid = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/cashtrays/".utf8.count))
+            let baseUrl = token.hasPrefix("\(wwwBaseURL)") ? wwwBaseURL : defaultWwwBaseURL
+            if token.hasPrefix("\(baseUrl)/cashtrays/") {
+                let uuid = String(token.suffix(token.utf8.count - "\(baseUrl)/cashtrays/".utf8.count))
                 send(BankAPI.Transaction.CreateWithCashtray(cashtrayId: uuid,accountId: accountId,couponId: couponId, strategy: strategy), handler: handler)
             }
-            else if token.hasPrefix("\(wwwBaseURL)/bills/") || token.hasPrefix("\(defaultWwwBaseURL)/bills/") {
-                let uuid = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/bills/".utf8.count))
+            else if token.hasPrefix("\(baseUrl)/bills/") {
+                let uuid = String(token.suffix(token.utf8.count - "\(baseUrl)/bills/".utf8.count))
                 send(BankAPI.Transaction.CreateWithBill(billId: uuid, accountId: accountId, amount: amount,couponId: couponId, strategy: strategy), handler: handler)
             }
-            else if token.hasPrefix("\(wwwBaseURL)/checks/") || token.hasPrefix("\(defaultWwwBaseURL)/checks/") {
-                let uuid = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/checks/".utf8.count))
+            else if token.hasPrefix("\(baseUrl)/checks/") {
+                let uuid = String(token.suffix(token.utf8.count - "\(baseUrl)/checks/".utf8.count))
                 send(BankAPI.Transaction.CreateWithCheck(checkId: uuid, accountId: accountId), handler: handler)
             }
             else if token.range(of: "^[0-9]{20}$", options: NSString.CompareOptions.regularExpression, range: nil, locale: nil) != nil {
