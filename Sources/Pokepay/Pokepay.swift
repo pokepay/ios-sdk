@@ -40,6 +40,10 @@ public struct Pokepay {
             if let customDomain = self.customDomain {
                 return URL(string: customDomain)!
             }
+            return defaultWwwBaseURL
+        }
+        
+        public var defaultWwwBaseURL: URL {
             switch env {
             case .production:
                 return URL(string: "https://www.pokepay.jp")!
@@ -231,17 +235,17 @@ public struct Pokepay {
             }
         }
 
-        public func scanToken(_ token: String, amount: Double? = nil, accountId: String? = nil, products: [Product]? = nil,couponId: String? = nil, strategy: TransactionStrategy? = .pointPreferred,
+        public func scanToken(_ token: String, amount: Double? = nil, accountId: String? = nil, products: [Product]? = nil, couponId: String? = nil, strategy: TransactionStrategy? = .pointPreferred,
                               handler: @escaping (Result<UserTransaction, PokepayError>) -> Void = { _ in }) {
-            if token.hasPrefix("\(wwwBaseURL)/cashtrays/") {
+            if token.hasPrefix("\(wwwBaseURL)/cashtrays/") || token.hasPrefix("\(defaultWwwBaseURL)/cashtrays/") {
                 let uuid = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/cashtrays/".utf8.count))
                 send(BankAPI.Transaction.CreateWithCashtray(cashtrayId: uuid,accountId: accountId,couponId: couponId, strategy: strategy), handler: handler)
             }
-            else if token.hasPrefix("\(wwwBaseURL)/bills/") {
+            else if token.hasPrefix("\(wwwBaseURL)/bills/") || token.hasPrefix("\(defaultWwwBaseURL)/bills/") {
                 let uuid = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/bills/".utf8.count))
                 send(BankAPI.Transaction.CreateWithBill(billId: uuid, accountId: accountId, amount: amount,couponId: couponId, strategy: strategy), handler: handler)
             }
-            else if token.hasPrefix("\(wwwBaseURL)/checks/") {
+            else if token.hasPrefix("\(wwwBaseURL)/checks/") || token.hasPrefix("\(defaultWwwBaseURL)/checks/") {
                 let uuid = String(token.suffix(token.utf8.count - "\(wwwBaseURL)/checks/".utf8.count))
                 send(BankAPI.Transaction.CreateWithCheck(checkId: uuid, accountId: accountId), handler: handler)
             }
