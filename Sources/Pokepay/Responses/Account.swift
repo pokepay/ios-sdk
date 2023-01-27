@@ -9,6 +9,7 @@ public struct Account: Codable {
     public let isSuspended: Bool
     public let privateMoney: PrivateMoney
     public let nearestExpiresAt: Date?
+    public let pointDebt: Double
 
     private enum CodingKeys: String, CodingKey {
         case id
@@ -19,5 +20,6 @@ public struct Account: Codable {
         case isSuspended = "is_suspended"
         case privateMoney = "private_money"
         case nearestExpiresAt = "nearest_expires_at"
+        case pointDebt = "point_debt"
     }
 }
