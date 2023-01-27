@@ -1,16 +1,18 @@
 import APIKit
+import Foundation
 
 public extension BankAPI.Transaction {
     struct CreateWithCashtray: BankRequest {
-        
         public let cashtrayId: String
         public let accountId: String?
         public let couponId:String?
         public let strategy:TransactionStrategy?
+        public let requestId: UUID?
 
         public typealias Response = UserTransaction
 
-        public init(cashtrayId: String, accountId: String? = nil, couponId:String? = nil, strategy:TransactionStrategy? = .pointPreferred) {
+        public init(cashtrayId: String, accountId: String? = nil, couponId:String? = nil, strategy:TransactionStrategy? = .pointPreferred, requestId: UUID? = nil) {
+            self.requestId = requestId
             self.cashtrayId = cashtrayId
             self.accountId = accountId
             self.couponId = couponId
@@ -35,6 +37,9 @@ public extension BankAPI.Transaction {
             }
             if strategy != nil {
                 dict["strategy"] = strategy?.rawValue
+            }
+            if requestId != nil {
+                dict["request_id"] = requestId?.uuidString
             }
             return dict
         }
