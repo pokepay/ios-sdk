@@ -236,23 +236,23 @@ public struct Pokepay {
             }
         }
 
-        public func scanToken(_ token: String, amount: Double? = nil, accountId: String? = nil, products: [Product]? = nil, couponId: String? = nil, strategy: TransactionStrategy? = .pointPreferred,
+        public func scanToken(_ token: String, amount: Double? = nil, accountId: String? = nil, products: [Product]? = nil, couponId: String? = nil, strategy: TransactionStrategy? = .pointPreferred, requestId: UUID? = nil,
                               handler: @escaping (Result<UserTransaction, PokepayError>) -> Void = { _ in }) {
             let baseUrl = token.hasPrefix("\(wwwBaseURL)") ? wwwBaseURL : defaultWwwBaseURL
             if token.hasPrefix("\(baseUrl)/cashtrays/") {
                 let uuid = String(token.suffix(token.utf8.count - "\(baseUrl)/cashtrays/".utf8.count))
-                send(BankAPI.Transaction.CreateWithCashtray(cashtrayId: uuid,accountId: accountId,couponId: couponId, strategy: strategy), handler: handler)
+                send(BankAPI.Transaction.CreateWithCashtray(cashtrayId: uuid,accountId: accountId,couponId: couponId, strategy: strategy, requestId: requestId), handler: handler)
             }
             else if token.hasPrefix("\(baseUrl)/bills/") {
                 let uuid = String(token.suffix(token.utf8.count - "\(baseUrl)/bills/".utf8.count))
-                send(BankAPI.Transaction.CreateWithBill(billId: uuid, accountId: accountId, amount: amount,couponId: couponId, strategy: strategy), handler: handler)
+                send(BankAPI.Transaction.CreateWithBill(billId: uuid, accountId: accountId, amount: amount,couponId: couponId, strategy: strategy, requestId: requestId), handler: handler)
             }
             else if token.hasPrefix("\(baseUrl)/checks/") {
                 let uuid = String(token.suffix(token.utf8.count - "\(baseUrl)/checks/".utf8.count))
-                send(BankAPI.Transaction.CreateWithCheck(checkId: uuid, accountId: accountId), handler: handler)
+                send(BankAPI.Transaction.CreateWithCheck(checkId: uuid, accountId: accountId, requestId: requestId), handler: handler)
             }
             else if token.range(of: "^[0-9]{20}$", options: NSString.CompareOptions.regularExpression, range: nil, locale: nil) != nil {
-                send(BankAPI.Transaction.CreateWithCpm(cpmToken: token, accountId: accountId, amount: amount ?? 0.0, products: products), handler: handler)
+                send(BankAPI.Transaction.CreateWithCpm(cpmToken: token, accountId: accountId, amount: amount ?? 0.0, products: products, requestId: requestId), handler: handler)
             }
             else {
                 let pokeregiToken = parseAsPokeregiToken(token)

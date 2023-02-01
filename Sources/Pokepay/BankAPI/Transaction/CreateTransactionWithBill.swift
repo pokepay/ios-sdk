@@ -1,17 +1,20 @@
 import APIKit
+import Foundation
 
 public extension BankAPI.Transaction {
     struct CreateWithBill: BankRequest {
-        
         public let billId: String
         public let accountId: String?
         public let amount: Double?
         public let couponId:String?
         public let strategy: TransactionStrategy?
+        public let requestId: UUID?
         
         public typealias Response = UserTransaction
 
-        public init(billId: String, accountId: String? = nil, amount: Double? = nil, couponId:String? = nil, strategy:TransactionStrategy? = .pointPreferred) {
+        public init(billId: String, accountId: String? = nil, amount: Double? = nil, couponId:String? = nil, strategy:TransactionStrategy? = .pointPreferred,
+                    requestId: UUID? = nil) {
+            self.requestId = requestId
             self.billId = billId
             self.accountId = accountId
             self.amount = amount
@@ -40,6 +43,9 @@ public extension BankAPI.Transaction {
             }
             if strategy != nil {
                 dict["strategy"] = strategy?.rawValue
+            }
+            if requestId != nil {
+                dict["request_id"] = requestId?.uuidString
             }
             return dict
         }
