@@ -4,7 +4,7 @@ public extension BankAPI.Bill {
     struct Get: BankRequest {
         public let id: String
 
-        public typealias Response = BillWithAdditionalPrivateMoneys
+        public typealias Response = Bill
 
         public init(id: String) {
             self.id = id
