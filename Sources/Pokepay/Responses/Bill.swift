@@ -24,6 +24,6 @@ public struct Bill: Codable {
         case token
         case minAmount = "min_amount"
         case maxAmount = "max_amount"
-        case additionalPrivateMoney = "additional_private_moneys"
+        case additionalPrivateMoneys = "additional_private_moneys"
     }
 }
