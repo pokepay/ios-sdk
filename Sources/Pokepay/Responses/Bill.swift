@@ -11,6 +11,7 @@ public struct Bill: Codable {
     public let token: String
     public let minAmount: Double?
     public let maxAmount: Double?
+    public let additionalPrivateMoneys: [PrivateMoney]?
 
     private enum CodingKeys: String, CodingKey {
         case id
@@ -23,5 +24,6 @@ public struct Bill: Codable {
         case token
         case minAmount = "min_amount"
         case maxAmount = "max_amount"
+        case additionalPrivateMoneys = "additional_private_moneys"
     }
 }
