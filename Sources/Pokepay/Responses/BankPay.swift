@@ -13,13 +13,13 @@ public struct BankPay: Codable {
 
     private enum CodingKeys: String, CodingKey {
         case id
-        case bankName
-        case bankCode
-        case branchNumber
-        case branchName
-        case depositType
-        case maskedAccountNumber
-        case accountName
-        case privateMoneyId
+        case bankName = "bank_name"
+        case bankCode = "bank_code"
+        case branchNumber = "branch_number"
+        case branchName = "branch_name"
+        case depositType = "deposit_type"
+        case maskedAccountNumber = "masked_account_number"
+        case accountName = "account_name"
+        case privateMoneyId = "private_money_id"
     }
 }

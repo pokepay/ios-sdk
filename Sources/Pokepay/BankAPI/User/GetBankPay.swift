@@ -24,7 +24,7 @@ public extension BankAPI.User {
             var dict: [String: Any] = [:]
 
             if privateMoneyId != nil {
-                dict["privateMoneyId"] = privateMoneyId
+                dict["private_money_id"] = privateMoneyId
             }
 
             return dict

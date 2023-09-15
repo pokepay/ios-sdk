@@ -24,8 +24,8 @@ public extension BankAPI.User {
         public var parameters: Any? {
             var dict: [String: Any] = [:]
 
-            dict["callbackUrl"] = callbackUrl
-            dict["privateMoneyId"] = privateMoneyId
+            dict["callback_url"] = callbackUrl
+            dict["private_money_id"] = privateMoneyId
             
             return dict
         }

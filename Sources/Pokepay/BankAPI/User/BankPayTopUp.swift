@@ -29,6 +29,7 @@ public extension BankAPI.User {
                 "bank_id": bankId,
                 "amount": amount
             ]
+
             return dict
         }
         
