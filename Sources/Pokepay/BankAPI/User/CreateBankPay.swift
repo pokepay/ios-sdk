@@ -7,7 +7,7 @@ public extension BankAPI.User {
         public let privateMoneyId: String
         public typealias Response = BankPayRedirectUrl
         
-        public init(id: String, token: String) {
+        public init(id: String, callbackUrl: String, privateMoneyId: String) {
             self.id = id
             self.callbackUrl = callbackUrl
             self.privateMoneyId = privateMoneyId
