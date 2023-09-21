@@ -5,7 +5,7 @@ public extension BankAPI.User {
         public let id: String
         public let privateMoneyId: String?
 
-        public typealias Response = BankPay
+        public typealias Response = [BankPay]
 
         public init(id: String, privateMoneyId: String? = nil) {
             self.id = id
