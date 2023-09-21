@@ -1,11 +1,8 @@
 import APIKit
+import Foundation
 
 public extension BankAPI.Account {
     struct IdentifyIndividual: BankRequest {
-        enum Gender {
-            case male, female, other
-        }
-
         public let accountId: String
         public let signature: String
         public let signingCert: String
