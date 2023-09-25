@@ -10,10 +10,11 @@ public extension BankAPI.Account {
         public let name: String?
         public let gender: Gender?
         public let address: String?
-        public let dateOfBirth: Date?
+        /// pattern = YYYY-MM-DD
+        public let dateOfBirth: String?
         public typealias Response = IdentificationResult
 
-        public init(accountId: String, signature: String, signingCert: String, expectedHash: String, name: String? = nil, gender: Gender? = nil, address: String? = nil, dateOfBirth: Date? = nil) {
+        public init(accountId: String, signature: String, signingCert: String, expectedHash: String, name: String? = nil, gender: Gender? = nil, address: String? = nil, dateOfBirth: String? = nil) {
             self.accountId = accountId
             self.signature = signature
             self.signingCert = signingCert
