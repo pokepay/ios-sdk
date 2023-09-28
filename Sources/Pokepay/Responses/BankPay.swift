@@ -6,7 +6,7 @@ public struct BankPay: Codable {
     public let bankCode: String
     public let branchNumber: String
     public let branchName: String
-    public let depositType: Int32
+    public let depositType: String
     public let maskedAccountNumber: String
     public let accountName: String
     public let privateMoneyId: String?
