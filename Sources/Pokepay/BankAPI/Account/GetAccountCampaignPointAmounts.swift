@@ -13,7 +13,7 @@ public extension BankAPI.Account {
         }
 
         public var method: HTTPMethod {
-            return .post
+            return .get
         }
 
         public var path: String {
