@@ -5,12 +5,14 @@ public extension BankAPI.User {
         public let id: String
         public let callbackUrl: String
         public let privateMoneyId: String
+        public let kana: String?
         public typealias Response = BankPayRedirectUrl
         
-        public init(id: String, callbackUrl: String, privateMoneyId: String) {
+        public init(id: String, callbackUrl: String, privateMoneyId: String, kana: String? = nil) {
             self.id = id
             self.callbackUrl = callbackUrl
             self.privateMoneyId = privateMoneyId
+            self.kana = kana
         }
         
         public var method: HTTPMethod {
