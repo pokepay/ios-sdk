@@ -28,6 +28,10 @@ public extension BankAPI.User {
 
             dict["callback_url"] = callbackUrl
             dict["private_money_id"] = privateMoneyId
+
+            if kana != nil {
+                dict["kana"] = kana
+            }
             
             return dict
         }
