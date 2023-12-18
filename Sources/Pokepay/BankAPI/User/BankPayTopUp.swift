@@ -7,12 +7,14 @@ public extension BankAPI.User {
         public let bankId: String
         public let amount: String
         public typealias Response = UserTransaction
+        public let requestId: String
         
-        public init(id: String, accountId: String , bankId: String, amount: String) {
+        public init(id: String, accountId: String , bankId: String, amount: String, requestId: String) {
             self.id = id
             self.accountId = accountId
             self.bankId = bankId
             self.amount = amount
+            self.requestId = requestId
         }
         
         public var method: HTTPMethod {
@@ -27,7 +29,8 @@ public extension BankAPI.User {
             let dict: [String: Any] = [
                 "account_id": accountId,
                 "bank_id": bankId,
-                "amount": amount
+                "amount": amount,
+                "request_id": requestId
             ]
 
             return dict
