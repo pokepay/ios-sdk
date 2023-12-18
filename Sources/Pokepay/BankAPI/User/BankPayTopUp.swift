@@ -9,7 +9,7 @@ public extension BankAPI.User {
         public typealias Response = UserTransaction
         public let requestId: String
         
-        public init(id: String, accountId: String , bankId: String, amount: String, requestId: String) {
+        public init(id: String, accountId: String , bankId: String, amount: String, requestId: String? = nil) {
             self.id = id
             self.accountId = accountId
             self.bankId = bankId
@@ -29,9 +29,11 @@ public extension BankAPI.User {
             let dict: [String: Any] = [
                 "account_id": accountId,
                 "bank_id": bankId,
-                "amount": amount,
-                "request_id": requestId
+                "amount": amount
             ]
+            if requestId != nil {
+                dict["request_id"] = requestId
+            }
 
             return dict
         }
