@@ -20,12 +20,12 @@ public extension BankAPI.User {
             return "/users/\(id)/banks"
         }
 
-        public var parameters: Any? {
+        public var bodyParameters: BodyParameters? {
             var dict: [String: Any] = [:]
 
             dict["bank_id"] = bankId
             
-            return dict
+            return JSONBodyParameters(JSONObject: dict)
         }
     }
 }

@@ -22,6 +22,14 @@ extension RequestProxy {
     var parameters: Any? {
         return request.parameters
     }
+    
+    var queryParameters: [String : Any]? {
+        return request.queryParameters
+    }
+    
+    var bodyParameters: BodyParameters? {
+        return request.bodyParameters
+    }
 
     var dataParser: DataParser {
         return request.dataParser
