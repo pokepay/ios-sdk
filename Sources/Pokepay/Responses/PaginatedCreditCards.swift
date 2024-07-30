@@ -4,11 +4,11 @@ import Foundation
 public struct PaginatedCreditCards: Codable {
     public let perPage: Int;
     public let count: Int;
-    public let next: String;
-    public let prev: String;
+    public let next: String?;
+    public let prev: String?;
     public let items: [CreditCard];
 
-    private enum CodingKeys: String, CodingKeys {
+    private enum CodingKeys: String, CodingKey {
         case perPage = "per_page"
         case count = "count"
         case next = "next"

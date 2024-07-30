@@ -5,12 +5,12 @@ public extension BankAPI.CreditCard {
     struct CreateCreditCard: BankRequest {
         public let token: String
         public let isCardholderNameSpecified: Bool?
-        public let organizationCode: String
+        public let organizationCode: String?
         public let userId: String
 
         public typealias Response = CreditCard
 
-        public init(token: String, isCardholderNameSpecified: Bool? = nil, organizationCode: String, userId: String) {
+        public init(token: String, isCardholderNameSpecified: Bool? = nil, organizationCode: String? = nil, userId: String) {
             self.token = token
             self.isCardholderNameSpecified = isCardholderNameSpecified
             self.organizationCode = organizationCode
@@ -34,7 +34,9 @@ public extension BankAPI.CreditCard {
                 dict["is_cardholder_name_specified"] = isCardholderNameSpecified
             }
 
-            dict["organization_code"] = organizationCode
+            if organizationCode != nil {
+                dict["organization_code"] = organizationCode
+            }
 
             return dict
         }

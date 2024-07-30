@@ -1,7 +1,7 @@
 import Foundation
 import APIKit
 
-final class DecodableDataParser: DataParser {
+final class HTMLDataParser: DataParser {
     var contentType: String? {
         return "text/html"
     }

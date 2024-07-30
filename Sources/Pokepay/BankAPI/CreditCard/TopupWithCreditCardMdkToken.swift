@@ -7,12 +7,12 @@ public extension BankAPI.CreditCard {
         public let token: String
         public let accountId: String
         public let amount: Int
-        public let organizationCode: String
+        public let organizationCode: String?
         public let isCardholderNameSpecified: Bool?
 
         public typealias Response = String
 
-        public init(userId: String, token: String, accountId: String, amount: Int, organizationCode: String, isCardholderNameSpecified: Bool? = nil) {
+        public init(userId: String, token: String, accountId: String, amount: Int, organizationCode: String? = nil, isCardholderNameSpecified: Bool? = nil) {
             self.userId = userId
             self.token = token
             self.accountId = accountId
@@ -40,7 +40,9 @@ public extension BankAPI.CreditCard {
 
             dict["amount"] = amount
 
-            dict["organization_code"] = organizationCode
+            if organizationCode != nil {
+                dict["organization_code"] = organizationCode
+            }
 
             if isCardholderNameSpecified != nil {
                 dict["is_cardholder_name_specified"] = isCardholderNameSpecified

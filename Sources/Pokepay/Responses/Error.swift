@@ -32,3 +32,9 @@ public struct InvalidParametersError: Codable {
 public struct OAuthError: Codable {
     public let error: String
 }
+
+public struct VeritransError: Codable {
+    public let status: String
+    public let code: String
+    public let message: String
+}

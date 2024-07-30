@@ -378,4 +378,27 @@ public struct Pokepay {
             send(OAuthAPI.Token.RefreshAccessToken(refreshToken: refreshToken, clientId: clientId, clientSecret: clientSecret), handler: handler)
         }
     }
+    
+    public struct VeritransClient {
+        
+        public init() {}
+        
+        public func send<T: APIKit.Request>(_ request: T, handler: @escaping (Result<T.Response, PokepayError>) -> Void) {
+            Session.send(request) { result in
+                switch result {
+                case .success(let data):
+                    handler(.success(data))
+                case .failure(let error):
+                    switch error {
+                    case .connectionError(let error):
+                        handler(.failure(PokepayError.connectionError(error)))
+                    case .requestError(let error):
+                        handler(.failure(PokepayError.requestError(error)))
+                    case .responseError(let error):
+                        handler(.failure(PokepayError.responseError(error)))
+                    }
+                }
+            }
+        }
+    }
 }
