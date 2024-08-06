@@ -6,14 +6,16 @@ public extension VeritransAPI.Token {
         public let cardExpiryDate: String
         public let securityCode: String
         public let tokenApiKey: String
+        public let cardholderName: String
 
         public typealias Response = VeritransToken
 
-        public init(cardNumber: String, cardExpiryDate: String, securityCode: String, tokenApiKey: String) {
+        public init(cardNumber: String, cardExpiryDate: String, securityCode: String, tokenApiKey: String, cardholderName: String) {
             self.cardNumber = cardNumber
             self.cardExpiryDate = cardExpiryDate
             self.securityCode = securityCode
             self.tokenApiKey = tokenApiKey
+            self.cardholderName = cardholderName
         }
 
         public var method: HTTPMethod {
@@ -29,7 +31,8 @@ public extension VeritransAPI.Token {
               "card_number": cardNumber,
               "card_expire": cardExpiryDate,
               "security_code": securityCode,
-              "token_api_key": tokenApiKey
+              "token_api_key": tokenApiKey,
+              "cardholder_name": cardholderName
             ]
         }
     }
