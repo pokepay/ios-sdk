@@ -7,13 +7,13 @@ public extension BankAPI.CreditCard {
         public let cardRegisteredAt: String
         public let accountId: String
         public let amount: Int
-        public let requestId: String
+        public let requestId: String?
         public let deleteCardIfAuthFail: Bool?
         public let organizationCode: String?
 
         public typealias Response = String
 
-        public init(userId: String, cardRegisteredAt: String, accountId: String, amount: Int, requestId: String, deleteCardIfAuthFail: Bool? = nil, organizationCode: String? = nil) {
+        public init(userId: String, cardRegisteredAt: String, accountId: String, amount: Int, requestId: String? = nil, deleteCardIfAuthFail: Bool? = nil, organizationCode: String? = nil) {
             self.userId = userId
             self.cardRegisteredAt = cardRegisteredAt
             self.accountId = accountId
@@ -42,7 +42,9 @@ public extension BankAPI.CreditCard {
 
             dict["amount"] = amount
 
-            dict["request_id"] = requestId
+            if requestId != nil {
+                dict["request_id"] = requestId
+            }
 
             if deleteCardIfAuthFail != nil {
                 dict["delete_card_if_auth_fail"] = deleteCardIfAuthFail
