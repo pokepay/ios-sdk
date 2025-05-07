@@ -10,6 +10,12 @@ public extension OAuthAPIRequest {
     var baseURL: URL {
         return URL(string: DEFAULT_WWW_BASE_URL)!
     }
+    var headerFields: [String: String] {
+        var h = request.headerFields
+        let version = dictionary["CFBundleShortVersionString"] as! String
+        h["X-SDK-Version"] = version
+        return h
+    }
 }
 
 public extension OAuthAPIRequest {

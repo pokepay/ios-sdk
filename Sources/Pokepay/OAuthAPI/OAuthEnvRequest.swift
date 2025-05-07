@@ -5,6 +5,12 @@ struct OAuthEnvRequest<R: APIKit.Request>: RequestProxy {
     typealias Request = R
     typealias Response = R.Response
     let request: R
+    var headerFields: [String: String] {
+        var h = request.headerFields
+        let version = dictionary["CFBundleShortVersionString"] as! String
+        h["X-SDK-Version"] = version
+        return h
+    }
     var endpoint: URL
     var baseURL: URL {
         return endpoint
