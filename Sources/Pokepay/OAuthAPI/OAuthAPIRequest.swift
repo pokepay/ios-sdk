@@ -11,7 +11,9 @@ public extension OAuthAPIRequest {
         return URL(string: DEFAULT_WWW_BASE_URL)!
     }
     var headerFields: [String: String] {
-        var h = request.headerFields
+        var h: [String:String] = [:]
+        let dictionary = Bundle.main.infoDictionary!
+        
         let version = dictionary["CFBundleShortVersionString"] as! String
         h["X-SDK-Version"] = version
         return h

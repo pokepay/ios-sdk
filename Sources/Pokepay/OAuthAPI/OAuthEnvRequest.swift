@@ -7,6 +7,8 @@ struct OAuthEnvRequest<R: APIKit.Request>: RequestProxy {
     let request: R
     var headerFields: [String: String] {
         var h = request.headerFields
+        let dictionary = Bundle.main.infoDictionary!
+        
         let version = dictionary["CFBundleShortVersionString"] as! String
         h["X-SDK-Version"] = version
         return h
