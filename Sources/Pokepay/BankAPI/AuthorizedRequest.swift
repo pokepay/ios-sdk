@@ -8,7 +8,10 @@ struct AuthorizedRequest<R: APIKit.Request>: RequestProxy {
     let accessToken: String
     var headerFields: [String: String] {
         var h = request.headerFields
+        
         h["Authorization"] = "Bearer \(accessToken)"
+        h["X-SDK-Version"] = SDKVersion
+        
         return h
     }
     var endpoint: URL
