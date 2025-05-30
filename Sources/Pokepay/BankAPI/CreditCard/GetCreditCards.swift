@@ -7,11 +7,11 @@ public extension BankAPI.CreditCard {
         public let before: String?
         public let after: String?
         public let perPage: Int?
-        public let organizationCode: String?
+        public let organizationCode: String
 
         public typealias Response = PaginatedCreditCards
 
-        public init(userId: String, before: String? = nil, after: String? = nil, perPage: Int? = nil, organizationCode: String? = nil) {
+        public init(userId: String, before: String? = nil, after: String? = nil, perPage: Int? = nil, organizationCode: String) {
             self.userId = userId
             self.before = before
             self.after = after
@@ -42,9 +42,7 @@ public extension BankAPI.CreditCard {
                 dict["per_page"] = perPage
             }
 
-            if organizationCode != nil {
-                dict["organization_code"] = organizationCode
-            }
+            dict["organization_code"] = organizationCode
 
             return dict
         }

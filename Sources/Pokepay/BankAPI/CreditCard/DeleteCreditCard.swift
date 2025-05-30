@@ -4,12 +4,12 @@ import APIKit
 public extension BankAPI.CreditCard {
     struct DeleteCreditCard: BankRequest {
         public let cardRegisteredAt: String
-        public let organizationCode: String?
+        public let organizationCode: String
         public let userId: String
 
         public typealias Response = NoContent
 
-        public init(cardRegisteredAt: String, organizationCode: String? = nil, userId: String) {
+        public init(cardRegisteredAt: String, organizationCode: String, userId: String) {
             self.cardRegisteredAt = cardRegisteredAt
             self.organizationCode = organizationCode
             self.userId = userId
@@ -28,9 +28,7 @@ public extension BankAPI.CreditCard {
 
             dict["card_registered_at"] = cardRegisteredAt
 
-            if organizationCode != nil {
-                dict["organization_code"] = organizationCode
-            }
+            dict["organization_code"] = organizationCode
 
             return dict
         }

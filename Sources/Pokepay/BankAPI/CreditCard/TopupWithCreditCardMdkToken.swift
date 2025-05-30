@@ -7,20 +7,20 @@ public extension BankAPI.CreditCard {
         public let token: String
         public let accountId: String
         public let amount: Int
-        public let requestId: String?
-        public let organizationCode: String?
+        public let organizationCode: String
         public let isCardholderNameSpecified: Bool?
+        public let requestId: String?
 
         public typealias Response = String
 
-        public init(userId: String, token: String, accountId: String, amount: Int, requestId: String? = nil, organizationCode: String? = nil, isCardholderNameSpecified: Bool? = nil) {
+        public init(userId: String, token: String, accountId: String, amount: Int, organizationCode: String, isCardholderNameSpecified: Bool? = nil, requestId: String? = nil) {
             self.userId = userId
             self.token = token
             self.accountId = accountId
             self.amount = amount
-            self.requestId = requestId
             self.organizationCode = organizationCode
             self.isCardholderNameSpecified = isCardholderNameSpecified
+            self.requestId = requestId
         }
 
         public var method: HTTPMethod {
@@ -42,16 +42,14 @@ public extension BankAPI.CreditCard {
 
             dict["amount"] = amount
 
-            if requestId != nil {
-                dict["request_id"] = requestId
-            }
-
-            if organizationCode != nil {
-                dict["organization_code"] = organizationCode
-            }
+            dict["organization_code"] = organizationCode
 
             if isCardholderNameSpecified != nil {
                 dict["is_cardholder_name_specified"] = isCardholderNameSpecified
+            }
+
+            if requestId != nil {
+                dict["request_id"] = requestId
             }
 
             return dict
