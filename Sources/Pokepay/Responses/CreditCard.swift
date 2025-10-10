@@ -5,7 +5,7 @@ public struct CreditCard: Codable {
     public let cardNumber: String;
     public let registeredAt: String;
 
-    private enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKeys {
         case cardNumber = "card_number"
         case registeredAt = "registered_at"
     }
