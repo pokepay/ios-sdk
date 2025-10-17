@@ -8,7 +8,7 @@ public struct PaginatedCreditCards: Codable {
     public let prev: String;
     public let items: [CreditCard];
 
-    private enum CodingKeys: String, CodingKeys {
+    private enum CodingKeys: String, CodingKey {
         case perPage = "per_page"
         case count = "count"
         case next = "next"

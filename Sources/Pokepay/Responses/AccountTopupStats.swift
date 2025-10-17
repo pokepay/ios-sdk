@@ -7,7 +7,7 @@ public struct AccountTopupStats: Codable {
     public let remainingAmount: Int;
     public let startedAt: String;
 
-    private enum CodingKeys: String, CodingKeys {
+    private enum CodingKeys: String, CodingKey {
         case currentAmount = "current_amount"
         case limitAmount = "limit_amount"
         case remainingAmount = "remaining_amount"
