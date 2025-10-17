@@ -4,23 +4,27 @@ import APIKit
 public extension BankAPI.CreditCard {
     struct TopupWithCreditCardMembership: BankRequest {
         public let userId: String
-        public let cardRegisteredAt: String
+        public let cardRegisteredAt: String?
+        public let cardUuid: String?
         public let accountId: String
         public let amount: Int
-        public let requestId: String?
         public let deleteCardIfAuthFail: Bool?
-        public let organizationCode: String?
+        public let organizationCode: String
+        public let requestId: String?
+        public let topupQuotaId: Int?
 
         public typealias Response = String
 
-        public init(userId: String, cardRegisteredAt: String, accountId: String, amount: Int, requestId: String? = nil, deleteCardIfAuthFail: Bool? = nil, organizationCode: String? = nil) {
+        public init(userId: String, cardRegisteredAt: String? = nil, cardUuid: String? = nil, accountId: String, amount: Int, deleteCardIfAuthFail: Bool? = nil, organizationCode: String, requestId: String? = nil, topupQuotaId: Int? = nil) {
             self.userId = userId
             self.cardRegisteredAt = cardRegisteredAt
+            self.cardUuid = cardUuid
             self.accountId = accountId
             self.amount = amount
-            self.requestId = requestId
             self.deleteCardIfAuthFail = deleteCardIfAuthFail
             self.organizationCode = organizationCode
+            self.requestId = requestId
+            self.topupQuotaId = topupQuotaId
         }
 
         public var method: HTTPMethod {
@@ -36,22 +40,30 @@ public extension BankAPI.CreditCard {
 
             dict["user_id"] = userId
 
-            dict["card_registered_at"] = cardRegisteredAt
+            if cardRegisteredAt != nil {
+                dict["card_registered_at"] = cardRegisteredAt
+            }
+
+            if cardUuid != nil {
+                dict["card_uuid"] = cardUuid
+            }
 
             dict["account_id"] = accountId
 
             dict["amount"] = amount
 
-            if requestId != nil {
-                dict["request_id"] = requestId
-            }
-
             if deleteCardIfAuthFail != nil {
                 dict["delete_card_if_auth_fail"] = deleteCardIfAuthFail
             }
 
-            if organizationCode != nil {
-                dict["organization_code"] = organizationCode
+            dict["organization_code"] = organizationCode
+
+            if requestId != nil {
+                dict["request_id"] = requestId
+            }
+
+            if topupQuotaId != nil {
+                dict["topup_quota_id"] = topupQuotaId
             }
 
             return dict
