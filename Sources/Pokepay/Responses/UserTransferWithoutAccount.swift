@@ -2,13 +2,13 @@
 import Foundation
 
 public struct UserTransferWithoutAccount: Codable {
-    public let id: String;
-    public let amount: Int;
-    public let moneyAmount: Int;
-    public let pointAmount: Int;
-    public let description: String;
-    public let doneAt: String;
-    public let type: String;
+    public let id: String
+    public let amount: Int
+    public let moneyAmount: Int
+    public let pointAmount: Int
+    public let description: String
+    public let doneAt: String
+    public let type: String
 
     private enum CodingKeys: String, CodingKey {
         case id = "id"

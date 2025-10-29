@@ -5,7 +5,7 @@ public extension BankAPI.Account {
     struct GetAccountTopupStats: BankRequest {
         public let accountId: String
 
-        public typealias Response = AccountTopupStats
+        public typealias Response = PaginatedAccountTopupStats
 
         public init(accountId: String) {
             self.accountId = accountId
