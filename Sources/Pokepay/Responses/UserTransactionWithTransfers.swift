@@ -2,18 +2,18 @@
 import Foundation
 
 public struct UserTransactionWithTransfers: Codable {
-    public let id: String;
-    public let user: User;
-    public let balance: Int;
-    public let amount: Int;
-    public let moneyAmount: Int;
-    public let pointAmount: Int;
-    public let account: Account;
-    public let description: String;
-    public let doneAt: String;
-    public let type: String;
-    public let isModified: Bool;
-    public let transfers: [UserTransferWithoutAccount];
+    public let id: String
+    public let user: User
+    public let balance: Int
+    public let amount: Int
+    public let moneyAmount: Int
+    public let pointAmount: Int
+    public let account: Account
+    public let description: String
+    public let doneAt: String
+    public let type: String
+    public let isModified: Bool
+    public let transfers: [UserTransferWithoutAccount]
 
     private enum CodingKeys: String, CodingKey {
         case id = "id"

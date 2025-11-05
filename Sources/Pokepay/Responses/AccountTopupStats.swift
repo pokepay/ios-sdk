@@ -2,10 +2,10 @@
 import Foundation
 
 public struct AccountTopupStats: Codable {
-    public let currentAmount: Int;
-    public let limitAmount: Int;
-    public let remainingAmount: Int;
-    public let startedAt: String;
+    public let currentAmount: Int
+    public let limitAmount: Int
+    public let remainingAmount: Int
+    public let startedAt: String?
 
     private enum CodingKeys: String, CodingKey {
         case currentAmount = "current_amount"
