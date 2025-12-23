@@ -319,6 +319,7 @@ MDKトークンを使用してクレジットカードを登録します。
 
 | フィールド | 型 | 説明 |
 |-----------|-----|------|
+| `id` | String | クレジットカードID (UUID形式) |
 | `cardNumber` | String | マスク済みカード番号（例: `************1234`） |
 | `registeredAt` | String | 登録日時（ISO8601形式） |
 
@@ -347,8 +348,8 @@ MDKトークンを使用してクレジットカードを登録します。
 | パラメータ | 型 | 必須 | 説明 |
 |-----------|-----|------|------|
 | `userId` | String | ✓ | ユーザーID |
-| `before` | String | - | ページネーション: カード登録日時(registerdAt)を指定。これ以前のデータを取得 |
-| `after` | String | - | ページネーション: カード登録日時(registerdAt)を指定。これ以降のデータを取得 |
+| `before` | String | - | ページネーション: カード登録日時(registeredAt)を指定。これ以前のデータを取得 |
+| `after` | String | - | ページネーション: カード登録日時(registeredAt)を指定。これ以降のデータを取得 |
 | `perPage` | Int | - | 1ページあたりの件数（デフォルト: 20） |
 | `organizationCode` | String | ✓ | 組織コード |
 
@@ -516,6 +517,7 @@ MDKトークンを使用して即時チャージを行います。カード情�
 
 ```swift
 public struct CreditCard: Codable {
+    public let id: String              // クレジットカードID
     public let cardNumber: String      // マスク済みカード番号
     public let registeredAt: String    // 登録日時（ISO8601形式）
 }
