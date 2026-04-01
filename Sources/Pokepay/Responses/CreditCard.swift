@@ -2,10 +2,12 @@
 import Foundation
 
 public struct CreditCard: Codable {
+    public let id: String
     public let cardNumber: String
     public let registeredAt: String
 
     private enum CodingKeys: String, CodingKey {
+        case id = "id"
         case cardNumber = "card_number"
         case registeredAt = "registered_at"
     }

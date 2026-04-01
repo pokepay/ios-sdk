@@ -7,6 +7,8 @@ public struct BankAPI {
     public struct Check {}
     public struct CpmToken {}
     public struct CreditCard {}
+    public struct Cvs {}
+    public struct Jihanpi {}
     public struct PrivateMoney {}
     public struct Terminal {}
     public struct Transaction {}
