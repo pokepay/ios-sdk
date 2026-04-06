@@ -8,15 +8,17 @@ public extension BankAPI.Transaction {
         public let amount: Double
         public let products: [Product]?
         public let requestId: UUID?
+        public let topupQuotaId: Int?
 
         public typealias Response = UserTransaction
 
-        public init(cpmToken: String, accountId: String? = nil, amount: Double, products: [Product]? = nil, requestId: UUID? = nil) {
+        public init(cpmToken: String, accountId: String? = nil, amount: Double, products: [Product]? = nil, requestId: UUID? = nil, topupQuotaId: Int? = nil) {
             self.requestId = requestId
             self.cpmToken = cpmToken
             self.accountId = accountId
             self.amount = amount
             self.products = products
+            self.topupQuotaId = topupQuotaId
         }
 
         public var method: HTTPMethod {
@@ -40,6 +42,9 @@ public extension BankAPI.Transaction {
             }
             if requestId != nil {
                 dict["request_id"] = requestId?.uuidString
+            }
+            if topupQuotaId != nil {
+                dict["topup_quota_id"] = topupQuotaId
             }
             return dict
         }
