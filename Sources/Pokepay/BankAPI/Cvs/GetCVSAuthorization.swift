@@ -3,12 +3,12 @@ import APIKit
 
 public extension BankAPI.Cvs {
     struct GetCVSAuthorization: BankRequest {
-        public let accountId: Uuid
-        public let orderId: Uuid
+        public let accountId: String
+        public let orderId: String
 
         public typealias Response = CVSAuthorization
 
-        public init(accountId: Uuid, orderId: Uuid) {
+        public init(accountId: String, orderId: String) {
             self.accountId = accountId
             self.orderId = orderId
         }

@@ -3,7 +3,7 @@ import Foundation
 
 public struct JihanpiTransaction: Codable {
     public let orderId: String
-    public let transaction: Nil?
+    public let transaction: UserTransactionWithTransfers?
     public let account: Account
     public let vendingMachineInfo: JihanpiVendingMachine
     public let state: String
