@@ -8,13 +8,15 @@ public extension BankAPI.User {
         public let amount: String
         public typealias Response = UserTransaction
         public let requestId: String?
+        public let topupQuotaId: Int?
         
-        public init(id: String, accountId: String , bankId: String, amount: String, requestId: String? = nil) {
+        public init(id: String, accountId: String , bankId: String, amount: String, requestId: String? = nil, topupQuotaId: Int? = nil) {
             self.id = id
             self.accountId = accountId
             self.bankId = bankId
             self.amount = amount
             self.requestId = requestId
+            self.topupQuotaId = topupQuotaId
         }
         
         public var method: HTTPMethod {
@@ -33,6 +35,9 @@ public extension BankAPI.User {
             ]
             if requestId != nil {
                 dict["request_id"] = requestId
+            }
+            if topupQuotaId != nil {
+                dict["topup_quota_id"] = topupQuotaId
             }
 
             return dict

@@ -8,15 +8,17 @@ public extension BankAPI.Transaction {
         public let couponId:String?
         public let strategy:TransactionStrategy?
         public let requestId: UUID?
+        public let topupQuotaId: Int?
 
         public typealias Response = UserTransaction
 
-        public init(cashtrayId: String, accountId: String? = nil, couponId:String? = nil, strategy:TransactionStrategy? = .pointPreferred, requestId: UUID? = nil) {
+        public init(cashtrayId: String, accountId: String? = nil, couponId:String? = nil, strategy:TransactionStrategy? = .pointPreferred, requestId: UUID? = nil, topupQuotaId: Int? = nil) {
             self.requestId = requestId
             self.cashtrayId = cashtrayId
             self.accountId = accountId
             self.couponId = couponId
             self.strategy = strategy
+            self.topupQuotaId = topupQuotaId
         }
 
         public var method: HTTPMethod {
@@ -28,7 +30,8 @@ public extension BankAPI.Transaction {
         }
 
         public var parameters: Any? {
-            var dict = ["cashtray_id": cashtrayId]
+            var dict: [String: Any] = [:]
+            dict["cashtray_id"] = cashtrayId
             if accountId != nil {
                 dict["account_id"] = accountId
             }
@@ -40,6 +43,9 @@ public extension BankAPI.Transaction {
             }
             if requestId != nil {
                 dict["request_id"] = requestId?.uuidString
+            }
+            if topupQuotaId != nil {
+                dict["topup_quota_id"] = topupQuotaId
             }
             return dict
         }

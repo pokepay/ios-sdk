@@ -8,6 +8,8 @@ public struct UserTransactionWithTransfers: Codable {
     public let amount: Int
     public let moneyAmount: Int
     public let pointAmount: Int
+    public let rawPointAmount: Int?
+    public let campaignPointAmount: Int?
     public let account: Account
     public let description: String
     public let doneAt: String
@@ -22,6 +24,8 @@ public struct UserTransactionWithTransfers: Codable {
         case amount = "amount"
         case moneyAmount = "money_amount"
         case pointAmount = "point_amount"
+        case rawPointAmount = "raw_point_amount"
+        case campaignPointAmount = "campaign_point_amount"
         case account = "account"
         case description = "description"
         case doneAt = "done_at"

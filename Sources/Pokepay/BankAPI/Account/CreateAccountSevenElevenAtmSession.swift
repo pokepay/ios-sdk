@@ -6,13 +6,15 @@ public extension BankAPI.Account {
         public let accountId: String
         public let qrInfo: String
         public let amount: Double
+        public let topupQuotaId: Int?
 
         public typealias Response = SevenElevenAtmSession
 
-        public init(accountId: String, qrInfo: String, amount: Double) {
+        public init(accountId: String, qrInfo: String, amount: Double, topupQuotaId: Int? = nil) {
             self.accountId = accountId
             self.qrInfo = qrInfo
             self.amount = amount
+            self.topupQuotaId = topupQuotaId
         }
 
         public var method: HTTPMethod {
@@ -27,6 +29,9 @@ public extension BankAPI.Account {
              var dict: [String: Any] = [:]
              dict["qr_info"] = qrInfo
              dict["amount"] = amount
+             if topupQuotaId != nil {
+                 dict["topup_quota_id"] = topupQuotaId
+             }
             
             return dict
         }
