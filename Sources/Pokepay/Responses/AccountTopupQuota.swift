@@ -1,0 +1,27 @@
+import Foundation
+
+public struct AccountTopupQuota: Codable {
+    public let id: Int
+    public let amount: Int
+    public let description: String
+    public let eventName: String
+    public let isSplittable: Bool
+    public let usedAmount: Int
+    public let status: String
+    public let startsAt: String
+    public let endsAt: String
+    public let endsAtBuffer: String
+
+    private enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case amount = "amount"
+        case description = "description"
+        case eventName = "event_name"
+        case isSplittable = "is_splittable"
+        case usedAmount = "used_amount"
+        case status = "status"
+        case startsAt = "starts_at"
+        case endsAt = "ends_at"
+        case endsAtBuffer = "ends_at_buffer"
+    }
+}

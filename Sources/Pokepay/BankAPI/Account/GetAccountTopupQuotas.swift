@@ -10,7 +10,7 @@ public extension BankAPI.Account {
         public let isWithinApplicablePeriod: Bool?
         public let isUsableAmountLeft: Bool?
 
-        public typealias Response = NIL
+        public typealias Response = AccountTopupQuotas
 
         public init(accountId: String, status: String? = nil, showExpiredForFixedPeriod: Bool? = nil, showStartedQuotas: Bool? = nil, isWithinApplicablePeriod: Bool? = nil, isUsableAmountLeft: Bool? = nil) {
             self.accountId = accountId

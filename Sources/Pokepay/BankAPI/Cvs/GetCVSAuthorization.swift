@@ -6,7 +6,7 @@ public extension BankAPI.Cvs {
         public let accountId: String
         public let orderId: String
 
-        public typealias Response = CVSAuthorization
+        public typealias Response = CvsAuthorization
 
         public init(accountId: String, orderId: String) {
             self.accountId = accountId

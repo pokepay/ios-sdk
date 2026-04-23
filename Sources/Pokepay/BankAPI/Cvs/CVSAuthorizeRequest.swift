@@ -9,11 +9,11 @@ public extension BankAPI.Cvs {
         public let name2: String
         public let tel: String
         public let topupQuotaId: Int?
-        public let accountId: Uuid
+        public let accountId: String
 
-        public typealias Response = CVSAuthorization
+        public typealias Response = CvsAuthorization
 
-        public init(serviceOptionType: String, amount: Int, name1: String, name2: String, tel: String, topupQuotaId: Int? = nil, accountId: Uuid) {
+        public init(serviceOptionType: String, amount: Int, name1: String, name2: String, tel: String, topupQuotaId: Int? = nil, accountId: String) {
             self.serviceOptionType = serviceOptionType
             self.amount = amount
             self.name1 = name1
