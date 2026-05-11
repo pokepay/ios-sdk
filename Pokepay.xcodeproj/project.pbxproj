@@ -15,6 +15,12 @@
 		440E00CA2F99C55600751068 /* PaginatedCvsAuthorizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E00C82F99C55600751068 /* PaginatedCvsAuthorizations.swift */; };
 		440E00CB2F99C55600751068 /* CvsAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E00C72F99C55600751068 /* CvsAuthorization.swift */; };
 		440E00CC2F99C55600751068 /* PaginatedCvsAuthorizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E00C82F99C55600751068 /* PaginatedCvsAuthorizations.swift */; };
+		4443E79A2FB1C0C7003A4EB9 /* TokenExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4443E7992FB1C0C7003A4EB9 /* TokenExchange.swift */; };
+		4443E79B2FB1C0C7003A4EB9 /* ExchangeDelegationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4443E7982FB1C0C7003A4EB9 /* ExchangeDelegationCode.swift */; };
+		4443E79C2FB1C0C7003A4EB9 /* TokenExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4443E7992FB1C0C7003A4EB9 /* TokenExchange.swift */; };
+		4443E79D2FB1C0C7003A4EB9 /* ExchangeDelegationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4443E7982FB1C0C7003A4EB9 /* ExchangeDelegationCode.swift */; };
+		4443E79F2FB1C0E5003A4EB9 /* ExchangedToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4443E79E2FB1C0E5003A4EB9 /* ExchangedToken.swift */; };
+		4443E7A02FB1C0E5003A4EB9 /* ExchangedToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4443E79E2FB1C0E5003A4EB9 /* ExchangedToken.swift */; };
 		444D2F922F839226006EF6BE /* GetAccountTopupQuotas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444D2F912F839226006EF6BE /* GetAccountTopupQuotas.swift */; };
 		444D2F932F839226006EF6BE /* GetAccountTopupQuotas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444D2F912F839226006EF6BE /* GetAccountTopupQuotas.swift */; };
 		444D2F992F839246006EF6BE /* CVSAuthorizeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444D2F952F839246006EF6BE /* CVSAuthorizeRequest.swift */; };
@@ -346,6 +352,9 @@
 		440E00C42F99C4F200751068 /* AccountTopupQuotas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTopupQuotas.swift; sourceTree = "<group>"; };
 		440E00C72F99C55600751068 /* CvsAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvsAuthorization.swift; sourceTree = "<group>"; };
 		440E00C82F99C55600751068 /* PaginatedCvsAuthorizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginatedCvsAuthorizations.swift; sourceTree = "<group>"; };
+		4443E7982FB1C0C7003A4EB9 /* ExchangeDelegationCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeDelegationCode.swift; sourceTree = "<group>"; };
+		4443E7992FB1C0C7003A4EB9 /* TokenExchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenExchange.swift; sourceTree = "<group>"; };
+		4443E79E2FB1C0E5003A4EB9 /* ExchangedToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangedToken.swift; sourceTree = "<group>"; };
 		444D2F912F839226006EF6BE /* GetAccountTopupQuotas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccountTopupQuotas.swift; sourceTree = "<group>"; };
 		444D2F942F839246006EF6BE /* CancelCVSAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelCVSAuthorization.swift; sourceTree = "<group>"; };
 		444D2F952F839246006EF6BE /* CVSAuthorizeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVSAuthorizeRequest.swift; sourceTree = "<group>"; };
@@ -742,6 +751,8 @@
 		4A6A88112EA21AAE0055A132 /* Token */ = {
 			isa = PBXGroup;
 			children = (
+				4443E7982FB1C0C7003A4EB9 /* ExchangeDelegationCode.swift */,
+				4443E7992FB1C0C7003A4EB9 /* TokenExchange.swift */,
 				4A6A880F2EA21AAE0055A132 /* ExchangeAuthCode.swift */,
 				4A6A88102EA21AAE0055A132 /* RefreshAccessToken.swift */,
 			);
@@ -783,6 +794,7 @@
 		4A6A884F2EA21AAE0055A132 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				4443E79E2FB1C0E5003A4EB9 /* ExchangedToken.swift */,
 				440E00C72F99C55600751068 /* CvsAuthorization.swift */,
 				440E00C82F99C55600751068 /* PaginatedCvsAuthorizations.swift */,
 				440E00C42F99C4F200751068 /* AccountTopupQuotas.swift */,
@@ -1143,6 +1155,7 @@
 				4A6A89202EA21AAE0055A132 /* GetMessage.swift in Sources */,
 				4A6A89212EA21AAE0055A132 /* ReceiveMessageAttachment.swift in Sources */,
 				4A6A89222EA21AAE0055A132 /* CreateTransactionWithCashtray.swift in Sources */,
+				4443E79F2FB1C0E5003A4EB9 /* ExchangedToken.swift in Sources */,
 				4A6A89232EA21AAE0055A132 /* UpdateTerminal.swift in Sources */,
 				4A6A89242EA21AAE0055A132 /* PaginatedCoupons.swift in Sources */,
 				4A6A89252EA21AAE0055A132 /* GetAccountCouponDetail.swift in Sources */,
@@ -1218,6 +1231,8 @@
 				4A6A89662EA21AAE0055A132 /* GetUserCards.swift in Sources */,
 				4A6A89672EA21AAE0055A132 /* CreateCreditCard.swift in Sources */,
 				4A6A89682EA21AAE0055A132 /* Message.swift in Sources */,
+				4443E79A2FB1C0C7003A4EB9 /* TokenExchange.swift in Sources */,
+				4443E79B2FB1C0C7003A4EB9 /* ExchangeDelegationCode.swift in Sources */,
 				4A6A89692EA21AAE0055A132 /* CreateTransactionWithJwt.swift in Sources */,
 				4A6A896A2EA21AAE0055A132 /* Organization.swift in Sources */,
 				4A6A896B2EA21AAE0055A132 /* GetUserTransactions.swift in Sources */,
@@ -1312,6 +1327,8 @@
 				4A6A88902EA21AAE0055A132 /* UpdateTerminal.swift in Sources */,
 				4A6A88912EA21AAE0055A132 /* PaginatedCoupons.swift in Sources */,
 				4A6A88922EA21AAE0055A132 /* GetAccountCouponDetail.swift in Sources */,
+				4443E79C2FB1C0C7003A4EB9 /* TokenExchange.swift in Sources */,
+				4443E79D2FB1C0C7003A4EB9 /* ExchangeDelegationCode.swift in Sources */,
 				4A6A88932EA21AAE0055A132 /* Check.swift in Sources */,
 				4A6A88942EA21AAE0055A132 /* MessageUnreadCount.swift in Sources */,
 				4A6A88952EA21AAE0055A132 /* DeleteBankPay.swift in Sources */,
@@ -1416,6 +1433,7 @@
 				4A6A88EE2EA21AAE0055A132 /* BankPayTopUp.swift in Sources */,
 				4A6A88EF2EA21AAE0055A132 /* GetAccountTransfers.swift in Sources */,
 				4A6A88F02EA21AAE0055A132 /* RequestProxy.swift in Sources */,
+				4443E7A02FB1C0E5003A4EB9 /* ExchangedToken.swift in Sources */,
 				4A6A88F12EA21AAE0055A132 /* SevenElevenAtmSession.swift in Sources */,
 				4A6A88F22EA21AAE0055A132 /* VeritransAPIRequest.swift in Sources */,
 				4A6A88F32EA21AAE0055A132 /* PaginatedPrivateMoneys.swift in Sources */,
