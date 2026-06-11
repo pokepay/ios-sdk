@@ -41,6 +41,8 @@
 		444D2FAE2F8393A0006EF6BE /* JihanpiTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444D2FAB2F8393A0006EF6BE /* JihanpiTransaction.swift */; };
 		444D2FAF2F8393A0006EF6BE /* JihanpiVendingMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444D2FAC2F8393A0006EF6BE /* JihanpiVendingMachine.swift */; };
 		444D2FB02F8393A0006EF6BE /* JihanpiTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444D2FAB2F8393A0006EF6BE /* JihanpiTransaction.swift */; };
+		445A62682FDA86E5006F55B2 /* TopupMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62672FDA86E5006F55B2 /* TopupMethod.swift */; };
+		445A62692FDA86E5006F55B2 /* TopupMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62672FDA86E5006F55B2 /* TopupMethod.swift */; };
 		4A6A88612EA21AAE0055A132 /* GetPrivateMoneyCoupons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A87E12EA21AAE0055A132 /* GetPrivateMoneyCoupons.swift */; };
 		4A6A88622EA21AAE0055A132 /* PrivateMoney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A88432EA21AAE0055A132 /* PrivateMoney.swift */; };
 		4A6A88632EA21AAE0055A132 /* BankAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A88072EA21AAE0055A132 /* BankAPIRequest.swift */; };
@@ -365,6 +367,7 @@
 		444D2FA32F839380006EF6BE /* GetJihanpiTransactionByRequestId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetJihanpiTransactionByRequestId.swift; sourceTree = "<group>"; };
 		444D2FAB2F8393A0006EF6BE /* JihanpiTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JihanpiTransaction.swift; sourceTree = "<group>"; };
 		444D2FAC2F8393A0006EF6BE /* JihanpiVendingMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JihanpiVendingMachine.swift; sourceTree = "<group>"; };
+		445A62672FDA86E5006F55B2 /* TopupMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopupMethod.swift; sourceTree = "<group>"; };
 		4A6A87B92EA21AAE0055A132 /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
 		4A6A87BA2EA21AAE0055A132 /* CreateAccountCpmToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountCpmToken.swift; sourceTree = "<group>"; };
 		4A6A87BB2EA21AAE0055A132 /* CreateAccountSevenElevenAtmSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountSevenElevenAtmSession.swift; sourceTree = "<group>"; };
@@ -794,6 +797,7 @@
 		4A6A884F2EA21AAE0055A132 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				445A62672FDA86E5006F55B2 /* TopupMethod.swift */,
 				4443E79E2FB1C0E5003A4EB9 /* ExchangedToken.swift */,
 				440E00C72F99C55600751068 /* CvsAuthorization.swift */,
 				440E00C82F99C55600751068 /* PaginatedCvsAuthorizations.swift */,
@@ -1184,6 +1188,7 @@
 				4A6A893C2EA21AAE0055A132 /* GetBankPay.swift in Sources */,
 				4A6A893D2EA21AAE0055A132 /* User.swift in Sources */,
 				4A6A893E2EA21AAE0055A132 /* AccessToken.swift in Sources */,
+				445A62692FDA86E5006F55B2 /* TopupMethod.swift in Sources */,
 				4A6A893F2EA21AAE0055A132 /* CardsTopUp.swift in Sources */,
 				4A6A89402EA21AAE0055A132 /* CancelTransaction.swift in Sources */,
 				4A6A89412EA21AAE0055A132 /* DeleteCheck.swift in Sources */,
@@ -1316,6 +1321,7 @@
 				4A6A88852EA21AAE0055A132 /* BankAPI.swift in Sources */,
 				4A6A88862EA21AAE0055A132 /* VeritransAPI.swift in Sources */,
 				4A6A88872EA21AAE0055A132 /* Terminal.swift in Sources */,
+				445A62682FDA86E5006F55B2 /* TopupMethod.swift in Sources */,
 				4A6A88882EA21AAE0055A132 /* AccountCpmToken.swift in Sources */,
 				4A6A88892EA21AAE0055A132 /* CreateCashtray.swift in Sources */,
 				4A6A888A2EA21AAE0055A132 /* UpdateCheck.swift in Sources */,

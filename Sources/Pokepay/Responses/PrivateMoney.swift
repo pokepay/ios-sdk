@@ -21,6 +21,7 @@ public struct PrivateMoney: Codable {
     public let canUseCreditCard: Bool?
     public let canUseC2CTransfer: Bool
     public let customDomainName: String?
+    public let topupMethods: [TopupMethod]?
 
     private enum CodingKeys: String, CodingKey {
         case id
@@ -43,5 +44,6 @@ public struct PrivateMoney: Codable {
         case canUseCreditCard = "can_use_credit_card"
         case canUseC2CTransfer = "can_use_c2c_transfer"
         case customDomainName = "custom_domain_name"
+        case topupMethods = "topup_methods"
     }
 }
