@@ -23,10 +23,6 @@ public struct PrivateMoney: Codable {
     public let customDomainName: String?
     public let topupMethods: [TopupMethod]?
 
-    public var creditCardTopupMethod: TopupMethod? {
-        return topupMethods?.first { method in method.isCreditCard }
-    }
-
     private enum CodingKeys: String, CodingKey {
         case id
         case name

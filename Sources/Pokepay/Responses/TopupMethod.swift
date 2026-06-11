@@ -1,14 +1,9 @@
 import Foundation
 
 public struct TopupMethod: Codable {
-    public static let typeCreditCard = "credit-card"
-
+    // "type" can be "credit-card", "sevenbank-atm", "paytree-bank", or "cvs"
     public let type: String
     public let name: String
     public let amounts: [Double]?
     public let range: [Double]?
-
-    public var isCreditCard: Bool {
-        return type == TopupMethod.typeCreditCard
-    }
 }
