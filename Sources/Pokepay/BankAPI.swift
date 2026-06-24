@@ -2,15 +2,10 @@
 
 public struct BankAPI {
     public struct Account {}
-    public struct Bill {}
-    public struct Cashtray {}
-    public struct Check {}
-    public struct CpmToken {}
     public struct CreditCard {}
     public struct Cvs {}
     public struct Jihanpi {}
-    public struct PrivateMoney {}
-    public struct Terminal {}
+    public struct Shop {}
     public struct Transaction {}
-    public struct User {}
+    public struct UserTag {}
 }
