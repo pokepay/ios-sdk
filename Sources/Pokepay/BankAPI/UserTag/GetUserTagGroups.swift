@@ -4,13 +4,13 @@ import APIKit
 public extension BankAPI.UserTag {
     struct GetUserTagGroups: BankRequest {
         public let privateMoneyId: String
-        public let before: String
-        public let after: String
+        public let before: String?
+        public let after: String?
         public let perPage: Int?
 
         public typealias Response = PaginatedUserTagGroups
 
-        public init(privateMoneyId: String, before: String, after: String, perPage: Int? = nil) {
+        public init(privateMoneyId: String, before: String? = nil, after: String? = nil, perPage: Int? = nil) {
             self.privateMoneyId = privateMoneyId
             self.before = before
             self.after = after
@@ -30,9 +30,13 @@ public extension BankAPI.UserTag {
 
             dict["private_money_id"] = privateMoneyId
 
-            dict["before"] = before
+            if before != nil {
+                dict["before"] = before
+            }
 
-            dict["after"] = after
+            if after != nil {
+                dict["after"] = after
+            }
 
             if perPage != nil {
                 dict["per_page"] = perPage
