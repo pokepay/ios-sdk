@@ -5,13 +5,13 @@ public extension BankAPI.Shop {
     struct GetListOfShops: BankRequest {
         public let privateMoneyId: String
         public let userTagGroupItemId: String?
-        public let before: Uuid
-        public let after: Uuid
+        public let before: String
+        public let after: String
         public let perPage: Int?
 
         public typealias Response = PaginatedShops
 
-        public init(privateMoneyId: String, userTagGroupItemId: String? = nil, before: Uuid, after: Uuid, perPage: Int? = nil) {
+        public init(privateMoneyId: String, userTagGroupItemId: String? = nil, before: String, after: String, perPage: Int? = nil) {
             self.privateMoneyId = privateMoneyId
             self.userTagGroupItemId = userTagGroupItemId
             self.before = before

@@ -5,10 +5,12 @@ public struct IndividualNumberIdentificationStatus: Codable {
     public let isValid: Bool
     public let lastIdentifiedAt: String?
     public let expiresAt: String?
+    public let isResident: Bool
 
     private enum CodingKeys: String, CodingKey {
         case isValid = "is_valid"
         case lastIdentifiedAt = "last_identified_at"
         case expiresAt = "expires_at"
+        case isResident = "is_resident"
     }
 }

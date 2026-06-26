@@ -4,14 +4,14 @@ import APIKit
 public extension BankAPI.UserTag {
     struct GetUserTagGroupItems: BankRequest {
         public let organizationCode: String
-        public let tagGroupId: Uuid
-        public let before: Uuid
-        public let after: Uuid
+        public let tagGroupId: String
+        public let before: String
+        public let after: String
         public let perPage: Int?
 
         public typealias Response = PaginatedUserTagGroupItems
 
-        public init(organizationCode: String, tagGroupId: Uuid, before: Uuid, after: Uuid, perPage: Int? = nil) {
+        public init(organizationCode: String, tagGroupId: String, before: String, after: String, perPage: Int? = nil) {
             self.organizationCode = organizationCode
             self.tagGroupId = tagGroupId
             self.before = before

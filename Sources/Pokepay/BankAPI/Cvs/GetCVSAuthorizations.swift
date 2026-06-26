@@ -3,14 +3,14 @@ import APIKit
 
 public extension BankAPI.Cvs {
     struct GetCVSAuthorizations: BankRequest {
-        public let accountId: Uuid
+        public let accountId: String
         public let before: String?
         public let after: String?
         public let perPage: Int?
 
         public typealias Response = PaginatedCVSAuthorizations
 
-        public init(accountId: Uuid, before: String? = nil, after: String? = nil, perPage: Int? = nil) {
+        public init(accountId: String, before: String? = nil, after: String? = nil, perPage: Int? = nil) {
             self.accountId = accountId
             self.before = before
             self.after = after

@@ -3,14 +3,14 @@ import APIKit
 
 public extension BankAPI.UserTag {
     struct GetUserTagGroups: BankRequest {
-        public let privateMoneyId: Uuid
-        public let before: Uuid
-        public let after: Uuid
+        public let privateMoneyId: String
+        public let before: String
+        public let after: String
         public let perPage: Int?
 
         public typealias Response = PaginatedUserTagGroups
 
-        public init(privateMoneyId: Uuid, before: Uuid, after: Uuid, perPage: Int? = nil) {
+        public init(privateMoneyId: String, before: String, after: String, perPage: Int? = nil) {
             self.privateMoneyId = privateMoneyId
             self.before = before
             self.after = after
