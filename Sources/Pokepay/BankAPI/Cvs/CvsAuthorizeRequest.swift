@@ -2,7 +2,7 @@
 import APIKit
 
 public extension BankAPI.Cvs {
-    struct CVSAuthorizeRequest: BankRequest {
+    struct CvsAuthorizeRequest: BankRequest {
         public let serviceOptionType: String
         public let amount: Int
         public let name1: String
@@ -11,7 +11,7 @@ public extension BankAPI.Cvs {
         public let topupQuotaId: Int?
         public let accountId: String
 
-        public typealias Response = CVSAuthorization
+        public typealias Response = CvsAuthorization
 
         public init(serviceOptionType: String, amount: Int, name1: String, name2: String, tel: String, topupQuotaId: Int? = nil, accountId: String) {
             self.serviceOptionType = serviceOptionType

@@ -2,7 +2,7 @@
 import APIKit
 
 public extension BankAPI.Cvs {
-    struct CancelCVSAuthorization: BankRequest {
+    struct CancelCvsAuthorization: BankRequest {
         public let accountId: String
         public let orderId: String
 
