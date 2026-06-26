@@ -2,7 +2,7 @@
 import APIKit
 
 public extension BankAPI.Cvs {
-    struct CVSAuthorizeRequest: BankRequest {
+    struct CvsAuthorizeRequest: BankRequest {
         public let serviceOptionType: String
         public let amount: Int
         public let name1: String

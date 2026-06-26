@@ -23,10 +23,6 @@
 		4443E7A02FB1C0E5003A4EB9 /* ExchangedToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4443E79E2FB1C0E5003A4EB9 /* ExchangedToken.swift */; };
 		444D2F922F839226006EF6BE /* GetAccountTopupQuotas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444D2F912F839226006EF6BE /* GetAccountTopupQuotas.swift */; };
 		444D2F932F839226006EF6BE /* GetAccountTopupQuotas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444D2F912F839226006EF6BE /* GetAccountTopupQuotas.swift */; };
-		444D2F992F839246006EF6BE /* CVSAuthorizeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444D2F952F839246006EF6BE /* CVSAuthorizeRequest.swift */; };
-		444D2F9A2F839246006EF6BE /* CancelCVSAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444D2F942F839246006EF6BE /* CancelCVSAuthorization.swift */; };
-		444D2F9B2F839246006EF6BE /* GetCVSAuthorizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444D2F972F839246006EF6BE /* GetCVSAuthorizations.swift */; };
-		444D2F9C2F839246006EF6BE /* GetCVSAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444D2F962F839246006EF6BE /* GetCVSAuthorization.swift */; };
 		444D2F9D2F839246006EF6BE /* CVSAuthorizeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444D2F952F839246006EF6BE /* CVSAuthorizeRequest.swift */; };
 		444D2F9E2F839246006EF6BE /* CancelCVSAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444D2F942F839246006EF6BE /* CancelCVSAuthorization.swift */; };
 		444D2F9F2F839246006EF6BE /* GetCVSAuthorizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444D2F972F839246006EF6BE /* GetCVSAuthorizations.swift */; };
@@ -43,6 +39,40 @@
 		444D2FB02F8393A0006EF6BE /* JihanpiTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444D2FAB2F8393A0006EF6BE /* JihanpiTransaction.swift */; };
 		445A62682FDA86E5006F55B2 /* TopupMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62672FDA86E5006F55B2 /* TopupMethod.swift */; };
 		445A62692FDA86E5006F55B2 /* TopupMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62672FDA86E5006F55B2 /* TopupMethod.swift */; };
+		445A62742FEE81DA006F55B2 /* UserTagGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62712FEE81DA006F55B2 /* UserTagGroup.swift */; };
+		445A62752FEE81DA006F55B2 /* PaginatedUserTagGroupItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A626E2FEE81DA006F55B2 /* PaginatedUserTagGroupItems.swift */; };
+		445A62762FEE81DA006F55B2 /* ShopInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62702FEE81DA006F55B2 /* ShopInformation.swift */; };
+		445A62772FEE81DA006F55B2 /* DetailedShopInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A626B2FEE81DA006F55B2 /* DetailedShopInformation.swift */; };
+		445A62782FEE81DA006F55B2 /* IndividualNumberIdentificationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A626C2FEE81DA006F55B2 /* IndividualNumberIdentificationStatus.swift */; };
+		445A62792FEE81DA006F55B2 /* PaginatedShops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A626D2FEE81DA006F55B2 /* PaginatedShops.swift */; };
+		445A627A2FEE81DA006F55B2 /* PaginatedUserTagGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A626F2FEE81DA006F55B2 /* PaginatedUserTagGroups.swift */; };
+		445A627B2FEE81DA006F55B2 /* UserTagGroupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62722FEE81DA006F55B2 /* UserTagGroupItem.swift */; };
+		445A627C2FEE81DA006F55B2 /* UserTagInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62732FEE81DA006F55B2 /* UserTagInformation.swift */; };
+		445A627D2FEE81DA006F55B2 /* UserTagGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62712FEE81DA006F55B2 /* UserTagGroup.swift */; };
+		445A627E2FEE81DA006F55B2 /* PaginatedUserTagGroupItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A626E2FEE81DA006F55B2 /* PaginatedUserTagGroupItems.swift */; };
+		445A627F2FEE81DA006F55B2 /* ShopInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62702FEE81DA006F55B2 /* ShopInformation.swift */; };
+		445A62802FEE81DA006F55B2 /* DetailedShopInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A626B2FEE81DA006F55B2 /* DetailedShopInformation.swift */; };
+		445A62812FEE81DA006F55B2 /* IndividualNumberIdentificationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A626C2FEE81DA006F55B2 /* IndividualNumberIdentificationStatus.swift */; };
+		445A62822FEE81DA006F55B2 /* PaginatedShops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A626D2FEE81DA006F55B2 /* PaginatedShops.swift */; };
+		445A62832FEE81DA006F55B2 /* PaginatedUserTagGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A626F2FEE81DA006F55B2 /* PaginatedUserTagGroups.swift */; };
+		445A62842FEE81DA006F55B2 /* UserTagGroupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62722FEE81DA006F55B2 /* UserTagGroupItem.swift */; };
+		445A62852FEE81DA006F55B2 /* UserTagInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62732FEE81DA006F55B2 /* UserTagInformation.swift */; };
+		445A629F2FEE8213006F55B2 /* GetUserTagGroupItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A629A2FEE8213006F55B2 /* GetUserTagGroupItems.swift */; };
+		445A62A12FEE8213006F55B2 /* GetUserTagGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A629B2FEE8213006F55B2 /* GetUserTagGroups.swift */; };
+		445A62A22FEE8213006F55B2 /* GetListOfShops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62982FEE8213006F55B2 /* GetListOfShops.swift */; };
+		445A62A32FEE8213006F55B2 /* GetDetailedShopInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62972FEE8213006F55B2 /* GetDetailedShopInformation.swift */; };
+		445A62A72FEE8213006F55B2 /* GetUserTagGroupItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A629A2FEE8213006F55B2 /* GetUserTagGroupItems.swift */; };
+		445A62A92FEE8213006F55B2 /* GetUserTagGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A629B2FEE8213006F55B2 /* GetUserTagGroups.swift */; };
+		445A62AA2FEE8213006F55B2 /* GetListOfShops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62982FEE8213006F55B2 /* GetListOfShops.swift */; };
+		445A62AB2FEE8213006F55B2 /* GetDetailedShopInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62972FEE8213006F55B2 /* GetDetailedShopInformation.swift */; };
+		445A62B22FEE843D006F55B2 /* GetCvsAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62B02FEE843D006F55B2 /* GetCvsAuthorization.swift */; };
+		445A62B32FEE843D006F55B2 /* CancelCvsAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62AE2FEE843D006F55B2 /* CancelCvsAuthorization.swift */; };
+		445A62B42FEE843D006F55B2 /* CvsAuthorizeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62AF2FEE843D006F55B2 /* CvsAuthorizeRequest.swift */; };
+		445A62B52FEE843D006F55B2 /* GetCvsAuthorizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62B12FEE843D006F55B2 /* GetCvsAuthorizations.swift */; };
+		445A62B62FEE843D006F55B2 /* GetCvsAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62B02FEE843D006F55B2 /* GetCvsAuthorization.swift */; };
+		445A62B72FEE843D006F55B2 /* CancelCvsAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62AE2FEE843D006F55B2 /* CancelCvsAuthorization.swift */; };
+		445A62B82FEE843D006F55B2 /* CvsAuthorizeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62AF2FEE843D006F55B2 /* CvsAuthorizeRequest.swift */; };
+		445A62B92FEE843D006F55B2 /* GetCvsAuthorizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62B12FEE843D006F55B2 /* GetCvsAuthorizations.swift */; };
 		4A6A88612EA21AAE0055A132 /* GetPrivateMoneyCoupons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A87E12EA21AAE0055A132 /* GetPrivateMoneyCoupons.swift */; };
 		4A6A88622EA21AAE0055A132 /* PrivateMoney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A88432EA21AAE0055A132 /* PrivateMoney.swift */; };
 		4A6A88632EA21AAE0055A132 /* BankAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A88072EA21AAE0055A132 /* BankAPIRequest.swift */; };
@@ -368,6 +398,23 @@
 		444D2FAB2F8393A0006EF6BE /* JihanpiTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JihanpiTransaction.swift; sourceTree = "<group>"; };
 		444D2FAC2F8393A0006EF6BE /* JihanpiVendingMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JihanpiVendingMachine.swift; sourceTree = "<group>"; };
 		445A62672FDA86E5006F55B2 /* TopupMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopupMethod.swift; sourceTree = "<group>"; };
+		445A626B2FEE81DA006F55B2 /* DetailedShopInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedShopInformation.swift; sourceTree = "<group>"; };
+		445A626C2FEE81DA006F55B2 /* IndividualNumberIdentificationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualNumberIdentificationStatus.swift; sourceTree = "<group>"; };
+		445A626D2FEE81DA006F55B2 /* PaginatedShops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginatedShops.swift; sourceTree = "<group>"; };
+		445A626E2FEE81DA006F55B2 /* PaginatedUserTagGroupItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginatedUserTagGroupItems.swift; sourceTree = "<group>"; };
+		445A626F2FEE81DA006F55B2 /* PaginatedUserTagGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginatedUserTagGroups.swift; sourceTree = "<group>"; };
+		445A62702FEE81DA006F55B2 /* ShopInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopInformation.swift; sourceTree = "<group>"; };
+		445A62712FEE81DA006F55B2 /* UserTagGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTagGroup.swift; sourceTree = "<group>"; };
+		445A62722FEE81DA006F55B2 /* UserTagGroupItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTagGroupItem.swift; sourceTree = "<group>"; };
+		445A62732FEE81DA006F55B2 /* UserTagInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTagInformation.swift; sourceTree = "<group>"; };
+		445A62972FEE8213006F55B2 /* GetDetailedShopInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDetailedShopInformation.swift; sourceTree = "<group>"; };
+		445A62982FEE8213006F55B2 /* GetListOfShops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetListOfShops.swift; sourceTree = "<group>"; };
+		445A629A2FEE8213006F55B2 /* GetUserTagGroupItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserTagGroupItems.swift; sourceTree = "<group>"; };
+		445A629B2FEE8213006F55B2 /* GetUserTagGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserTagGroups.swift; sourceTree = "<group>"; };
+		445A62AE2FEE843D006F55B2 /* CancelCvsAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelCvsAuthorization.swift; sourceTree = "<group>"; };
+		445A62AF2FEE843D006F55B2 /* CvsAuthorizeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvsAuthorizeRequest.swift; sourceTree = "<group>"; };
+		445A62B02FEE843D006F55B2 /* GetCvsAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCvsAuthorization.swift; sourceTree = "<group>"; };
+		445A62B12FEE843D006F55B2 /* GetCvsAuthorizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCvsAuthorizations.swift; sourceTree = "<group>"; };
 		4A6A87B92EA21AAE0055A132 /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
 		4A6A87BA2EA21AAE0055A132 /* CreateAccountCpmToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountCpmToken.swift; sourceTree = "<group>"; };
 		4A6A87BB2EA21AAE0055A132 /* CreateAccountSevenElevenAtmSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountSevenElevenAtmSession.swift; sourceTree = "<group>"; };
@@ -580,6 +627,35 @@
 			path = Jihanpi;
 			sourceTree = "<group>";
 		};
+		445A62962FEE8213006F55B2 /* Cvs */ = {
+			isa = PBXGroup;
+			children = (
+				445A62AE2FEE843D006F55B2 /* CancelCvsAuthorization.swift */,
+				445A62AF2FEE843D006F55B2 /* CvsAuthorizeRequest.swift */,
+				445A62B02FEE843D006F55B2 /* GetCvsAuthorization.swift */,
+				445A62B12FEE843D006F55B2 /* GetCvsAuthorizations.swift */,
+			);
+			path = Cvs;
+			sourceTree = "<group>";
+		};
+		445A62992FEE8213006F55B2 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				445A62972FEE8213006F55B2 /* GetDetailedShopInformation.swift */,
+				445A62982FEE8213006F55B2 /* GetListOfShops.swift */,
+			);
+			path = Shop;
+			sourceTree = "<group>";
+		};
+		445A629C2FEE8213006F55B2 /* UserTag */ = {
+			isa = PBXGroup;
+			children = (
+				445A629A2FEE8213006F55B2 /* GetUserTagGroupItems.swift */,
+				445A629B2FEE8213006F55B2 /* GetUserTagGroups.swift */,
+			);
+			path = UserTag;
+			sourceTree = "<group>";
+		};
 		4A6A87C72EA21AAE0055A132 /* Account */ = {
 			isa = PBXGroup;
 			children = (
@@ -718,6 +794,9 @@
 		4A6A88082EA21AAE0055A132 /* BankAPI */ = {
 			isa = PBXGroup;
 			children = (
+				445A62962FEE8213006F55B2 /* Cvs */,
+				445A62992FEE8213006F55B2 /* Shop */,
+				445A629C2FEE8213006F55B2 /* UserTag */,
 				444D2FA42F839380006EF6BE /* Jihanpi */,
 				444D2F982F839246006EF6BE /* Cvs */,
 				4A6A87C72EA21AAE0055A132 /* Account */,
@@ -797,6 +876,15 @@
 		4A6A884F2EA21AAE0055A132 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				445A626B2FEE81DA006F55B2 /* DetailedShopInformation.swift */,
+				445A626C2FEE81DA006F55B2 /* IndividualNumberIdentificationStatus.swift */,
+				445A626D2FEE81DA006F55B2 /* PaginatedShops.swift */,
+				445A626E2FEE81DA006F55B2 /* PaginatedUserTagGroupItems.swift */,
+				445A626F2FEE81DA006F55B2 /* PaginatedUserTagGroups.swift */,
+				445A62702FEE81DA006F55B2 /* ShopInformation.swift */,
+				445A62712FEE81DA006F55B2 /* UserTagGroup.swift */,
+				445A62722FEE81DA006F55B2 /* UserTagGroupItem.swift */,
+				445A62732FEE81DA006F55B2 /* UserTagInformation.swift */,
 				445A62672FDA86E5006F55B2 /* TopupMethod.swift */,
 				4443E79E2FB1C0E5003A4EB9 /* ExchangedToken.swift */,
 				440E00C72F99C55600751068 /* CvsAuthorization.swift */,
@@ -1106,6 +1194,15 @@
 				440E00CB2F99C55600751068 /* CvsAuthorization.swift in Sources */,
 				440E00CC2F99C55600751068 /* PaginatedCvsAuthorizations.swift in Sources */,
 				B415E57B21BA3936009843DB /* PokeregiTests.swift in Sources */,
+				445A627D2FEE81DA006F55B2 /* UserTagGroup.swift in Sources */,
+				445A627E2FEE81DA006F55B2 /* PaginatedUserTagGroupItems.swift in Sources */,
+				445A627F2FEE81DA006F55B2 /* ShopInformation.swift in Sources */,
+				445A62802FEE81DA006F55B2 /* DetailedShopInformation.swift in Sources */,
+				445A62812FEE81DA006F55B2 /* IndividualNumberIdentificationStatus.swift in Sources */,
+				445A62822FEE81DA006F55B2 /* PaginatedShops.swift in Sources */,
+				445A62832FEE81DA006F55B2 /* PaginatedUserTagGroups.swift in Sources */,
+				445A62842FEE81DA006F55B2 /* UserTagGroupItem.swift in Sources */,
+				445A62852FEE81DA006F55B2 /* UserTagInformation.swift in Sources */,
 				B415E51B21BA2599009843DB /* PokepayTests.swift in Sources */,
 				4A6A88F42EA21AAE0055A132 /* GetPrivateMoneyCoupons.swift in Sources */,
 				4A6A88F52EA21AAE0055A132 /* PrivateMoney.swift in Sources */,
@@ -1118,6 +1215,10 @@
 				4A6A88FC2EA21AAE0055A132 /* IdentificationResult.swift in Sources */,
 				4A6A88FD2EA21AAE0055A132 /* CreateTransactionWithCpm.swift in Sources */,
 				444D2F9D2F839246006EF6BE /* CVSAuthorizeRequest.swift in Sources */,
+				445A629F2FEE8213006F55B2 /* GetUserTagGroupItems.swift in Sources */,
+				445A62A12FEE8213006F55B2 /* GetUserTagGroups.swift in Sources */,
+				445A62A22FEE8213006F55B2 /* GetListOfShops.swift in Sources */,
+				445A62A32FEE8213006F55B2 /* GetDetailedShopInformation.swift in Sources */,
 				444D2F9E2F839246006EF6BE /* CancelCVSAuthorization.swift in Sources */,
 				444D2F9F2F839246006EF6BE /* GetCVSAuthorizations.swift in Sources */,
 				444D2FA02F839246006EF6BE /* GetCVSAuthorization.swift in Sources */,
@@ -1248,6 +1349,10 @@
 				4A6A89702EA21AAE0055A132 /* UserWithAuthFactors.swift in Sources */,
 				444D2FAD2F8393A0006EF6BE /* JihanpiVendingMachine.swift in Sources */,
 				444D2FAE2F8393A0006EF6BE /* JihanpiTransaction.swift in Sources */,
+				445A62B62FEE843D006F55B2 /* GetCvsAuthorization.swift in Sources */,
+				445A62B72FEE843D006F55B2 /* CancelCvsAuthorization.swift in Sources */,
+				445A62B82FEE843D006F55B2 /* CvsAuthorizeRequest.swift in Sources */,
+				445A62B92FEE843D006F55B2 /* GetCvsAuthorizations.swift in Sources */,
 				4A6A89712EA21AAE0055A132 /* GetAccountCoupons.swift in Sources */,
 				4A6A89722EA21AAE0055A132 /* CreateAccountCpmToken.swift in Sources */,
 				4A6A89732EA21AAE0055A132 /* CreateAccount.swift in Sources */,
@@ -1310,10 +1415,6 @@
 				4A6A887E2EA21AAE0055A132 /* DeleteUserEmail.swift in Sources */,
 				4A6A887F2EA21AAE0055A132 /* PaginatedTransfers.swift in Sources */,
 				4A6A88802EA21AAE0055A132 /* MessagingAPI.swift in Sources */,
-				444D2F992F839246006EF6BE /* CVSAuthorizeRequest.swift in Sources */,
-				444D2F9A2F839246006EF6BE /* CancelCVSAuthorization.swift in Sources */,
-				444D2F9B2F839246006EF6BE /* GetCVSAuthorizations.swift in Sources */,
-				444D2F9C2F839246006EF6BE /* GetCVSAuthorization.swift in Sources */,
 				4A6A88812EA21AAE0055A132 /* Transfer.swift in Sources */,
 				4A6A88822EA21AAE0055A132 /* DeleteCashtray.swift in Sources */,
 				4A6A88832EA21AAE0055A132 /* Coupon.swift in Sources */,
@@ -1350,6 +1451,19 @@
 				444D2FAF2F8393A0006EF6BE /* JihanpiVendingMachine.swift in Sources */,
 				444D2FB02F8393A0006EF6BE /* JihanpiTransaction.swift in Sources */,
 				4A6A889F2EA21AAE0055A132 /* GetCashtray.swift in Sources */,
+				445A62742FEE81DA006F55B2 /* UserTagGroup.swift in Sources */,
+				445A62752FEE81DA006F55B2 /* PaginatedUserTagGroupItems.swift in Sources */,
+				445A62762FEE81DA006F55B2 /* ShopInformation.swift in Sources */,
+				445A62772FEE81DA006F55B2 /* DetailedShopInformation.swift in Sources */,
+				445A62782FEE81DA006F55B2 /* IndividualNumberIdentificationStatus.swift in Sources */,
+				445A62792FEE81DA006F55B2 /* PaginatedShops.swift in Sources */,
+				445A627A2FEE81DA006F55B2 /* PaginatedUserTagGroups.swift in Sources */,
+				445A627B2FEE81DA006F55B2 /* UserTagGroupItem.swift in Sources */,
+				445A62B22FEE843D006F55B2 /* GetCvsAuthorization.swift in Sources */,
+				445A62B32FEE843D006F55B2 /* CancelCvsAuthorization.swift in Sources */,
+				445A62B42FEE843D006F55B2 /* CvsAuthorizeRequest.swift in Sources */,
+				445A62B52FEE843D006F55B2 /* GetCvsAuthorizations.swift in Sources */,
+				445A627C2FEE81DA006F55B2 /* UserTagInformation.swift in Sources */,
 				4A6A88A02EA21AAE0055A132 /* ServerKey.swift in Sources */,
 				4A6A88A12EA21AAE0055A132 /* PaginatedTransactions.swift in Sources */,
 				4A6A88A22EA21AAE0055A132 /* GetTransactionByRequestId.swift in Sources */,
@@ -1407,6 +1521,10 @@
 				4A6A88D12EA21AAE0055A132 /* SendConfirmationEmail.swift in Sources */,
 				4A6A88D22EA21AAE0055A132 /* GetAccountSevenElevenAtmSession.swift in Sources */,
 				4A6A88D32EA21AAE0055A132 /* GetUserCards.swift in Sources */,
+				445A62A72FEE8213006F55B2 /* GetUserTagGroupItems.swift in Sources */,
+				445A62A92FEE8213006F55B2 /* GetUserTagGroups.swift in Sources */,
+				445A62AA2FEE8213006F55B2 /* GetListOfShops.swift in Sources */,
+				445A62AB2FEE8213006F55B2 /* GetDetailedShopInformation.swift in Sources */,
 				4A6A88D42EA21AAE0055A132 /* CreateCreditCard.swift in Sources */,
 				4A6A88D52EA21AAE0055A132 /* Message.swift in Sources */,
 				4A6A88D62EA21AAE0055A132 /* CreateTransactionWithJwt.swift in Sources */,
@@ -1585,6 +1703,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1627,6 +1746,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
