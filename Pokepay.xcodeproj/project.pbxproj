@@ -73,6 +73,8 @@
 		445A62B72FEE843D006F55B2 /* CancelCvsAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62AE2FEE843D006F55B2 /* CancelCvsAuthorization.swift */; };
 		445A62B82FEE843D006F55B2 /* CvsAuthorizeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62AF2FEE843D006F55B2 /* CvsAuthorizeRequest.swift */; };
 		445A62B92FEE843D006F55B2 /* GetCvsAuthorizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62B12FEE843D006F55B2 /* GetCvsAuthorizations.swift */; };
+		445A62BF2FEF9B0D006F55B2 /* GetAccountIndividualNumberIdentification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62BE2FEF9B0D006F55B2 /* GetAccountIndividualNumberIdentification.swift */; };
+		445A62C02FEF9B0D006F55B2 /* GetAccountIndividualNumberIdentification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A62BE2FEF9B0D006F55B2 /* GetAccountIndividualNumberIdentification.swift */; };
 		4A6A88612EA21AAE0055A132 /* GetPrivateMoneyCoupons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A87E12EA21AAE0055A132 /* GetPrivateMoneyCoupons.swift */; };
 		4A6A88622EA21AAE0055A132 /* PrivateMoney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A88432EA21AAE0055A132 /* PrivateMoney.swift */; };
 		4A6A88632EA21AAE0055A132 /* BankAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A88072EA21AAE0055A132 /* BankAPIRequest.swift */; };
@@ -415,6 +417,7 @@
 		445A62AF2FEE843D006F55B2 /* CvsAuthorizeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvsAuthorizeRequest.swift; sourceTree = "<group>"; };
 		445A62B02FEE843D006F55B2 /* GetCvsAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCvsAuthorization.swift; sourceTree = "<group>"; };
 		445A62B12FEE843D006F55B2 /* GetCvsAuthorizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCvsAuthorizations.swift; sourceTree = "<group>"; };
+		445A62BE2FEF9B0D006F55B2 /* GetAccountIndividualNumberIdentification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccountIndividualNumberIdentification.swift; sourceTree = "<group>"; };
 		4A6A87B92EA21AAE0055A132 /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
 		4A6A87BA2EA21AAE0055A132 /* CreateAccountCpmToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountCpmToken.swift; sourceTree = "<group>"; };
 		4A6A87BB2EA21AAE0055A132 /* CreateAccountSevenElevenAtmSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountSevenElevenAtmSession.swift; sourceTree = "<group>"; };
@@ -659,6 +662,7 @@
 		4A6A87C72EA21AAE0055A132 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				445A62BE2FEF9B0D006F55B2 /* GetAccountIndividualNumberIdentification.swift */,
 				444D2F912F839226006EF6BE /* GetAccountTopupQuotas.swift */,
 				4A6A87B92EA21AAE0055A132 /* CreateAccount.swift */,
 				4A6A87BA2EA21AAE0055A132 /* CreateAccountCpmToken.swift */,
@@ -1283,6 +1287,7 @@
 				4A6A89362EA21AAE0055A132 /* GetBalances.swift in Sources */,
 				4A6A89372EA21AAE0055A132 /* GetVeritransToken.swift in Sources */,
 				4A6A89382EA21AAE0055A132 /* IdentificationMatch.swift in Sources */,
+				445A62C02FEF9B0D006F55B2 /* GetAccountIndividualNumberIdentification.swift in Sources */,
 				4A6A89392EA21AAE0055A132 /* UserTransactionWithTransfers.swift in Sources */,
 				4A6A893A2EA21AAE0055A132 /* SearchPrivateMoneys.swift in Sources */,
 				4A6A893B2EA21AAE0055A132 /* AuthorizedRequest.swift in Sources */,
@@ -1445,6 +1450,7 @@
 				4A6A88992EA21AAE0055A132 /* DecodableDataParser.swift in Sources */,
 				4A6A889A2EA21AAE0055A132 /* Gender.swift in Sources */,
 				4A6A889B2EA21AAE0055A132 /* Env.swift in Sources */,
+				445A62BF2FEF9B0D006F55B2 /* GetAccountIndividualNumberIdentification.swift in Sources */,
 				4A6A889C2EA21AAE0055A132 /* IdentifyIndividual.swift in Sources */,
 				4A6A889D2EA21AAE0055A132 /* GetCheck.swift in Sources */,
 				4A6A889E2EA21AAE0055A132 /* GetBill.swift in Sources */,
