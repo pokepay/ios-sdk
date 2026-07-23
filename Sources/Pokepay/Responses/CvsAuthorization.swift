@@ -10,6 +10,10 @@ public struct CvsAuthorization: Codable {
     public let tel: String
     public let payLimit: String
     public let account: Account
+    public let haraikomiUrl: String
+    public let receiptNo: String
+    public let doneAt: String?
+    public let canceledAt: String?
 
     private enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -20,5 +24,9 @@ public struct CvsAuthorization: Codable {
         case tel = "tel"
         case payLimit = "pay_limit"
         case account = "account"
+        case haraikomiUrl = "haraikomi_url"
+        case receiptNo = "receipt_no"
+        case doneAt = "done_at"
+        case canceledAt = "canceled_at"
     }
 }
