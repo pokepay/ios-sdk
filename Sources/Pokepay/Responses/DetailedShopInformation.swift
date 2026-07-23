@@ -8,6 +8,7 @@ public struct DetailedShopInformation: Codable {
     public let businessHours: String
     public let regularClosedDays: String
     public let url: String?
+    public let description: String
     public let logoImageUrl: String?
     public let imageUrls: [String]
     public let address: String?
@@ -20,6 +21,7 @@ public struct DetailedShopInformation: Codable {
         case businessHours = "business_hours"
         case regularClosedDays = "regular_closed_days"
         case url = "url"
+        case description = "description"
         case logoImageUrl = "logo_image_url"
         case imageUrls = "image_urls"
         case address = "address"
