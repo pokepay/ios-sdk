@@ -2,20 +2,18 @@
 import APIKit
 
 public extension BankAPI.UserTag {
-    struct GetUserTagGroupItems: BankRequest {
+    struct GetUserTagSubgroups: BankRequest {
         public let organizationCode: String
         public let tagGroupId: String
-        public let subgroupId: String?
         public let before: String?
         public let after: String?
         public let perPage: Int?
 
-        public typealias Response = PaginatedUserTagGroupItems
+        public typealias Response = PaginatedUserTagSubgroups
 
-        public init(organizationCode: String, tagGroupId: String, subgroupId: String? = nil, before: String? = nil, after: String? = nil, perPage: Int? = nil) {
+        public init(organizationCode: String, tagGroupId: String, before: String? = nil, after: String? = nil, perPage: Int? = nil) {
             self.organizationCode = organizationCode
             self.tagGroupId = tagGroupId
-            self.subgroupId = subgroupId
             self.before = before
             self.after = after
             self.perPage = perPage
@@ -26,17 +24,13 @@ public extension BankAPI.UserTag {
         }
 
         public var path: String {
-            return "/user-tag-groups/\(organizationCode)/items"
+            return "/user-tag-groups/\(organizationCode)/subgroups"
         }
 
         public var parameters: Any? {
             var dict: [String: Any] = [:]
 
             dict["tag_group_id"] = tagGroupId
-
-            if subgroupId != nil {
-                dict["subgroup_id"] = subgroupId
-            }
 
             if before != nil {
                 dict["before"] = before
