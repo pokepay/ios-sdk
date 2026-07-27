@@ -6,13 +6,13 @@ public extension BankAPI.Transaction {
         public let requestId: String
         public let billId: String
         public let accountId: String?
-        public let amount: Int?
+        public let amount: Double?
         public let couponId: String?
         public let strategy: String?
 
         public typealias Response = UserTransactionWithFallback
 
-        public init(requestId: String, billId: String, accountId: String? = nil, amount: Int? = nil, couponId: String? = nil, strategy: String? = nil) {
+        public init(requestId: String, billId: String, accountId: String? = nil, amount: Double? = nil, couponId: String? = nil, strategy: String? = nil) {
             self.requestId = requestId
             self.billId = billId
             self.accountId = accountId

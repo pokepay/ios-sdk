@@ -3,9 +3,9 @@ import Foundation
 
 public struct UserTransferWithoutAccount: Codable {
     public let id: String
-    public let amount: Int
-    public let moneyAmount: Int
-    public let pointAmount: Int
+    public let amount: Double
+    public let moneyAmount: Double
+    public let pointAmount: Double
     public let description: String
     public let doneAt: String
     public let type: String
