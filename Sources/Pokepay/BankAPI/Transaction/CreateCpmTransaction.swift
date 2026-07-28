@@ -6,13 +6,13 @@ public extension BankAPI.Transaction {
         public let requestId: String
         public let cpmToken: String
         public let accountId: String?
-        public let amount: Int
+        public let amount: Double
         public let products: [Product]?
         public let topupQuotaId: Int?
 
         public typealias Response = UserTransactionWithFallback
 
-        public init(requestId: String, cpmToken: String, accountId: String? = nil, amount: Int, products: [Product]? = nil, topupQuotaId: Int? = nil) {
+        public init(requestId: String, cpmToken: String, accountId: String? = nil, amount: Double, products: [Product]? = nil, topupQuotaId: Int? = nil) {
             self.requestId = requestId
             self.cpmToken = cpmToken
             self.accountId = accountId

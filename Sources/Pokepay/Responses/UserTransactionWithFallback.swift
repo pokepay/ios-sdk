@@ -4,12 +4,12 @@ import Foundation
 public struct UserTransactionWithFallback: Codable {
     public let id: String
     public let user: User
-    public let balance: Int
-    public let amount: Int
-    public let moneyAmount: Int
-    public let pointAmount: Int
-    public let rawPointAmount: Int?
-    public let campaignPointAmount: Int?
+    public let balance: Double
+    public let amount: Double
+    public let moneyAmount: Double
+    public let pointAmount: Double
+    public let rawPointAmount: Double?
+    public let campaignPointAmount: Double?
     public let account: Account
     public let description: String
     public let doneAt: String

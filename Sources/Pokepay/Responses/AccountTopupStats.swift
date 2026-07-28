@@ -2,9 +2,9 @@
 import Foundation
 
 public struct AccountTopupStats: Codable {
-    public let currentAmount: Int
-    public let limitAmount: Int
-    public let remainingAmount: Int
+    public let currentAmount: Double
+    public let limitAmount: Double
+    public let remainingAmount: Double
     public let startedAt: String?
 
     private enum CodingKeys: String, CodingKey {
