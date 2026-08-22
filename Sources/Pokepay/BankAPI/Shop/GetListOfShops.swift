@@ -4,6 +4,7 @@ import APIKit
 public extension BankAPI.Shop {
     struct GetListOfShops: BankRequest {
         public let privateMoneyId: String
+        public let name: String?
         public let userTagGroupItemId: String?
         public let userTagSubgroupId: String?
         public let before: String?
@@ -12,8 +13,9 @@ public extension BankAPI.Shop {
 
         public typealias Response = PaginatedShops
 
-        public init(privateMoneyId: String, userTagGroupItemId: String? = nil, userTagSubgroupId: String? = nil, before: String? = nil, after: String? = nil, perPage: Int? = nil) {
+        public init(privateMoneyId: String, name: String? = nil, userTagGroupItemId: String? = nil, userTagSubgroupId: String? = nil, before: String? = nil, after: String? = nil, perPage: Int? = nil) {
             self.privateMoneyId = privateMoneyId
+            self.name = name
             self.userTagGroupItemId = userTagGroupItemId
             self.userTagSubgroupId = userTagSubgroupId
             self.before = before
@@ -33,6 +35,10 @@ public extension BankAPI.Shop {
             var dict: [String: Any] = [:]
 
             dict["private_money_id"] = privateMoneyId
+
+            if name != nil {
+                dict["name"] = name
+            }
 
             if userTagGroupItemId != nil {
                 dict["user_tag_group_item_id"] = userTagGroupItemId
