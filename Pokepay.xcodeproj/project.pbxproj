@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -91,6 +91,10 @@
 		44AA0E9230130C0700EAC17A /* CancelCvsAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA0E8F30130C0700EAC17A /* CancelCvsAuthorization.swift */; };
 		44AA0E9330130C0700EAC17A /* GetCvsAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA0E9030130C0700EAC17A /* GetCvsAuthorization.swift */; };
 		44AA0E9430130C0700EAC17A /* GetCvsAuthorizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA0E9130130C0700EAC17A /* GetCvsAuthorizations.swift */; };
+		44AA107A303C12A000EAC17A /* Result.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44AA1079303C12A000EAC17A /* Result.xcframework */; };
+		44AA107B303C12A000EAC17A /* Result.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 44AA1079303C12A000EAC17A /* Result.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		44AA107E303C12B300EAC17A /* APIKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44AA107D303C12B300EAC17A /* APIKit.xcframework */; };
+		44AA107F303C12B300EAC17A /* APIKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 44AA107D303C12B300EAC17A /* APIKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4A6A88612EA21AAE0055A132 /* GetPrivateMoneyCoupons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A87E12EA21AAE0055A132 /* GetPrivateMoneyCoupons.swift */; };
 		4A6A88622EA21AAE0055A132 /* PrivateMoney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A88432EA21AAE0055A132 /* PrivateMoney.swift */; };
 		4A6A88632EA21AAE0055A132 /* BankAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A88072EA21AAE0055A132 /* BankAPIRequest.swift */; };
@@ -391,11 +395,24 @@
 		B415E57B21BA3936009843DB /* PokeregiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415E57A21BA3936009843DB /* PokeregiTests.swift */; };
 		B4AF946721CB76030049B71C /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AF946521CB76030049B71C /* Result.framework */; };
 		B4AF946821CB76030049B71C /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AF946621CB76030049B71C /* APIKit.framework */; };
-		B4BE7458236AA9BF0096C59B /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AF946621CB76030049B71C /* APIKit.framework */; };
-		B4BE745A236AA9BF0096C59B /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AF946521CB76030049B71C /* Result.framework */; };
 		B4D4447C21BAA74D00353BBE /* Pokepay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF86A17C216F637600FCD979 /* Pokepay.framework */; };
 		DFB910EB230CF47B0065FE07 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFB910EA230CF47B0065FE07 /* Security.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		44AA107C303C12A000EAC17A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				44AA107B303C12A000EAC17A /* Result.xcframework in Embed Frameworks */,
+				44AA107F303C12B300EAC17A /* APIKit.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		440E00C12F99C3A000751068 /* AccountTopupQuota.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTopupQuota.swift; sourceTree = "<group>"; };
@@ -442,6 +459,8 @@
 		44AA0E8F30130C0700EAC17A /* CancelCvsAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelCvsAuthorization.swift; sourceTree = "<group>"; };
 		44AA0E9030130C0700EAC17A /* GetCvsAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCvsAuthorization.swift; sourceTree = "<group>"; };
 		44AA0E9130130C0700EAC17A /* GetCvsAuthorizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCvsAuthorizations.swift; sourceTree = "<group>"; };
+		44AA1079303C12A000EAC17A /* Result.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Result.xcframework; path = Carthage/Build/Result.xcframework; sourceTree = "<group>"; };
+		44AA107D303C12B300EAC17A /* APIKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = APIKit.xcframework; path = Carthage/Build/APIKit.xcframework; sourceTree = "<group>"; };
 		4A6A87B92EA21AAE0055A132 /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
 		4A6A87BA2EA21AAE0055A132 /* CreateAccountCpmToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountCpmToken.swift; sourceTree = "<group>"; };
 		4A6A87BB2EA21AAE0055A132 /* CreateAccountSevenElevenAtmSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountSevenElevenAtmSession.swift; sourceTree = "<group>"; };
@@ -624,8 +643,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				B4BE745A236AA9BF0096C59B /* Result.framework in Frameworks */,
-				B4BE7458236AA9BF0096C59B /* APIKit.framework in Frameworks */,
+				44AA107E303C12B300EAC17A /* APIKit.xcframework in Frameworks */,
+				44AA107A303C12A000EAC17A /* Result.xcframework in Frameworks */,
 				DFB910EB230CF47B0065FE07 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1038,6 +1057,8 @@
 		B4AF946421CB76030049B71C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				44AA107D303C12B300EAC17A /* APIKit.xcframework */,
+				44AA1079303C12A000EAC17A /* Result.xcframework */,
 				DFB910EA230CF47B0065FE07 /* Security.framework */,
 				B4AF946621CB76030049B71C /* APIKit.framework */,
 				B4AF946521CB76030049B71C /* Result.framework */,
@@ -1112,7 +1133,7 @@
 			buildPhases = (
 				OBJ_168 /* Sources */,
 				OBJ_227 /* Frameworks */,
-				B4BE745D236AA9F40096C59B /* ShellScript */,
+				44AA107C303C12A000EAC17A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1200,25 +1221,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-		B4BE745D236AA9F40096C59B /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/APIKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/opt/homebrew/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1672,7 +1674,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = PokepayTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1737,7 +1743,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = PokepayTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1772,7 +1782,10 @@
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Pokepay.xcodeproj/Pokepay_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+				);
 				MARKETING_VERSION = 1.4.9;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
@@ -1815,7 +1828,10 @@
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Pokepay.xcodeproj/Pokepay_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+				);
 				MARKETING_VERSION = 1.4.9;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
@@ -1880,7 +1896,8 @@
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				USE_HEADERMAP = NO;
 			};
 			name = Release;
