@@ -95,6 +95,310 @@
 		44AA107B303C12A000EAC17A /* Result.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 44AA1079303C12A000EAC17A /* Result.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		44AA107E303C12B300EAC17A /* APIKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44AA107D303C12B300EAC17A /* APIKit.xcframework */; };
 		44AA107F303C12B300EAC17A /* APIKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 44AA107D303C12B300EAC17A /* APIKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		44AA1130303C20FA00EAC17A /* AutogenUpdateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1091303C20FA00EAC17A /* AutogenUpdateAccount.swift */; };
+		44AA1131303C20FA00EAC17A /* AutogenCreateCreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10AF303C20FA00EAC17A /* AutogenCreateCreditCard.swift */; };
+		44AA1132303C20FA00EAC17A /* AutogenPaginatedAccountTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1107303C20FA00EAC17A /* AutogenPaginatedAccountTransactions.swift */; };
+		44AA1133303C20FA00EAC17A /* AutogenPaginatedUserTagGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1111303C20FA00EAC17A /* AutogenPaginatedUserTagGroups.swift */; };
+		44AA1134303C20FA00EAC17A /* AutogenDeleteBankPay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1095303C20FA00EAC17A /* AutogenDeleteBankPay.swift */; };
+		44AA1135303C20FA00EAC17A /* AutogenGetJihanpiTransactionByOrderId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10BE303C20FA00EAC17A /* AutogenGetJihanpiTransactionByOrderId.swift */; };
+		44AA1136303C20FA00EAC17A /* AutogenCpmToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10F8303C20FA00EAC17A /* AutogenCpmToken.swift */; };
+		44AA1137303C20FA00EAC17A /* AutogenGetAccountBalances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1086303C20FA00EAC17A /* AutogenGetAccountBalances.swift */; };
+		44AA1138303C20FA00EAC17A /* AutogenPaginatedBillTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1109303C20FA00EAC17A /* AutogenPaginatedBillTransactions.swift */; };
+		44AA1139303C20FA00EAC17A /* AutogenGetBillTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA109A303C20FA00EAC17A /* AutogenGetBillTransactions.swift */; };
+		44AA113A303C20FA00EAC17A /* AutogenGetCashtrayAttempts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10A2303C20FA00EAC17A /* AutogenGetCashtrayAttempts.swift */; };
+		44AA113B303C20FA00EAC17A /* AutogenPrivateMoney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1114303C20FA00EAC17A /* AutogenPrivateMoney.swift */; };
+		44AA113C303C20FA00EAC17A /* AutogenCreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10F9303C20FA00EAC17A /* AutogenCreditCard.swift */; };
+		44AA113D303C20FA00EAC17A /* AutogenCreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1083303C20FA00EAC17A /* AutogenCreateAccount.swift */; };
+		44AA113E303C20FA00EAC17A /* AutogenAccountDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10E9303C20FA00EAC17A /* AutogenAccountDetail.swift */; };
+		44AA113F303C20FA00EAC17A /* AutogenGetJihanpiTransactionByRequestId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10BF303C20FA00EAC17A /* AutogenGetJihanpiTransactionByRequestId.swift */; };
+		44AA1140303C20FA00EAC17A /* AutogenUserTransactionWithFallbackAndCustomerBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1125303C20FA00EAC17A /* AutogenUserTransactionWithFallbackAndCustomerBalance.swift */; };
+		44AA1141303C20FA00EAC17A /* AutogenJihanpiVendingMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1102303C20FA00EAC17A /* AutogenJihanpiVendingMachine.swift */; };
+		44AA1142303C20FA00EAC17A /* AutogenGetUserTagSubgroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10E3303C20FA00EAC17A /* AutogenGetUserTagSubgroups.swift */; };
+		44AA1143303C20FA00EAC17A /* AutogenUserTransactionWithCustomerBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1123303C20FA00EAC17A /* AutogenUserTransactionWithCustomerBalance.swift */; };
+		44AA1144303C20FA00EAC17A /* AutogenGetMerchantTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10C1303C20FA00EAC17A /* AutogenGetMerchantTransaction.swift */; };
+		44AA1145303C20FA00EAC17A /* AutogenGetAccountTopupStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA108B303C20FA00EAC17A /* AutogenGetAccountTopupStats.swift */; };
+		44AA1146303C20FA00EAC17A /* AutogenCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10F4303C20FA00EAC17A /* AutogenCheck.swift */; };
+		44AA1147303C20FA00EAC17A /* AutogenGetCpmToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10AD303C20FA00EAC17A /* AutogenGetCpmToken.swift */; };
+		44AA1148303C20FA00EAC17A /* AutogenGetAccountCoupons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1088303C20FA00EAC17A /* AutogenGetAccountCoupons.swift */; };
+		44AA1149303C20FA00EAC17A /* AutogenPaginatedAccountBalances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1105303C20FA00EAC17A /* AutogenPaginatedAccountBalances.swift */; };
+		44AA114A303C20FA00EAC17A /* AutogenCouponDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10F6303C20FA00EAC17A /* AutogenCouponDetail.swift */; };
+		44AA114B303C20FA00EAC17A /* AutogenCreateTransactionWithCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10D3303C20FA00EAC17A /* AutogenCreateTransactionWithCheck.swift */; };
+		44AA114C303C20FA00EAC17A /* AutogenCreateCashtray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA109F303C20FA00EAC17A /* AutogenCreateCashtray.swift */; };
+		44AA114D303C20FA00EAC17A /* AutogenIndividualNumberIdentificationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10FF303C20FA00EAC17A /* AutogenIndividualNumberIdentificationError.swift */; };
+		44AA114E303C20FA00EAC17A /* AutogenAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10E6303C20FA00EAC17A /* AutogenAccount.swift */; };
+		44AA114F303C20FA00EAC17A /* AutogenUserTransactionWithTransfersAndCustomerBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1127303C20FA00EAC17A /* AutogenUserTransactionWithTransfersAndCustomerBalance.swift */; };
+		44AA1150303C20FA00EAC17A /* AutogenDeleteCreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10B1303C20FA00EAC17A /* AutogenDeleteCreditCard.swift */; };
+		44AA1151303C20FA00EAC17A /* AutogenCashtrayWithAttemptAndTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10F3303C20FA00EAC17A /* AutogenCashtrayWithAttemptAndTransaction.swift */; };
+		44AA1152303C20FA00EAC17A /* AutogenCouponInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10F7303C20FA00EAC17A /* AutogenCouponInfo.swift */; };
+		44AA1153303C20FA00EAC17A /* AutogenUserTransactionWithFallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1124303C20FA00EAC17A /* AutogenUserTransactionWithFallback.swift */; };
+		44AA1154303C20FA00EAC17A /* AutogenPaginatedUserTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1113303C20FA00EAC17A /* AutogenPaginatedUserTransactions.swift */; };
+		44AA1155303C20FA00EAC17A /* AutogenGetPrivateMoneyPrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10C6303C20FA00EAC17A /* AutogenGetPrivateMoneyPrivacyPolicy.swift */; };
+		44AA1156303C20FA00EAC17A /* AutogenFallbackPrivateMoney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10FC303C20FA00EAC17A /* AutogenFallbackPrivateMoney.swift */; };
+		44AA1157303C20FA00EAC17A /* AutogenGetDetailedShopInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10CA303C20FA00EAC17A /* AutogenGetDetailedShopInformation.swift */; };
+		44AA1158303C20FA00EAC17A /* AutogenDeleteCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10A6303C20FA00EAC17A /* AutogenDeleteCheck.swift */; };
+		44AA1159303C20FA00EAC17A /* AutogenUserTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1122303C20FA00EAC17A /* AutogenUserTransaction.swift */; };
+		44AA115A303C20FA00EAC17A /* AutogenUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA111C303C20FA00EAC17A /* AutogenUser.swift */; };
+		44AA115B303C20FA00EAC17A /* AutogenUserTransactionWithTransfers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1126303C20FA00EAC17A /* AutogenUserTransactionWithTransfers.swift */; };
+		44AA115C303C20FA00EAC17A /* AutogenGetUserWithAuthFactors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10DE303C20FA00EAC17A /* AutogenGetUserWithAuthFactors.swift */; };
+		44AA115D303C20FA00EAC17A /* AutogenGetCreditCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10B2303C20FA00EAC17A /* AutogenGetCreditCards.swift */; };
+		44AA115E303C20FA00EAC17A /* AutogenGetUserTagGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10E2303C20FA00EAC17A /* AutogenGetUserTagGroups.swift */; };
+		44AA115F303C20FA00EAC17A /* AutogenGetTransactionByRequestId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10D6303C20FA00EAC17A /* AutogenGetTransactionByRequestId.swift */; };
+		44AA1160303C20FA00EAC17A /* AutogenPatchAccountCouponDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA108F303C20FA00EAC17A /* AutogenPatchAccountCouponDetail.swift */; };
+		44AA1161303C20FA00EAC17A /* AutogenIdentificationMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10FD303C20FA00EAC17A /* AutogenIdentificationMatch.swift */; };
+		44AA1162303C20FA00EAC17A /* AutogenPaginatedCvsAuthorizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA110B303C20FA00EAC17A /* AutogenPaginatedCvsAuthorizations.swift */; };
+		44AA1163303C20FA00EAC17A /* AutogenCreditWithCreditCardMembership.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10B0303C20FA00EAC17A /* AutogenCreditWithCreditCardMembership.swift */; };
+		44AA1164303C20FA00EAC17A /* AutogenPrivateMoneyTopupMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1119303C20FA00EAC17A /* AutogenPrivateMoneyTopupMethod.swift */; };
+		44AA1165303C20FA00EAC17A /* AutogenGetAccountTopupQuotas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA108A303C20FA00EAC17A /* AutogenGetAccountTopupQuotas.swift */; };
+		44AA1166303C20FA00EAC17A /* AutogenGetCouponDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10AA303C20FA00EAC17A /* AutogenGetCouponDetail.swift */; };
+		44AA1167303C20FA00EAC17A /* AutogenGetAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1085303C20FA00EAC17A /* AutogenGetAccount.swift */; };
+		44AA1168303C20FA00EAC17A /* AutogenGetPrivateMoneyCommercialAct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10C4303C20FA00EAC17A /* AutogenGetPrivateMoneyCommercialAct.swift */; };
+		44AA1169303C20FA00EAC17A /* AutogenCreateTransactionWithCashtray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10D2303C20FA00EAC17A /* AutogenCreateTransactionWithCashtray.swift */; };
+		44AA116A303C20FA00EAC17A /* AutogenUpdateCashtray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10A3303C20FA00EAC17A /* AutogenUpdateCashtray.swift */; };
+		44AA116B303C20FA00EAC17A /* AutogenGetCashtray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10A1303C20FA00EAC17A /* AutogenGetCashtray.swift */; };
+		44AA116C303C20FA00EAC17A /* AutogenCashtray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10F0303C20FA00EAC17A /* AutogenCashtray.swift */; };
+		44AA116D303C20FA00EAC17A /* AutogenAccountTopupQuotas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10EB303C20FA00EAC17A /* AutogenAccountTopupQuotas.swift */; };
+		44AA116E303C20FA00EAC17A /* AutogenDetailedShopInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10FB303C20FA00EAC17A /* AutogenDetailedShopInformation.swift */; };
+		44AA116F303C20FA00EAC17A /* AutogenOauthFullAccessUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1103303C20FA00EAC17A /* AutogenOauthFullAccessUrl.swift */; };
+		44AA1170303C20FA00EAC17A /* AutogenUpdateBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA109B303C20FA00EAC17A /* AutogenUpdateBill.swift */; };
+		44AA1171303C20FA00EAC17A /* AutogenGetPrivateMoneyCoupons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10AB303C20FA00EAC17A /* AutogenGetPrivateMoneyCoupons.swift */; };
+		44AA1172303C20FA00EAC17A /* AutogenJihanpiTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1101303C20FA00EAC17A /* AutogenJihanpiTransaction.swift */; };
+		44AA1173303C20FA00EAC17A /* AutogenCreateCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10A5303C20FA00EAC17A /* AutogenCreateCheck.swift */; };
+		44AA1174303C20FA00EAC17A /* AutogenGetAccountCouponDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1087303C20FA00EAC17A /* AutogenGetAccountCouponDetail.swift */; };
+		44AA1175303C20FA00EAC17A /* AutogenCvsAuthorizeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10B9303C20FA00EAC17A /* AutogenCvsAuthorizeRequest.swift */; };
+		44AA1176303C20FA00EAC17A /* AutogenOrganization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1104303C20FA00EAC17A /* AutogenOrganization.swift */; };
+		44AA1177303C20FA00EAC17A /* AutogenTopupWithCreditCardMdkToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10B5303C20FA00EAC17A /* AutogenTopupWithCreditCardMdkToken.swift */; };
+		44AA1178303C20FA00EAC17A /* AutogenCashtrayAttempt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10F1303C20FA00EAC17A /* AutogenCashtrayAttempt.swift */; };
+		44AA1179303C20FA00EAC17A /* AutogenAccountTopupStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10EC303C20FA00EAC17A /* AutogenAccountTopupStats.swift */; };
+		44AA117A303C20FA00EAC17A /* AutogenShopInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA111A303C20FA00EAC17A /* AutogenShopInformation.swift */; };
+		44AA117B303C20FA00EAC17A /* AutogenCreateBankPay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1094303C20FA00EAC17A /* AutogenCreateBankPay.swift */; };
+		44AA117C303C20FA00EAC17A /* AutogenCvsAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10FA303C20FA00EAC17A /* AutogenCvsAuthorization.swift */; };
+		44AA117D303C20FA00EAC17A /* AutogenBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10EE303C20FA00EAC17A /* AutogenBill.swift */; };
+		44AA117E303C20FA00EAC17A /* AutogenGetAccountIndividualNumberIdentification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1089303C20FA00EAC17A /* AutogenGetAccountIndividualNumberIdentification.swift */; };
+		44AA117F303C20FA00EAC17A /* AutogenGetTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10D5303C20FA00EAC17A /* AutogenGetTransaction.swift */; };
+		44AA1180303C20FA00EAC17A /* AutogenPaginatedShops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA110E303C20FA00EAC17A /* AutogenPaginatedShops.swift */; };
+		44AA1181303C20FA00EAC17A /* AutogenGetPrivateMoney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10C3303C20FA00EAC17A /* AutogenGetPrivateMoney.swift */; };
+		44AA1182303C20FA00EAC17A /* AutogenGetPrivateMoneyTerms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10C7303C20FA00EAC17A /* AutogenGetPrivateMoneyTerms.swift */; };
+		44AA1183303C20FA00EAC17A /* AutogenUserTagGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA111E303C20FA00EAC17A /* AutogenUserTagGroup.swift */; };
+		44AA1184303C20FA00EAC17A /* AutogenPrivateMoneyImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1116303C20FA00EAC17A /* AutogenPrivateMoneyImages.swift */; };
+		44AA1185303C20FA00EAC17A /* AutogenGetTerminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10CD303C20FA00EAC17A /* AutogenGetTerminal.swift */; };
+		44AA1186303C20FA00EAC17A /* AutogenGetUserSettingUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10DC303C20FA00EAC17A /* AutogenGetUserSettingUrl.swift */; };
+		44AA1187303C20FA00EAC17A /* AutogenUserWithDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA112B303C20FA00EAC17A /* AutogenUserWithDetails.swift */; };
+		44AA1188303C20FA00EAC17A /* AutogenGetAccountTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA108C303C20FA00EAC17A /* AutogenGetAccountTransactions.swift */; };
+		44AA1189303C20FA00EAC17A /* AutogenGetVeritransMdkTokenApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10B3303C20FA00EAC17A /* AutogenGetVeritransMdkTokenApiKey.swift */; };
+		44AA118A303C20FA00EAC17A /* AutogenCreateJihanpiTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10BD303C20FA00EAC17A /* AutogenCreateJihanpiTransaction.swift */; };
+		44AA118B303C20FA00EAC17A /* AutogenCreateTransactionWithBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10D1303C20FA00EAC17A /* AutogenCreateTransactionWithBill.swift */; };
+		44AA118C303C20FA00EAC17A /* AutogenPrivateMoneyDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1115303C20FA00EAC17A /* AutogenPrivateMoneyDetail.swift */; };
+		44AA118D303C20FA00EAC17A /* AutogenUserTagSubgroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1121303C20FA00EAC17A /* AutogenUserTagSubgroup.swift */; };
+		44AA118E303C20FA00EAC17A /* AutogenCashtrayAttempts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10F2303C20FA00EAC17A /* AutogenCashtrayAttempts.swift */; };
+		44AA118F303C20FA00EAC17A /* AutogenCoupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10F5303C20FA00EAC17A /* AutogenCoupon.swift */; };
+		44AA1190303C20FA00EAC17A /* AutogenDeleteCashtray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10A0303C20FA00EAC17A /* AutogenDeleteCashtray.swift */; };
+		44AA1191303C20FA00EAC17A /* AutogenGetCvsAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10BA303C20FA00EAC17A /* AutogenGetCvsAuthorization.swift */; };
+		44AA1192303C20FA00EAC17A /* AutogenPrivateMoneySounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1118303C20FA00EAC17A /* AutogenPrivateMoneySounds.swift */; };
+		44AA1193303C20FA00EAC17A /* AutogenBankPaySession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10ED303C20FA00EAC17A /* AutogenBankPaySession.swift */; };
+		44AA1194303C20FA00EAC17A /* AutogenPaginatedUserTagGroupItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1110303C20FA00EAC17A /* AutogenPaginatedUserTagGroupItems.swift */; };
+		44AA1195303C20FA00EAC17A /* AutogenAccountTopupQuota.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10EA303C20FA00EAC17A /* AutogenAccountTopupQuota.swift */; };
+		44AA1196303C20FA00EAC17A /* AutogenCancelCvsAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10B8303C20FA00EAC17A /* AutogenCancelCvsAuthorization.swift */; };
+		44AA1197303C20FA00EAC17A /* AutogenGetAccountCampaignPointAmounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA109D303C20FA00EAC17A /* AutogenGetAccountCampaignPointAmounts.swift */; };
+		44AA1198303C20FA00EAC17A /* AutogenBankPayTopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1093303C20FA00EAC17A /* AutogenBankPayTopUp.swift */; };
+		44AA1199303C20FA00EAC17A /* AutogenPaginatedAccountTransfers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1108303C20FA00EAC17A /* AutogenPaginatedAccountTransfers.swift */; };
+		44AA119A303C20FA00EAC17A /* AutogenUserTagInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1120303C20FA00EAC17A /* AutogenUserTagInformation.swift */; };
+		44AA119B303C20FA00EAC17A /* AutogenGetUserAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10DB303C20FA00EAC17A /* AutogenGetUserAccounts.swift */; };
+		44AA119C303C20FA00EAC17A /* AutogenPaginatedPrivateMoneyCoupons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA110C303C20FA00EAC17A /* AutogenPaginatedPrivateMoneyCoupons.swift */; };
+		44AA119D303C20FA00EAC17A /* Autogen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA112E303C20FA00EAC17A /* Autogen.swift */; };
+		44AA119E303C20FA00EAC17A /* AutogenPaginatedAccountCoupons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1106303C20FA00EAC17A /* AutogenPaginatedAccountCoupons.swift */; };
+		44AA119F303C20FA00EAC17A /* AutogenSendToAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1090303C20FA00EAC17A /* AutogenSendToAccount.swift */; };
+		44AA11A0303C20FA00EAC17A /* AutogenDeleteBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1098303C20FA00EAC17A /* AutogenDeleteBill.swift */; };
+		44AA11A1303C20FA00EAC17A /* AutogenUpdateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10DF303C20FA00EAC17A /* AutogenUpdateUser.swift */; };
+		44AA11A2303C20FA00EAC17A /* AutogenUserTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1128303C20FA00EAC17A /* AutogenUserTransfer.swift */; };
+		44AA11A3303C20FA00EAC17A /* AutogenUserBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA111D303C20FA00EAC17A /* AutogenUserBank.swift */; };
+		44AA11A4303C20FA00EAC17A /* AutogenPaginatedUserTagSubgroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1112303C20FA00EAC17A /* AutogenPaginatedUserTagSubgroups.swift */; };
+		44AA11A5303C20FA00EAC17A /* AutogenGetListOfShops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10CB303C20FA00EAC17A /* AutogenGetListOfShops.swift */; };
+		44AA11A6303C20FA00EAC17A /* AutogenPaginatedCreditCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA110A303C20FA00EAC17A /* AutogenPaginatedCreditCards.swift */; };
+		44AA11A7303C20FA00EAC17A /* AutogenRefundTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10D7303C20FA00EAC17A /* AutogenRefundTransaction.swift */; };
+		44AA11A8303C20FA00EAC17A /* AutogenIdentifyIndividual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA108E303C20FA00EAC17A /* AutogenIdentifyIndividual.swift */; };
+		44AA11A9303C20FA00EAC17A /* AutogenBillWithAdditionalPrivateMoneys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10EF303C20FA00EAC17A /* AutogenBillWithAdditionalPrivateMoneys.swift */; };
+		44AA11AA303C20FA00EAC17A /* AutogenGetCvsAuthorizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10BB303C20FA00EAC17A /* AutogenGetCvsAuthorizations.swift */; };
+		44AA11AB303C20FA00EAC17A /* AutogenGetUserTagGroupItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10E1303C20FA00EAC17A /* AutogenGetUserTagGroupItems.swift */; };
+		44AA11AC303C20FA00EAC17A /* AutogenUserWithAuthFactors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA112A303C20FA00EAC17A /* AutogenUserWithAuthFactors.swift */; };
+		44AA11AD303C20FA00EAC17A /* AutogenCreateTransactionWithCpm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10D4303C20FA00EAC17A /* AutogenCreateTransactionWithCpm.swift */; };
+		44AA11AE303C20FA00EAC17A /* AutogenGetCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10A7303C20FA00EAC17A /* AutogenGetCheck.swift */; };
+		44AA11AF303C20FA00EAC17A /* AutogenPaginatedPrivateMoneys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA110D303C20FA00EAC17A /* AutogenPaginatedPrivateMoneys.swift */; };
+		44AA11B0303C20FA00EAC17A /* AutogenTopupWithCreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10B4303C20FA00EAC17A /* AutogenTopupWithCreditCard.swift */; };
+		44AA11B1303C20FA00EAC17A /* AutogenGetAccountTransfers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA108D303C20FA00EAC17A /* AutogenGetAccountTransfers.swift */; };
+		44AA11B2303C20FA00EAC17A /* AutogenCreateBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1097303C20FA00EAC17A /* AutogenCreateBill.swift */; };
+		44AA11B3303C20FA00EAC17A /* AutogenDeleteUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10D9303C20FA00EAC17A /* AutogenDeleteUser.swift */; };
+		44AA11B4303C20FA00EAC17A /* AutogenVeritransMdkTokenApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA112C303C20FA00EAC17A /* AutogenVeritransMdkTokenApiKey.swift */; };
+		44AA11B5303C20FA00EAC17A /* AutogenAccountCampaignPointAmounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10E8303C20FA00EAC17A /* AutogenAccountCampaignPointAmounts.swift */; };
+		44AA11B6303C20FA00EAC17A /* AutogenSearchPrivateMoneys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10C8303C20FA00EAC17A /* AutogenSearchPrivateMoneys.swift */; };
+		44AA11B7303C20FA00EAC17A /* AutogenPrivateMoneyLegalText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1117303C20FA00EAC17A /* AutogenPrivateMoneyLegalText.swift */; };
+		44AA11B8303C20FA00EAC17A /* AutogenGetBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1099303C20FA00EAC17A /* AutogenGetBill.swift */; };
+		44AA11B9303C20FA00EAC17A /* AutogenTopupWithCreditCardMembership.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10B6303C20FA00EAC17A /* AutogenTopupWithCreditCardMembership.swift */; };
+		44AA11BA303C20FA00EAC17A /* AutogenIdentificationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10FE303C20FA00EAC17A /* AutogenIdentificationResult.swift */; };
+		44AA11BB303C20FA00EAC17A /* AutogenIndividualNumberIdentificationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1100303C20FA00EAC17A /* AutogenIndividualNumberIdentificationStatus.swift */; };
+		44AA11BC303C20FA00EAC17A /* AutogenUpdateCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10A8303C20FA00EAC17A /* AutogenUpdateCheck.swift */; };
+		44AA11BD303C20FA00EAC17A /* AutogenTerminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA111B303C20FA00EAC17A /* AutogenTerminal.swift */; };
+		44AA11BE303C20FA00EAC17A /* AutogenUserTagGroupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA111F303C20FA00EAC17A /* AutogenUserTagGroupItem.swift */; };
+		44AA11BF303C20FA00EAC17A /* AutogenGetUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10DA303C20FA00EAC17A /* AutogenGetUser.swift */; };
+		44AA11C0303C20FA00EAC17A /* AutogenUpdateTerminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10CF303C20FA00EAC17A /* AutogenUpdateTerminal.swift */; };
+		44AA11C1303C20FA00EAC17A /* AutogenUserTransferWithoutAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1129303C20FA00EAC17A /* AutogenUserTransferWithoutAccount.swift */; };
+		44AA11C2303C20FA00EAC17A /* AutogenPaginatedUserAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA110F303C20FA00EAC17A /* AutogenPaginatedUserAccounts.swift */; };
+		44AA11C3303C20FA00EAC17A /* AutogenCreateAccountCpmToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1084303C20FA00EAC17A /* AutogenCreateAccountCpmToken.swift */; };
+		44AA11C4303C20FA00EAC17A /* AutogenGetTerminalById.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10CE303C20FA00EAC17A /* AutogenGetTerminalById.swift */; };
+		44AA11C5303C20FA00EAC17A /* AutogenAccountBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10E7303C20FA00EAC17A /* AutogenAccountBalance.swift */; };
+		44AA11C6303C20FA00EAC17A /* AutogenGetPrivateMoneyPaymentAct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10C5303C20FA00EAC17A /* AutogenGetPrivateMoneyPaymentAct.swift */; };
+		44AA11C7303C20FA00EAC17A /* AutogenGetUserTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10DD303C20FA00EAC17A /* AutogenGetUserTransactions.swift */; };
+		44AA11C8303C20FA00EAC17A /* AutogenUpdateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1091303C20FA00EAC17A /* AutogenUpdateAccount.swift */; };
+		44AA11C9303C20FA00EAC17A /* AutogenCreateCreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10AF303C20FA00EAC17A /* AutogenCreateCreditCard.swift */; };
+		44AA11CA303C20FA00EAC17A /* AutogenPaginatedAccountTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1107303C20FA00EAC17A /* AutogenPaginatedAccountTransactions.swift */; };
+		44AA11CB303C20FA00EAC17A /* AutogenPaginatedUserTagGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1111303C20FA00EAC17A /* AutogenPaginatedUserTagGroups.swift */; };
+		44AA11CC303C20FA00EAC17A /* AutogenDeleteBankPay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1095303C20FA00EAC17A /* AutogenDeleteBankPay.swift */; };
+		44AA11CD303C20FA00EAC17A /* AutogenGetJihanpiTransactionByOrderId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10BE303C20FA00EAC17A /* AutogenGetJihanpiTransactionByOrderId.swift */; };
+		44AA11CE303C20FA00EAC17A /* AutogenCpmToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10F8303C20FA00EAC17A /* AutogenCpmToken.swift */; };
+		44AA11CF303C20FA00EAC17A /* AutogenGetAccountBalances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1086303C20FA00EAC17A /* AutogenGetAccountBalances.swift */; };
+		44AA11D0303C20FA00EAC17A /* AutogenPaginatedBillTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1109303C20FA00EAC17A /* AutogenPaginatedBillTransactions.swift */; };
+		44AA11D1303C20FA00EAC17A /* AutogenGetBillTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA109A303C20FA00EAC17A /* AutogenGetBillTransactions.swift */; };
+		44AA11D2303C20FA00EAC17A /* AutogenGetCashtrayAttempts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10A2303C20FA00EAC17A /* AutogenGetCashtrayAttempts.swift */; };
+		44AA11D3303C20FA00EAC17A /* AutogenPrivateMoney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1114303C20FA00EAC17A /* AutogenPrivateMoney.swift */; };
+		44AA11D4303C20FA00EAC17A /* AutogenCreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10F9303C20FA00EAC17A /* AutogenCreditCard.swift */; };
+		44AA11D5303C20FA00EAC17A /* AutogenCreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1083303C20FA00EAC17A /* AutogenCreateAccount.swift */; };
+		44AA11D6303C20FA00EAC17A /* AutogenAccountDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10E9303C20FA00EAC17A /* AutogenAccountDetail.swift */; };
+		44AA11D7303C20FA00EAC17A /* AutogenGetJihanpiTransactionByRequestId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10BF303C20FA00EAC17A /* AutogenGetJihanpiTransactionByRequestId.swift */; };
+		44AA11D8303C20FA00EAC17A /* AutogenUserTransactionWithFallbackAndCustomerBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1125303C20FA00EAC17A /* AutogenUserTransactionWithFallbackAndCustomerBalance.swift */; };
+		44AA11D9303C20FA00EAC17A /* AutogenJihanpiVendingMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1102303C20FA00EAC17A /* AutogenJihanpiVendingMachine.swift */; };
+		44AA11DA303C20FA00EAC17A /* AutogenGetUserTagSubgroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10E3303C20FA00EAC17A /* AutogenGetUserTagSubgroups.swift */; };
+		44AA11DB303C20FA00EAC17A /* AutogenUserTransactionWithCustomerBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1123303C20FA00EAC17A /* AutogenUserTransactionWithCustomerBalance.swift */; };
+		44AA11DC303C20FA00EAC17A /* AutogenGetMerchantTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10C1303C20FA00EAC17A /* AutogenGetMerchantTransaction.swift */; };
+		44AA11DD303C20FA00EAC17A /* AutogenGetAccountTopupStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA108B303C20FA00EAC17A /* AutogenGetAccountTopupStats.swift */; };
+		44AA11DE303C20FA00EAC17A /* AutogenCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10F4303C20FA00EAC17A /* AutogenCheck.swift */; };
+		44AA11DF303C20FA00EAC17A /* AutogenGetCpmToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10AD303C20FA00EAC17A /* AutogenGetCpmToken.swift */; };
+		44AA11E0303C20FA00EAC17A /* AutogenGetAccountCoupons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1088303C20FA00EAC17A /* AutogenGetAccountCoupons.swift */; };
+		44AA11E1303C20FA00EAC17A /* AutogenPaginatedAccountBalances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1105303C20FA00EAC17A /* AutogenPaginatedAccountBalances.swift */; };
+		44AA11E2303C20FA00EAC17A /* AutogenCouponDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10F6303C20FA00EAC17A /* AutogenCouponDetail.swift */; };
+		44AA11E3303C20FA00EAC17A /* AutogenCreateTransactionWithCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10D3303C20FA00EAC17A /* AutogenCreateTransactionWithCheck.swift */; };
+		44AA11E4303C20FA00EAC17A /* AutogenCreateCashtray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA109F303C20FA00EAC17A /* AutogenCreateCashtray.swift */; };
+		44AA11E5303C20FA00EAC17A /* AutogenIndividualNumberIdentificationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10FF303C20FA00EAC17A /* AutogenIndividualNumberIdentificationError.swift */; };
+		44AA11E6303C20FA00EAC17A /* AutogenAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10E6303C20FA00EAC17A /* AutogenAccount.swift */; };
+		44AA11E7303C20FA00EAC17A /* AutogenUserTransactionWithTransfersAndCustomerBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1127303C20FA00EAC17A /* AutogenUserTransactionWithTransfersAndCustomerBalance.swift */; };
+		44AA11E8303C20FA00EAC17A /* AutogenDeleteCreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10B1303C20FA00EAC17A /* AutogenDeleteCreditCard.swift */; };
+		44AA11E9303C20FA00EAC17A /* AutogenCashtrayWithAttemptAndTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10F3303C20FA00EAC17A /* AutogenCashtrayWithAttemptAndTransaction.swift */; };
+		44AA11EA303C20FA00EAC17A /* AutogenCouponInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10F7303C20FA00EAC17A /* AutogenCouponInfo.swift */; };
+		44AA11EB303C20FA00EAC17A /* AutogenUserTransactionWithFallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1124303C20FA00EAC17A /* AutogenUserTransactionWithFallback.swift */; };
+		44AA11EC303C20FA00EAC17A /* AutogenPaginatedUserTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1113303C20FA00EAC17A /* AutogenPaginatedUserTransactions.swift */; };
+		44AA11ED303C20FA00EAC17A /* AutogenGetPrivateMoneyPrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10C6303C20FA00EAC17A /* AutogenGetPrivateMoneyPrivacyPolicy.swift */; };
+		44AA11EE303C20FA00EAC17A /* AutogenFallbackPrivateMoney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10FC303C20FA00EAC17A /* AutogenFallbackPrivateMoney.swift */; };
+		44AA11EF303C20FA00EAC17A /* AutogenGetDetailedShopInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10CA303C20FA00EAC17A /* AutogenGetDetailedShopInformation.swift */; };
+		44AA11F0303C20FA00EAC17A /* AutogenDeleteCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10A6303C20FA00EAC17A /* AutogenDeleteCheck.swift */; };
+		44AA11F1303C20FA00EAC17A /* AutogenUserTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1122303C20FA00EAC17A /* AutogenUserTransaction.swift */; };
+		44AA11F2303C20FA00EAC17A /* AutogenUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA111C303C20FA00EAC17A /* AutogenUser.swift */; };
+		44AA11F3303C20FA00EAC17A /* AutogenUserTransactionWithTransfers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1126303C20FA00EAC17A /* AutogenUserTransactionWithTransfers.swift */; };
+		44AA11F4303C20FA00EAC17A /* AutogenGetUserWithAuthFactors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10DE303C20FA00EAC17A /* AutogenGetUserWithAuthFactors.swift */; };
+		44AA11F5303C20FA00EAC17A /* AutogenGetCreditCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10B2303C20FA00EAC17A /* AutogenGetCreditCards.swift */; };
+		44AA11F6303C20FA00EAC17A /* AutogenGetUserTagGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10E2303C20FA00EAC17A /* AutogenGetUserTagGroups.swift */; };
+		44AA11F7303C20FA00EAC17A /* AutogenGetTransactionByRequestId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10D6303C20FA00EAC17A /* AutogenGetTransactionByRequestId.swift */; };
+		44AA11F8303C20FA00EAC17A /* AutogenPatchAccountCouponDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA108F303C20FA00EAC17A /* AutogenPatchAccountCouponDetail.swift */; };
+		44AA11F9303C20FA00EAC17A /* AutogenIdentificationMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10FD303C20FA00EAC17A /* AutogenIdentificationMatch.swift */; };
+		44AA11FA303C20FA00EAC17A /* AutogenPaginatedCvsAuthorizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA110B303C20FA00EAC17A /* AutogenPaginatedCvsAuthorizations.swift */; };
+		44AA11FB303C20FA00EAC17A /* AutogenCreditWithCreditCardMembership.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10B0303C20FA00EAC17A /* AutogenCreditWithCreditCardMembership.swift */; };
+		44AA11FC303C20FA00EAC17A /* AutogenPrivateMoneyTopupMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1119303C20FA00EAC17A /* AutogenPrivateMoneyTopupMethod.swift */; };
+		44AA11FD303C20FA00EAC17A /* AutogenGetAccountTopupQuotas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA108A303C20FA00EAC17A /* AutogenGetAccountTopupQuotas.swift */; };
+		44AA11FE303C20FA00EAC17A /* AutogenGetCouponDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10AA303C20FA00EAC17A /* AutogenGetCouponDetail.swift */; };
+		44AA11FF303C20FA00EAC17A /* AutogenGetAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1085303C20FA00EAC17A /* AutogenGetAccount.swift */; };
+		44AA1200303C20FA00EAC17A /* AutogenGetPrivateMoneyCommercialAct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10C4303C20FA00EAC17A /* AutogenGetPrivateMoneyCommercialAct.swift */; };
+		44AA1201303C20FA00EAC17A /* AutogenCreateTransactionWithCashtray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10D2303C20FA00EAC17A /* AutogenCreateTransactionWithCashtray.swift */; };
+		44AA1202303C20FA00EAC17A /* AutogenUpdateCashtray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10A3303C20FA00EAC17A /* AutogenUpdateCashtray.swift */; };
+		44AA1203303C20FA00EAC17A /* AutogenGetCashtray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10A1303C20FA00EAC17A /* AutogenGetCashtray.swift */; };
+		44AA1204303C20FA00EAC17A /* AutogenCashtray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10F0303C20FA00EAC17A /* AutogenCashtray.swift */; };
+		44AA1205303C20FA00EAC17A /* AutogenAccountTopupQuotas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10EB303C20FA00EAC17A /* AutogenAccountTopupQuotas.swift */; };
+		44AA1206303C20FA00EAC17A /* AutogenDetailedShopInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10FB303C20FA00EAC17A /* AutogenDetailedShopInformation.swift */; };
+		44AA1207303C20FA00EAC17A /* AutogenOauthFullAccessUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1103303C20FA00EAC17A /* AutogenOauthFullAccessUrl.swift */; };
+		44AA1208303C20FA00EAC17A /* AutogenUpdateBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA109B303C20FA00EAC17A /* AutogenUpdateBill.swift */; };
+		44AA1209303C20FA00EAC17A /* AutogenGetPrivateMoneyCoupons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10AB303C20FA00EAC17A /* AutogenGetPrivateMoneyCoupons.swift */; };
+		44AA120A303C20FA00EAC17A /* AutogenJihanpiTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1101303C20FA00EAC17A /* AutogenJihanpiTransaction.swift */; };
+		44AA120B303C20FA00EAC17A /* AutogenCreateCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10A5303C20FA00EAC17A /* AutogenCreateCheck.swift */; };
+		44AA120C303C20FA00EAC17A /* AutogenGetAccountCouponDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1087303C20FA00EAC17A /* AutogenGetAccountCouponDetail.swift */; };
+		44AA120D303C20FA00EAC17A /* AutogenCvsAuthorizeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10B9303C20FA00EAC17A /* AutogenCvsAuthorizeRequest.swift */; };
+		44AA120E303C20FA00EAC17A /* AutogenOrganization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1104303C20FA00EAC17A /* AutogenOrganization.swift */; };
+		44AA120F303C20FA00EAC17A /* AutogenTopupWithCreditCardMdkToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10B5303C20FA00EAC17A /* AutogenTopupWithCreditCardMdkToken.swift */; };
+		44AA1210303C20FA00EAC17A /* AutogenCashtrayAttempt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10F1303C20FA00EAC17A /* AutogenCashtrayAttempt.swift */; };
+		44AA1211303C20FA00EAC17A /* AutogenAccountTopupStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10EC303C20FA00EAC17A /* AutogenAccountTopupStats.swift */; };
+		44AA1212303C20FA00EAC17A /* AutogenShopInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA111A303C20FA00EAC17A /* AutogenShopInformation.swift */; };
+		44AA1213303C20FA00EAC17A /* AutogenCreateBankPay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1094303C20FA00EAC17A /* AutogenCreateBankPay.swift */; };
+		44AA1214303C20FA00EAC17A /* AutogenCvsAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10FA303C20FA00EAC17A /* AutogenCvsAuthorization.swift */; };
+		44AA1215303C20FA00EAC17A /* AutogenBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10EE303C20FA00EAC17A /* AutogenBill.swift */; };
+		44AA1216303C20FA00EAC17A /* AutogenGetAccountIndividualNumberIdentification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1089303C20FA00EAC17A /* AutogenGetAccountIndividualNumberIdentification.swift */; };
+		44AA1217303C20FA00EAC17A /* AutogenGetTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10D5303C20FA00EAC17A /* AutogenGetTransaction.swift */; };
+		44AA1218303C20FA00EAC17A /* AutogenPaginatedShops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA110E303C20FA00EAC17A /* AutogenPaginatedShops.swift */; };
+		44AA1219303C20FA00EAC17A /* AutogenGetPrivateMoney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10C3303C20FA00EAC17A /* AutogenGetPrivateMoney.swift */; };
+		44AA121A303C20FA00EAC17A /* AutogenGetPrivateMoneyTerms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10C7303C20FA00EAC17A /* AutogenGetPrivateMoneyTerms.swift */; };
+		44AA121B303C20FA00EAC17A /* AutogenUserTagGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA111E303C20FA00EAC17A /* AutogenUserTagGroup.swift */; };
+		44AA121C303C20FA00EAC17A /* AutogenPrivateMoneyImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1116303C20FA00EAC17A /* AutogenPrivateMoneyImages.swift */; };
+		44AA121D303C20FA00EAC17A /* AutogenGetTerminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10CD303C20FA00EAC17A /* AutogenGetTerminal.swift */; };
+		44AA121E303C20FA00EAC17A /* AutogenGetUserSettingUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10DC303C20FA00EAC17A /* AutogenGetUserSettingUrl.swift */; };
+		44AA121F303C20FA00EAC17A /* AutogenUserWithDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA112B303C20FA00EAC17A /* AutogenUserWithDetails.swift */; };
+		44AA1220303C20FA00EAC17A /* AutogenGetAccountTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA108C303C20FA00EAC17A /* AutogenGetAccountTransactions.swift */; };
+		44AA1221303C20FA00EAC17A /* AutogenGetVeritransMdkTokenApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10B3303C20FA00EAC17A /* AutogenGetVeritransMdkTokenApiKey.swift */; };
+		44AA1222303C20FA00EAC17A /* AutogenCreateJihanpiTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10BD303C20FA00EAC17A /* AutogenCreateJihanpiTransaction.swift */; };
+		44AA1223303C20FA00EAC17A /* AutogenCreateTransactionWithBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10D1303C20FA00EAC17A /* AutogenCreateTransactionWithBill.swift */; };
+		44AA1224303C20FA00EAC17A /* AutogenPrivateMoneyDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1115303C20FA00EAC17A /* AutogenPrivateMoneyDetail.swift */; };
+		44AA1225303C20FA00EAC17A /* AutogenUserTagSubgroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1121303C20FA00EAC17A /* AutogenUserTagSubgroup.swift */; };
+		44AA1226303C20FA00EAC17A /* AutogenCashtrayAttempts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10F2303C20FA00EAC17A /* AutogenCashtrayAttempts.swift */; };
+		44AA1227303C20FA00EAC17A /* AutogenCoupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10F5303C20FA00EAC17A /* AutogenCoupon.swift */; };
+		44AA1228303C20FA00EAC17A /* AutogenDeleteCashtray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10A0303C20FA00EAC17A /* AutogenDeleteCashtray.swift */; };
+		44AA1229303C20FA00EAC17A /* AutogenGetCvsAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10BA303C20FA00EAC17A /* AutogenGetCvsAuthorization.swift */; };
+		44AA122A303C20FA00EAC17A /* AutogenPrivateMoneySounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1118303C20FA00EAC17A /* AutogenPrivateMoneySounds.swift */; };
+		44AA122B303C20FA00EAC17A /* AutogenBankPaySession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10ED303C20FA00EAC17A /* AutogenBankPaySession.swift */; };
+		44AA122C303C20FA00EAC17A /* AutogenPaginatedUserTagGroupItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1110303C20FA00EAC17A /* AutogenPaginatedUserTagGroupItems.swift */; };
+		44AA122D303C20FA00EAC17A /* AutogenAccountTopupQuota.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10EA303C20FA00EAC17A /* AutogenAccountTopupQuota.swift */; };
+		44AA122E303C20FA00EAC17A /* AutogenCancelCvsAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10B8303C20FA00EAC17A /* AutogenCancelCvsAuthorization.swift */; };
+		44AA122F303C20FA00EAC17A /* AutogenGetAccountCampaignPointAmounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA109D303C20FA00EAC17A /* AutogenGetAccountCampaignPointAmounts.swift */; };
+		44AA1230303C20FA00EAC17A /* AutogenBankPayTopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1093303C20FA00EAC17A /* AutogenBankPayTopUp.swift */; };
+		44AA1231303C20FA00EAC17A /* AutogenPaginatedAccountTransfers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1108303C20FA00EAC17A /* AutogenPaginatedAccountTransfers.swift */; };
+		44AA1232303C20FA00EAC17A /* AutogenUserTagInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1120303C20FA00EAC17A /* AutogenUserTagInformation.swift */; };
+		44AA1233303C20FA00EAC17A /* AutogenGetUserAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10DB303C20FA00EAC17A /* AutogenGetUserAccounts.swift */; };
+		44AA1234303C20FA00EAC17A /* AutogenPaginatedPrivateMoneyCoupons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA110C303C20FA00EAC17A /* AutogenPaginatedPrivateMoneyCoupons.swift */; };
+		44AA1235303C20FA00EAC17A /* Autogen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA112E303C20FA00EAC17A /* Autogen.swift */; };
+		44AA1236303C20FA00EAC17A /* AutogenPaginatedAccountCoupons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1106303C20FA00EAC17A /* AutogenPaginatedAccountCoupons.swift */; };
+		44AA1237303C20FA00EAC17A /* AutogenSendToAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1090303C20FA00EAC17A /* AutogenSendToAccount.swift */; };
+		44AA1238303C20FA00EAC17A /* AutogenDeleteBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1098303C20FA00EAC17A /* AutogenDeleteBill.swift */; };
+		44AA1239303C20FA00EAC17A /* AutogenUpdateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10DF303C20FA00EAC17A /* AutogenUpdateUser.swift */; };
+		44AA123A303C20FA00EAC17A /* AutogenUserTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1128303C20FA00EAC17A /* AutogenUserTransfer.swift */; };
+		44AA123B303C20FA00EAC17A /* AutogenUserBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA111D303C20FA00EAC17A /* AutogenUserBank.swift */; };
+		44AA123C303C20FA00EAC17A /* AutogenPaginatedUserTagSubgroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1112303C20FA00EAC17A /* AutogenPaginatedUserTagSubgroups.swift */; };
+		44AA123D303C20FA00EAC17A /* AutogenGetListOfShops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10CB303C20FA00EAC17A /* AutogenGetListOfShops.swift */; };
+		44AA123E303C20FA00EAC17A /* AutogenPaginatedCreditCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA110A303C20FA00EAC17A /* AutogenPaginatedCreditCards.swift */; };
+		44AA123F303C20FA00EAC17A /* AutogenRefundTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10D7303C20FA00EAC17A /* AutogenRefundTransaction.swift */; };
+		44AA1240303C20FA00EAC17A /* AutogenIdentifyIndividual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA108E303C20FA00EAC17A /* AutogenIdentifyIndividual.swift */; };
+		44AA1241303C20FA00EAC17A /* AutogenBillWithAdditionalPrivateMoneys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10EF303C20FA00EAC17A /* AutogenBillWithAdditionalPrivateMoneys.swift */; };
+		44AA1242303C20FA00EAC17A /* AutogenGetCvsAuthorizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10BB303C20FA00EAC17A /* AutogenGetCvsAuthorizations.swift */; };
+		44AA1243303C20FA00EAC17A /* AutogenGetUserTagGroupItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10E1303C20FA00EAC17A /* AutogenGetUserTagGroupItems.swift */; };
+		44AA1244303C20FA00EAC17A /* AutogenUserWithAuthFactors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA112A303C20FA00EAC17A /* AutogenUserWithAuthFactors.swift */; };
+		44AA1245303C20FA00EAC17A /* AutogenCreateTransactionWithCpm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10D4303C20FA00EAC17A /* AutogenCreateTransactionWithCpm.swift */; };
+		44AA1246303C20FA00EAC17A /* AutogenGetCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10A7303C20FA00EAC17A /* AutogenGetCheck.swift */; };
+		44AA1247303C20FA00EAC17A /* AutogenPaginatedPrivateMoneys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA110D303C20FA00EAC17A /* AutogenPaginatedPrivateMoneys.swift */; };
+		44AA1248303C20FA00EAC17A /* AutogenTopupWithCreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10B4303C20FA00EAC17A /* AutogenTopupWithCreditCard.swift */; };
+		44AA1249303C20FA00EAC17A /* AutogenGetAccountTransfers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA108D303C20FA00EAC17A /* AutogenGetAccountTransfers.swift */; };
+		44AA124A303C20FA00EAC17A /* AutogenCreateBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1097303C20FA00EAC17A /* AutogenCreateBill.swift */; };
+		44AA124B303C20FA00EAC17A /* AutogenDeleteUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10D9303C20FA00EAC17A /* AutogenDeleteUser.swift */; };
+		44AA124C303C20FA00EAC17A /* AutogenVeritransMdkTokenApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA112C303C20FA00EAC17A /* AutogenVeritransMdkTokenApiKey.swift */; };
+		44AA124D303C20FA00EAC17A /* AutogenAccountCampaignPointAmounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10E8303C20FA00EAC17A /* AutogenAccountCampaignPointAmounts.swift */; };
+		44AA124E303C20FA00EAC17A /* AutogenSearchPrivateMoneys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10C8303C20FA00EAC17A /* AutogenSearchPrivateMoneys.swift */; };
+		44AA124F303C20FA00EAC17A /* AutogenPrivateMoneyLegalText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1117303C20FA00EAC17A /* AutogenPrivateMoneyLegalText.swift */; };
+		44AA1250303C20FA00EAC17A /* AutogenGetBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1099303C20FA00EAC17A /* AutogenGetBill.swift */; };
+		44AA1251303C20FA00EAC17A /* AutogenTopupWithCreditCardMembership.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10B6303C20FA00EAC17A /* AutogenTopupWithCreditCardMembership.swift */; };
+		44AA1252303C20FA00EAC17A /* AutogenIdentificationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10FE303C20FA00EAC17A /* AutogenIdentificationResult.swift */; };
+		44AA1253303C20FA00EAC17A /* AutogenIndividualNumberIdentificationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1100303C20FA00EAC17A /* AutogenIndividualNumberIdentificationStatus.swift */; };
+		44AA1254303C20FA00EAC17A /* AutogenUpdateCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10A8303C20FA00EAC17A /* AutogenUpdateCheck.swift */; };
+		44AA1255303C20FA00EAC17A /* AutogenTerminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA111B303C20FA00EAC17A /* AutogenTerminal.swift */; };
+		44AA1256303C20FA00EAC17A /* AutogenUserTagGroupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA111F303C20FA00EAC17A /* AutogenUserTagGroupItem.swift */; };
+		44AA1257303C20FA00EAC17A /* AutogenGetUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10DA303C20FA00EAC17A /* AutogenGetUser.swift */; };
+		44AA1258303C20FA00EAC17A /* AutogenUpdateTerminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10CF303C20FA00EAC17A /* AutogenUpdateTerminal.swift */; };
+		44AA1259303C20FA00EAC17A /* AutogenUserTransferWithoutAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1129303C20FA00EAC17A /* AutogenUserTransferWithoutAccount.swift */; };
+		44AA125A303C20FA00EAC17A /* AutogenPaginatedUserAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA110F303C20FA00EAC17A /* AutogenPaginatedUserAccounts.swift */; };
+		44AA125B303C20FA00EAC17A /* AutogenCreateAccountCpmToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1084303C20FA00EAC17A /* AutogenCreateAccountCpmToken.swift */; };
+		44AA125C303C20FA00EAC17A /* AutogenGetTerminalById.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10CE303C20FA00EAC17A /* AutogenGetTerminalById.swift */; };
+		44AA125D303C20FA00EAC17A /* AutogenAccountBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10E7303C20FA00EAC17A /* AutogenAccountBalance.swift */; };
+		44AA125E303C20FA00EAC17A /* AutogenGetPrivateMoneyPaymentAct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10C5303C20FA00EAC17A /* AutogenGetPrivateMoneyPaymentAct.swift */; };
+		44AA125F303C20FA00EAC17A /* AutogenGetUserTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10DD303C20FA00EAC17A /* AutogenGetUserTransactions.swift */; };
 		4A6A88612EA21AAE0055A132 /* GetPrivateMoneyCoupons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A87E12EA21AAE0055A132 /* GetPrivateMoneyCoupons.swift */; };
 		4A6A88622EA21AAE0055A132 /* PrivateMoney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A88432EA21AAE0055A132 /* PrivateMoney.swift */; };
 		4A6A88632EA21AAE0055A132 /* BankAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A88072EA21AAE0055A132 /* BankAPIRequest.swift */; };
@@ -393,8 +697,6 @@
 		4A6A898A2EA21C400055A132 /* UserTransferWithoutAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A89882EA21C400055A132 /* UserTransferWithoutAccount.swift */; };
 		B415E51B21BA2599009843DB /* PokepayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415E51A21BA2599009843DB /* PokepayTests.swift */; };
 		B415E57B21BA3936009843DB /* PokeregiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415E57A21BA3936009843DB /* PokeregiTests.swift */; };
-		B4AF946721CB76030049B71C /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AF946521CB76030049B71C /* Result.framework */; };
-		B4AF946821CB76030049B71C /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4AF946621CB76030049B71C /* APIKit.framework */; };
 		B4D4447C21BAA74D00353BBE /* Pokepay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF86A17C216F637600FCD979 /* Pokepay.framework */; };
 		DFB910EB230CF47B0065FE07 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFB910EA230CF47B0065FE07 /* Security.framework */; };
 /* End PBXBuildFile section */
@@ -461,6 +763,158 @@
 		44AA0E9130130C0700EAC17A /* GetCvsAuthorizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCvsAuthorizations.swift; sourceTree = "<group>"; };
 		44AA1079303C12A000EAC17A /* Result.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Result.xcframework; path = Carthage/Build/Result.xcframework; sourceTree = "<group>"; };
 		44AA107D303C12B300EAC17A /* APIKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = APIKit.xcframework; path = Carthage/Build/APIKit.xcframework; sourceTree = "<group>"; };
+		44AA1083303C20FA00EAC17A /* AutogenCreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenCreateAccount.swift; sourceTree = "<group>"; };
+		44AA1084303C20FA00EAC17A /* AutogenCreateAccountCpmToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenCreateAccountCpmToken.swift; sourceTree = "<group>"; };
+		44AA1085303C20FA00EAC17A /* AutogenGetAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetAccount.swift; sourceTree = "<group>"; };
+		44AA1086303C20FA00EAC17A /* AutogenGetAccountBalances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetAccountBalances.swift; sourceTree = "<group>"; };
+		44AA1087303C20FA00EAC17A /* AutogenGetAccountCouponDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetAccountCouponDetail.swift; sourceTree = "<group>"; };
+		44AA1088303C20FA00EAC17A /* AutogenGetAccountCoupons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetAccountCoupons.swift; sourceTree = "<group>"; };
+		44AA1089303C20FA00EAC17A /* AutogenGetAccountIndividualNumberIdentification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetAccountIndividualNumberIdentification.swift; sourceTree = "<group>"; };
+		44AA108A303C20FA00EAC17A /* AutogenGetAccountTopupQuotas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetAccountTopupQuotas.swift; sourceTree = "<group>"; };
+		44AA108B303C20FA00EAC17A /* AutogenGetAccountTopupStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetAccountTopupStats.swift; sourceTree = "<group>"; };
+		44AA108C303C20FA00EAC17A /* AutogenGetAccountTransactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetAccountTransactions.swift; sourceTree = "<group>"; };
+		44AA108D303C20FA00EAC17A /* AutogenGetAccountTransfers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetAccountTransfers.swift; sourceTree = "<group>"; };
+		44AA108E303C20FA00EAC17A /* AutogenIdentifyIndividual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenIdentifyIndividual.swift; sourceTree = "<group>"; };
+		44AA108F303C20FA00EAC17A /* AutogenPatchAccountCouponDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenPatchAccountCouponDetail.swift; sourceTree = "<group>"; };
+		44AA1090303C20FA00EAC17A /* AutogenSendToAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenSendToAccount.swift; sourceTree = "<group>"; };
+		44AA1091303C20FA00EAC17A /* AutogenUpdateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenUpdateAccount.swift; sourceTree = "<group>"; };
+		44AA1093303C20FA00EAC17A /* AutogenBankPayTopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenBankPayTopUp.swift; sourceTree = "<group>"; };
+		44AA1094303C20FA00EAC17A /* AutogenCreateBankPay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenCreateBankPay.swift; sourceTree = "<group>"; };
+		44AA1095303C20FA00EAC17A /* AutogenDeleteBankPay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenDeleteBankPay.swift; sourceTree = "<group>"; };
+		44AA1097303C20FA00EAC17A /* AutogenCreateBill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenCreateBill.swift; sourceTree = "<group>"; };
+		44AA1098303C20FA00EAC17A /* AutogenDeleteBill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenDeleteBill.swift; sourceTree = "<group>"; };
+		44AA1099303C20FA00EAC17A /* AutogenGetBill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetBill.swift; sourceTree = "<group>"; };
+		44AA109A303C20FA00EAC17A /* AutogenGetBillTransactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetBillTransactions.swift; sourceTree = "<group>"; };
+		44AA109B303C20FA00EAC17A /* AutogenUpdateBill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenUpdateBill.swift; sourceTree = "<group>"; };
+		44AA109D303C20FA00EAC17A /* AutogenGetAccountCampaignPointAmounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetAccountCampaignPointAmounts.swift; sourceTree = "<group>"; };
+		44AA109F303C20FA00EAC17A /* AutogenCreateCashtray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenCreateCashtray.swift; sourceTree = "<group>"; };
+		44AA10A0303C20FA00EAC17A /* AutogenDeleteCashtray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenDeleteCashtray.swift; sourceTree = "<group>"; };
+		44AA10A1303C20FA00EAC17A /* AutogenGetCashtray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetCashtray.swift; sourceTree = "<group>"; };
+		44AA10A2303C20FA00EAC17A /* AutogenGetCashtrayAttempts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetCashtrayAttempts.swift; sourceTree = "<group>"; };
+		44AA10A3303C20FA00EAC17A /* AutogenUpdateCashtray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenUpdateCashtray.swift; sourceTree = "<group>"; };
+		44AA10A5303C20FA00EAC17A /* AutogenCreateCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenCreateCheck.swift; sourceTree = "<group>"; };
+		44AA10A6303C20FA00EAC17A /* AutogenDeleteCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenDeleteCheck.swift; sourceTree = "<group>"; };
+		44AA10A7303C20FA00EAC17A /* AutogenGetCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetCheck.swift; sourceTree = "<group>"; };
+		44AA10A8303C20FA00EAC17A /* AutogenUpdateCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenUpdateCheck.swift; sourceTree = "<group>"; };
+		44AA10AA303C20FA00EAC17A /* AutogenGetCouponDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetCouponDetail.swift; sourceTree = "<group>"; };
+		44AA10AB303C20FA00EAC17A /* AutogenGetPrivateMoneyCoupons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetPrivateMoneyCoupons.swift; sourceTree = "<group>"; };
+		44AA10AD303C20FA00EAC17A /* AutogenGetCpmToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetCpmToken.swift; sourceTree = "<group>"; };
+		44AA10AF303C20FA00EAC17A /* AutogenCreateCreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenCreateCreditCard.swift; sourceTree = "<group>"; };
+		44AA10B0303C20FA00EAC17A /* AutogenCreditWithCreditCardMembership.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenCreditWithCreditCardMembership.swift; sourceTree = "<group>"; };
+		44AA10B1303C20FA00EAC17A /* AutogenDeleteCreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenDeleteCreditCard.swift; sourceTree = "<group>"; };
+		44AA10B2303C20FA00EAC17A /* AutogenGetCreditCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetCreditCards.swift; sourceTree = "<group>"; };
+		44AA10B3303C20FA00EAC17A /* AutogenGetVeritransMdkTokenApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetVeritransMdkTokenApiKey.swift; sourceTree = "<group>"; };
+		44AA10B4303C20FA00EAC17A /* AutogenTopupWithCreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenTopupWithCreditCard.swift; sourceTree = "<group>"; };
+		44AA10B5303C20FA00EAC17A /* AutogenTopupWithCreditCardMdkToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenTopupWithCreditCardMdkToken.swift; sourceTree = "<group>"; };
+		44AA10B6303C20FA00EAC17A /* AutogenTopupWithCreditCardMembership.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenTopupWithCreditCardMembership.swift; sourceTree = "<group>"; };
+		44AA10B8303C20FA00EAC17A /* AutogenCancelCvsAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenCancelCvsAuthorization.swift; sourceTree = "<group>"; };
+		44AA10B9303C20FA00EAC17A /* AutogenCvsAuthorizeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenCvsAuthorizeRequest.swift; sourceTree = "<group>"; };
+		44AA10BA303C20FA00EAC17A /* AutogenGetCvsAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetCvsAuthorization.swift; sourceTree = "<group>"; };
+		44AA10BB303C20FA00EAC17A /* AutogenGetCvsAuthorizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetCvsAuthorizations.swift; sourceTree = "<group>"; };
+		44AA10BD303C20FA00EAC17A /* AutogenCreateJihanpiTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenCreateJihanpiTransaction.swift; sourceTree = "<group>"; };
+		44AA10BE303C20FA00EAC17A /* AutogenGetJihanpiTransactionByOrderId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetJihanpiTransactionByOrderId.swift; sourceTree = "<group>"; };
+		44AA10BF303C20FA00EAC17A /* AutogenGetJihanpiTransactionByRequestId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetJihanpiTransactionByRequestId.swift; sourceTree = "<group>"; };
+		44AA10C1303C20FA00EAC17A /* AutogenGetMerchantTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetMerchantTransaction.swift; sourceTree = "<group>"; };
+		44AA10C3303C20FA00EAC17A /* AutogenGetPrivateMoney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetPrivateMoney.swift; sourceTree = "<group>"; };
+		44AA10C4303C20FA00EAC17A /* AutogenGetPrivateMoneyCommercialAct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetPrivateMoneyCommercialAct.swift; sourceTree = "<group>"; };
+		44AA10C5303C20FA00EAC17A /* AutogenGetPrivateMoneyPaymentAct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetPrivateMoneyPaymentAct.swift; sourceTree = "<group>"; };
+		44AA10C6303C20FA00EAC17A /* AutogenGetPrivateMoneyPrivacyPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetPrivateMoneyPrivacyPolicy.swift; sourceTree = "<group>"; };
+		44AA10C7303C20FA00EAC17A /* AutogenGetPrivateMoneyTerms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetPrivateMoneyTerms.swift; sourceTree = "<group>"; };
+		44AA10C8303C20FA00EAC17A /* AutogenSearchPrivateMoneys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenSearchPrivateMoneys.swift; sourceTree = "<group>"; };
+		44AA10CA303C20FA00EAC17A /* AutogenGetDetailedShopInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetDetailedShopInformation.swift; sourceTree = "<group>"; };
+		44AA10CB303C20FA00EAC17A /* AutogenGetListOfShops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetListOfShops.swift; sourceTree = "<group>"; };
+		44AA10CD303C20FA00EAC17A /* AutogenGetTerminal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetTerminal.swift; sourceTree = "<group>"; };
+		44AA10CE303C20FA00EAC17A /* AutogenGetTerminalById.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetTerminalById.swift; sourceTree = "<group>"; };
+		44AA10CF303C20FA00EAC17A /* AutogenUpdateTerminal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenUpdateTerminal.swift; sourceTree = "<group>"; };
+		44AA10D1303C20FA00EAC17A /* AutogenCreateTransactionWithBill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenCreateTransactionWithBill.swift; sourceTree = "<group>"; };
+		44AA10D2303C20FA00EAC17A /* AutogenCreateTransactionWithCashtray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenCreateTransactionWithCashtray.swift; sourceTree = "<group>"; };
+		44AA10D3303C20FA00EAC17A /* AutogenCreateTransactionWithCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenCreateTransactionWithCheck.swift; sourceTree = "<group>"; };
+		44AA10D4303C20FA00EAC17A /* AutogenCreateTransactionWithCpm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenCreateTransactionWithCpm.swift; sourceTree = "<group>"; };
+		44AA10D5303C20FA00EAC17A /* AutogenGetTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetTransaction.swift; sourceTree = "<group>"; };
+		44AA10D6303C20FA00EAC17A /* AutogenGetTransactionByRequestId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetTransactionByRequestId.swift; sourceTree = "<group>"; };
+		44AA10D7303C20FA00EAC17A /* AutogenRefundTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenRefundTransaction.swift; sourceTree = "<group>"; };
+		44AA10D9303C20FA00EAC17A /* AutogenDeleteUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenDeleteUser.swift; sourceTree = "<group>"; };
+		44AA10DA303C20FA00EAC17A /* AutogenGetUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetUser.swift; sourceTree = "<group>"; };
+		44AA10DB303C20FA00EAC17A /* AutogenGetUserAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetUserAccounts.swift; sourceTree = "<group>"; };
+		44AA10DC303C20FA00EAC17A /* AutogenGetUserSettingUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetUserSettingUrl.swift; sourceTree = "<group>"; };
+		44AA10DD303C20FA00EAC17A /* AutogenGetUserTransactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetUserTransactions.swift; sourceTree = "<group>"; };
+		44AA10DE303C20FA00EAC17A /* AutogenGetUserWithAuthFactors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetUserWithAuthFactors.swift; sourceTree = "<group>"; };
+		44AA10DF303C20FA00EAC17A /* AutogenUpdateUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenUpdateUser.swift; sourceTree = "<group>"; };
+		44AA10E1303C20FA00EAC17A /* AutogenGetUserTagGroupItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetUserTagGroupItems.swift; sourceTree = "<group>"; };
+		44AA10E2303C20FA00EAC17A /* AutogenGetUserTagGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetUserTagGroups.swift; sourceTree = "<group>"; };
+		44AA10E3303C20FA00EAC17A /* AutogenGetUserTagSubgroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenGetUserTagSubgroups.swift; sourceTree = "<group>"; };
+		44AA10E6303C20FA00EAC17A /* AutogenAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenAccount.swift; sourceTree = "<group>"; };
+		44AA10E7303C20FA00EAC17A /* AutogenAccountBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenAccountBalance.swift; sourceTree = "<group>"; };
+		44AA10E8303C20FA00EAC17A /* AutogenAccountCampaignPointAmounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenAccountCampaignPointAmounts.swift; sourceTree = "<group>"; };
+		44AA10E9303C20FA00EAC17A /* AutogenAccountDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenAccountDetail.swift; sourceTree = "<group>"; };
+		44AA10EA303C20FA00EAC17A /* AutogenAccountTopupQuota.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenAccountTopupQuota.swift; sourceTree = "<group>"; };
+		44AA10EB303C20FA00EAC17A /* AutogenAccountTopupQuotas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenAccountTopupQuotas.swift; sourceTree = "<group>"; };
+		44AA10EC303C20FA00EAC17A /* AutogenAccountTopupStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenAccountTopupStats.swift; sourceTree = "<group>"; };
+		44AA10ED303C20FA00EAC17A /* AutogenBankPaySession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenBankPaySession.swift; sourceTree = "<group>"; };
+		44AA10EE303C20FA00EAC17A /* AutogenBill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenBill.swift; sourceTree = "<group>"; };
+		44AA10EF303C20FA00EAC17A /* AutogenBillWithAdditionalPrivateMoneys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenBillWithAdditionalPrivateMoneys.swift; sourceTree = "<group>"; };
+		44AA10F0303C20FA00EAC17A /* AutogenCashtray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenCashtray.swift; sourceTree = "<group>"; };
+		44AA10F1303C20FA00EAC17A /* AutogenCashtrayAttempt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenCashtrayAttempt.swift; sourceTree = "<group>"; };
+		44AA10F2303C20FA00EAC17A /* AutogenCashtrayAttempts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenCashtrayAttempts.swift; sourceTree = "<group>"; };
+		44AA10F3303C20FA00EAC17A /* AutogenCashtrayWithAttemptAndTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenCashtrayWithAttemptAndTransaction.swift; sourceTree = "<group>"; };
+		44AA10F4303C20FA00EAC17A /* AutogenCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenCheck.swift; sourceTree = "<group>"; };
+		44AA10F5303C20FA00EAC17A /* AutogenCoupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenCoupon.swift; sourceTree = "<group>"; };
+		44AA10F6303C20FA00EAC17A /* AutogenCouponDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenCouponDetail.swift; sourceTree = "<group>"; };
+		44AA10F7303C20FA00EAC17A /* AutogenCouponInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenCouponInfo.swift; sourceTree = "<group>"; };
+		44AA10F8303C20FA00EAC17A /* AutogenCpmToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenCpmToken.swift; sourceTree = "<group>"; };
+		44AA10F9303C20FA00EAC17A /* AutogenCreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenCreditCard.swift; sourceTree = "<group>"; };
+		44AA10FA303C20FA00EAC17A /* AutogenCvsAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenCvsAuthorization.swift; sourceTree = "<group>"; };
+		44AA10FB303C20FA00EAC17A /* AutogenDetailedShopInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenDetailedShopInformation.swift; sourceTree = "<group>"; };
+		44AA10FC303C20FA00EAC17A /* AutogenFallbackPrivateMoney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenFallbackPrivateMoney.swift; sourceTree = "<group>"; };
+		44AA10FD303C20FA00EAC17A /* AutogenIdentificationMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenIdentificationMatch.swift; sourceTree = "<group>"; };
+		44AA10FE303C20FA00EAC17A /* AutogenIdentificationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenIdentificationResult.swift; sourceTree = "<group>"; };
+		44AA10FF303C20FA00EAC17A /* AutogenIndividualNumberIdentificationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenIndividualNumberIdentificationError.swift; sourceTree = "<group>"; };
+		44AA1100303C20FA00EAC17A /* AutogenIndividualNumberIdentificationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenIndividualNumberIdentificationStatus.swift; sourceTree = "<group>"; };
+		44AA1101303C20FA00EAC17A /* AutogenJihanpiTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenJihanpiTransaction.swift; sourceTree = "<group>"; };
+		44AA1102303C20FA00EAC17A /* AutogenJihanpiVendingMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenJihanpiVendingMachine.swift; sourceTree = "<group>"; };
+		44AA1103303C20FA00EAC17A /* AutogenOauthFullAccessUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenOauthFullAccessUrl.swift; sourceTree = "<group>"; };
+		44AA1104303C20FA00EAC17A /* AutogenOrganization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenOrganization.swift; sourceTree = "<group>"; };
+		44AA1105303C20FA00EAC17A /* AutogenPaginatedAccountBalances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenPaginatedAccountBalances.swift; sourceTree = "<group>"; };
+		44AA1106303C20FA00EAC17A /* AutogenPaginatedAccountCoupons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenPaginatedAccountCoupons.swift; sourceTree = "<group>"; };
+		44AA1107303C20FA00EAC17A /* AutogenPaginatedAccountTransactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenPaginatedAccountTransactions.swift; sourceTree = "<group>"; };
+		44AA1108303C20FA00EAC17A /* AutogenPaginatedAccountTransfers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenPaginatedAccountTransfers.swift; sourceTree = "<group>"; };
+		44AA1109303C20FA00EAC17A /* AutogenPaginatedBillTransactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenPaginatedBillTransactions.swift; sourceTree = "<group>"; };
+		44AA110A303C20FA00EAC17A /* AutogenPaginatedCreditCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenPaginatedCreditCards.swift; sourceTree = "<group>"; };
+		44AA110B303C20FA00EAC17A /* AutogenPaginatedCvsAuthorizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenPaginatedCvsAuthorizations.swift; sourceTree = "<group>"; };
+		44AA110C303C20FA00EAC17A /* AutogenPaginatedPrivateMoneyCoupons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenPaginatedPrivateMoneyCoupons.swift; sourceTree = "<group>"; };
+		44AA110D303C20FA00EAC17A /* AutogenPaginatedPrivateMoneys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenPaginatedPrivateMoneys.swift; sourceTree = "<group>"; };
+		44AA110E303C20FA00EAC17A /* AutogenPaginatedShops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenPaginatedShops.swift; sourceTree = "<group>"; };
+		44AA110F303C20FA00EAC17A /* AutogenPaginatedUserAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenPaginatedUserAccounts.swift; sourceTree = "<group>"; };
+		44AA1110303C20FA00EAC17A /* AutogenPaginatedUserTagGroupItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenPaginatedUserTagGroupItems.swift; sourceTree = "<group>"; };
+		44AA1111303C20FA00EAC17A /* AutogenPaginatedUserTagGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenPaginatedUserTagGroups.swift; sourceTree = "<group>"; };
+		44AA1112303C20FA00EAC17A /* AutogenPaginatedUserTagSubgroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenPaginatedUserTagSubgroups.swift; sourceTree = "<group>"; };
+		44AA1113303C20FA00EAC17A /* AutogenPaginatedUserTransactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenPaginatedUserTransactions.swift; sourceTree = "<group>"; };
+		44AA1114303C20FA00EAC17A /* AutogenPrivateMoney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenPrivateMoney.swift; sourceTree = "<group>"; };
+		44AA1115303C20FA00EAC17A /* AutogenPrivateMoneyDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenPrivateMoneyDetail.swift; sourceTree = "<group>"; };
+		44AA1116303C20FA00EAC17A /* AutogenPrivateMoneyImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenPrivateMoneyImages.swift; sourceTree = "<group>"; };
+		44AA1117303C20FA00EAC17A /* AutogenPrivateMoneyLegalText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenPrivateMoneyLegalText.swift; sourceTree = "<group>"; };
+		44AA1118303C20FA00EAC17A /* AutogenPrivateMoneySounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenPrivateMoneySounds.swift; sourceTree = "<group>"; };
+		44AA1119303C20FA00EAC17A /* AutogenPrivateMoneyTopupMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenPrivateMoneyTopupMethod.swift; sourceTree = "<group>"; };
+		44AA111A303C20FA00EAC17A /* AutogenShopInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenShopInformation.swift; sourceTree = "<group>"; };
+		44AA111B303C20FA00EAC17A /* AutogenTerminal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenTerminal.swift; sourceTree = "<group>"; };
+		44AA111C303C20FA00EAC17A /* AutogenUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenUser.swift; sourceTree = "<group>"; };
+		44AA111D303C20FA00EAC17A /* AutogenUserBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenUserBank.swift; sourceTree = "<group>"; };
+		44AA111E303C20FA00EAC17A /* AutogenUserTagGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenUserTagGroup.swift; sourceTree = "<group>"; };
+		44AA111F303C20FA00EAC17A /* AutogenUserTagGroupItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenUserTagGroupItem.swift; sourceTree = "<group>"; };
+		44AA1120303C20FA00EAC17A /* AutogenUserTagInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenUserTagInformation.swift; sourceTree = "<group>"; };
+		44AA1121303C20FA00EAC17A /* AutogenUserTagSubgroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenUserTagSubgroup.swift; sourceTree = "<group>"; };
+		44AA1122303C20FA00EAC17A /* AutogenUserTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenUserTransaction.swift; sourceTree = "<group>"; };
+		44AA1123303C20FA00EAC17A /* AutogenUserTransactionWithCustomerBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenUserTransactionWithCustomerBalance.swift; sourceTree = "<group>"; };
+		44AA1124303C20FA00EAC17A /* AutogenUserTransactionWithFallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenUserTransactionWithFallback.swift; sourceTree = "<group>"; };
+		44AA1125303C20FA00EAC17A /* AutogenUserTransactionWithFallbackAndCustomerBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenUserTransactionWithFallbackAndCustomerBalance.swift; sourceTree = "<group>"; };
+		44AA1126303C20FA00EAC17A /* AutogenUserTransactionWithTransfers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenUserTransactionWithTransfers.swift; sourceTree = "<group>"; };
+		44AA1127303C20FA00EAC17A /* AutogenUserTransactionWithTransfersAndCustomerBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenUserTransactionWithTransfersAndCustomerBalance.swift; sourceTree = "<group>"; };
+		44AA1128303C20FA00EAC17A /* AutogenUserTransfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenUserTransfer.swift; sourceTree = "<group>"; };
+		44AA1129303C20FA00EAC17A /* AutogenUserTransferWithoutAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenUserTransferWithoutAccount.swift; sourceTree = "<group>"; };
+		44AA112A303C20FA00EAC17A /* AutogenUserWithAuthFactors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenUserWithAuthFactors.swift; sourceTree = "<group>"; };
+		44AA112B303C20FA00EAC17A /* AutogenUserWithDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenUserWithDetails.swift; sourceTree = "<group>"; };
+		44AA112C303C20FA00EAC17A /* AutogenVeritransMdkTokenApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenVeritransMdkTokenApiKey.swift; sourceTree = "<group>"; };
+		44AA112E303C20FA00EAC17A /* Autogen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Autogen.swift; sourceTree = "<group>"; };
 		4A6A87B92EA21AAE0055A132 /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
 		4A6A87BA2EA21AAE0055A132 /* CreateAccountCpmToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountCpmToken.swift; sourceTree = "<group>"; };
 		4A6A87BB2EA21AAE0055A132 /* CreateAccountSevenElevenAtmSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountSevenElevenAtmSession.swift; sourceTree = "<group>"; };
@@ -613,8 +1067,6 @@
 		B415E51A21BA2599009843DB /* PokepayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokepayTests.swift; sourceTree = "<group>"; };
 		B415E51C21BA2599009843DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B415E57A21BA3936009843DB /* PokeregiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeregiTests.swift; sourceTree = "<group>"; };
-		B4AF946521CB76030049B71C /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
-		B4AF946621CB76030049B71C /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
 		B4D4446E21BA984B00353BBE /* PokepayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokepayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF6B2D97216F4677007E2B4C /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
 		DF6B2D98216F4677007E2B4C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -633,8 +1085,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4AF946721CB76030049B71C /* Result.framework in Frameworks */,
-				B4AF946821CB76030049B71C /* APIKit.framework in Frameworks */,
 				B4D4447C21BAA74D00353BBE /* Pokepay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -701,6 +1151,325 @@
 				445A629B2FEE8213006F55B2 /* GetUserTagGroups.swift */,
 			);
 			path = UserTag;
+			sourceTree = "<group>";
+		};
+		44AA1092303C20FA00EAC17A /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				44AA1083303C20FA00EAC17A /* AutogenCreateAccount.swift */,
+				44AA1084303C20FA00EAC17A /* AutogenCreateAccountCpmToken.swift */,
+				44AA1085303C20FA00EAC17A /* AutogenGetAccount.swift */,
+				44AA1086303C20FA00EAC17A /* AutogenGetAccountBalances.swift */,
+				44AA1087303C20FA00EAC17A /* AutogenGetAccountCouponDetail.swift */,
+				44AA1088303C20FA00EAC17A /* AutogenGetAccountCoupons.swift */,
+				44AA1089303C20FA00EAC17A /* AutogenGetAccountIndividualNumberIdentification.swift */,
+				44AA108A303C20FA00EAC17A /* AutogenGetAccountTopupQuotas.swift */,
+				44AA108B303C20FA00EAC17A /* AutogenGetAccountTopupStats.swift */,
+				44AA108C303C20FA00EAC17A /* AutogenGetAccountTransactions.swift */,
+				44AA108D303C20FA00EAC17A /* AutogenGetAccountTransfers.swift */,
+				44AA108E303C20FA00EAC17A /* AutogenIdentifyIndividual.swift */,
+				44AA108F303C20FA00EAC17A /* AutogenPatchAccountCouponDetail.swift */,
+				44AA1090303C20FA00EAC17A /* AutogenSendToAccount.swift */,
+				44AA1091303C20FA00EAC17A /* AutogenUpdateAccount.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		44AA1096303C20FA00EAC17A /* Bank */ = {
+			isa = PBXGroup;
+			children = (
+				44AA1093303C20FA00EAC17A /* AutogenBankPayTopUp.swift */,
+				44AA1094303C20FA00EAC17A /* AutogenCreateBankPay.swift */,
+				44AA1095303C20FA00EAC17A /* AutogenDeleteBankPay.swift */,
+			);
+			path = Bank;
+			sourceTree = "<group>";
+		};
+		44AA109C303C20FA00EAC17A /* Bill */ = {
+			isa = PBXGroup;
+			children = (
+				44AA1097303C20FA00EAC17A /* AutogenCreateBill.swift */,
+				44AA1098303C20FA00EAC17A /* AutogenDeleteBill.swift */,
+				44AA1099303C20FA00EAC17A /* AutogenGetBill.swift */,
+				44AA109A303C20FA00EAC17A /* AutogenGetBillTransactions.swift */,
+				44AA109B303C20FA00EAC17A /* AutogenUpdateBill.swift */,
+			);
+			path = Bill;
+			sourceTree = "<group>";
+		};
+		44AA109E303C20FA00EAC17A /* Campaign */ = {
+			isa = PBXGroup;
+			children = (
+				44AA109D303C20FA00EAC17A /* AutogenGetAccountCampaignPointAmounts.swift */,
+			);
+			path = Campaign;
+			sourceTree = "<group>";
+		};
+		44AA10A4303C20FA00EAC17A /* Cashtray */ = {
+			isa = PBXGroup;
+			children = (
+				44AA109F303C20FA00EAC17A /* AutogenCreateCashtray.swift */,
+				44AA10A0303C20FA00EAC17A /* AutogenDeleteCashtray.swift */,
+				44AA10A1303C20FA00EAC17A /* AutogenGetCashtray.swift */,
+				44AA10A2303C20FA00EAC17A /* AutogenGetCashtrayAttempts.swift */,
+				44AA10A3303C20FA00EAC17A /* AutogenUpdateCashtray.swift */,
+			);
+			path = Cashtray;
+			sourceTree = "<group>";
+		};
+		44AA10A9303C20FA00EAC17A /* Check */ = {
+			isa = PBXGroup;
+			children = (
+				44AA10A5303C20FA00EAC17A /* AutogenCreateCheck.swift */,
+				44AA10A6303C20FA00EAC17A /* AutogenDeleteCheck.swift */,
+				44AA10A7303C20FA00EAC17A /* AutogenGetCheck.swift */,
+				44AA10A8303C20FA00EAC17A /* AutogenUpdateCheck.swift */,
+			);
+			path = Check;
+			sourceTree = "<group>";
+		};
+		44AA10AC303C20FA00EAC17A /* Coupon */ = {
+			isa = PBXGroup;
+			children = (
+				44AA10AA303C20FA00EAC17A /* AutogenGetCouponDetail.swift */,
+				44AA10AB303C20FA00EAC17A /* AutogenGetPrivateMoneyCoupons.swift */,
+			);
+			path = Coupon;
+			sourceTree = "<group>";
+		};
+		44AA10AE303C20FA00EAC17A /* Cpm */ = {
+			isa = PBXGroup;
+			children = (
+				44AA10AD303C20FA00EAC17A /* AutogenGetCpmToken.swift */,
+			);
+			path = Cpm;
+			sourceTree = "<group>";
+		};
+		44AA10B7303C20FA00EAC17A /* CreditCard */ = {
+			isa = PBXGroup;
+			children = (
+				44AA10AF303C20FA00EAC17A /* AutogenCreateCreditCard.swift */,
+				44AA10B0303C20FA00EAC17A /* AutogenCreditWithCreditCardMembership.swift */,
+				44AA10B1303C20FA00EAC17A /* AutogenDeleteCreditCard.swift */,
+				44AA10B2303C20FA00EAC17A /* AutogenGetCreditCards.swift */,
+				44AA10B3303C20FA00EAC17A /* AutogenGetVeritransMdkTokenApiKey.swift */,
+				44AA10B4303C20FA00EAC17A /* AutogenTopupWithCreditCard.swift */,
+				44AA10B5303C20FA00EAC17A /* AutogenTopupWithCreditCardMdkToken.swift */,
+				44AA10B6303C20FA00EAC17A /* AutogenTopupWithCreditCardMembership.swift */,
+			);
+			path = CreditCard;
+			sourceTree = "<group>";
+		};
+		44AA10BC303C20FA00EAC17A /* Cvs */ = {
+			isa = PBXGroup;
+			children = (
+				44AA10B8303C20FA00EAC17A /* AutogenCancelCvsAuthorization.swift */,
+				44AA10B9303C20FA00EAC17A /* AutogenCvsAuthorizeRequest.swift */,
+				44AA10BA303C20FA00EAC17A /* AutogenGetCvsAuthorization.swift */,
+				44AA10BB303C20FA00EAC17A /* AutogenGetCvsAuthorizations.swift */,
+			);
+			path = Cvs;
+			sourceTree = "<group>";
+		};
+		44AA10C0303C20FA00EAC17A /* Jihanpi */ = {
+			isa = PBXGroup;
+			children = (
+				44AA10BD303C20FA00EAC17A /* AutogenCreateJihanpiTransaction.swift */,
+				44AA10BE303C20FA00EAC17A /* AutogenGetJihanpiTransactionByOrderId.swift */,
+				44AA10BF303C20FA00EAC17A /* AutogenGetJihanpiTransactionByRequestId.swift */,
+			);
+			path = Jihanpi;
+			sourceTree = "<group>";
+		};
+		44AA10C2303C20FA00EAC17A /* Merchants */ = {
+			isa = PBXGroup;
+			children = (
+				44AA10C1303C20FA00EAC17A /* AutogenGetMerchantTransaction.swift */,
+			);
+			path = Merchants;
+			sourceTree = "<group>";
+		};
+		44AA10C9303C20FA00EAC17A /* PrivateMoney */ = {
+			isa = PBXGroup;
+			children = (
+				44AA10C3303C20FA00EAC17A /* AutogenGetPrivateMoney.swift */,
+				44AA10C4303C20FA00EAC17A /* AutogenGetPrivateMoneyCommercialAct.swift */,
+				44AA10C5303C20FA00EAC17A /* AutogenGetPrivateMoneyPaymentAct.swift */,
+				44AA10C6303C20FA00EAC17A /* AutogenGetPrivateMoneyPrivacyPolicy.swift */,
+				44AA10C7303C20FA00EAC17A /* AutogenGetPrivateMoneyTerms.swift */,
+				44AA10C8303C20FA00EAC17A /* AutogenSearchPrivateMoneys.swift */,
+			);
+			path = PrivateMoney;
+			sourceTree = "<group>";
+		};
+		44AA10CC303C20FA00EAC17A /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				44AA10CA303C20FA00EAC17A /* AutogenGetDetailedShopInformation.swift */,
+				44AA10CB303C20FA00EAC17A /* AutogenGetListOfShops.swift */,
+			);
+			path = Shop;
+			sourceTree = "<group>";
+		};
+		44AA10D0303C20FA00EAC17A /* Terminal */ = {
+			isa = PBXGroup;
+			children = (
+				44AA10CD303C20FA00EAC17A /* AutogenGetTerminal.swift */,
+				44AA10CE303C20FA00EAC17A /* AutogenGetTerminalById.swift */,
+				44AA10CF303C20FA00EAC17A /* AutogenUpdateTerminal.swift */,
+			);
+			path = Terminal;
+			sourceTree = "<group>";
+		};
+		44AA10D8303C20FA00EAC17A /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				44AA10D1303C20FA00EAC17A /* AutogenCreateTransactionWithBill.swift */,
+				44AA10D2303C20FA00EAC17A /* AutogenCreateTransactionWithCashtray.swift */,
+				44AA10D3303C20FA00EAC17A /* AutogenCreateTransactionWithCheck.swift */,
+				44AA10D4303C20FA00EAC17A /* AutogenCreateTransactionWithCpm.swift */,
+				44AA10D5303C20FA00EAC17A /* AutogenGetTransaction.swift */,
+				44AA10D6303C20FA00EAC17A /* AutogenGetTransactionByRequestId.swift */,
+				44AA10D7303C20FA00EAC17A /* AutogenRefundTransaction.swift */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		44AA10E0303C20FA00EAC17A /* User */ = {
+			isa = PBXGroup;
+			children = (
+				44AA10D9303C20FA00EAC17A /* AutogenDeleteUser.swift */,
+				44AA10DA303C20FA00EAC17A /* AutogenGetUser.swift */,
+				44AA10DB303C20FA00EAC17A /* AutogenGetUserAccounts.swift */,
+				44AA10DC303C20FA00EAC17A /* AutogenGetUserSettingUrl.swift */,
+				44AA10DD303C20FA00EAC17A /* AutogenGetUserTransactions.swift */,
+				44AA10DE303C20FA00EAC17A /* AutogenGetUserWithAuthFactors.swift */,
+				44AA10DF303C20FA00EAC17A /* AutogenUpdateUser.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		44AA10E4303C20FA00EAC17A /* UserTag */ = {
+			isa = PBXGroup;
+			children = (
+				44AA10E1303C20FA00EAC17A /* AutogenGetUserTagGroupItems.swift */,
+				44AA10E2303C20FA00EAC17A /* AutogenGetUserTagGroups.swift */,
+				44AA10E3303C20FA00EAC17A /* AutogenGetUserTagSubgroups.swift */,
+			);
+			path = UserTag;
+			sourceTree = "<group>";
+		};
+		44AA10E5303C20FA00EAC17A /* BankAPI */ = {
+			isa = PBXGroup;
+			children = (
+				44AA1092303C20FA00EAC17A /* Account */,
+				44AA1096303C20FA00EAC17A /* Bank */,
+				44AA109C303C20FA00EAC17A /* Bill */,
+				44AA109E303C20FA00EAC17A /* Campaign */,
+				44AA10A4303C20FA00EAC17A /* Cashtray */,
+				44AA10A9303C20FA00EAC17A /* Check */,
+				44AA10AC303C20FA00EAC17A /* Coupon */,
+				44AA10AE303C20FA00EAC17A /* Cpm */,
+				44AA10B7303C20FA00EAC17A /* CreditCard */,
+				44AA10BC303C20FA00EAC17A /* Cvs */,
+				44AA10C0303C20FA00EAC17A /* Jihanpi */,
+				44AA10C2303C20FA00EAC17A /* Merchants */,
+				44AA10C9303C20FA00EAC17A /* PrivateMoney */,
+				44AA10CC303C20FA00EAC17A /* Shop */,
+				44AA10D0303C20FA00EAC17A /* Terminal */,
+				44AA10D8303C20FA00EAC17A /* Transaction */,
+				44AA10E0303C20FA00EAC17A /* User */,
+				44AA10E4303C20FA00EAC17A /* UserTag */,
+			);
+			path = BankAPI;
+			sourceTree = "<group>";
+		};
+		44AA112D303C20FA00EAC17A /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				44AA10E6303C20FA00EAC17A /* AutogenAccount.swift */,
+				44AA10E7303C20FA00EAC17A /* AutogenAccountBalance.swift */,
+				44AA10E8303C20FA00EAC17A /* AutogenAccountCampaignPointAmounts.swift */,
+				44AA10E9303C20FA00EAC17A /* AutogenAccountDetail.swift */,
+				44AA10EA303C20FA00EAC17A /* AutogenAccountTopupQuota.swift */,
+				44AA10EB303C20FA00EAC17A /* AutogenAccountTopupQuotas.swift */,
+				44AA10EC303C20FA00EAC17A /* AutogenAccountTopupStats.swift */,
+				44AA10ED303C20FA00EAC17A /* AutogenBankPaySession.swift */,
+				44AA10EE303C20FA00EAC17A /* AutogenBill.swift */,
+				44AA10EF303C20FA00EAC17A /* AutogenBillWithAdditionalPrivateMoneys.swift */,
+				44AA10F0303C20FA00EAC17A /* AutogenCashtray.swift */,
+				44AA10F1303C20FA00EAC17A /* AutogenCashtrayAttempt.swift */,
+				44AA10F2303C20FA00EAC17A /* AutogenCashtrayAttempts.swift */,
+				44AA10F3303C20FA00EAC17A /* AutogenCashtrayWithAttemptAndTransaction.swift */,
+				44AA10F4303C20FA00EAC17A /* AutogenCheck.swift */,
+				44AA10F5303C20FA00EAC17A /* AutogenCoupon.swift */,
+				44AA10F6303C20FA00EAC17A /* AutogenCouponDetail.swift */,
+				44AA10F7303C20FA00EAC17A /* AutogenCouponInfo.swift */,
+				44AA10F8303C20FA00EAC17A /* AutogenCpmToken.swift */,
+				44AA10F9303C20FA00EAC17A /* AutogenCreditCard.swift */,
+				44AA10FA303C20FA00EAC17A /* AutogenCvsAuthorization.swift */,
+				44AA10FB303C20FA00EAC17A /* AutogenDetailedShopInformation.swift */,
+				44AA10FC303C20FA00EAC17A /* AutogenFallbackPrivateMoney.swift */,
+				44AA10FD303C20FA00EAC17A /* AutogenIdentificationMatch.swift */,
+				44AA10FE303C20FA00EAC17A /* AutogenIdentificationResult.swift */,
+				44AA10FF303C20FA00EAC17A /* AutogenIndividualNumberIdentificationError.swift */,
+				44AA1100303C20FA00EAC17A /* AutogenIndividualNumberIdentificationStatus.swift */,
+				44AA1101303C20FA00EAC17A /* AutogenJihanpiTransaction.swift */,
+				44AA1102303C20FA00EAC17A /* AutogenJihanpiVendingMachine.swift */,
+				44AA1103303C20FA00EAC17A /* AutogenOauthFullAccessUrl.swift */,
+				44AA1104303C20FA00EAC17A /* AutogenOrganization.swift */,
+				44AA1105303C20FA00EAC17A /* AutogenPaginatedAccountBalances.swift */,
+				44AA1106303C20FA00EAC17A /* AutogenPaginatedAccountCoupons.swift */,
+				44AA1107303C20FA00EAC17A /* AutogenPaginatedAccountTransactions.swift */,
+				44AA1108303C20FA00EAC17A /* AutogenPaginatedAccountTransfers.swift */,
+				44AA1109303C20FA00EAC17A /* AutogenPaginatedBillTransactions.swift */,
+				44AA110A303C20FA00EAC17A /* AutogenPaginatedCreditCards.swift */,
+				44AA110B303C20FA00EAC17A /* AutogenPaginatedCvsAuthorizations.swift */,
+				44AA110C303C20FA00EAC17A /* AutogenPaginatedPrivateMoneyCoupons.swift */,
+				44AA110D303C20FA00EAC17A /* AutogenPaginatedPrivateMoneys.swift */,
+				44AA110E303C20FA00EAC17A /* AutogenPaginatedShops.swift */,
+				44AA110F303C20FA00EAC17A /* AutogenPaginatedUserAccounts.swift */,
+				44AA1110303C20FA00EAC17A /* AutogenPaginatedUserTagGroupItems.swift */,
+				44AA1111303C20FA00EAC17A /* AutogenPaginatedUserTagGroups.swift */,
+				44AA1112303C20FA00EAC17A /* AutogenPaginatedUserTagSubgroups.swift */,
+				44AA1113303C20FA00EAC17A /* AutogenPaginatedUserTransactions.swift */,
+				44AA1114303C20FA00EAC17A /* AutogenPrivateMoney.swift */,
+				44AA1115303C20FA00EAC17A /* AutogenPrivateMoneyDetail.swift */,
+				44AA1116303C20FA00EAC17A /* AutogenPrivateMoneyImages.swift */,
+				44AA1117303C20FA00EAC17A /* AutogenPrivateMoneyLegalText.swift */,
+				44AA1118303C20FA00EAC17A /* AutogenPrivateMoneySounds.swift */,
+				44AA1119303C20FA00EAC17A /* AutogenPrivateMoneyTopupMethod.swift */,
+				44AA111A303C20FA00EAC17A /* AutogenShopInformation.swift */,
+				44AA111B303C20FA00EAC17A /* AutogenTerminal.swift */,
+				44AA111C303C20FA00EAC17A /* AutogenUser.swift */,
+				44AA111D303C20FA00EAC17A /* AutogenUserBank.swift */,
+				44AA111E303C20FA00EAC17A /* AutogenUserTagGroup.swift */,
+				44AA111F303C20FA00EAC17A /* AutogenUserTagGroupItem.swift */,
+				44AA1120303C20FA00EAC17A /* AutogenUserTagInformation.swift */,
+				44AA1121303C20FA00EAC17A /* AutogenUserTagSubgroup.swift */,
+				44AA1122303C20FA00EAC17A /* AutogenUserTransaction.swift */,
+				44AA1123303C20FA00EAC17A /* AutogenUserTransactionWithCustomerBalance.swift */,
+				44AA1124303C20FA00EAC17A /* AutogenUserTransactionWithFallback.swift */,
+				44AA1125303C20FA00EAC17A /* AutogenUserTransactionWithFallbackAndCustomerBalance.swift */,
+				44AA1126303C20FA00EAC17A /* AutogenUserTransactionWithTransfers.swift */,
+				44AA1127303C20FA00EAC17A /* AutogenUserTransactionWithTransfersAndCustomerBalance.swift */,
+				44AA1128303C20FA00EAC17A /* AutogenUserTransfer.swift */,
+				44AA1129303C20FA00EAC17A /* AutogenUserTransferWithoutAccount.swift */,
+				44AA112A303C20FA00EAC17A /* AutogenUserWithAuthFactors.swift */,
+				44AA112B303C20FA00EAC17A /* AutogenUserWithDetails.swift */,
+				44AA112C303C20FA00EAC17A /* AutogenVeritransMdkTokenApiKey.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		44AA112F303C20FA00EAC17A /* Autogen */ = {
+			isa = PBXGroup;
+			children = (
+				44AA10E5303C20FA00EAC17A /* BankAPI */,
+				44AA112D303C20FA00EAC17A /* Responses */,
+				44AA112E303C20FA00EAC17A /* Autogen.swift */,
+			);
+			path = Autogen;
 			sourceTree = "<group>";
 		};
 		4A6A87C72EA21AAE0055A132 /* Account */ = {
@@ -1022,6 +1791,7 @@
 		4A6A88602EA21AAE0055A132 /* Pokepay */ = {
 			isa = PBXGroup;
 			children = (
+				44AA112F303C20FA00EAC17A /* Autogen */,
 				4A6A88082EA21AAE0055A132 /* BankAPI */,
 				4A6A880E2EA21AAE0055A132 /* MessagingAPI */,
 				4A6A88152EA21AAE0055A132 /* OAuthAPI */,
@@ -1060,8 +1830,6 @@
 				44AA107D303C12B300EAC17A /* APIKit.xcframework */,
 				44AA1079303C12A000EAC17A /* Result.xcframework */,
 				DFB910EA230CF47B0065FE07 /* Security.framework */,
-				B4AF946621CB76030049B71C /* APIKit.framework */,
-				B4AF946521CB76030049B71C /* Result.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1414,6 +2182,158 @@
 				4A6A897B2EA21AAE0055A132 /* DeleteCreditCard.swift in Sources */,
 				4A6A897C2EA21AAE0055A132 /* GetUserSettingUrl.swift in Sources */,
 				4A6A897D2EA21AAE0055A132 /* OAuthAPI.swift in Sources */,
+				44AA11C8303C20FA00EAC17A /* AutogenUpdateAccount.swift in Sources */,
+				44AA11C9303C20FA00EAC17A /* AutogenCreateCreditCard.swift in Sources */,
+				44AA11CA303C20FA00EAC17A /* AutogenPaginatedAccountTransactions.swift in Sources */,
+				44AA11CB303C20FA00EAC17A /* AutogenPaginatedUserTagGroups.swift in Sources */,
+				44AA11CC303C20FA00EAC17A /* AutogenDeleteBankPay.swift in Sources */,
+				44AA11CD303C20FA00EAC17A /* AutogenGetJihanpiTransactionByOrderId.swift in Sources */,
+				44AA11CE303C20FA00EAC17A /* AutogenCpmToken.swift in Sources */,
+				44AA11CF303C20FA00EAC17A /* AutogenGetAccountBalances.swift in Sources */,
+				44AA11D0303C20FA00EAC17A /* AutogenPaginatedBillTransactions.swift in Sources */,
+				44AA11D1303C20FA00EAC17A /* AutogenGetBillTransactions.swift in Sources */,
+				44AA11D2303C20FA00EAC17A /* AutogenGetCashtrayAttempts.swift in Sources */,
+				44AA11D3303C20FA00EAC17A /* AutogenPrivateMoney.swift in Sources */,
+				44AA11D4303C20FA00EAC17A /* AutogenCreditCard.swift in Sources */,
+				44AA11D5303C20FA00EAC17A /* AutogenCreateAccount.swift in Sources */,
+				44AA11D6303C20FA00EAC17A /* AutogenAccountDetail.swift in Sources */,
+				44AA11D7303C20FA00EAC17A /* AutogenGetJihanpiTransactionByRequestId.swift in Sources */,
+				44AA11D8303C20FA00EAC17A /* AutogenUserTransactionWithFallbackAndCustomerBalance.swift in Sources */,
+				44AA11D9303C20FA00EAC17A /* AutogenJihanpiVendingMachine.swift in Sources */,
+				44AA11DA303C20FA00EAC17A /* AutogenGetUserTagSubgroups.swift in Sources */,
+				44AA11DB303C20FA00EAC17A /* AutogenUserTransactionWithCustomerBalance.swift in Sources */,
+				44AA11DC303C20FA00EAC17A /* AutogenGetMerchantTransaction.swift in Sources */,
+				44AA11DD303C20FA00EAC17A /* AutogenGetAccountTopupStats.swift in Sources */,
+				44AA11DE303C20FA00EAC17A /* AutogenCheck.swift in Sources */,
+				44AA11DF303C20FA00EAC17A /* AutogenGetCpmToken.swift in Sources */,
+				44AA11E0303C20FA00EAC17A /* AutogenGetAccountCoupons.swift in Sources */,
+				44AA11E1303C20FA00EAC17A /* AutogenPaginatedAccountBalances.swift in Sources */,
+				44AA11E2303C20FA00EAC17A /* AutogenCouponDetail.swift in Sources */,
+				44AA11E3303C20FA00EAC17A /* AutogenCreateTransactionWithCheck.swift in Sources */,
+				44AA11E4303C20FA00EAC17A /* AutogenCreateCashtray.swift in Sources */,
+				44AA11E5303C20FA00EAC17A /* AutogenIndividualNumberIdentificationError.swift in Sources */,
+				44AA11E6303C20FA00EAC17A /* AutogenAccount.swift in Sources */,
+				44AA11E7303C20FA00EAC17A /* AutogenUserTransactionWithTransfersAndCustomerBalance.swift in Sources */,
+				44AA11E8303C20FA00EAC17A /* AutogenDeleteCreditCard.swift in Sources */,
+				44AA11E9303C20FA00EAC17A /* AutogenCashtrayWithAttemptAndTransaction.swift in Sources */,
+				44AA11EA303C20FA00EAC17A /* AutogenCouponInfo.swift in Sources */,
+				44AA11EB303C20FA00EAC17A /* AutogenUserTransactionWithFallback.swift in Sources */,
+				44AA11EC303C20FA00EAC17A /* AutogenPaginatedUserTransactions.swift in Sources */,
+				44AA11ED303C20FA00EAC17A /* AutogenGetPrivateMoneyPrivacyPolicy.swift in Sources */,
+				44AA11EE303C20FA00EAC17A /* AutogenFallbackPrivateMoney.swift in Sources */,
+				44AA11EF303C20FA00EAC17A /* AutogenGetDetailedShopInformation.swift in Sources */,
+				44AA11F0303C20FA00EAC17A /* AutogenDeleteCheck.swift in Sources */,
+				44AA11F1303C20FA00EAC17A /* AutogenUserTransaction.swift in Sources */,
+				44AA11F2303C20FA00EAC17A /* AutogenUser.swift in Sources */,
+				44AA11F3303C20FA00EAC17A /* AutogenUserTransactionWithTransfers.swift in Sources */,
+				44AA11F4303C20FA00EAC17A /* AutogenGetUserWithAuthFactors.swift in Sources */,
+				44AA11F5303C20FA00EAC17A /* AutogenGetCreditCards.swift in Sources */,
+				44AA11F6303C20FA00EAC17A /* AutogenGetUserTagGroups.swift in Sources */,
+				44AA11F7303C20FA00EAC17A /* AutogenGetTransactionByRequestId.swift in Sources */,
+				44AA11F8303C20FA00EAC17A /* AutogenPatchAccountCouponDetail.swift in Sources */,
+				44AA11F9303C20FA00EAC17A /* AutogenIdentificationMatch.swift in Sources */,
+				44AA11FA303C20FA00EAC17A /* AutogenPaginatedCvsAuthorizations.swift in Sources */,
+				44AA11FB303C20FA00EAC17A /* AutogenCreditWithCreditCardMembership.swift in Sources */,
+				44AA11FC303C20FA00EAC17A /* AutogenPrivateMoneyTopupMethod.swift in Sources */,
+				44AA11FD303C20FA00EAC17A /* AutogenGetAccountTopupQuotas.swift in Sources */,
+				44AA11FE303C20FA00EAC17A /* AutogenGetCouponDetail.swift in Sources */,
+				44AA11FF303C20FA00EAC17A /* AutogenGetAccount.swift in Sources */,
+				44AA1200303C20FA00EAC17A /* AutogenGetPrivateMoneyCommercialAct.swift in Sources */,
+				44AA1201303C20FA00EAC17A /* AutogenCreateTransactionWithCashtray.swift in Sources */,
+				44AA1202303C20FA00EAC17A /* AutogenUpdateCashtray.swift in Sources */,
+				44AA1203303C20FA00EAC17A /* AutogenGetCashtray.swift in Sources */,
+				44AA1204303C20FA00EAC17A /* AutogenCashtray.swift in Sources */,
+				44AA1205303C20FA00EAC17A /* AutogenAccountTopupQuotas.swift in Sources */,
+				44AA1206303C20FA00EAC17A /* AutogenDetailedShopInformation.swift in Sources */,
+				44AA1207303C20FA00EAC17A /* AutogenOauthFullAccessUrl.swift in Sources */,
+				44AA1208303C20FA00EAC17A /* AutogenUpdateBill.swift in Sources */,
+				44AA1209303C20FA00EAC17A /* AutogenGetPrivateMoneyCoupons.swift in Sources */,
+				44AA120A303C20FA00EAC17A /* AutogenJihanpiTransaction.swift in Sources */,
+				44AA120B303C20FA00EAC17A /* AutogenCreateCheck.swift in Sources */,
+				44AA120C303C20FA00EAC17A /* AutogenGetAccountCouponDetail.swift in Sources */,
+				44AA120D303C20FA00EAC17A /* AutogenCvsAuthorizeRequest.swift in Sources */,
+				44AA120E303C20FA00EAC17A /* AutogenOrganization.swift in Sources */,
+				44AA120F303C20FA00EAC17A /* AutogenTopupWithCreditCardMdkToken.swift in Sources */,
+				44AA1210303C20FA00EAC17A /* AutogenCashtrayAttempt.swift in Sources */,
+				44AA1211303C20FA00EAC17A /* AutogenAccountTopupStats.swift in Sources */,
+				44AA1212303C20FA00EAC17A /* AutogenShopInformation.swift in Sources */,
+				44AA1213303C20FA00EAC17A /* AutogenCreateBankPay.swift in Sources */,
+				44AA1214303C20FA00EAC17A /* AutogenCvsAuthorization.swift in Sources */,
+				44AA1215303C20FA00EAC17A /* AutogenBill.swift in Sources */,
+				44AA1216303C20FA00EAC17A /* AutogenGetAccountIndividualNumberIdentification.swift in Sources */,
+				44AA1217303C20FA00EAC17A /* AutogenGetTransaction.swift in Sources */,
+				44AA1218303C20FA00EAC17A /* AutogenPaginatedShops.swift in Sources */,
+				44AA1219303C20FA00EAC17A /* AutogenGetPrivateMoney.swift in Sources */,
+				44AA121A303C20FA00EAC17A /* AutogenGetPrivateMoneyTerms.swift in Sources */,
+				44AA121B303C20FA00EAC17A /* AutogenUserTagGroup.swift in Sources */,
+				44AA121C303C20FA00EAC17A /* AutogenPrivateMoneyImages.swift in Sources */,
+				44AA121D303C20FA00EAC17A /* AutogenGetTerminal.swift in Sources */,
+				44AA121E303C20FA00EAC17A /* AutogenGetUserSettingUrl.swift in Sources */,
+				44AA121F303C20FA00EAC17A /* AutogenUserWithDetails.swift in Sources */,
+				44AA1220303C20FA00EAC17A /* AutogenGetAccountTransactions.swift in Sources */,
+				44AA1221303C20FA00EAC17A /* AutogenGetVeritransMdkTokenApiKey.swift in Sources */,
+				44AA1222303C20FA00EAC17A /* AutogenCreateJihanpiTransaction.swift in Sources */,
+				44AA1223303C20FA00EAC17A /* AutogenCreateTransactionWithBill.swift in Sources */,
+				44AA1224303C20FA00EAC17A /* AutogenPrivateMoneyDetail.swift in Sources */,
+				44AA1225303C20FA00EAC17A /* AutogenUserTagSubgroup.swift in Sources */,
+				44AA1226303C20FA00EAC17A /* AutogenCashtrayAttempts.swift in Sources */,
+				44AA1227303C20FA00EAC17A /* AutogenCoupon.swift in Sources */,
+				44AA1228303C20FA00EAC17A /* AutogenDeleteCashtray.swift in Sources */,
+				44AA1229303C20FA00EAC17A /* AutogenGetCvsAuthorization.swift in Sources */,
+				44AA122A303C20FA00EAC17A /* AutogenPrivateMoneySounds.swift in Sources */,
+				44AA122B303C20FA00EAC17A /* AutogenBankPaySession.swift in Sources */,
+				44AA122C303C20FA00EAC17A /* AutogenPaginatedUserTagGroupItems.swift in Sources */,
+				44AA122D303C20FA00EAC17A /* AutogenAccountTopupQuota.swift in Sources */,
+				44AA122E303C20FA00EAC17A /* AutogenCancelCvsAuthorization.swift in Sources */,
+				44AA122F303C20FA00EAC17A /* AutogenGetAccountCampaignPointAmounts.swift in Sources */,
+				44AA1230303C20FA00EAC17A /* AutogenBankPayTopUp.swift in Sources */,
+				44AA1231303C20FA00EAC17A /* AutogenPaginatedAccountTransfers.swift in Sources */,
+				44AA1232303C20FA00EAC17A /* AutogenUserTagInformation.swift in Sources */,
+				44AA1233303C20FA00EAC17A /* AutogenGetUserAccounts.swift in Sources */,
+				44AA1234303C20FA00EAC17A /* AutogenPaginatedPrivateMoneyCoupons.swift in Sources */,
+				44AA1235303C20FA00EAC17A /* Autogen.swift in Sources */,
+				44AA1236303C20FA00EAC17A /* AutogenPaginatedAccountCoupons.swift in Sources */,
+				44AA1237303C20FA00EAC17A /* AutogenSendToAccount.swift in Sources */,
+				44AA1238303C20FA00EAC17A /* AutogenDeleteBill.swift in Sources */,
+				44AA1239303C20FA00EAC17A /* AutogenUpdateUser.swift in Sources */,
+				44AA123A303C20FA00EAC17A /* AutogenUserTransfer.swift in Sources */,
+				44AA123B303C20FA00EAC17A /* AutogenUserBank.swift in Sources */,
+				44AA123C303C20FA00EAC17A /* AutogenPaginatedUserTagSubgroups.swift in Sources */,
+				44AA123D303C20FA00EAC17A /* AutogenGetListOfShops.swift in Sources */,
+				44AA123E303C20FA00EAC17A /* AutogenPaginatedCreditCards.swift in Sources */,
+				44AA123F303C20FA00EAC17A /* AutogenRefundTransaction.swift in Sources */,
+				44AA1240303C20FA00EAC17A /* AutogenIdentifyIndividual.swift in Sources */,
+				44AA1241303C20FA00EAC17A /* AutogenBillWithAdditionalPrivateMoneys.swift in Sources */,
+				44AA1242303C20FA00EAC17A /* AutogenGetCvsAuthorizations.swift in Sources */,
+				44AA1243303C20FA00EAC17A /* AutogenGetUserTagGroupItems.swift in Sources */,
+				44AA1244303C20FA00EAC17A /* AutogenUserWithAuthFactors.swift in Sources */,
+				44AA1245303C20FA00EAC17A /* AutogenCreateTransactionWithCpm.swift in Sources */,
+				44AA1246303C20FA00EAC17A /* AutogenGetCheck.swift in Sources */,
+				44AA1247303C20FA00EAC17A /* AutogenPaginatedPrivateMoneys.swift in Sources */,
+				44AA1248303C20FA00EAC17A /* AutogenTopupWithCreditCard.swift in Sources */,
+				44AA1249303C20FA00EAC17A /* AutogenGetAccountTransfers.swift in Sources */,
+				44AA124A303C20FA00EAC17A /* AutogenCreateBill.swift in Sources */,
+				44AA124B303C20FA00EAC17A /* AutogenDeleteUser.swift in Sources */,
+				44AA124C303C20FA00EAC17A /* AutogenVeritransMdkTokenApiKey.swift in Sources */,
+				44AA124D303C20FA00EAC17A /* AutogenAccountCampaignPointAmounts.swift in Sources */,
+				44AA124E303C20FA00EAC17A /* AutogenSearchPrivateMoneys.swift in Sources */,
+				44AA124F303C20FA00EAC17A /* AutogenPrivateMoneyLegalText.swift in Sources */,
+				44AA1250303C20FA00EAC17A /* AutogenGetBill.swift in Sources */,
+				44AA1251303C20FA00EAC17A /* AutogenTopupWithCreditCardMembership.swift in Sources */,
+				44AA1252303C20FA00EAC17A /* AutogenIdentificationResult.swift in Sources */,
+				44AA1253303C20FA00EAC17A /* AutogenIndividualNumberIdentificationStatus.swift in Sources */,
+				44AA1254303C20FA00EAC17A /* AutogenUpdateCheck.swift in Sources */,
+				44AA1255303C20FA00EAC17A /* AutogenTerminal.swift in Sources */,
+				44AA1256303C20FA00EAC17A /* AutogenUserTagGroupItem.swift in Sources */,
+				44AA1257303C20FA00EAC17A /* AutogenGetUser.swift in Sources */,
+				44AA1258303C20FA00EAC17A /* AutogenUpdateTerminal.swift in Sources */,
+				44AA1259303C20FA00EAC17A /* AutogenUserTransferWithoutAccount.swift in Sources */,
+				44AA125A303C20FA00EAC17A /* AutogenPaginatedUserAccounts.swift in Sources */,
+				44AA125B303C20FA00EAC17A /* AutogenCreateAccountCpmToken.swift in Sources */,
+				44AA125C303C20FA00EAC17A /* AutogenGetTerminalById.swift in Sources */,
+				44AA125D303C20FA00EAC17A /* AutogenAccountBalance.swift in Sources */,
+				44AA125E303C20FA00EAC17A /* AutogenGetPrivateMoneyPaymentAct.swift in Sources */,
+				44AA125F303C20FA00EAC17A /* AutogenGetUserTransactions.swift in Sources */,
 				4A6A897E2EA21AAE0055A132 /* GetCashtrayAttempts.swift in Sources */,
 				4A6A897F2EA21AAE0055A132 /* GetAccount.swift in Sources */,
 				4A6A89802EA21AAE0055A132 /* VeritransAPIError.swift in Sources */,
@@ -1507,6 +2427,158 @@
 				445A62752FEE81DA006F55B2 /* PaginatedUserTagGroupItems.swift in Sources */,
 				445A62762FEE81DA006F55B2 /* ShopInformation.swift in Sources */,
 				445A62772FEE81DA006F55B2 /* DetailedShopInformation.swift in Sources */,
+				44AA1130303C20FA00EAC17A /* AutogenUpdateAccount.swift in Sources */,
+				44AA1131303C20FA00EAC17A /* AutogenCreateCreditCard.swift in Sources */,
+				44AA1132303C20FA00EAC17A /* AutogenPaginatedAccountTransactions.swift in Sources */,
+				44AA1133303C20FA00EAC17A /* AutogenPaginatedUserTagGroups.swift in Sources */,
+				44AA1134303C20FA00EAC17A /* AutogenDeleteBankPay.swift in Sources */,
+				44AA1135303C20FA00EAC17A /* AutogenGetJihanpiTransactionByOrderId.swift in Sources */,
+				44AA1136303C20FA00EAC17A /* AutogenCpmToken.swift in Sources */,
+				44AA1137303C20FA00EAC17A /* AutogenGetAccountBalances.swift in Sources */,
+				44AA1138303C20FA00EAC17A /* AutogenPaginatedBillTransactions.swift in Sources */,
+				44AA1139303C20FA00EAC17A /* AutogenGetBillTransactions.swift in Sources */,
+				44AA113A303C20FA00EAC17A /* AutogenGetCashtrayAttempts.swift in Sources */,
+				44AA113B303C20FA00EAC17A /* AutogenPrivateMoney.swift in Sources */,
+				44AA113C303C20FA00EAC17A /* AutogenCreditCard.swift in Sources */,
+				44AA113D303C20FA00EAC17A /* AutogenCreateAccount.swift in Sources */,
+				44AA113E303C20FA00EAC17A /* AutogenAccountDetail.swift in Sources */,
+				44AA113F303C20FA00EAC17A /* AutogenGetJihanpiTransactionByRequestId.swift in Sources */,
+				44AA1140303C20FA00EAC17A /* AutogenUserTransactionWithFallbackAndCustomerBalance.swift in Sources */,
+				44AA1141303C20FA00EAC17A /* AutogenJihanpiVendingMachine.swift in Sources */,
+				44AA1142303C20FA00EAC17A /* AutogenGetUserTagSubgroups.swift in Sources */,
+				44AA1143303C20FA00EAC17A /* AutogenUserTransactionWithCustomerBalance.swift in Sources */,
+				44AA1144303C20FA00EAC17A /* AutogenGetMerchantTransaction.swift in Sources */,
+				44AA1145303C20FA00EAC17A /* AutogenGetAccountTopupStats.swift in Sources */,
+				44AA1146303C20FA00EAC17A /* AutogenCheck.swift in Sources */,
+				44AA1147303C20FA00EAC17A /* AutogenGetCpmToken.swift in Sources */,
+				44AA1148303C20FA00EAC17A /* AutogenGetAccountCoupons.swift in Sources */,
+				44AA1149303C20FA00EAC17A /* AutogenPaginatedAccountBalances.swift in Sources */,
+				44AA114A303C20FA00EAC17A /* AutogenCouponDetail.swift in Sources */,
+				44AA114B303C20FA00EAC17A /* AutogenCreateTransactionWithCheck.swift in Sources */,
+				44AA114C303C20FA00EAC17A /* AutogenCreateCashtray.swift in Sources */,
+				44AA114D303C20FA00EAC17A /* AutogenIndividualNumberIdentificationError.swift in Sources */,
+				44AA114E303C20FA00EAC17A /* AutogenAccount.swift in Sources */,
+				44AA114F303C20FA00EAC17A /* AutogenUserTransactionWithTransfersAndCustomerBalance.swift in Sources */,
+				44AA1150303C20FA00EAC17A /* AutogenDeleteCreditCard.swift in Sources */,
+				44AA1151303C20FA00EAC17A /* AutogenCashtrayWithAttemptAndTransaction.swift in Sources */,
+				44AA1152303C20FA00EAC17A /* AutogenCouponInfo.swift in Sources */,
+				44AA1153303C20FA00EAC17A /* AutogenUserTransactionWithFallback.swift in Sources */,
+				44AA1154303C20FA00EAC17A /* AutogenPaginatedUserTransactions.swift in Sources */,
+				44AA1155303C20FA00EAC17A /* AutogenGetPrivateMoneyPrivacyPolicy.swift in Sources */,
+				44AA1156303C20FA00EAC17A /* AutogenFallbackPrivateMoney.swift in Sources */,
+				44AA1157303C20FA00EAC17A /* AutogenGetDetailedShopInformation.swift in Sources */,
+				44AA1158303C20FA00EAC17A /* AutogenDeleteCheck.swift in Sources */,
+				44AA1159303C20FA00EAC17A /* AutogenUserTransaction.swift in Sources */,
+				44AA115A303C20FA00EAC17A /* AutogenUser.swift in Sources */,
+				44AA115B303C20FA00EAC17A /* AutogenUserTransactionWithTransfers.swift in Sources */,
+				44AA115C303C20FA00EAC17A /* AutogenGetUserWithAuthFactors.swift in Sources */,
+				44AA115D303C20FA00EAC17A /* AutogenGetCreditCards.swift in Sources */,
+				44AA115E303C20FA00EAC17A /* AutogenGetUserTagGroups.swift in Sources */,
+				44AA115F303C20FA00EAC17A /* AutogenGetTransactionByRequestId.swift in Sources */,
+				44AA1160303C20FA00EAC17A /* AutogenPatchAccountCouponDetail.swift in Sources */,
+				44AA1161303C20FA00EAC17A /* AutogenIdentificationMatch.swift in Sources */,
+				44AA1162303C20FA00EAC17A /* AutogenPaginatedCvsAuthorizations.swift in Sources */,
+				44AA1163303C20FA00EAC17A /* AutogenCreditWithCreditCardMembership.swift in Sources */,
+				44AA1164303C20FA00EAC17A /* AutogenPrivateMoneyTopupMethod.swift in Sources */,
+				44AA1165303C20FA00EAC17A /* AutogenGetAccountTopupQuotas.swift in Sources */,
+				44AA1166303C20FA00EAC17A /* AutogenGetCouponDetail.swift in Sources */,
+				44AA1167303C20FA00EAC17A /* AutogenGetAccount.swift in Sources */,
+				44AA1168303C20FA00EAC17A /* AutogenGetPrivateMoneyCommercialAct.swift in Sources */,
+				44AA1169303C20FA00EAC17A /* AutogenCreateTransactionWithCashtray.swift in Sources */,
+				44AA116A303C20FA00EAC17A /* AutogenUpdateCashtray.swift in Sources */,
+				44AA116B303C20FA00EAC17A /* AutogenGetCashtray.swift in Sources */,
+				44AA116C303C20FA00EAC17A /* AutogenCashtray.swift in Sources */,
+				44AA116D303C20FA00EAC17A /* AutogenAccountTopupQuotas.swift in Sources */,
+				44AA116E303C20FA00EAC17A /* AutogenDetailedShopInformation.swift in Sources */,
+				44AA116F303C20FA00EAC17A /* AutogenOauthFullAccessUrl.swift in Sources */,
+				44AA1170303C20FA00EAC17A /* AutogenUpdateBill.swift in Sources */,
+				44AA1171303C20FA00EAC17A /* AutogenGetPrivateMoneyCoupons.swift in Sources */,
+				44AA1172303C20FA00EAC17A /* AutogenJihanpiTransaction.swift in Sources */,
+				44AA1173303C20FA00EAC17A /* AutogenCreateCheck.swift in Sources */,
+				44AA1174303C20FA00EAC17A /* AutogenGetAccountCouponDetail.swift in Sources */,
+				44AA1175303C20FA00EAC17A /* AutogenCvsAuthorizeRequest.swift in Sources */,
+				44AA1176303C20FA00EAC17A /* AutogenOrganization.swift in Sources */,
+				44AA1177303C20FA00EAC17A /* AutogenTopupWithCreditCardMdkToken.swift in Sources */,
+				44AA1178303C20FA00EAC17A /* AutogenCashtrayAttempt.swift in Sources */,
+				44AA1179303C20FA00EAC17A /* AutogenAccountTopupStats.swift in Sources */,
+				44AA117A303C20FA00EAC17A /* AutogenShopInformation.swift in Sources */,
+				44AA117B303C20FA00EAC17A /* AutogenCreateBankPay.swift in Sources */,
+				44AA117C303C20FA00EAC17A /* AutogenCvsAuthorization.swift in Sources */,
+				44AA117D303C20FA00EAC17A /* AutogenBill.swift in Sources */,
+				44AA117E303C20FA00EAC17A /* AutogenGetAccountIndividualNumberIdentification.swift in Sources */,
+				44AA117F303C20FA00EAC17A /* AutogenGetTransaction.swift in Sources */,
+				44AA1180303C20FA00EAC17A /* AutogenPaginatedShops.swift in Sources */,
+				44AA1181303C20FA00EAC17A /* AutogenGetPrivateMoney.swift in Sources */,
+				44AA1182303C20FA00EAC17A /* AutogenGetPrivateMoneyTerms.swift in Sources */,
+				44AA1183303C20FA00EAC17A /* AutogenUserTagGroup.swift in Sources */,
+				44AA1184303C20FA00EAC17A /* AutogenPrivateMoneyImages.swift in Sources */,
+				44AA1185303C20FA00EAC17A /* AutogenGetTerminal.swift in Sources */,
+				44AA1186303C20FA00EAC17A /* AutogenGetUserSettingUrl.swift in Sources */,
+				44AA1187303C20FA00EAC17A /* AutogenUserWithDetails.swift in Sources */,
+				44AA1188303C20FA00EAC17A /* AutogenGetAccountTransactions.swift in Sources */,
+				44AA1189303C20FA00EAC17A /* AutogenGetVeritransMdkTokenApiKey.swift in Sources */,
+				44AA118A303C20FA00EAC17A /* AutogenCreateJihanpiTransaction.swift in Sources */,
+				44AA118B303C20FA00EAC17A /* AutogenCreateTransactionWithBill.swift in Sources */,
+				44AA118C303C20FA00EAC17A /* AutogenPrivateMoneyDetail.swift in Sources */,
+				44AA118D303C20FA00EAC17A /* AutogenUserTagSubgroup.swift in Sources */,
+				44AA118E303C20FA00EAC17A /* AutogenCashtrayAttempts.swift in Sources */,
+				44AA118F303C20FA00EAC17A /* AutogenCoupon.swift in Sources */,
+				44AA1190303C20FA00EAC17A /* AutogenDeleteCashtray.swift in Sources */,
+				44AA1191303C20FA00EAC17A /* AutogenGetCvsAuthorization.swift in Sources */,
+				44AA1192303C20FA00EAC17A /* AutogenPrivateMoneySounds.swift in Sources */,
+				44AA1193303C20FA00EAC17A /* AutogenBankPaySession.swift in Sources */,
+				44AA1194303C20FA00EAC17A /* AutogenPaginatedUserTagGroupItems.swift in Sources */,
+				44AA1195303C20FA00EAC17A /* AutogenAccountTopupQuota.swift in Sources */,
+				44AA1196303C20FA00EAC17A /* AutogenCancelCvsAuthorization.swift in Sources */,
+				44AA1197303C20FA00EAC17A /* AutogenGetAccountCampaignPointAmounts.swift in Sources */,
+				44AA1198303C20FA00EAC17A /* AutogenBankPayTopUp.swift in Sources */,
+				44AA1199303C20FA00EAC17A /* AutogenPaginatedAccountTransfers.swift in Sources */,
+				44AA119A303C20FA00EAC17A /* AutogenUserTagInformation.swift in Sources */,
+				44AA119B303C20FA00EAC17A /* AutogenGetUserAccounts.swift in Sources */,
+				44AA119C303C20FA00EAC17A /* AutogenPaginatedPrivateMoneyCoupons.swift in Sources */,
+				44AA119D303C20FA00EAC17A /* Autogen.swift in Sources */,
+				44AA119E303C20FA00EAC17A /* AutogenPaginatedAccountCoupons.swift in Sources */,
+				44AA119F303C20FA00EAC17A /* AutogenSendToAccount.swift in Sources */,
+				44AA11A0303C20FA00EAC17A /* AutogenDeleteBill.swift in Sources */,
+				44AA11A1303C20FA00EAC17A /* AutogenUpdateUser.swift in Sources */,
+				44AA11A2303C20FA00EAC17A /* AutogenUserTransfer.swift in Sources */,
+				44AA11A3303C20FA00EAC17A /* AutogenUserBank.swift in Sources */,
+				44AA11A4303C20FA00EAC17A /* AutogenPaginatedUserTagSubgroups.swift in Sources */,
+				44AA11A5303C20FA00EAC17A /* AutogenGetListOfShops.swift in Sources */,
+				44AA11A6303C20FA00EAC17A /* AutogenPaginatedCreditCards.swift in Sources */,
+				44AA11A7303C20FA00EAC17A /* AutogenRefundTransaction.swift in Sources */,
+				44AA11A8303C20FA00EAC17A /* AutogenIdentifyIndividual.swift in Sources */,
+				44AA11A9303C20FA00EAC17A /* AutogenBillWithAdditionalPrivateMoneys.swift in Sources */,
+				44AA11AA303C20FA00EAC17A /* AutogenGetCvsAuthorizations.swift in Sources */,
+				44AA11AB303C20FA00EAC17A /* AutogenGetUserTagGroupItems.swift in Sources */,
+				44AA11AC303C20FA00EAC17A /* AutogenUserWithAuthFactors.swift in Sources */,
+				44AA11AD303C20FA00EAC17A /* AutogenCreateTransactionWithCpm.swift in Sources */,
+				44AA11AE303C20FA00EAC17A /* AutogenGetCheck.swift in Sources */,
+				44AA11AF303C20FA00EAC17A /* AutogenPaginatedPrivateMoneys.swift in Sources */,
+				44AA11B0303C20FA00EAC17A /* AutogenTopupWithCreditCard.swift in Sources */,
+				44AA11B1303C20FA00EAC17A /* AutogenGetAccountTransfers.swift in Sources */,
+				44AA11B2303C20FA00EAC17A /* AutogenCreateBill.swift in Sources */,
+				44AA11B3303C20FA00EAC17A /* AutogenDeleteUser.swift in Sources */,
+				44AA11B4303C20FA00EAC17A /* AutogenVeritransMdkTokenApiKey.swift in Sources */,
+				44AA11B5303C20FA00EAC17A /* AutogenAccountCampaignPointAmounts.swift in Sources */,
+				44AA11B6303C20FA00EAC17A /* AutogenSearchPrivateMoneys.swift in Sources */,
+				44AA11B7303C20FA00EAC17A /* AutogenPrivateMoneyLegalText.swift in Sources */,
+				44AA11B8303C20FA00EAC17A /* AutogenGetBill.swift in Sources */,
+				44AA11B9303C20FA00EAC17A /* AutogenTopupWithCreditCardMembership.swift in Sources */,
+				44AA11BA303C20FA00EAC17A /* AutogenIdentificationResult.swift in Sources */,
+				44AA11BB303C20FA00EAC17A /* AutogenIndividualNumberIdentificationStatus.swift in Sources */,
+				44AA11BC303C20FA00EAC17A /* AutogenUpdateCheck.swift in Sources */,
+				44AA11BD303C20FA00EAC17A /* AutogenTerminal.swift in Sources */,
+				44AA11BE303C20FA00EAC17A /* AutogenUserTagGroupItem.swift in Sources */,
+				44AA11BF303C20FA00EAC17A /* AutogenGetUser.swift in Sources */,
+				44AA11C0303C20FA00EAC17A /* AutogenUpdateTerminal.swift in Sources */,
+				44AA11C1303C20FA00EAC17A /* AutogenUserTransferWithoutAccount.swift in Sources */,
+				44AA11C2303C20FA00EAC17A /* AutogenPaginatedUserAccounts.swift in Sources */,
+				44AA11C3303C20FA00EAC17A /* AutogenCreateAccountCpmToken.swift in Sources */,
+				44AA11C4303C20FA00EAC17A /* AutogenGetTerminalById.swift in Sources */,
+				44AA11C5303C20FA00EAC17A /* AutogenAccountBalance.swift in Sources */,
+				44AA11C6303C20FA00EAC17A /* AutogenGetPrivateMoneyPaymentAct.swift in Sources */,
+				44AA11C7303C20FA00EAC17A /* AutogenGetUserTransactions.swift in Sources */,
 				445A62782FEE81DA006F55B2 /* IndividualNumberIdentificationStatus.swift in Sources */,
 				445A62792FEE81DA006F55B2 /* PaginatedShops.swift in Sources */,
 				445A627A2FEE81DA006F55B2 /* PaginatedUserTagGroups.swift in Sources */,
