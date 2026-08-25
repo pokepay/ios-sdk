@@ -1,6 +1,7 @@
 import APIKit
 
 public extension BankAPI.Jihanpi {
+    @available(*, deprecated, message: "Use Autogen.BankAPI.Jihanpi.CreateJihanpiTransaction instead. This hand-written request is being replaced by the auto-generated Autogen API.")
     struct CreateJihanpiTransaction: BankRequest {
         public let nfcTagId: String
         public let accountId: String

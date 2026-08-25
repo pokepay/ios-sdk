@@ -1,6 +1,7 @@
 import APIKit
 
 public extension BankAPI.Transaction {
+    @available(*, deprecated, message: "Use Autogen.BankAPI.Transaction.CreateTransactionWithCpm instead. This hand-written request is being replaced by the auto-generated Autogen API.")
     struct CreateCpmTransaction: BankRequest {
         public let requestId: String
         public let cpmToken: String

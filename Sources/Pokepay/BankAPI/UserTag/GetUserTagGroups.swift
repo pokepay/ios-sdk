@@ -1,6 +1,7 @@
 import APIKit
 
 public extension BankAPI.UserTag {
+    @available(*, deprecated, message: "Use Autogen.BankAPI.UserTag.GetUserTagGroups instead. This hand-written request is being replaced by the auto-generated Autogen API.")
     struct GetUserTagGroups: BankRequest {
         public let privateMoneyId: String
         public let before: String?

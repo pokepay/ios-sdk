@@ -2,6 +2,7 @@ import Foundation
 import APIKit
 
 public extension BankAPI.Check {
+    @available(*, deprecated, message: "Use Autogen.BankAPI.Check.CreateCheck instead. This hand-written request is being replaced by the auto-generated Autogen API.")
     struct Create: BankRequest {
         public let amount: Double?
         public let accountId: String?

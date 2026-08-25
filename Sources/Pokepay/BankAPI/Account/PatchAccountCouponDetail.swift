@@ -1,6 +1,7 @@
 import APIKit
 
 public extension BankAPI.Account {
+    @available(*, deprecated, message: "Use Autogen.BankAPI.Account.PatchAccountCouponDetail instead. This hand-written request is being replaced by the auto-generated Autogen API.")
     struct PatchCouponDetail:BankRequest {
         public let accountId: String
         public let couponId:String

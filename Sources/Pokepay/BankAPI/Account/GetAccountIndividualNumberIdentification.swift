@@ -1,6 +1,7 @@
 import APIKit
 
 public extension BankAPI.Account {
+    @available(*, deprecated, message: "Use Autogen.BankAPI.Account.GetAccountIndividualNumberIdentification instead. This hand-written request is being replaced by the auto-generated Autogen API.")
     struct GetAccountIndividualNumberIdentification: BankRequest {
         public let accountId: String
 

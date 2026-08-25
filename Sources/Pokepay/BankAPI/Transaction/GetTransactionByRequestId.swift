@@ -1,6 +1,7 @@
 import APIKit
 
 public extension BankAPI.Transaction {
+    @available(*, deprecated, message: "Use Autogen.BankAPI.Transaction.GetTransactionByRequestId instead. This hand-written request is being replaced by the auto-generated Autogen API.")
     struct GetTransactionByRequestId: BankRequest {
         public let requestId: String
 

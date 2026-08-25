@@ -1,6 +1,7 @@
 import APIKit
 
 public extension BankAPI.CreditCard {
+    @available(*, deprecated, message: "Use Autogen.BankAPI.CreditCard.DeleteCreditCard instead. This hand-written request is being replaced by the auto-generated Autogen API.")
     struct DeleteCreditCard: BankRequest {
         public let cardRegisteredAt: String?
         public let cardUuid: String?

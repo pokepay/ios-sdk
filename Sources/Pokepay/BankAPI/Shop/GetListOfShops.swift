@@ -1,6 +1,7 @@
 import APIKit
 
 public extension BankAPI.Shop {
+    @available(*, deprecated, message: "Use Autogen.BankAPI.Shop.GetListOfShops instead. This hand-written request is being replaced by the auto-generated Autogen API.")
     struct GetListOfShops: BankRequest {
         public let privateMoneyId: String
         public let userTagGroupItemId: String?

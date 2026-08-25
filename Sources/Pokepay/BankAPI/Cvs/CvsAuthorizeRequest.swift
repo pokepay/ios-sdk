@@ -1,6 +1,7 @@
 import APIKit
 
 public extension BankAPI.Cvs {
+    @available(*, deprecated, message: "Use Autogen.BankAPI.Cvs.CvsAuthorizeRequest instead. This hand-written request is being replaced by the auto-generated Autogen API.")
     struct CvsAuthorizeRequest: BankRequest {
         public let serviceOptionType: String
         public let amount: Int

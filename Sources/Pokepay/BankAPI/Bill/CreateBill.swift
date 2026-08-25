@@ -1,6 +1,7 @@
 import APIKit
 
 public extension BankAPI.Bill {
+    @available(*, deprecated, message: "Use Autogen.BankAPI.Bill.CreateBill instead. This hand-written request is being replaced by the auto-generated Autogen API.")
     struct Create: BankRequest {
         public let amount: Double?
         public let accountId: String?
