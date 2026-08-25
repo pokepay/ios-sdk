@@ -1,6 +1,7 @@
 import APIKit
 
 public extension BankAPI.Account {
+    @available(*, deprecated, message: "Use Autogen.BankAPI.Account.IdentifyIndividual instead. This hand-written request is being replaced by the auto-generated Autogen API.")
     struct IdentifyIndividual: BankRequest {
         public let signature: String
         public let signingCert: String

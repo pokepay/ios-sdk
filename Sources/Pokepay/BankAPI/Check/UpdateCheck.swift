@@ -1,6 +1,7 @@
 import APIKit
 
 public extension BankAPI.Check {
+    @available(*, deprecated, message: "Use Autogen.BankAPI.Check.UpdateCheck instead. This hand-written request is being replaced by the auto-generated Autogen API.")
     struct Update: BankRequest {
         public let id: String
         public let amount: Double?

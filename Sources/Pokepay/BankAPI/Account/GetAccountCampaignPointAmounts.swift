@@ -2,6 +2,7 @@ import APIKit
 import Foundation
 
 public extension BankAPI.Account {
+    @available(*, deprecated, message: "Use Autogen.BankAPI.Campaign.GetAccountCampaignPointAmounts instead. This hand-written request is being replaced by the auto-generated Autogen API.")
     struct GetAccountCampaignPointAmounts: BankRequest {
         public let accountId: String
         public let campaignId: String

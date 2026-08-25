@@ -1,6 +1,7 @@
 import APIKit
 
 public extension BankAPI.Account {
+    @available(*, deprecated, message: "Use Autogen.BankAPI.Account.CreateAccount instead. This hand-written request is being replaced by the auto-generated Autogen API.")
     struct Create: BankRequest {
         public let name: String?
         public let privateMoneyId: String

@@ -1,6 +1,7 @@
 import APIKit
 
 public extension BankAPI.Transaction {
+    @available(*, deprecated, message: "Use Autogen.BankAPI.Account.SendToAccount instead. This hand-written request is being replaced by the auto-generated Autogen API.")
     struct SendToAccount: BankRequest {
         public let accountId: String
         public let amount: Double

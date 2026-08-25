@@ -1,6 +1,7 @@
 import APIKit
 
 public extension BankAPI.Account {
+    @available(*, deprecated, message: "Use Autogen.BankAPI.Account.CreateAccountCpmToken instead. This hand-written request is being replaced by the auto-generated Autogen API.")
     struct CreateAccountCpmToken: BankRequest {
 
         public enum Scope: Int {

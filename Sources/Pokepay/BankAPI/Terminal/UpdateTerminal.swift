@@ -1,6 +1,7 @@
 import APIKit
 
 public extension BankAPI.Terminal {
+    @available(*, deprecated, message: "Use Autogen.BankAPI.Terminal.UpdateTerminal instead. This hand-written request is being replaced by the auto-generated Autogen API.")
     struct Update: BankRequest {
         let accountId: String
         let name: String

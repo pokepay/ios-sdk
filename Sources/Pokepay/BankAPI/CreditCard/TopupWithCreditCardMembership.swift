@@ -1,6 +1,7 @@
 import APIKit
 
 public extension BankAPI.CreditCard {
+    @available(*, deprecated, message: "Use Autogen.BankAPI.CreditCard.TopupWithCreditCardMembership instead. This hand-written request is being replaced by the auto-generated Autogen API.")
     struct TopupWithCreditCardMembership: BankRequest {
         public let userId: String
         public let cardRegisteredAt: String?

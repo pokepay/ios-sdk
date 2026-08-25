@@ -1,6 +1,7 @@
 import APIKit
 
 public extension BankAPI.PrivateMoney {
+    @available(*, deprecated, message: "Use Autogen.BankAPI.Coupon.GetPrivateMoneyCoupons instead. This hand-written request is being replaced by the auto-generated Autogen API.")
     struct GetPrivateMoneyCoupons: BankRequest {
         public let privateMoneyId:String
         public let before:String?

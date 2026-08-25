@@ -1,6 +1,7 @@
 import APIKit
 
 public extension BankAPI.Cashtray {
+    @available(*, deprecated, message: "Use Autogen.BankAPI.Cashtray.GetCashtray instead. This hand-written request is being replaced by the auto-generated Autogen API.")
     struct Get: BankRequest {
         public let id: String
 

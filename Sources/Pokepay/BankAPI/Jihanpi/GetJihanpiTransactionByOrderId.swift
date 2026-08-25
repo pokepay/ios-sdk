@@ -1,6 +1,7 @@
 import APIKit
 
 public extension BankAPI.Jihanpi {
+    @available(*, deprecated, message: "Use Autogen.BankAPI.Jihanpi.GetJihanpiTransactionByOrderId instead. This hand-written request is being replaced by the auto-generated Autogen API.")
     struct GetJihanpiTransactionByOrderId: BankRequest {
         public let orderId: String
 
