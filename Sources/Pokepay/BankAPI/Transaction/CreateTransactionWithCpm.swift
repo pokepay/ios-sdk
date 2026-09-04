@@ -41,7 +41,7 @@ public extension BankAPI.Transaction {
                 dict["products"] = products!.map { $0.dictionary }
             }
             if requestId != nil {
-                dict["request_id"] = requestId?.uuidString
+                dict["request_id"] = requestId?.pokepayRequestID
             }
             if topupQuotaId != nil {
                 dict["topup_quota_id"] = topupQuotaId
