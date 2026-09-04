@@ -399,6 +399,8 @@
 		44AA125D303C20FA00EAC17A /* AutogenAccountBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10E7303C20FA00EAC17A /* AutogenAccountBalance.swift */; };
 		44AA125E303C20FA00EAC17A /* AutogenGetPrivateMoneyPaymentAct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10C5303C20FA00EAC17A /* AutogenGetPrivateMoneyPaymentAct.swift */; };
 		44AA125F303C20FA00EAC17A /* AutogenGetUserTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA10DD303C20FA00EAC17A /* AutogenGetUserTransactions.swift */; };
+		44AA1264304A732200EAC17A /* RequestID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1263304A732200EAC17A /* RequestID.swift */; };
+		44AA1265304A732200EAC17A /* RequestID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1263304A732200EAC17A /* RequestID.swift */; };
 		4A6A88612EA21AAE0055A132 /* GetPrivateMoneyCoupons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A87E12EA21AAE0055A132 /* GetPrivateMoneyCoupons.swift */; };
 		4A6A88622EA21AAE0055A132 /* PrivateMoney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A88432EA21AAE0055A132 /* PrivateMoney.swift */; };
 		4A6A88632EA21AAE0055A132 /* BankAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A88072EA21AAE0055A132 /* BankAPIRequest.swift */; };
@@ -915,6 +917,7 @@
 		44AA112B303C20FA00EAC17A /* AutogenUserWithDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenUserWithDetails.swift; sourceTree = "<group>"; };
 		44AA112C303C20FA00EAC17A /* AutogenVeritransMdkTokenApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutogenVeritransMdkTokenApiKey.swift; sourceTree = "<group>"; };
 		44AA112E303C20FA00EAC17A /* Autogen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Autogen.swift; sourceTree = "<group>"; };
+		44AA1263304A732200EAC17A /* RequestID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestID.swift; sourceTree = "<group>"; };
 		4A6A87B92EA21AAE0055A132 /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
 		4A6A87BA2EA21AAE0055A132 /* CreateAccountCpmToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountCpmToken.swift; sourceTree = "<group>"; };
 		4A6A87BB2EA21AAE0055A132 /* CreateAccountSevenElevenAtmSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountSevenElevenAtmSession.swift; sourceTree = "<group>"; };
@@ -1631,6 +1634,7 @@
 				4A6A87F22EA21AAE0055A132 /* Transaction */,
 				4A6A88022EA21AAE0055A132 /* User */,
 				4A6A88032EA21AAE0055A132 /* AuthorizedRequest.swift */,
+				44AA1263304A732200EAC17A /* RequestID.swift */,
 				4A6A88042EA21AAE0055A132 /* BankAPIDateFormatter.swift */,
 				4A6A88052EA21AAE0055A132 /* BankAPIError.swift */,
 				4A6A88062EA21AAE0055A132 /* BankAPIJSONDecoder.swift */,
@@ -2012,6 +2016,7 @@
 				B415E51B21BA2599009843DB /* PokepayTests.swift in Sources */,
 				4A6A88F42EA21AAE0055A132 /* GetPrivateMoneyCoupons.swift in Sources */,
 				4A6A88F52EA21AAE0055A132 /* PrivateMoney.swift in Sources */,
+				44AA1265304A732200EAC17A /* RequestID.swift in Sources */,
 				4A6A88F62EA21AAE0055A132 /* BankAPIRequest.swift in Sources */,
 				44AA0E9230130C0700EAC17A /* CancelCvsAuthorization.swift in Sources */,
 				44AA0E9330130C0700EAC17A /* GetCvsAuthorization.swift in Sources */,
@@ -2374,6 +2379,7 @@
 				4A6A88762EA21AAE0055A132 /* MessageAttachment.swift in Sources */,
 				4A6A88772EA21AAE0055A132 /* GetPrivateMoney.swift in Sources */,
 				4A6A88782EA21AAE0055A132 /* GetTransaction.swift in Sources */,
+				44AA1264304A732200EAC17A /* RequestID.swift in Sources */,
 				4A6A88792EA21AAE0055A132 /* CreateCheck.swift in Sources */,
 				4A6A887A2EA21AAE0055A132 /* Cypher.swift in Sources */,
 				4A6A887B2EA21AAE0055A132 /* CreditCard.swift in Sources */,
