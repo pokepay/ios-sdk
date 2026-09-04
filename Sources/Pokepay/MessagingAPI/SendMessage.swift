@@ -9,18 +9,18 @@ public extension MessagingAPI {
         public let body: String
         public let sender: User
         public let fromAccountId: String?
-        public let requestId: String
+        public let requestId: String?
 
         public typealias Response = Message
 
-        public init(toUserId: String, amount: Double? = nil, subject: String = "", body: String = "", sender: User, fromAccountId: String? = nil, requestId: UUID = UUID()) {
+        public init(toUserId: String, amount: Double? = nil, subject: String = "", body: String = "", sender: User, fromAccountId: String? = nil, requestId: UUID? = nil) {
             self.toUserId = toUserId
             self.amount = amount
             self.subject = subject
             self.body = body
             self.sender = sender
             self.fromAccountId = fromAccountId
-            self.requestId = requestId.pokepayRequestID
+            self.requestId = requestId?.pokepayRequestID
         }
 
         public var method: HTTPMethod {
@@ -42,7 +42,9 @@ public extension MessagingAPI {
             if fromAccountId != nil {
                 dict["from_account_id"] = fromAccountId
             }
-            dict["_request_id"] = requestId
+            if requestId != nil {
+                dict["_request_id"] = requestId
+            }
             return dict
         }
     }
