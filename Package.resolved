@@ -1,25 +1,14 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "APIKit",
-        "repositoryURL": "https://github.com/ishkawa/APIKit",
-        "state": {
-          "branch": null,
-          "revision": "b839e53b870104798035b279d2a6168b0a2227b1",
-          "version": "5.4.0"
-        }
-      },
-      {
-        "package": "Result",
-        "repositoryURL": "https://github.com/antitypical/Result.git",
-        "state": {
-          "branch": null,
-          "revision": "12920a5c2595926efab9274d6003e29f503dbb66",
-          "version": "5.0.0"
-        }
+  "pins" : [
+    {
+      "identity" : "apikit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ishkawa/APIKit",
+      "state" : {
+        "revision" : "b839e53b870104798035b279d2a6168b0a2227b1",
+        "version" : "5.4.0"
       }
-    ]
-  },
-  "version": 1
+    }
+  ],
+  "version" : 2
 }
