@@ -380,11 +380,18 @@ public struct Pokepay {
     }
     
     public struct VeritransClient {
-        
+        // Requests carry raw card numbers, so they must not be persisted to Cache.db via the
+        // shared URLCache. Scoped to this client so Bank API requests keep their caching.
+        static let session: Session = {
+            let configuration = URLSessionConfiguration.ephemeral
+            configuration.urlCache = nil
+            return Session(adapter: URLSessionAdapter(configuration: configuration))
+        }()
+
         public init() {}
         
         public func send<T: APIKit.Request>(_ request: T, handler: @escaping (Result<T.Response, PokepayError>) -> Void) {
-            Session.send(request) { result in
+            VeritransClient.session.send(request) { result in
                 switch result {
                 case .success(let data):
                     handler(.success(data))
