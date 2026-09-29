@@ -1,5 +1,4 @@
 import CoreBluetooth
-import Result
 
 public enum BLEError : Error {
     case peripheralIsGone

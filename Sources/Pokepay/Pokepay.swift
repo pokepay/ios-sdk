@@ -1,6 +1,5 @@
 import Foundation
 import APIKit
-import Result
 
 private extension String {
     func capture(pattern: String, group: Int) -> String? {

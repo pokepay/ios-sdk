@@ -192,8 +192,8 @@ client.send(BankAPI.Terminal.Get()) { result in
 
 ## Requirements
 
-* Xcode 9 or later
-* iOS 10.0 or later
+* Xcode 15 or later
+* iOS 15.0 or later
 
 ## Installation
 
@@ -207,6 +207,21 @@ github "pokepay/ios-sdk"
 
 ```
 pod 'Pokepay'
+```
+
+Pokepay depends on [APIKit](https://github.com/ishkawa/APIKit), whose podspec still
+declares a minimum deployment target of iOS 9.0. Xcode 26 and later refuse to build
+any target below iOS 15.0, so add the following to your `Podfile` to raise it for all
+pods:
+
+```ruby
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
+    end
+  end
+end
 ```
 
 ## Dependencies
